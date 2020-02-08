@@ -1,0 +1,12 @@
+C:\Users\CJ Equila\source\repos\Game of the Generals\Game of the Generals\bin\Debug\Game of the Generals.exe.config
+C:\Users\CJ Equila\source\repos\Game of the Generals\Game of the Generals\bin\Debug\Game of the Generals.exe
+C:\Users\CJ Equila\source\repos\Game of the Generals\Game of the Generals\bin\Debug\Game of the Generals.pdb
+C:\Users\CJ Equila\source\repos\Game of the Generals\Game of the Generals\bin\Debug\Game of the Generals.xml
+C:\Users\CJ Equila\source\repos\Game of the Generals\Game of the Generals\obj\Debug\Game of the Generals.vbprojAssemblyReference.cache
+C:\Users\CJ Equila\source\repos\Game of the Generals\Game of the Generals\obj\Debug\Game_of_the_Generals.Form1.resources
+C:\Users\CJ Equila\source\repos\Game of the Generals\Game of the Generals\obj\Debug\Game_of_the_Generals.Form2.resources
+C:\Users\CJ Equila\source\repos\Game of the Generals\Game of the Generals\obj\Debug\Game_of_the_Generals.Resources.resources
+C:\Users\CJ Equila\source\repos\Game of the Generals\Game of the Generals\obj\Debug\Game of the Generals.vbproj.GenerateResource.cache
+C:\Users\CJ Equila\source\repos\Game of the Generals\Game of the Generals\obj\Debug\Game of the Generals.exe
+C:\Users\CJ Equila\source\repos\Game of the Generals\Game of the Generals\obj\Debug\Game of the Generals.xml
+C:\Users\CJ Equila\source\repos\Game of the Generals\Game of the Generals\obj\Debug\Game of the Generals.pdb
