@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
-Partial Class Form4
+Partial Class Tutorial
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
@@ -35,13 +35,13 @@ Partial Class Form4
         Me.TextBox1.TabIndex = 0
         Me.TextBox1.Text = "SERIES OF TUTORIAL"
         '
-        'Form4
+        'Tutorial
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(910, 450)
         Me.Controls.Add(Me.TextBox1)
-        Me.Name = "Form4"
+        Me.Name = "Tutorial"
         Me.Text = "Tutorial"
         Me.ResumeLayout(False)
         Me.PerformLayout()

@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
-Partial Class Form3
+Partial Class Options
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
@@ -66,7 +66,7 @@ Partial Class Form3
         Me.Button2.Text = "SOUND"
         Me.Button2.UseVisualStyleBackColor = False
         '
-        'Form3
+        'Options
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(11.0!, 19.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
@@ -76,7 +76,7 @@ Partial Class Form3
         Me.Controls.Add(Me.Button73)
         Me.Font = New System.Drawing.Font("Cooper Black", 12.0!)
         Me.Margin = New System.Windows.Forms.Padding(6, 4, 6, 4)
-        Me.Name = "Form3"
+        Me.Name = "Options"
         Me.Text = "Options"
         Me.ResumeLayout(False)
 

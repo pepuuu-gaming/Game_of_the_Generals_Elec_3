@@ -750,7 +750,7 @@ Partial Class gameboard
         Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.Button72)
         Me.Name = "gameboard"
-        Me.Text = "Form2"
+        Me.Text = "Game of the Generals"
         Me.ResumeLayout(False)
 
     End Sub
