@@ -28,4 +28,9 @@
         Me.Close()
 
     End Sub
+
+    Private Sub back_to_menu_Click(sender As Object, e As EventArgs) Handles back_to_menu.Click
+        Tutorial.Show()
+        Me.Hide()
+    End Sub
 End Class

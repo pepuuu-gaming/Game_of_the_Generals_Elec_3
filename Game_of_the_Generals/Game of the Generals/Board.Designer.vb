@@ -1173,6 +1173,7 @@ Partial Class gameboard
         Me.Controls.Add(Me.b8)
         Me.Controls.Add(Me.a8)
         Me.Name = "gameboard"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Game of the Generals"
         Me.ResumeLayout(False)
 
