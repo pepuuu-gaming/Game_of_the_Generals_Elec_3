@@ -10,3 +10,19 @@ C:\Users\CJ Equila\source\repos\Game of the Generals\Game of the Generals\obj\De
 C:\Users\CJ Equila\source\repos\Game of the Generals\Game of the Generals\obj\Debug\Game of the Generals.exe
 C:\Users\CJ Equila\source\repos\Game of the Generals\Game of the Generals\obj\Debug\Game of the Generals.xml
 C:\Users\CJ Equila\source\repos\Game of the Generals\Game of the Generals\obj\Debug\Game of the Generals.pdb
+C:\Users\Mark Angelo\Desktop\my-git-repo\Game_of_the_Generals_Elec_3\Game_of_the_Generals\Game of the Generals\bin\Debug\Game of the Generals.exe.config
+C:\Users\Mark Angelo\Desktop\my-git-repo\Game_of_the_Generals_Elec_3\Game_of_the_Generals\Game of the Generals\bin\Debug\Game of the Generals.exe
+C:\Users\Mark Angelo\Desktop\my-git-repo\Game_of_the_Generals_Elec_3\Game_of_the_Generals\Game of the Generals\bin\Debug\Game of the Generals.pdb
+C:\Users\Mark Angelo\Desktop\my-git-repo\Game_of_the_Generals_Elec_3\Game_of_the_Generals\Game of the Generals\bin\Debug\Game of the Generals.xml
+C:\Users\Mark Angelo\Desktop\my-git-repo\Game_of_the_Generals_Elec_3\Game_of_the_Generals\Game of the Generals\obj\Debug\Game of the Generals.vbprojAssemblyReference.cache
+C:\Users\Mark Angelo\Desktop\my-git-repo\Game_of_the_Generals_Elec_3\Game_of_the_Generals\Game of the Generals\obj\Debug\Game_of_the_Generals.homepage.resources
+C:\Users\Mark Angelo\Desktop\my-git-repo\Game_of_the_Generals_Elec_3\Game_of_the_Generals\Game of the Generals\obj\Debug\Game_of_the_Generals.gameboard.resources
+C:\Users\Mark Angelo\Desktop\my-git-repo\Game_of_the_Generals_Elec_3\Game_of_the_Generals\Game of the Generals\obj\Debug\Game_of_the_Generals.Options.resources
+C:\Users\Mark Angelo\Desktop\my-git-repo\Game_of_the_Generals_Elec_3\Game_of_the_Generals\Game of the Generals\obj\Debug\Game_of_the_Generals.Tutorial.resources
+C:\Users\Mark Angelo\Desktop\my-git-repo\Game_of_the_Generals_Elec_3\Game_of_the_Generals\Game of the Generals\obj\Debug\Game_of_the_Generals.Resources.resources
+C:\Users\Mark Angelo\Desktop\my-git-repo\Game_of_the_Generals_Elec_3\Game_of_the_Generals\Game of the Generals\obj\Debug\Game_of_the_Generals.TutorialPage1.resources
+C:\Users\Mark Angelo\Desktop\my-git-repo\Game_of_the_Generals_Elec_3\Game_of_the_Generals\Game of the Generals\obj\Debug\Game_of_the_Generals.TutorialPage2.resources
+C:\Users\Mark Angelo\Desktop\my-git-repo\Game_of_the_Generals_Elec_3\Game_of_the_Generals\Game of the Generals\obj\Debug\Game of the Generals.vbproj.GenerateResource.cache
+C:\Users\Mark Angelo\Desktop\my-git-repo\Game_of_the_Generals_Elec_3\Game_of_the_Generals\Game of the Generals\obj\Debug\Game of the Generals.exe
+C:\Users\Mark Angelo\Desktop\my-git-repo\Game_of_the_Generals_Elec_3\Game_of_the_Generals\Game of the Generals\obj\Debug\Game of the Generals.xml
+C:\Users\Mark Angelo\Desktop\my-git-repo\Game_of_the_Generals_Elec_3\Game_of_the_Generals\Game of the Generals\obj\Debug\Game of the Generals.pdb
