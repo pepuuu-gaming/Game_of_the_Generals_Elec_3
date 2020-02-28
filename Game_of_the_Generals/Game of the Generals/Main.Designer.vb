@@ -24,9 +24,9 @@ Partial Class homepage
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(homepage))
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
-        Me.Button1 = New System.Windows.Forms.Button()
-        Me.Button2 = New System.Windows.Forms.Button()
-        Me.Button3 = New System.Windows.Forms.Button()
+        Me.ButtonPlay = New System.Windows.Forms.Button()
+        Me.ButtonTutorials = New System.Windows.Forms.Button()
+        Me.ButtonOptions = New System.Windows.Forms.Button()
         Me.Label1 = New System.Windows.Forms.Label()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -43,56 +43,56 @@ Partial Class homepage
         Me.PictureBox1.TabIndex = 135
         Me.PictureBox1.TabStop = False
         '
-        'Button1
+        'ButtonPlay
         '
-        Me.Button1.BackColor = System.Drawing.Color.White
-        Me.Button1.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.Button1.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(112, Byte), Integer), CType(CType(112, Byte), Integer), CType(CType(112, Byte), Integer))
-        Me.Button1.FlatAppearance.BorderSize = 0
-        Me.Button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(159, Byte), Integer), CType(CType(211, Byte), Integer), CType(CType(199, Byte), Integer))
-        Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button1.Font = New System.Drawing.Font("OCR A Extended", 30.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(56, Byte), Integer), CType(CType(81, Byte), Integer), CType(CType(112, Byte), Integer))
-        Me.Button1.Location = New System.Drawing.Point(533, 446)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(232, 51)
-        Me.Button1.TabIndex = 136
-        Me.Button1.Text = "PLAY"
-        Me.Button1.UseVisualStyleBackColor = False
+        Me.ButtonPlay.BackColor = System.Drawing.Color.White
+        Me.ButtonPlay.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.ButtonPlay.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(112, Byte), Integer), CType(CType(112, Byte), Integer), CType(CType(112, Byte), Integer))
+        Me.ButtonPlay.FlatAppearance.BorderSize = 0
+        Me.ButtonPlay.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(159, Byte), Integer), CType(CType(211, Byte), Integer), CType(CType(199, Byte), Integer))
+        Me.ButtonPlay.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.ButtonPlay.Font = New System.Drawing.Font("OCR A Extended", 30.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ButtonPlay.ForeColor = System.Drawing.Color.FromArgb(CType(CType(56, Byte), Integer), CType(CType(81, Byte), Integer), CType(CType(112, Byte), Integer))
+        Me.ButtonPlay.Location = New System.Drawing.Point(533, 446)
+        Me.ButtonPlay.Name = "ButtonPlay"
+        Me.ButtonPlay.Size = New System.Drawing.Size(232, 51)
+        Me.ButtonPlay.TabIndex = 136
+        Me.ButtonPlay.Text = "PLAY"
+        Me.ButtonPlay.UseVisualStyleBackColor = False
         '
-        'Button2
+        'ButtonTutorials
         '
-        Me.Button2.BackColor = System.Drawing.Color.White
-        Me.Button2.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.Button2.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(112, Byte), Integer), CType(CType(112, Byte), Integer), CType(CType(112, Byte), Integer))
-        Me.Button2.FlatAppearance.BorderSize = 0
-        Me.Button2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(159, Byte), Integer), CType(CType(211, Byte), Integer), CType(CType(199, Byte), Integer))
-        Me.Button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button2.Font = New System.Drawing.Font("OCR A Extended", 27.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button2.ForeColor = System.Drawing.Color.FromArgb(CType(CType(56, Byte), Integer), CType(CType(81, Byte), Integer), CType(CType(112, Byte), Integer))
-        Me.Button2.Location = New System.Drawing.Point(533, 508)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(232, 51)
-        Me.Button2.TabIndex = 137
-        Me.Button2.Text = "TUTORIALS"
-        Me.Button2.UseVisualStyleBackColor = False
+        Me.ButtonTutorials.BackColor = System.Drawing.Color.White
+        Me.ButtonTutorials.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.ButtonTutorials.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(112, Byte), Integer), CType(CType(112, Byte), Integer), CType(CType(112, Byte), Integer))
+        Me.ButtonTutorials.FlatAppearance.BorderSize = 0
+        Me.ButtonTutorials.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(159, Byte), Integer), CType(CType(211, Byte), Integer), CType(CType(199, Byte), Integer))
+        Me.ButtonTutorials.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.ButtonTutorials.Font = New System.Drawing.Font("OCR A Extended", 27.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ButtonTutorials.ForeColor = System.Drawing.Color.FromArgb(CType(CType(56, Byte), Integer), CType(CType(81, Byte), Integer), CType(CType(112, Byte), Integer))
+        Me.ButtonTutorials.Location = New System.Drawing.Point(533, 508)
+        Me.ButtonTutorials.Name = "ButtonTutorials"
+        Me.ButtonTutorials.Size = New System.Drawing.Size(232, 51)
+        Me.ButtonTutorials.TabIndex = 137
+        Me.ButtonTutorials.Text = "TUTORIALS"
+        Me.ButtonTutorials.UseVisualStyleBackColor = False
         '
-        'Button3
+        'ButtonOptions
         '
-        Me.Button3.BackColor = System.Drawing.Color.White
-        Me.Button3.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.Button3.FlatAppearance.BorderColor = System.Drawing.Color.White
-        Me.Button3.FlatAppearance.BorderSize = 0
-        Me.Button3.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(159, Byte), Integer), CType(CType(211, Byte), Integer), CType(CType(199, Byte), Integer))
-        Me.Button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button3.Font = New System.Drawing.Font("OCR A Extended", 30.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button3.ForeColor = System.Drawing.Color.FromArgb(CType(CType(56, Byte), Integer), CType(CType(81, Byte), Integer), CType(CType(112, Byte), Integer))
-        Me.Button3.Location = New System.Drawing.Point(533, 570)
-        Me.Button3.Name = "Button3"
-        Me.Button3.Size = New System.Drawing.Size(232, 51)
-        Me.Button3.TabIndex = 138
-        Me.Button3.Text = "OPTIONS"
-        Me.Button3.UseVisualStyleBackColor = False
+        Me.ButtonOptions.BackColor = System.Drawing.Color.White
+        Me.ButtonOptions.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.ButtonOptions.FlatAppearance.BorderColor = System.Drawing.Color.White
+        Me.ButtonOptions.FlatAppearance.BorderSize = 0
+        Me.ButtonOptions.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(159, Byte), Integer), CType(CType(211, Byte), Integer), CType(CType(199, Byte), Integer))
+        Me.ButtonOptions.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.ButtonOptions.Font = New System.Drawing.Font("OCR A Extended", 30.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ButtonOptions.ForeColor = System.Drawing.Color.FromArgb(CType(CType(56, Byte), Integer), CType(CType(81, Byte), Integer), CType(CType(112, Byte), Integer))
+        Me.ButtonOptions.Location = New System.Drawing.Point(533, 570)
+        Me.ButtonOptions.Name = "ButtonOptions"
+        Me.ButtonOptions.Size = New System.Drawing.Size(232, 51)
+        Me.ButtonOptions.TabIndex = 138
+        Me.ButtonOptions.Text = "OPTIONS"
+        Me.ButtonOptions.UseVisualStyleBackColor = False
         '
         'Label1
         '
@@ -115,9 +115,9 @@ Partial Class homepage
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(236, Byte), Integer), CType(CType(236, Byte), Integer), CType(CType(236, Byte), Integer))
         Me.ClientSize = New System.Drawing.Size(1264, 681)
         Me.Controls.Add(Me.Label1)
-        Me.Controls.Add(Me.Button3)
-        Me.Controls.Add(Me.Button2)
-        Me.Controls.Add(Me.Button1)
+        Me.Controls.Add(Me.ButtonOptions)
+        Me.Controls.Add(Me.ButtonTutorials)
+        Me.Controls.Add(Me.ButtonPlay)
         Me.Controls.Add(Me.PictureBox1)
         Me.ForeColor = System.Drawing.Color.FromArgb(CType(CType(80, Byte), Integer), CType(CType(80, Byte), Integer), CType(CType(80, Byte), Integer))
         Me.Name = "homepage"
@@ -129,7 +129,7 @@ Partial Class homepage
     End Sub
     Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents Label1 As Label
-    Friend WithEvents Button1 As Button
-    Friend WithEvents Button2 As Button
-    Friend WithEvents Button3 As Button
+    Friend WithEvents ButtonPlay As Button
+    Friend WithEvents ButtonTutorials As Button
+    Friend WithEvents ButtonOptions As Button
 End Class

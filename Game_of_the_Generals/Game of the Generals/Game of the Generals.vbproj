@@ -74,7 +74,6 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
-<<<<<<< HEAD
     <Compile Include="RoundButton.vb" />
     <Compile Include="TutorialPage1.Designer.vb">
       <DependentUpon>TutorialPage1.vb</DependentUpon>
@@ -82,9 +81,6 @@
     <Compile Include="TutorialPage1.vb">
       <SubType>Form</SubType>
     </Compile>
-=======
-    <Compile Include="Class1.vb" />
->>>>>>> f65cdc4de4708b2c8f896291b8d7be4ff6ac0168
     <Compile Include="Main.vb">
       <SubType>Form</SubType>
     </Compile>
@@ -159,7 +155,6 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <None Include=".editorconfig" />
     <None Include="My Project\Application.myapp">
       <Generator>MyApplicationCodeGenerator</Generator>
       <LastGenOutput>Application.Designer.vb</LastGenOutput>

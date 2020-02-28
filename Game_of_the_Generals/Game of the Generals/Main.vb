@@ -2,35 +2,33 @@
     Private Sub homepage_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
         Dim a As RoundButton = New RoundButton
-        a.Round(Button1, 40)
+        a.Round(ButtonPlay, 40)
 
         Dim b As RoundButton = New RoundButton
-        b.Round(Button2, 40)
+        b.Round(ButtonTutorials, 40)
 
         Dim c As RoundButton = New RoundButton
-        c.Round(Button3, 40)
+        c.Round(ButtonOptions, 40)
 
 
 
     End Sub
 
 
-    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+    Private Sub ButtonPlay_Click(sender As Object, e As EventArgs) Handles ButtonPlay.Click
         gameboard.Show()
         Me.Hide()
     End Sub
 
-    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
+    Private Sub ButtonTutorials_Click(sender As Object, e As EventArgs) Handles ButtonTutorials.Click
         'tutorials.Show()
         Me.Hide()
     End Sub
 
-    Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
+    Private Sub ButtonOptions_Click(sender As Object, e As EventArgs) Handles ButtonOptions.Click
         'options.Show()
         Me.Hide()
     End Sub
 
-    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
-        Tutorial.Show()
-    End Sub
+
 End Class
