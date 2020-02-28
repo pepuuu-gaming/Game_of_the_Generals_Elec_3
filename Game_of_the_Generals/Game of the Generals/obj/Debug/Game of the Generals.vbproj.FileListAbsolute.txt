@@ -10,3 +10,7 @@ C:\Users\Mark Angelo\Desktop\my-git-repo\Game_of_the_Generals_Elec_3\Game_of_the
 C:\Users\Mark Angelo\Desktop\my-git-repo\Game_of_the_Generals_Elec_3\Game_of_the_Generals\Game of the Generals\obj\Debug\Game of the Generals.exe
 C:\Users\Mark Angelo\Desktop\my-git-repo\Game_of_the_Generals_Elec_3\Game_of_the_Generals\Game of the Generals\obj\Debug\Game of the Generals.xml
 C:\Users\Mark Angelo\Desktop\my-git-repo\Game_of_the_Generals_Elec_3\Game_of_the_Generals\Game of the Generals\obj\Debug\Game of the Generals.pdb
+C:\Users\Mark Angelo\Desktop\my-git-repo\Game_of_the_Generals_Elec_3\Game_of_the_Generals\Game of the Generals\bin\Debug\Game of the Generals.exe.config
+C:\Users\Mark Angelo\Desktop\my-git-repo\Game_of_the_Generals_Elec_3\Game_of_the_Generals\Game of the Generals\bin\Debug\Game of the Generals.exe
+C:\Users\Mark Angelo\Desktop\my-git-repo\Game_of_the_Generals_Elec_3\Game_of_the_Generals\Game of the Generals\bin\Debug\Game of the Generals.pdb
+C:\Users\Mark Angelo\Desktop\my-git-repo\Game_of_the_Generals_Elec_3\Game_of_the_Generals\Game of the Generals\bin\Debug\Game of the Generals.xml

@@ -21,7 +21,7 @@
     End Sub
 
     Private Sub ButtonTutorials_Click(sender As Object, e As EventArgs) Handles ButtonTutorials.Click
-        'tutorials.Show()
+        Tutorial.Show()
         Me.Hide()
     End Sub
 
