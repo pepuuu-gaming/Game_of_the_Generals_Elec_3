@@ -127,6 +127,12 @@
     <Compile Include="TutorialPage2.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="TutorialPage3.Designer.vb">
+      <DependentUpon>TutorialPage3.vb</DependentUpon>
+    </Compile>
+    <Compile Include="TutorialPage3.vb">
+      <SubType>Form</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Main.resx">
@@ -152,6 +158,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="TutorialPage2.resx">
       <DependentUpon>TutorialPage2.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TutorialPage3.resx">
+      <DependentUpon>TutorialPage3.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
