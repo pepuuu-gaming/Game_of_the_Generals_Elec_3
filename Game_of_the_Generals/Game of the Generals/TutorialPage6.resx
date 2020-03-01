@@ -129,29 +129,41 @@
         NI6TkniotCwWS1KOZDrcBlhOhti7HjLn9d4qw/ANQMe4NChlPbkAAAAASUVORK5CYII=
 </value>
   </data>
-  <data name="Label3.Text" xml:space="preserve">
-    <value>•  Flag(1)
-
-   The most important piece of the game. 
-   The Flag can be eliminated by any piece 
-   including the enemy Flag. 
-
-   A Flag eliminates opposing Flag when it 
-   takes aggressive action by moving into 
-   same square occupied by the other Flag.
+  <data name="PictureBox1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAAB0AAAAfCAYAAAAbW8YEAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAFiSURBVEhLzVdBbsIwELTCT/oC3tAPtOofgBzpmUPpBypx4g+ceugVlR80R4KEqFr1UlFAQiDU
+        Crm7zlqIep2EEMcdaU6e3Yl3HWcjbIhF8zoOwrtxLXyOg9YyroUyk6BL9BAnWleUKhsT0ahD8Aub9FRC
+        HsxHqXnAE3bZ4HMJOyeLYzgzJI6DZpusEqiSMsKyeVRqqH3EiUon9DgxxFPKCVwR/Jz30iD4CXivRuyi
+        I6If9nPFLTojXCCCXXDM/2u6i97lojdk1/4yjzbTdH7/JDXeLh9YjWZebarp9KIj98sNpZHyezZndchT
+        tKmm29GEUhyAuzlXazX9uOlTqAncVVEt0mr68/pFYSbWj1FhLdJq+nk7UOXhiDsrqkWm9tQVPZlWf/eu
+        fH1lPHxPvUwOamSpbkaKlCHCyzSIqHzu1XBlbDXUUKUuq8eQxyhpGuivrave47wXCOgSPVRMn1IDQvwC
+        8/6qYHm2k+UAAAAASUVORK5CYII=
 </value>
   </data>
   <data name="PictureBox2.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
-        iVBORw0KGgoAAAANSUhEUgAAAB0AAAAfCAYAAAAbW8YEAAAABGdBTUEAALGPC/xhBQAAAZxJREFUSEvt
-        l09OwkAUxiflBp7EeAQv4J8TuBG6lBNYE9cmbnSLWzea4NbISpd0SXFDTIiJQYEQ2Rgyvm8600D6mKHY
-        wkK+5Beavjfvm860M4OYp0iU9yPPP22V/KfIq/Sjki+dUF6cT+1EZU+XcqstjrepcZMtmhWqg3q6NC/q
-        YcA2/iv05NpiVoUZalpe+URbxVJDyiTmzcxQ09iHXFLu0BzHhnhLuYSiID/nXHYPr+X7UY2NLQX5Cfqu
-        GmyQgKHRR/WWzckK/DCfAy4IemcP2lLK0X2onrgX1GX34Eq+blVT+biHnM7OeSqWQAuIYAMaFJkMxto2
-        rdFdU3UCDGvPctL/ju9TB7l6BqspGDfaqlAWoQ1Xy7AxTdiY2vR/TIc3L2wtw8Km+MUK9bZ7ocD1T+dT
-        xab1dfnIrlbTLGzKxQCWPNMRl5nBuvYCl2lmyM+6y4C8TfUuY99PsaVhnrjYUmA/XcvJQR1ZVndGCpUh
-        tJbTILTyc69RUcZzDY3UUOc1x1QnNaQ26X9tgfqOHQtIAuXF+TRi5i1NSYhfYPg43BNvxd8AAAAASUVO
-        RK5CYII=
+        iVBORw0KGgoAAAANSUhEUgAAAB0AAAAfCAYAAAAbW8YEAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAG8SURBVEhL7Zc9TkJBEMc3cANP4hm8gMYbWAiUcgLxAiZWttJamWhrpNISSh52GGNiiEJMCI1Z
+        Z/bNEFhm9iMINk7yT3j7Mb/3Zv/v7WK0KEztoKg0TvvVxkNRqX8W1YaNCsaV42Geqe9TqngMzPEuTO6K
+        SXMFeTAfpZYD7rAlTl5X8OSEWI6NAUn9Su2EUGW4kgoDf1tLpYba96RBmibtJ4vxdtQW+1XBGpdAdKk0
+        QBEDObLBwEtey+edpp1cPRLK2u/xlH5ZO2rdinNEAc/Ae9UROxeEwFl3SAhrPy7uXdu0M6AW625ImusL
+        ebieY6mT5QP9ci6WOwkMHxAjdpBiQFYuWIWGgJJ7c8Aq9OumRyn05Bha33vzet7uS4XipFnvxb4eXrpr
+        fPIU947O7ty84d75vM1XcE1ZfqnXcS8qCo2ZKddEqCA0BmTlglVoCMgQzUT/7mVFjYTyS72+e7f/7R0H
+        d5kYkJUDpl1G3k9TgaxkMO6n2slBc29ISe7Fk4M7sghnJN+9qQq6FzgOiPEnp0GMrZ97OTYFVoEcrtSZ
+        52BVkGelpKGgf20t9x5HPiBzwbhyPFSMXboSxvwAC+E2DAEixeEAAAAASUVORK5CYII=
+</value>
+  </data>
+  <data name="PictureBox3.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAAB0AAAAfCAYAAAAbW8YEAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAF8SURBVEhLxVcxTsNAEDw5P+AJvADxBD4A4g8kLklNkSBRI1HRUlNR0CJS0cZlnAgJBdEgRIwQ
+        UZro2D2vhWzvZc/ClxtpqpudSXbP57OyIVXdozSKB5NO/JhGvUXaibVI0OV6qFO9Q7KSMVUne1A8Zk2b
+        EnzQj6x5wC8cssX/JfxziijDWyBxEnVPKSqHaSkjbJulVkPvE07UOmHGeSDuUk7gi5DnfZY1Qp6C52rE
+        Lnoi5uE8M27RG+EAUeyCZzYOfd490+vFj16N53q202c1EhuHrpJXXeDr5onVSGwU+nn1QHF/eDu+ZrWb
+        6Bw6P7ikmDKw1dhyrsZGp1CcHZrbgPPl6mx0Cv2+S8jejo/ze7aWoxj63r8lWxk4As6jSjF0nS3JUsZy
+        NGU9qhRDcXdi61z4sn/BelTpNNO2GeLszUK9ZQK8T4PcHMyVZXt3pMQEIoLcBhFbv/cW8BVsDSxgWt3W
+        jMGn1tJNoK+2oXmOXQ8Q0OV66FixS2tQ6hflX6kmHTghvwAAAABJRU5ErkJggg==
 </value>
   </data>
 </root>
