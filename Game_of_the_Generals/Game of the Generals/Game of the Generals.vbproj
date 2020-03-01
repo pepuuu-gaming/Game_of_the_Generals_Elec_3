@@ -74,6 +74,12 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="TutorialPage5.Designer.vb">
+      <DependentUpon>TutorialPage5.vb</DependentUpon>
+    </Compile>
+    <Compile Include="TutorialPage5.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="TutorialPage4.Designer.vb">
       <DependentUpon>TutorialPage4.vb</DependentUpon>
     </Compile>
@@ -170,6 +176,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="TutorialPage4.resx">
       <DependentUpon>TutorialPage4.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TutorialPage5.resx">
+      <DependentUpon>TutorialPage5.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
