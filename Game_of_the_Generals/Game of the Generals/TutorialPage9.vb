@@ -10,7 +10,7 @@
     End Sub
 
     Private Sub BtnTutorialNext_Click(sender As Object, e As EventArgs) Handles BtnTutorialNext.Click
-        TutorialPage10.Show()
+        TutorialPage9a.Show()
         Me.Hide()
     End Sub
 End Class
