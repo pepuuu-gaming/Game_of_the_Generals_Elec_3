@@ -60,7 +60,7 @@ Partial Class TutorialPage1
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(419, 43)
         Me.Label2.TabIndex = 2
-        Me.Label2.Text = "THE BATTLEFIELD:"
+        Me.Label2.Text = "The Battlefield:" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10)
         '
         'Label3
         '
@@ -71,7 +71,7 @@ Partial Class TutorialPage1
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(750, 35)
         Me.Label3.TabIndex = 3
-        Me.Label3.Text = "• CONSISTS OF 8 ROWS AND 9 COLUMNS."
+        Me.Label3.Text = "• Consists of 8 rows and 9 Columns."
         '
         'Label4
         '
@@ -82,7 +82,7 @@ Partial Class TutorialPage1
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(813, 70)
         Me.Label4.TabIndex = 4
-        Me.Label4.Text = "• ARRANGE YOUR 21 PIECES IN THE FIRST " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "  3 ROWS (IN ANY ORDER)." & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10)
+        Me.Label4.Text = "• Arrange your 21 pieces in the first " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "  3 rows (In any order)." & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10)
         '
         'Label5
         '
@@ -93,7 +93,7 @@ Partial Class TutorialPage1
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(792, 70)
         Me.Label5.TabIndex = 5
-        Me.Label5.Text = "• THERE SHOULD BE 6 RANDOM SPACES IN " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "  YOUR FORMATION."
+        Me.Label5.Text = "• There should be 6 random spaces in " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "  your formation."
         '
         'BtnTutorialNext
         '

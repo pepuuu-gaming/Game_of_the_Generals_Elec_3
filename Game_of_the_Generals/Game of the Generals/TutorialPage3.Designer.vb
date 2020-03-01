@@ -28,7 +28,8 @@ Partial Class TutorialPage3
         Me.back_to_menu = New System.Windows.Forms.Button()
         Me.BtnTutorialNext = New System.Windows.Forms.Button()
         Me.Label3 = New System.Windows.Forms.Label()
-        Me.Label4 = New System.Windows.Forms.Label()
+        Me.PictureBox2 = New System.Windows.Forms.PictureBox()
+        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Label1
@@ -49,9 +50,9 @@ Partial Class TutorialPage3
         Me.Label2.ForeColor = System.Drawing.Color.FromArgb(CType(CType(56, Byte), Integer), CType(CType(81, Byte), Integer), CType(CType(112, Byte), Integer))
         Me.Label2.Location = New System.Drawing.Point(116, 170)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(369, 43)
+        Me.Label2.Size = New System.Drawing.Size(344, 43)
         Me.Label2.TabIndex = 4
-        Me.Label2.Text = "THE SOLDIERS :"
+        Me.Label2.Text = "The Soldiers:"
         '
         'back_to_menu
         '
@@ -85,33 +86,30 @@ Partial Class TutorialPage3
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Font = New System.Drawing.Font("OCR A Extended", 20.0!)
+        Me.Label3.Font = New System.Drawing.Font("OCR A Extended", 25.0!)
         Me.Label3.ForeColor = System.Drawing.Color.FromArgb(CType(CType(56, Byte), Integer), CType(CType(81, Byte), Integer), CType(CType(112, Byte), Integer))
-        Me.Label3.Location = New System.Drawing.Point(160, 239)
+        Me.Label3.Location = New System.Drawing.Point(160, 272)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(797, 87)
+        Me.Label3.Size = New System.Drawing.Size(918, 210)
         Me.Label3.TabIndex = 216
-        Me.Label3.Text = "• Flag(1): The most important piece of the game. " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "  The Flag can be eliminated b" &
-    "y any piece " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "  including the enemy Flag."
+        Me.Label3.Text = resources.GetString("Label3.Text")
         '
-        'Label4
+        'PictureBox2
         '
-        Me.Label4.AutoSize = True
-        Me.Label4.Font = New System.Drawing.Font("OCR A Extended", 20.0!)
-        Me.Label4.ForeColor = System.Drawing.Color.FromArgb(CType(CType(56, Byte), Integer), CType(CType(81, Byte), Integer), CType(CType(112, Byte), Integer))
-        Me.Label4.Location = New System.Drawing.Point(160, 382)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(781, 87)
-        Me.Label4.TabIndex = 217
-        Me.Label4.Text = "• A Flag eliminates opposing Flag when it takes " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "  aggressive action by moving i" &
-    "nto same square " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "  occupied by the other Flag."
+        Me.PictureBox2.Image = CType(resources.GetObject("PictureBox2.Image"), System.Drawing.Image)
+        Me.PictureBox2.Location = New System.Drawing.Point(154, 272)
+        Me.PictureBox2.Name = "PictureBox2"
+        Me.PictureBox2.Size = New System.Drawing.Size(42, 37)
+        Me.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox2.TabIndex = 219
+        Me.PictureBox2.TabStop = False
         '
         'TutorialPage3
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1264, 681)
-        Me.Controls.Add(Me.Label4)
+        Me.Controls.Add(Me.PictureBox2)
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.BtnTutorialNext)
         Me.Controls.Add(Me.back_to_menu)
@@ -120,6 +118,7 @@ Partial Class TutorialPage3
         Me.Name = "TutorialPage3"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Game of the Generals"
+        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -130,5 +129,5 @@ Partial Class TutorialPage3
     Friend WithEvents back_to_menu As Button
     Friend WithEvents BtnTutorialNext As Button
     Friend WithEvents Label3 As Label
-    Friend WithEvents Label4 As Label
+    Friend WithEvents PictureBox2 As PictureBox
 End Class

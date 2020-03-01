@@ -129,4 +129,26 @@
         NI6TkniotCwWS1KOZDrcBlhOhti7HjLn9d4qw/ANQMe4NChlPbkAAAAASUVORK5CYII=
 </value>
   </data>
+  <data name="Label3.Text" xml:space="preserve">
+    <value>• Flag(1): The most important piece of the 
+  game. The Flag can be eliminated by any 
+  piece including the enemy Flag. A Flag 
+  eliminates opposing Flag when it takes 
+  aggressive action by moving into same 
+  square occupied by the other Flag.
+</value>
+  </data>
+  <data name="PictureBox2.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAAB0AAAAfCAYAAAAbW8YEAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAGcSURBVEhL7ZdPTsJAFMYn5QaexHgEL+CfE7gRupQTWBPXJm50i1s3muDWyEqXdElxQ0yIiUGB
+        ENkYMr5vOtNA+pih2MJCvuQXmr4375vOtDODmKdIlPcjzz9tlfynyKv0o5IvnVBenE/tRGVPl3KrLY63
+        qXGTLZoVqoN6ujQv6mHANv4r9OTaYlaFGWpaXvlEW8VSQ8ok5s3MUNPYh1xS7tAcx4Z4S7mEoiA/51x2
+        D6/l+1GNjS0F+Qn6rhpskICh0Uf1ls3JCvwwnwMuCHpnD9pSytF9qJ64F9Rl9+BKvm5VU/m4h5zOznkq
+        lkALiGADGhSZDMbaNq3RXVN1Agxrz3LS/47vUwe5egarKRg32qpQFqENV8uwMU3YmNr0f0yHNy9sLcPC
+        pvjFCvW2e6HA9U/nU8Wm9XX5yK5W0yxsysUAljzTEZeZwbr2ApdpZsjPusuAvE31LmPfT7GlYZ642FJg
+        P13LyUEdWVZ3RgqVIbSW0yC08nOvUVHGcw2N1FDnNcdUJzWkNul/bYH6jh0LSALlxfk0YuYtTUmIX2D4
+        ONwTb8XfAAAAAElFTkSuQmCC
+</value>
+  </data>
 </root>

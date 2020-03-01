@@ -14,5 +14,5 @@
         Dim a As RoundButton = New RoundButton
         a.Round(BtnTutorialNext, 40)
     End Sub
+End Class
 
- 

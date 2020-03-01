@@ -30,6 +30,12 @@ Partial Class TutorialPage2
         Me.Label5 = New System.Windows.Forms.Label()
         Me.BtnTutorialNext = New System.Windows.Forms.Button()
         Me.back_to_menu = New System.Windows.Forms.Button()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.PictureBox2 = New System.Windows.Forms.PictureBox()
+        Me.PictureBox3 = New System.Windows.Forms.PictureBox()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Label1
@@ -52,42 +58,42 @@ Partial Class TutorialPage2
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(569, 43)
         Me.Label2.TabIndex = 3
-        Me.Label2.Text = "OBJECTIVE OF THE GAME:"
+        Me.Label2.Text = "Objective of the Game:" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10)
         '
         'Label3
         '
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("OCR A Extended", 25.0!)
         Me.Label3.ForeColor = System.Drawing.Color.FromArgb(CType(CType(56, Byte), Integer), CType(CType(81, Byte), Integer), CType(CType(112, Byte), Integer))
-        Me.Label3.Location = New System.Drawing.Point(160, 263)
+        Me.Label3.Location = New System.Drawing.Point(160, 254)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(1002, 70)
         Me.Label3.TabIndex = 4
-        Me.Label3.Text = "• THE OBJECTIVE OF THE GAME IS TO ELIMINATE OR " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "  CAPTURE THE FLAG OF YOUR OPPON" &
-    "ENT."
+        Me.Label3.Text = "• The objective of the game is to eliminate or " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "  capture the Flag of your oppon" &
+    "ent."
         '
         'Label4
         '
         Me.Label4.AutoSize = True
         Me.Label4.Font = New System.Drawing.Font("OCR A Extended", 25.0!)
         Me.Label4.ForeColor = System.Drawing.Color.FromArgb(CType(CType(56, Byte), Integer), CType(CType(81, Byte), Integer), CType(CType(112, Byte), Integer))
-        Me.Label4.Location = New System.Drawing.Point(160, 461)
+        Me.Label4.Location = New System.Drawing.Point(160, 494)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(1002, 105)
+        Me.Label4.Size = New System.Drawing.Size(939, 70)
         Me.Label4.TabIndex = 5
-        Me.Label4.Text = "• YOU MAY ALSO WIN BY SUCCESSFULLY MANEUVERING " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "  YOUR OWN FLAG TO THE OPPOSITE " &
-    "END OF THE " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "  BOARD."
+        Me.Label4.Text = "• Flag should be at least two square of any " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "  opposing piece in order to win."
         '
         'Label5
         '
         Me.Label5.AutoSize = True
         Me.Label5.Font = New System.Drawing.Font("OCR A Extended", 25.0!)
         Me.Label5.ForeColor = System.Drawing.Color.FromArgb(CType(CType(56, Byte), Integer), CType(CType(81, Byte), Integer), CType(CType(112, Byte), Integer))
-        Me.Label5.Location = New System.Drawing.Point(160, 361)
+        Me.Label5.Location = New System.Drawing.Point(160, 353)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(939, 70)
+        Me.Label5.Size = New System.Drawing.Size(1002, 105)
         Me.Label5.TabIndex = 6
-        Me.Label5.Text = "• FLAG SHOULD BE AT LEAST TWO SQUARE OF ANY " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "  OPPOSING PIECE IN ORDER TO WIN."
+        Me.Label5.Text = "• You may also win by successfully maneuvering " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "  your own Flag to the opposite " &
+    "end of the" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "  board."
         '
         'BtnTutorialNext
         '
@@ -118,11 +124,44 @@ Partial Class TutorialPage2
         Me.back_to_menu.TabIndex = 213
         Me.back_to_menu.UseVisualStyleBackColor = True
         '
+        'PictureBox1
+        '
+        Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
+        Me.PictureBox1.Location = New System.Drawing.Point(166, 254)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(30, 30)
+        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox1.TabIndex = 214
+        Me.PictureBox1.TabStop = False
+        '
+        'PictureBox2
+        '
+        Me.PictureBox2.Image = CType(resources.GetObject("PictureBox2.Image"), System.Drawing.Image)
+        Me.PictureBox2.Location = New System.Drawing.Point(166, 494)
+        Me.PictureBox2.Name = "PictureBox2"
+        Me.PictureBox2.Size = New System.Drawing.Size(30, 30)
+        Me.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox2.TabIndex = 215
+        Me.PictureBox2.TabStop = False
+        '
+        'PictureBox3
+        '
+        Me.PictureBox3.Image = CType(resources.GetObject("PictureBox3.Image"), System.Drawing.Image)
+        Me.PictureBox3.Location = New System.Drawing.Point(166, 353)
+        Me.PictureBox3.Name = "PictureBox3"
+        Me.PictureBox3.Size = New System.Drawing.Size(30, 30)
+        Me.PictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox3.TabIndex = 216
+        Me.PictureBox3.TabStop = False
+        '
         'TutorialPage2
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1264, 681)
+        Me.Controls.Add(Me.PictureBox3)
+        Me.Controls.Add(Me.PictureBox2)
+        Me.Controls.Add(Me.PictureBox1)
         Me.Controls.Add(Me.back_to_menu)
         Me.Controls.Add(Me.BtnTutorialNext)
         Me.Controls.Add(Me.Label5)
@@ -133,6 +172,9 @@ Partial Class TutorialPage2
         Me.Name = "TutorialPage2"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Game of the Generals"
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -145,4 +187,7 @@ Partial Class TutorialPage2
     Friend WithEvents Label5 As Label
     Friend WithEvents BtnTutorialNext As Button
     Friend WithEvents back_to_menu As Button
+    Friend WithEvents PictureBox1 As PictureBox
+    Friend WithEvents PictureBox2 As PictureBox
+    Friend WithEvents PictureBox3 As PictureBox
 End Class
