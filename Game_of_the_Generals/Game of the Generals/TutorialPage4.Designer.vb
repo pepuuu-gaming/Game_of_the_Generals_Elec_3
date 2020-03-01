@@ -50,11 +50,11 @@ Partial Class TutorialPage4
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("OCR A Extended", 50.0!)
         Me.Label1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(56, Byte), Integer), CType(CType(81, Byte), Integer), CType(CType(112, Byte), Integer))
-        Me.Label1.Location = New System.Drawing.Point(368, 40)
+        Me.Label1.Location = New System.Drawing.Point(420, 40)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(590, 69)
+        Me.Label1.Size = New System.Drawing.Size(470, 69)
         Me.Label1.TabIndex = 4
-        Me.Label1.Text = "BASIC TUTORIAL"
+        Me.Label1.Text = "HOW TO PLAY"
         '
         'back_to_menu
         '
