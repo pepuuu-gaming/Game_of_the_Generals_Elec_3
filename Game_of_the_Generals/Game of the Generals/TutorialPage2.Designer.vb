@@ -61,22 +61,22 @@ Partial Class TutorialPage2
         Me.Label3.ForeColor = System.Drawing.Color.FromArgb(CType(CType(56, Byte), Integer), CType(CType(81, Byte), Integer), CType(CType(112, Byte), Integer))
         Me.Label3.Location = New System.Drawing.Point(160, 263)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(960, 70)
+        Me.Label3.Size = New System.Drawing.Size(1002, 70)
         Me.Label3.TabIndex = 4
-        Me.Label3.Text = "THE OBJECTIVE OF THE GAME IS TO ELIMINATE OR " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "CAPTURE THE FLAG OF YOUR OPPONENT." &
-    ""
+        Me.Label3.Text = "• THE OBJECTIVE OF THE GAME IS TO ELIMINATE OR " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "  CAPTURE THE FLAG OF YOUR OPPON" &
+    "ENT."
         '
         'Label4
         '
         Me.Label4.AutoSize = True
         Me.Label4.Font = New System.Drawing.Font("OCR A Extended", 25.0!)
         Me.Label4.ForeColor = System.Drawing.Color.FromArgb(CType(CType(56, Byte), Integer), CType(CType(81, Byte), Integer), CType(CType(112, Byte), Integer))
-        Me.Label4.Location = New System.Drawing.Point(160, 480)
+        Me.Label4.Location = New System.Drawing.Point(160, 461)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(1065, 70)
+        Me.Label4.Size = New System.Drawing.Size(1002, 105)
         Me.Label4.TabIndex = 5
-        Me.Label4.Text = "YOU MAY ALSO WIN BY SUCCESSFULLY MANEUVERING YOUR " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "OWN FLAG TO THE OPPOSITE END " &
-    "OF THE BOARD."
+        Me.Label4.Text = "• YOU MAY ALSO WIN BY SUCCESSFULLY MANEUVERING " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "  YOUR OWN FLAG TO THE OPPOSITE " &
+    "END OF THE " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "  BOARD."
         '
         'Label5
         '
@@ -85,9 +85,9 @@ Partial Class TutorialPage2
         Me.Label5.ForeColor = System.Drawing.Color.FromArgb(CType(CType(56, Byte), Integer), CType(CType(81, Byte), Integer), CType(CType(112, Byte), Integer))
         Me.Label5.Location = New System.Drawing.Point(160, 361)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(897, 70)
+        Me.Label5.Size = New System.Drawing.Size(939, 70)
         Me.Label5.TabIndex = 6
-        Me.Label5.Text = "FLAG SHOULD BE AT LEAST TWO SQUARE OF ANY " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "OPPOSING PIECE IN ORDER TO WIN."
+        Me.Label5.Text = "• FLAG SHOULD BE AT LEAST TWO SQUARE OF ANY " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "  OPPOSING PIECE IN ORDER TO WIN."
         '
         'Button1
         '
