@@ -1,5 +1,5 @@
 ﻿Public Class TutorialPage1
-    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles BtnTutorialNext.Click
         TutorialPage2.Show()
         Me.Close()
 
@@ -12,6 +12,7 @@
 
     Private Sub TutorialPage1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Dim a As RoundButton = New RoundButton
-        a.Round(Button1, 40)
+        a.Round(BtnTutorialNext, 40)
     End Sub
-End Class
+
+ 

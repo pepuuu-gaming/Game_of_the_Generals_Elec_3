@@ -28,7 +28,7 @@ Partial Class TutorialPage2
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
-        Me.Button1 = New System.Windows.Forms.Button()
+        Me.BtnTutorialNext = New System.Windows.Forms.Button()
         Me.back_to_menu = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
@@ -89,21 +89,21 @@ Partial Class TutorialPage2
         Me.Label5.TabIndex = 6
         Me.Label5.Text = "• FLAG SHOULD BE AT LEAST TWO SQUARE OF ANY " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "  OPPOSING PIECE IN ORDER TO WIN."
         '
-        'Button1
+        'BtnTutorialNext
         '
-        Me.Button1.BackColor = System.Drawing.Color.White
-        Me.Button1.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(112, Byte), Integer), CType(CType(112, Byte), Integer), CType(CType(112, Byte), Integer))
-        Me.Button1.FlatAppearance.BorderSize = 0
-        Me.Button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(159, Byte), Integer), CType(CType(211, Byte), Integer), CType(CType(199, Byte), Integer))
-        Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button1.Font = New System.Drawing.Font("OCR A Extended", 30.0!)
-        Me.Button1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(56, Byte), Integer), CType(CType(81, Byte), Integer), CType(CType(112, Byte), Integer))
-        Me.Button1.Location = New System.Drawing.Point(1000, 600)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(232, 51)
-        Me.Button1.TabIndex = 7
-        Me.Button1.Text = "NEXT"
-        Me.Button1.UseVisualStyleBackColor = False
+        Me.BtnTutorialNext.BackColor = System.Drawing.Color.White
+        Me.BtnTutorialNext.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(112, Byte), Integer), CType(CType(112, Byte), Integer), CType(CType(112, Byte), Integer))
+        Me.BtnTutorialNext.FlatAppearance.BorderSize = 0
+        Me.BtnTutorialNext.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(159, Byte), Integer), CType(CType(211, Byte), Integer), CType(CType(199, Byte), Integer))
+        Me.BtnTutorialNext.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BtnTutorialNext.Font = New System.Drawing.Font("OCR A Extended", 30.0!)
+        Me.BtnTutorialNext.ForeColor = System.Drawing.Color.FromArgb(CType(CType(56, Byte), Integer), CType(CType(81, Byte), Integer), CType(CType(112, Byte), Integer))
+        Me.BtnTutorialNext.Location = New System.Drawing.Point(1000, 600)
+        Me.BtnTutorialNext.Name = "BtnTutorialNext"
+        Me.BtnTutorialNext.Size = New System.Drawing.Size(232, 51)
+        Me.BtnTutorialNext.TabIndex = 7
+        Me.BtnTutorialNext.Text = "NEXT"
+        Me.BtnTutorialNext.UseVisualStyleBackColor = False
         '
         'back_to_menu
         '
@@ -124,7 +124,7 @@ Partial Class TutorialPage2
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1264, 681)
         Me.Controls.Add(Me.back_to_menu)
-        Me.Controls.Add(Me.Button1)
+        Me.Controls.Add(Me.BtnTutorialNext)
         Me.Controls.Add(Me.Label5)
         Me.Controls.Add(Me.Label4)
         Me.Controls.Add(Me.Label3)
@@ -143,6 +143,6 @@ Partial Class TutorialPage2
     Friend WithEvents Label3 As Label
     Friend WithEvents Label4 As Label
     Friend WithEvents Label5 As Label
-    Friend WithEvents Button1 As Button
+    Friend WithEvents BtnTutorialNext As Button
     Friend WithEvents back_to_menu As Button
 End Class
