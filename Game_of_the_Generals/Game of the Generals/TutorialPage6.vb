@@ -5,7 +5,7 @@
     End Sub
 
     Private Sub BtnTutorialNext_Click(sender As Object, e As EventArgs) Handles BtnTutorialNext.Click
-        'TutorialPage7.Show()
+        TutorialPage7.Show()
         Me.Hide()
     End Sub
 
