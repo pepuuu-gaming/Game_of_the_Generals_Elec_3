@@ -20,3 +20,5 @@ C:\Users\Mark Angelo\Desktop\my-git-repo\Game_of_the_Generals_Elec_3\Game_of_the
 C:\Users\Mark Angelo\Desktop\my-git-repo\Game_of_the_Generals_Elec_3\Game_of_the_Generals\Game of the Generals\obj\Debug\Game_of_the_Generals.TutorialPage6.resources
 C:\Users\Mark Angelo\Desktop\my-git-repo\Game_of_the_Generals_Elec_3\Game_of_the_Generals\Game of the Generals\obj\Debug\Game_of_the_Generals.TutorialPage7.resources
 C:\Users\Mark Angelo\Desktop\my-git-repo\Game_of_the_Generals_Elec_3\Game_of_the_Generals\Game of the Generals\obj\Debug\Game_of_the_Generals.TutorialPage8.resources
+C:\Users\Mark Angelo\Desktop\my-git-repo\Game_of_the_Generals_Elec_3\Game_of_the_Generals\Game of the Generals\obj\Debug\Game_of_the_Generals.TutorialPage9.resources
+C:\Users\Mark Angelo\Desktop\my-git-repo\Game_of_the_Generals_Elec_3\Game_of_the_Generals\Game of the Generals\obj\Debug\Game_of_the_Generals.TutorialPage10.resources
