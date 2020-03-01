@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
-Partial Class TutorialPage8
+Partial Class TutorialPage9
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
@@ -22,17 +22,14 @@ Partial Class TutorialPage8
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(TutorialPage8))
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(TutorialPage9))
         Me.back_to_menu = New System.Windows.Forms.Button()
         Me.BtnTutorialNext = New System.Windows.Forms.Button()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
-        Me.Label4 = New System.Windows.Forms.Label()
-        Me.PictureBox3 = New System.Windows.Forms.PictureBox()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'back_to_menu
@@ -45,7 +42,7 @@ Partial Class TutorialPage8
         Me.back_to_menu.Location = New System.Drawing.Point(40, 40)
         Me.back_to_menu.Name = "back_to_menu"
         Me.back_to_menu.Size = New System.Drawing.Size(63, 54)
-        Me.back_to_menu.TabIndex = 219
+        Me.back_to_menu.TabIndex = 220
         Me.back_to_menu.UseVisualStyleBackColor = True
         '
         'BtnTutorialNext
@@ -60,7 +57,7 @@ Partial Class TutorialPage8
         Me.BtnTutorialNext.Location = New System.Drawing.Point(1000, 600)
         Me.BtnTutorialNext.Name = "BtnTutorialNext"
         Me.BtnTutorialNext.Size = New System.Drawing.Size(232, 51)
-        Me.BtnTutorialNext.TabIndex = 220
+        Me.BtnTutorialNext.TabIndex = 221
         Me.BtnTutorialNext.Text = "NEXT"
         Me.BtnTutorialNext.UseVisualStyleBackColor = False
         '
@@ -72,7 +69,7 @@ Partial Class TutorialPage8
         Me.Label1.Location = New System.Drawing.Point(420, 40)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(470, 69)
-        Me.Label1.TabIndex = 222
+        Me.Label1.TabIndex = 223
         Me.Label1.Text = "HOW TO PLAY"
         '
         'Label2
@@ -83,7 +80,7 @@ Partial Class TutorialPage8
         Me.Label2.Location = New System.Drawing.Point(116, 170)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(569, 43)
-        Me.Label2.TabIndex = 223
+        Me.Label2.TabIndex = 224
         Me.Label2.Text = "Movement and Gameplay:"
         '
         'Label3
@@ -93,60 +90,35 @@ Partial Class TutorialPage8
         Me.Label3.ForeColor = System.Drawing.Color.FromArgb(CType(CType(56, Byte), Integer), CType(CType(81, Byte), Integer), CType(CType(112, Byte), Integer))
         Me.Label3.Location = New System.Drawing.Point(160, 230)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(1044, 105)
-        Me.Label3.TabIndex = 224
-        Me.Label3.Text = "• The 21 pieces are placed in various locations " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "  within the nearest three rows" &
-    " to each player's " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "  home side (a total of 27 squares)."
+        Me.Label3.Size = New System.Drawing.Size(960, 210)
+        Me.Label3.TabIndex = 225
+        Me.Label3.Text = resources.GetString("Label3.Text")
         '
         'PictureBox1
         '
         Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
-        Me.PictureBox1.Location = New System.Drawing.Point(166, 235)
+        Me.PictureBox1.Location = New System.Drawing.Point(166, 230)
         Me.PictureBox1.Name = "PictureBox1"
         Me.PictureBox1.Size = New System.Drawing.Size(30, 30)
         Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox1.TabIndex = 225
+        Me.PictureBox1.TabIndex = 226
         Me.PictureBox1.TabStop = False
         '
-        'Label4
-        '
-        Me.Label4.AutoSize = True
-        Me.Label4.Font = New System.Drawing.Font("OCR A Extended", 25.0!)
-        Me.Label4.ForeColor = System.Drawing.Color.FromArgb(CType(CType(56, Byte), Integer), CType(CType(81, Byte), Integer), CType(CType(112, Byte), Integer))
-        Me.Label4.Location = New System.Drawing.Point(160, 385)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(1023, 175)
-        Me.Label4.TabIndex = 229
-        Me.Label4.Text = resources.GetString("Label4.Text")
-        '
-        'PictureBox3
-        '
-        Me.PictureBox3.Image = CType(resources.GetObject("PictureBox3.Image"), System.Drawing.Image)
-        Me.PictureBox3.Location = New System.Drawing.Point(166, 385)
-        Me.PictureBox3.Name = "PictureBox3"
-        Me.PictureBox3.Size = New System.Drawing.Size(30, 30)
-        Me.PictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox3.TabIndex = 230
-        Me.PictureBox3.TabStop = False
-        '
-        'TutorialPage8
+        'TutorialPage9
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1264, 681)
-        Me.Controls.Add(Me.PictureBox3)
-        Me.Controls.Add(Me.Label4)
         Me.Controls.Add(Me.PictureBox1)
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.BtnTutorialNext)
         Me.Controls.Add(Me.back_to_menu)
-        Me.Name = "TutorialPage8"
+        Me.Name = "TutorialPage9"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Game of the Generals"
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -158,6 +130,4 @@ Partial Class TutorialPage8
     Friend WithEvents Label2 As Label
     Friend WithEvents Label3 As Label
     Friend WithEvents PictureBox1 As PictureBox
-    Friend WithEvents Label4 As Label
-    Friend WithEvents PictureBox3 As PictureBox
 End Class

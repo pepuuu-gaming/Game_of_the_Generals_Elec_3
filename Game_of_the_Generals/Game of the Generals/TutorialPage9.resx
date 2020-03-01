@@ -129,6 +129,14 @@
         NI6TkniotCwWS1KOZDrcBlhOhti7HjLn9d4qw/ANQMe4NChlPbkAAAAASUVORK5CYII=
 </value>
   </data>
+  <data name="Label3.Text" xml:space="preserve">
+    <value>• All pieces have the same move: one square 
+  forward, backward, or sideways, as long as 
+  it is not blocked by the board's edge or 
+  by another friendly piece. A piece cannot 
+  move into a square already occupied by a 
+  friendly piece.</value>
+  </data>
   <data name="PictureBox1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABcAAAAZCAYAAADaILXQAAAABGdBTUEAALGPC/xhBQAAAOFJREFUSEtj
@@ -136,22 +144,6 @@
         fFCw3WJK77/FkGoA1YYBrjNkKIDUwNSDBUEaUAwngEGWQgzJqAdhqIHn0dXBHYIuQQ18myHDYdRwDDxq
         OFY8ajhWPEQNZ0r/AK8X0CWBhdMDULkOxA1wDCr3gZrQ1WJgYCmLUnrCJECG4itWQeAmQ1oAxGKkohps
         afqGW8wZCVBlCAA3nDnjAFSIemDUcKwA1gK4wZQ+ASo02AEDAwCokB8vkfJ3UwAAAABJRU5ErkJggg==
-</value>
-  </data>
-  <data name="Label4.Text" xml:space="preserve">
-    <value>• There is also no predetermined order of play. 
-  The players can decide who goes first; 
-  afterward, the players take their turns 
-  alternately. Each player can move only 
-  one piece per turn.</value>
-  </data>
-  <data name="PictureBox3.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABcAAAAZCAYAAADaILXQAAAABGdBTUEAALGPC/xhBQAAANpJREFUSEtj
-        MFAIENDV8N2vp+n3X1fTdz2Iz0AtADRwA8hgGNbV8FsAlaIcIBsMxe+hUpQDYJBcQDccKDZfT8PvPhJ/
-        P9CH/VqqXgZQbRhAQyNAAaQGph4sCNIANYQ4DLQUbIiGXz0IQw08j64O7hB0CWpgHQ0fh1HDMfCo4Vjx
-        qOFY8RA1XMPvA7xewFTg+wBUrgMVNcAwuNwHasJUi4pBpSxK6YmQ9H2Ar1gFAV013wCQxShFNdBSkOVA
-        sQSoMgSAKQJKHoAKUQ+MGo4VgFMCxIIJUKHBDhgYADBOO3Akc0O8AAAAAElFTkSuQmCC
 </value>
   </data>
 </root>
