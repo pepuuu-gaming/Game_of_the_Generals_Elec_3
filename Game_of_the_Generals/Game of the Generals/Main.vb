@@ -26,7 +26,7 @@
     End Sub
 
     Private Sub ButtonOptions_Click(sender As Object, e As EventArgs) Handles ButtonOptions.Click
-        'options.Show()
+        Options.Show()
         Me.Hide()
     End Sub
 
