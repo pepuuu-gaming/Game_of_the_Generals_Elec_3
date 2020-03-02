@@ -1,6 +1,6 @@
 ﻿Public Class TutorialPage8
     Private Sub back_to_menu_Click(sender As Object, e As EventArgs) Handles back_to_menu.Click
-        TutorialPage7.Show()
+        Tutorial.Show()
         Me.Hide()
     End Sub
 

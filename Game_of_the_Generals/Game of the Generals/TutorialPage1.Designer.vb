@@ -67,7 +67,7 @@ Partial Class TutorialPage1
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("OCR A Extended", 25.0!)
         Me.Label3.ForeColor = System.Drawing.Color.FromArgb(CType(CType(56, Byte), Integer), CType(CType(81, Byte), Integer), CType(CType(112, Byte), Integer))
-        Me.Label3.Location = New System.Drawing.Point(160, 263)
+        Me.Label3.Location = New System.Drawing.Point(223, 263)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(750, 35)
         Me.Label3.TabIndex = 3
@@ -78,7 +78,7 @@ Partial Class TutorialPage1
         Me.Label4.AutoSize = True
         Me.Label4.Font = New System.Drawing.Font("OCR A Extended", 25.0!)
         Me.Label4.ForeColor = System.Drawing.Color.FromArgb(CType(CType(56, Byte), Integer), CType(CType(81, Byte), Integer), CType(CType(112, Byte), Integer))
-        Me.Label4.Location = New System.Drawing.Point(160, 361)
+        Me.Label4.Location = New System.Drawing.Point(223, 364)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(813, 70)
         Me.Label4.TabIndex = 4
@@ -89,7 +89,7 @@ Partial Class TutorialPage1
         Me.Label5.AutoSize = True
         Me.Label5.Font = New System.Drawing.Font("OCR A Extended", 25.0!)
         Me.Label5.ForeColor = System.Drawing.Color.FromArgb(CType(CType(56, Byte), Integer), CType(CType(81, Byte), Integer), CType(CType(112, Byte), Integer))
-        Me.Label5.Location = New System.Drawing.Point(160, 480)
+        Me.Label5.Location = New System.Drawing.Point(223, 480)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(792, 70)
         Me.Label5.TabIndex = 5
@@ -108,7 +108,7 @@ Partial Class TutorialPage1
         Me.BtnTutorialNext.Name = "BtnTutorialNext"
         Me.BtnTutorialNext.Size = New System.Drawing.Size(232, 51)
         Me.BtnTutorialNext.TabIndex = 6
-        Me.BtnTutorialNext.Text = "NEXT"
+        Me.BtnTutorialNext.Text = "FINISH"
         Me.BtnTutorialNext.UseVisualStyleBackColor = False
         '
         'back_to_menu
@@ -133,7 +133,7 @@ Partial Class TutorialPage1
         'PictureBox1
         '
         Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
-        Me.PictureBox1.Location = New System.Drawing.Point(166, 263)
+        Me.PictureBox1.Location = New System.Drawing.Point(229, 263)
         Me.PictureBox1.Name = "PictureBox1"
         Me.PictureBox1.Size = New System.Drawing.Size(30, 30)
         Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -143,7 +143,7 @@ Partial Class TutorialPage1
         'PictureBox2
         '
         Me.PictureBox2.Image = CType(resources.GetObject("PictureBox2.Image"), System.Drawing.Image)
-        Me.PictureBox2.Location = New System.Drawing.Point(166, 480)
+        Me.PictureBox2.Location = New System.Drawing.Point(229, 480)
         Me.PictureBox2.Name = "PictureBox2"
         Me.PictureBox2.Size = New System.Drawing.Size(30, 30)
         Me.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -153,7 +153,7 @@ Partial Class TutorialPage1
         'PictureBox3
         '
         Me.PictureBox3.Image = CType(resources.GetObject("PictureBox3.Image"), System.Drawing.Image)
-        Me.PictureBox3.Location = New System.Drawing.Point(166, 361)
+        Me.PictureBox3.Location = New System.Drawing.Point(229, 364)
         Me.PictureBox3.Name = "PictureBox3"
         Me.PictureBox3.Size = New System.Drawing.Size(30, 30)
         Me.PictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage

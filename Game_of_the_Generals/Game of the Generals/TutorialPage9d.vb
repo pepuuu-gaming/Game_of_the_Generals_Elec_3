@@ -1,6 +1,6 @@
 ﻿Public Class TutorialPage9d
     Private Sub BtnTutorialNext_Click(sender As Object, e As EventArgs) Handles BtnTutorialNext.Click
-        TutorialPage9e.Show()
+        Tutorial.Show()
         Me.Hide()
     End Sub
 

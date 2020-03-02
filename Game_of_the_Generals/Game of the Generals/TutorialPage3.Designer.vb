@@ -88,7 +88,7 @@ Partial Class TutorialPage3
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("OCR A Extended", 25.0!)
         Me.Label3.ForeColor = System.Drawing.Color.FromArgb(CType(CType(56, Byte), Integer), CType(CType(81, Byte), Integer), CType(CType(112, Byte), Integer))
-        Me.Label3.Location = New System.Drawing.Point(160, 249)
+        Me.Label3.Location = New System.Drawing.Point(223, 249)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(918, 315)
         Me.Label3.TabIndex = 216
@@ -97,7 +97,7 @@ Partial Class TutorialPage3
         'PictureBox2
         '
         Me.PictureBox2.Image = CType(resources.GetObject("PictureBox2.Image"), System.Drawing.Image)
-        Me.PictureBox2.Location = New System.Drawing.Point(166, 249)
+        Me.PictureBox2.Location = New System.Drawing.Point(229, 249)
         Me.PictureBox2.Name = "PictureBox2"
         Me.PictureBox2.Size = New System.Drawing.Size(42, 37)
         Me.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage

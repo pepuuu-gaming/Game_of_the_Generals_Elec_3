@@ -84,7 +84,7 @@ Partial Class TutorialPage9d
         Me.BtnTutorialNext.Name = "BtnTutorialNext"
         Me.BtnTutorialNext.Size = New System.Drawing.Size(232, 51)
         Me.BtnTutorialNext.TabIndex = 232
-        Me.BtnTutorialNext.Text = "NEXT"
+        Me.BtnTutorialNext.Text = "FINISH"
         Me.BtnTutorialNext.UseVisualStyleBackColor = False
         '
         'back_to_menu

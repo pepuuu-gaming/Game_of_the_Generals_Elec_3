@@ -1,7 +1,7 @@
 ﻿Public Class TutorialPage1
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles BtnTutorialNext.Click
-        TutorialPage2.Show()
-        Me.Close()
+        Tutorial.Show()
+        Me.Hide()
 
     End Sub
 

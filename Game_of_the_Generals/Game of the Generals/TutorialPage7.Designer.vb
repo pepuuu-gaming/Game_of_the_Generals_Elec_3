@@ -61,7 +61,7 @@ Partial Class TutorialPage7
         Me.BtnTutorialNext.Name = "BtnTutorialNext"
         Me.BtnTutorialNext.Size = New System.Drawing.Size(232, 51)
         Me.BtnTutorialNext.TabIndex = 219
-        Me.BtnTutorialNext.Text = "NEXT"
+        Me.BtnTutorialNext.Text = "FINISH"
         Me.BtnTutorialNext.UseVisualStyleBackColor = False
         '
         'Label1
@@ -91,7 +91,7 @@ Partial Class TutorialPage7
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("OCR A Extended", 25.0!)
         Me.Label3.ForeColor = System.Drawing.Color.FromArgb(CType(CType(56, Byte), Integer), CType(CType(81, Byte), Integer), CType(CType(112, Byte), Integer))
-        Me.Label3.Location = New System.Drawing.Point(160, 249)
+        Me.Label3.Location = New System.Drawing.Point(223, 249)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(666, 105)
         Me.Label3.TabIndex = 223
@@ -102,16 +102,16 @@ Partial Class TutorialPage7
         Me.Label4.AutoSize = True
         Me.Label4.Font = New System.Drawing.Font("OCR A Extended", 25.0!)
         Me.Label4.ForeColor = System.Drawing.Color.FromArgb(CType(CType(56, Byte), Integer), CType(CType(81, Byte), Integer), CType(CType(112, Byte), Integer))
-        Me.Label4.Location = New System.Drawing.Point(160, 405)
+        Me.Label4.Location = New System.Drawing.Point(223, 405)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(960, 105)
+        Me.Label4.Size = New System.Drawing.Size(792, 140)
         Me.Label4.TabIndex = 224
-        Me.Label4.Text = "•  Spy(2) " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "   Eliminates all pieces, except the private." & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10)
+        Me.Label4.Text = "•  Spy(2) " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "   Eliminates all pieces, except the " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "   private." & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10)
         '
         'PictureBox1
         '
         Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
-        Me.PictureBox1.Location = New System.Drawing.Point(166, 405)
+        Me.PictureBox1.Location = New System.Drawing.Point(229, 405)
         Me.PictureBox1.Name = "PictureBox1"
         Me.PictureBox1.Size = New System.Drawing.Size(42, 37)
         Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -121,7 +121,7 @@ Partial Class TutorialPage7
         'PictureBox2
         '
         Me.PictureBox2.Image = CType(resources.GetObject("PictureBox2.Image"), System.Drawing.Image)
-        Me.PictureBox2.Location = New System.Drawing.Point(166, 249)
+        Me.PictureBox2.Location = New System.Drawing.Point(229, 249)
         Me.PictureBox2.Name = "PictureBox2"
         Me.PictureBox2.Size = New System.Drawing.Size(42, 37)
         Me.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
