@@ -13,4 +13,5 @@
         TutorialPage9c.Show()
         Me.Hide()
     End Sub
+
 End Class
