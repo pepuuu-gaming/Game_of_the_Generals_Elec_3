@@ -16,7 +16,7 @@
 
 
     Private Sub ButtonPlay_Click(sender As Object, e As EventArgs) Handles ButtonPlay.Click
-        gameboard.Show()
+        Room.Show()
         Me.Hide()
     End Sub
 
