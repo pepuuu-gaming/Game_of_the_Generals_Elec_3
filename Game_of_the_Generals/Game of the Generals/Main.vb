@@ -1,6 +1,6 @@
 ﻿Public Class homepage
     Private Sub homepage_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
+        My.Computer.Audio.Play(My.Resources.GOG, AudioPlayMode.BackgroundLoop)
         Dim a As RoundButton = New RoundButton
         a.Round(ButtonPlay, 40)
 

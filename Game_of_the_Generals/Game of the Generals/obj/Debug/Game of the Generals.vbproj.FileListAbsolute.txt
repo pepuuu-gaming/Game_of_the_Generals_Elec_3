@@ -25,3 +25,9 @@ C:\Users\Mark Angelo\Desktop\my-git-repo\Game_of_the_Generals_Elec_3\Game_of_the
 C:\Users\Mark Angelo\Desktop\my-git-repo\Game_of_the_Generals_Elec_3\Game_of_the_Generals\Game of the Generals\obj\Debug\Game of the Generals.exe
 C:\Users\Mark Angelo\Desktop\my-git-repo\Game_of_the_Generals_Elec_3\Game_of_the_Generals\Game of the Generals\obj\Debug\Game of the Generals.xml
 C:\Users\Mark Angelo\Desktop\my-git-repo\Game_of_the_Generals_Elec_3\Game_of_the_Generals\Game of the Generals\obj\Debug\Game of the Generals.pdb
+C:\Users\Mark Angelo\Desktop\my-git-repo\Game_of_the_Generals_Elec_3\Game_of_the_Generals\Game of the Generals\obj\Debug\Game of the Generals.vbprojAssemblyReference.cache
+C:\Users\Mark Angelo\Desktop\my-git-repo\Game_of_the_Generals_Elec_3\Game_of_the_Generals\Game of the Generals\obj\Debug\Interop.WMPLib.dll
+C:\Users\Mark Angelo\Desktop\my-git-repo\Game_of_the_Generals_Elec_3\Game_of_the_Generals\Game of the Generals\obj\Debug\AxInterop.WMPLib.dll
+C:\Users\Mark Angelo\Desktop\my-git-repo\Game_of_the_Generals_Elec_3\Game_of_the_Generals\Game of the Generals\obj\Debug\Game of the Generals.vbproj.ResolveComReference.cache
+C:\Users\Mark Angelo\Desktop\my-git-repo\Game_of_the_Generals_Elec_3\Game_of_the_Generals\Game of the Generals\bin\Debug\Interop.WMPLib.dll
+C:\Users\Mark Angelo\Desktop\my-git-repo\Game_of_the_Generals_Elec_3\Game_of_the_Generals\Game of the Generals\bin\Debug\AxInterop.WMPLib.dll

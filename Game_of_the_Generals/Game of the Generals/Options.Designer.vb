@@ -29,10 +29,12 @@ Partial Class Options
         Me.Label3 = New System.Windows.Forms.Label()
         Me.BtnPlayerName = New System.Windows.Forms.Button()
         Me.BtnSounds = New System.Windows.Forms.Button()
-        Me.BtnMusic = New System.Windows.Forms.Button()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.PictureBox2 = New System.Windows.Forms.PictureBox()
         Me.PictureBox3 = New System.Windows.Forms.PictureBox()
+        Me.BackgroundWorker1 = New System.ComponentModel.BackgroundWorker()
+        Me.BtnEnableMusic = New System.Windows.Forms.Button()
+        Me.BtnDisableMusic = New System.Windows.Forms.Button()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -121,20 +123,6 @@ Partial Class Options
         Me.BtnSounds.TabIndex = 218
         Me.BtnSounds.UseVisualStyleBackColor = False
         '
-        'BtnMusic
-        '
-        Me.BtnMusic.BackColor = System.Drawing.Color.FromArgb(CType(CType(236, Byte), Integer), CType(CType(236, Byte), Integer), CType(CType(236, Byte), Integer))
-        Me.BtnMusic.BackgroundImage = CType(resources.GetObject("BtnMusic.BackgroundImage"), System.Drawing.Image)
-        Me.BtnMusic.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
-        Me.BtnMusic.FlatAppearance.BorderSize = 0
-        Me.BtnMusic.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(159, Byte), Integer), CType(CType(211, Byte), Integer), CType(CType(199, Byte), Integer))
-        Me.BtnMusic.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.BtnMusic.Location = New System.Drawing.Point(900, 400)
-        Me.BtnMusic.Name = "BtnMusic"
-        Me.BtnMusic.Size = New System.Drawing.Size(63, 54)
-        Me.BtnMusic.TabIndex = 219
-        Me.BtnMusic.UseVisualStyleBackColor = False
-        '
         'PictureBox1
         '
         Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
@@ -165,16 +153,45 @@ Partial Class Options
         Me.PictureBox3.TabIndex = 222
         Me.PictureBox3.TabStop = False
         '
+        'BtnEnableMusic
+        '
+        Me.BtnEnableMusic.BackColor = System.Drawing.Color.FromArgb(CType(CType(236, Byte), Integer), CType(CType(236, Byte), Integer), CType(CType(236, Byte), Integer))
+        Me.BtnEnableMusic.BackgroundImage = CType(resources.GetObject("BtnEnableMusic.BackgroundImage"), System.Drawing.Image)
+        Me.BtnEnableMusic.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
+        Me.BtnEnableMusic.FlatAppearance.BorderSize = 0
+        Me.BtnEnableMusic.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(159, Byte), Integer), CType(CType(211, Byte), Integer), CType(CType(199, Byte), Integer))
+        Me.BtnEnableMusic.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BtnEnableMusic.Location = New System.Drawing.Point(900, 400)
+        Me.BtnEnableMusic.Name = "BtnEnableMusic"
+        Me.BtnEnableMusic.Size = New System.Drawing.Size(63, 54)
+        Me.BtnEnableMusic.TabIndex = 223
+        Me.BtnEnableMusic.UseVisualStyleBackColor = False
+        '
+        'BtnDisableMusic
+        '
+        Me.BtnDisableMusic.BackColor = System.Drawing.Color.FromArgb(CType(CType(236, Byte), Integer), CType(CType(236, Byte), Integer), CType(CType(236, Byte), Integer))
+        Me.BtnDisableMusic.BackgroundImage = CType(resources.GetObject("BtnDisableMusic.BackgroundImage"), System.Drawing.Image)
+        Me.BtnDisableMusic.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
+        Me.BtnDisableMusic.FlatAppearance.BorderSize = 0
+        Me.BtnDisableMusic.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(159, Byte), Integer), CType(CType(211, Byte), Integer), CType(CType(199, Byte), Integer))
+        Me.BtnDisableMusic.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BtnDisableMusic.Location = New System.Drawing.Point(900, 400)
+        Me.BtnDisableMusic.Name = "BtnDisableMusic"
+        Me.BtnDisableMusic.Size = New System.Drawing.Size(63, 54)
+        Me.BtnDisableMusic.TabIndex = 224
+        Me.BtnDisableMusic.UseVisualStyleBackColor = False
+        '
         'Options
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(11.0!, 19.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(236, Byte), Integer), CType(CType(236, Byte), Integer), CType(CType(236, Byte), Integer))
         Me.ClientSize = New System.Drawing.Size(1264, 681)
+        Me.Controls.Add(Me.BtnDisableMusic)
+        Me.Controls.Add(Me.BtnEnableMusic)
         Me.Controls.Add(Me.PictureBox3)
         Me.Controls.Add(Me.PictureBox2)
         Me.Controls.Add(Me.PictureBox1)
-        Me.Controls.Add(Me.BtnMusic)
         Me.Controls.Add(Me.BtnSounds)
         Me.Controls.Add(Me.BtnPlayerName)
         Me.Controls.Add(Me.Label3)
@@ -185,7 +202,7 @@ Partial Class Options
         Me.Margin = New System.Windows.Forms.Padding(6, 4, 6, 4)
         Me.Name = "Options"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "Game of the Generals"
+        Me.Text = "  "
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).EndInit()
@@ -199,8 +216,10 @@ Partial Class Options
     Friend WithEvents Label3 As Label
     Friend WithEvents BtnPlayerName As Button
     Friend WithEvents BtnSounds As Button
-    Friend WithEvents BtnMusic As Button
     Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents PictureBox2 As PictureBox
     Friend WithEvents PictureBox3 As PictureBox
+    Friend WithEvents BackgroundWorker1 As System.ComponentModel.BackgroundWorker
+    Friend WithEvents BtnEnableMusic As Button
+    Friend WithEvents BtnDisableMusic As Button
 End Class
