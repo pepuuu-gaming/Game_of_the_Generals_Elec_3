@@ -116,7 +116,7 @@ Partial Class gameboard
         '
         'h1
         '
-        Me.h1.BackColor = System.Drawing.Color.White
+        Me.h1.BackColor = System.Drawing.Color.FromArgb(CType(CType(159, Byte), Integer), CType(CType(211, Byte), Integer), CType(CType(199, Byte), Integer))
         Me.h1.Cursor = System.Windows.Forms.Cursors.Hand
         Me.h1.FlatAppearance.BorderSize = 0
         Me.h1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White
@@ -129,7 +129,7 @@ Partial Class gameboard
         '
         'g1
         '
-        Me.g1.BackColor = System.Drawing.Color.White
+        Me.g1.BackColor = System.Drawing.Color.FromArgb(CType(CType(159, Byte), Integer), CType(CType(211, Byte), Integer), CType(CType(199, Byte), Integer))
         Me.g1.Cursor = System.Windows.Forms.Cursors.Hand
         Me.g1.FlatAppearance.BorderSize = 0
         Me.g1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White
@@ -142,7 +142,7 @@ Partial Class gameboard
         '
         'f1
         '
-        Me.f1.BackColor = System.Drawing.Color.White
+        Me.f1.BackColor = System.Drawing.Color.FromArgb(CType(CType(159, Byte), Integer), CType(CType(211, Byte), Integer), CType(CType(199, Byte), Integer))
         Me.f1.Cursor = System.Windows.Forms.Cursors.Hand
         Me.f1.FlatAppearance.BorderSize = 0
         Me.f1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White
@@ -155,7 +155,7 @@ Partial Class gameboard
         '
         'd1
         '
-        Me.d1.BackColor = System.Drawing.Color.White
+        Me.d1.BackColor = System.Drawing.Color.FromArgb(CType(CType(159, Byte), Integer), CType(CType(211, Byte), Integer), CType(CType(199, Byte), Integer))
         Me.d1.Cursor = System.Windows.Forms.Cursors.Hand
         Me.d1.FlatAppearance.BorderSize = 0
         Me.d1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White
@@ -168,7 +168,7 @@ Partial Class gameboard
         '
         'e1
         '
-        Me.e1.BackColor = System.Drawing.Color.White
+        Me.e1.BackColor = System.Drawing.Color.FromArgb(CType(CType(159, Byte), Integer), CType(CType(211, Byte), Integer), CType(CType(199, Byte), Integer))
         Me.e1.Cursor = System.Windows.Forms.Cursors.Hand
         Me.e1.FlatAppearance.BorderSize = 0
         Me.e1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White
@@ -181,7 +181,7 @@ Partial Class gameboard
         '
         'c1
         '
-        Me.c1.BackColor = System.Drawing.Color.White
+        Me.c1.BackColor = System.Drawing.Color.FromArgb(CType(CType(159, Byte), Integer), CType(CType(211, Byte), Integer), CType(CType(199, Byte), Integer))
         Me.c1.Cursor = System.Windows.Forms.Cursors.Hand
         Me.c1.FlatAppearance.BorderSize = 0
         Me.c1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White
@@ -194,7 +194,7 @@ Partial Class gameboard
         '
         'b1
         '
-        Me.b1.BackColor = System.Drawing.Color.White
+        Me.b1.BackColor = System.Drawing.Color.FromArgb(CType(CType(159, Byte), Integer), CType(CType(211, Byte), Integer), CType(CType(199, Byte), Integer))
         Me.b1.Cursor = System.Windows.Forms.Cursors.Hand
         Me.b1.FlatAppearance.BorderSize = 0
         Me.b1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White
@@ -233,7 +233,7 @@ Partial Class gameboard
         '
         'h2
         '
-        Me.h2.BackColor = System.Drawing.Color.White
+        Me.h2.BackColor = System.Drawing.Color.FromArgb(CType(CType(159, Byte), Integer), CType(CType(211, Byte), Integer), CType(CType(199, Byte), Integer))
         Me.h2.Cursor = System.Windows.Forms.Cursors.Hand
         Me.h2.FlatAppearance.BorderSize = 0
         Me.h2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White
@@ -246,7 +246,7 @@ Partial Class gameboard
         '
         'g2
         '
-        Me.g2.BackColor = System.Drawing.Color.White
+        Me.g2.BackColor = System.Drawing.Color.FromArgb(CType(CType(159, Byte), Integer), CType(CType(211, Byte), Integer), CType(CType(199, Byte), Integer))
         Me.g2.Cursor = System.Windows.Forms.Cursors.Hand
         Me.g2.FlatAppearance.BorderSize = 0
         Me.g2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White
@@ -259,7 +259,7 @@ Partial Class gameboard
         '
         'f2
         '
-        Me.f2.BackColor = System.Drawing.Color.White
+        Me.f2.BackColor = System.Drawing.Color.FromArgb(CType(CType(159, Byte), Integer), CType(CType(211, Byte), Integer), CType(CType(199, Byte), Integer))
         Me.f2.Cursor = System.Windows.Forms.Cursors.Hand
         Me.f2.FlatAppearance.BorderSize = 0
         Me.f2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White
@@ -272,7 +272,7 @@ Partial Class gameboard
         '
         'd2
         '
-        Me.d2.BackColor = System.Drawing.Color.White
+        Me.d2.BackColor = System.Drawing.Color.FromArgb(CType(CType(159, Byte), Integer), CType(CType(211, Byte), Integer), CType(CType(199, Byte), Integer))
         Me.d2.Cursor = System.Windows.Forms.Cursors.Hand
         Me.d2.FlatAppearance.BorderSize = 0
         Me.d2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White
@@ -285,7 +285,7 @@ Partial Class gameboard
         '
         'e2
         '
-        Me.e2.BackColor = System.Drawing.Color.White
+        Me.e2.BackColor = System.Drawing.Color.FromArgb(CType(CType(159, Byte), Integer), CType(CType(211, Byte), Integer), CType(CType(199, Byte), Integer))
         Me.e2.Cursor = System.Windows.Forms.Cursors.Hand
         Me.e2.FlatAppearance.BorderSize = 0
         Me.e2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White
@@ -298,7 +298,7 @@ Partial Class gameboard
         '
         'c2
         '
-        Me.c2.BackColor = System.Drawing.Color.White
+        Me.c2.BackColor = System.Drawing.Color.FromArgb(CType(CType(159, Byte), Integer), CType(CType(211, Byte), Integer), CType(CType(199, Byte), Integer))
         Me.c2.Cursor = System.Windows.Forms.Cursors.Hand
         Me.c2.FlatAppearance.BorderSize = 0
         Me.c2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White
@@ -311,7 +311,7 @@ Partial Class gameboard
         '
         'b2
         '
-        Me.b2.BackColor = System.Drawing.Color.White
+        Me.b2.BackColor = System.Drawing.Color.FromArgb(CType(CType(159, Byte), Integer), CType(CType(211, Byte), Integer), CType(CType(199, Byte), Integer))
         Me.b2.Cursor = System.Windows.Forms.Cursors.Hand
         Me.b2.FlatAppearance.BorderSize = 0
         Me.b2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White
@@ -350,7 +350,7 @@ Partial Class gameboard
         '
         'h3
         '
-        Me.h3.BackColor = System.Drawing.Color.White
+        Me.h3.BackColor = System.Drawing.Color.FromArgb(CType(CType(159, Byte), Integer), CType(CType(211, Byte), Integer), CType(CType(199, Byte), Integer))
         Me.h3.Cursor = System.Windows.Forms.Cursors.Hand
         Me.h3.FlatAppearance.BorderSize = 0
         Me.h3.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White
@@ -363,7 +363,7 @@ Partial Class gameboard
         '
         'g3
         '
-        Me.g3.BackColor = System.Drawing.Color.White
+        Me.g3.BackColor = System.Drawing.Color.FromArgb(CType(CType(159, Byte), Integer), CType(CType(211, Byte), Integer), CType(CType(199, Byte), Integer))
         Me.g3.Cursor = System.Windows.Forms.Cursors.Hand
         Me.g3.FlatAppearance.BorderSize = 0
         Me.g3.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White
@@ -376,7 +376,7 @@ Partial Class gameboard
         '
         'f3
         '
-        Me.f3.BackColor = System.Drawing.Color.White
+        Me.f3.BackColor = System.Drawing.Color.FromArgb(CType(CType(159, Byte), Integer), CType(CType(211, Byte), Integer), CType(CType(199, Byte), Integer))
         Me.f3.Cursor = System.Windows.Forms.Cursors.Hand
         Me.f3.FlatAppearance.BorderSize = 0
         Me.f3.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White
@@ -389,7 +389,7 @@ Partial Class gameboard
         '
         'd3
         '
-        Me.d3.BackColor = System.Drawing.Color.White
+        Me.d3.BackColor = System.Drawing.Color.FromArgb(CType(CType(159, Byte), Integer), CType(CType(211, Byte), Integer), CType(CType(199, Byte), Integer))
         Me.d3.Cursor = System.Windows.Forms.Cursors.Hand
         Me.d3.FlatAppearance.BorderSize = 0
         Me.d3.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White
@@ -402,7 +402,7 @@ Partial Class gameboard
         '
         'e3
         '
-        Me.e3.BackColor = System.Drawing.Color.White
+        Me.e3.BackColor = System.Drawing.Color.FromArgb(CType(CType(159, Byte), Integer), CType(CType(211, Byte), Integer), CType(CType(199, Byte), Integer))
         Me.e3.Cursor = System.Windows.Forms.Cursors.Hand
         Me.e3.FlatAppearance.BorderSize = 0
         Me.e3.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White
@@ -415,7 +415,7 @@ Partial Class gameboard
         '
         'c3
         '
-        Me.c3.BackColor = System.Drawing.Color.White
+        Me.c3.BackColor = System.Drawing.Color.FromArgb(CType(CType(159, Byte), Integer), CType(CType(211, Byte), Integer), CType(CType(199, Byte), Integer))
         Me.c3.Cursor = System.Windows.Forms.Cursors.Hand
         Me.c3.FlatAppearance.BorderSize = 0
         Me.c3.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White
@@ -428,7 +428,7 @@ Partial Class gameboard
         '
         'b3
         '
-        Me.b3.BackColor = System.Drawing.Color.White
+        Me.b3.BackColor = System.Drawing.Color.FromArgb(CType(CType(159, Byte), Integer), CType(CType(211, Byte), Integer), CType(CType(199, Byte), Integer))
         Me.b3.Cursor = System.Windows.Forms.Cursors.Hand
         Me.b3.FlatAppearance.BorderSize = 0
         Me.b3.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White
@@ -701,7 +701,7 @@ Partial Class gameboard
         '
         'h6
         '
-        Me.h6.BackColor = System.Drawing.Color.White
+        Me.h6.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(45, Byte), Integer), CType(CType(76, Byte), Integer))
         Me.h6.Cursor = System.Windows.Forms.Cursors.Hand
         Me.h6.FlatAppearance.BorderSize = 0
         Me.h6.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White
@@ -714,7 +714,7 @@ Partial Class gameboard
         '
         'g6
         '
-        Me.g6.BackColor = System.Drawing.Color.White
+        Me.g6.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(45, Byte), Integer), CType(CType(76, Byte), Integer))
         Me.g6.Cursor = System.Windows.Forms.Cursors.Hand
         Me.g6.FlatAppearance.BorderSize = 0
         Me.g6.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White
@@ -727,7 +727,7 @@ Partial Class gameboard
         '
         'f6
         '
-        Me.f6.BackColor = System.Drawing.Color.White
+        Me.f6.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(45, Byte), Integer), CType(CType(76, Byte), Integer))
         Me.f6.Cursor = System.Windows.Forms.Cursors.Hand
         Me.f6.FlatAppearance.BorderSize = 0
         Me.f6.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White
@@ -740,7 +740,7 @@ Partial Class gameboard
         '
         'd6
         '
-        Me.d6.BackColor = System.Drawing.Color.White
+        Me.d6.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(45, Byte), Integer), CType(CType(76, Byte), Integer))
         Me.d6.Cursor = System.Windows.Forms.Cursors.Hand
         Me.d6.FlatAppearance.BorderSize = 0
         Me.d6.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White
@@ -753,7 +753,7 @@ Partial Class gameboard
         '
         'e6
         '
-        Me.e6.BackColor = System.Drawing.Color.White
+        Me.e6.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(45, Byte), Integer), CType(CType(76, Byte), Integer))
         Me.e6.Cursor = System.Windows.Forms.Cursors.Hand
         Me.e6.FlatAppearance.BorderSize = 0
         Me.e6.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White
@@ -766,7 +766,7 @@ Partial Class gameboard
         '
         'c6
         '
-        Me.c6.BackColor = System.Drawing.Color.White
+        Me.c6.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(45, Byte), Integer), CType(CType(76, Byte), Integer))
         Me.c6.Cursor = System.Windows.Forms.Cursors.Hand
         Me.c6.FlatAppearance.BorderSize = 0
         Me.c6.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White
@@ -779,7 +779,7 @@ Partial Class gameboard
         '
         'b6
         '
-        Me.b6.BackColor = System.Drawing.Color.White
+        Me.b6.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(45, Byte), Integer), CType(CType(76, Byte), Integer))
         Me.b6.Cursor = System.Windows.Forms.Cursors.Hand
         Me.b6.FlatAppearance.BorderSize = 0
         Me.b6.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White
@@ -818,7 +818,7 @@ Partial Class gameboard
         '
         'h7
         '
-        Me.h7.BackColor = System.Drawing.Color.White
+        Me.h7.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(45, Byte), Integer), CType(CType(76, Byte), Integer))
         Me.h7.Cursor = System.Windows.Forms.Cursors.Hand
         Me.h7.FlatAppearance.BorderSize = 0
         Me.h7.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White
@@ -831,7 +831,7 @@ Partial Class gameboard
         '
         'g7
         '
-        Me.g7.BackColor = System.Drawing.Color.White
+        Me.g7.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(45, Byte), Integer), CType(CType(76, Byte), Integer))
         Me.g7.Cursor = System.Windows.Forms.Cursors.Hand
         Me.g7.FlatAppearance.BorderSize = 0
         Me.g7.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White
@@ -844,7 +844,7 @@ Partial Class gameboard
         '
         'f7
         '
-        Me.f7.BackColor = System.Drawing.Color.White
+        Me.f7.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(45, Byte), Integer), CType(CType(76, Byte), Integer))
         Me.f7.Cursor = System.Windows.Forms.Cursors.Hand
         Me.f7.FlatAppearance.BorderSize = 0
         Me.f7.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White
@@ -857,7 +857,7 @@ Partial Class gameboard
         '
         'd7
         '
-        Me.d7.BackColor = System.Drawing.Color.White
+        Me.d7.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(45, Byte), Integer), CType(CType(76, Byte), Integer))
         Me.d7.Cursor = System.Windows.Forms.Cursors.Hand
         Me.d7.FlatAppearance.BorderSize = 0
         Me.d7.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White
@@ -870,7 +870,7 @@ Partial Class gameboard
         '
         'e7
         '
-        Me.e7.BackColor = System.Drawing.Color.White
+        Me.e7.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(45, Byte), Integer), CType(CType(76, Byte), Integer))
         Me.e7.Cursor = System.Windows.Forms.Cursors.Hand
         Me.e7.FlatAppearance.BorderSize = 0
         Me.e7.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White
@@ -883,7 +883,7 @@ Partial Class gameboard
         '
         'c7
         '
-        Me.c7.BackColor = System.Drawing.Color.White
+        Me.c7.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(45, Byte), Integer), CType(CType(76, Byte), Integer))
         Me.c7.Cursor = System.Windows.Forms.Cursors.Hand
         Me.c7.FlatAppearance.BorderSize = 0
         Me.c7.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White
@@ -896,7 +896,7 @@ Partial Class gameboard
         '
         'b7
         '
-        Me.b7.BackColor = System.Drawing.Color.White
+        Me.b7.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(45, Byte), Integer), CType(CType(76, Byte), Integer))
         Me.b7.Cursor = System.Windows.Forms.Cursors.Hand
         Me.b7.FlatAppearance.BorderSize = 0
         Me.b7.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White
@@ -935,7 +935,7 @@ Partial Class gameboard
         '
         'h8
         '
-        Me.h8.BackColor = System.Drawing.Color.White
+        Me.h8.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(45, Byte), Integer), CType(CType(76, Byte), Integer))
         Me.h8.Cursor = System.Windows.Forms.Cursors.Hand
         Me.h8.FlatAppearance.BorderSize = 0
         Me.h8.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White
@@ -948,7 +948,7 @@ Partial Class gameboard
         '
         'g8
         '
-        Me.g8.BackColor = System.Drawing.Color.White
+        Me.g8.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(45, Byte), Integer), CType(CType(76, Byte), Integer))
         Me.g8.Cursor = System.Windows.Forms.Cursors.Hand
         Me.g8.FlatAppearance.BorderSize = 0
         Me.g8.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White
@@ -961,7 +961,7 @@ Partial Class gameboard
         '
         'f8
         '
-        Me.f8.BackColor = System.Drawing.Color.White
+        Me.f8.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(45, Byte), Integer), CType(CType(76, Byte), Integer))
         Me.f8.Cursor = System.Windows.Forms.Cursors.Hand
         Me.f8.FlatAppearance.BorderSize = 0
         Me.f8.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White
@@ -974,7 +974,7 @@ Partial Class gameboard
         '
         'd8
         '
-        Me.d8.BackColor = System.Drawing.Color.White
+        Me.d8.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(45, Byte), Integer), CType(CType(76, Byte), Integer))
         Me.d8.Cursor = System.Windows.Forms.Cursors.Hand
         Me.d8.FlatAppearance.BorderSize = 0
         Me.d8.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White
@@ -987,7 +987,7 @@ Partial Class gameboard
         '
         'e8
         '
-        Me.e8.BackColor = System.Drawing.Color.White
+        Me.e8.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(45, Byte), Integer), CType(CType(76, Byte), Integer))
         Me.e8.Cursor = System.Windows.Forms.Cursors.Hand
         Me.e8.FlatAppearance.BorderSize = 0
         Me.e8.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White
@@ -1000,7 +1000,7 @@ Partial Class gameboard
         '
         'c8
         '
-        Me.c8.BackColor = System.Drawing.Color.White
+        Me.c8.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(45, Byte), Integer), CType(CType(76, Byte), Integer))
         Me.c8.Cursor = System.Windows.Forms.Cursors.Hand
         Me.c8.FlatAppearance.BorderSize = 0
         Me.c8.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White
@@ -1013,7 +1013,7 @@ Partial Class gameboard
         '
         'b8
         '
-        Me.b8.BackColor = System.Drawing.Color.White
+        Me.b8.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(45, Byte), Integer), CType(CType(76, Byte), Integer))
         Me.b8.Cursor = System.Windows.Forms.Cursors.Hand
         Me.b8.FlatAppearance.BorderSize = 0
         Me.b8.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White
