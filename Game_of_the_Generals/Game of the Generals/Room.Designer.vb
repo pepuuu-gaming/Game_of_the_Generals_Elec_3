@@ -44,14 +44,18 @@ Partial Class Room
         '
         'Label2
         '
+        Me.Label2.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("OCR A Extended", 30.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.ForeColor = System.Drawing.Color.FromArgb(CType(CType(56, Byte), Integer), CType(CType(81, Byte), Integer), CType(CType(112, Byte), Integer))
-        Me.Label2.Location = New System.Drawing.Point(289, 345)
+        Me.Label2.Location = New System.Drawing.Point(313, 349)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(282, 41)
+        Me.Label2.Size = New System.Drawing.Size(258, 41)
         Me.Label2.TabIndex = 1
-        Me.Label2.Text = "IP Address:"
+        Me.Label2.Text = "Room name:"
+        Me.Label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'TextBox1
         '
