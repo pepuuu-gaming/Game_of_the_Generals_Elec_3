@@ -31,3 +31,37 @@ C:\Users\Mark Angelo\Desktop\my-git-repo\Game_of_the_Generals_Elec_3\Game_of_the
 C:\Users\Mark Angelo\Desktop\my-git-repo\Game_of_the_Generals_Elec_3\Game_of_the_Generals\Game of the Generals\obj\Debug\Game of the Generals.vbproj.ResolveComReference.cache
 C:\Users\Mark Angelo\Desktop\my-git-repo\Game_of_the_Generals_Elec_3\Game_of_the_Generals\Game of the Generals\bin\Debug\Interop.WMPLib.dll
 C:\Users\Mark Angelo\Desktop\my-git-repo\Game_of_the_Generals_Elec_3\Game_of_the_Generals\Game of the Generals\bin\Debug\AxInterop.WMPLib.dll
+E:\Game_of_the_Generals_Elec_3\Game_of_the_Generals\Game of the Generals\bin\Debug\Game of the Generals.exe.config
+E:\Game_of_the_Generals_Elec_3\Game_of_the_Generals\Game of the Generals\bin\Debug\Game of the Generals.exe
+E:\Game_of_the_Generals_Elec_3\Game_of_the_Generals\Game of the Generals\bin\Debug\Game of the Generals.pdb
+E:\Game_of_the_Generals_Elec_3\Game_of_the_Generals\Game of the Generals\bin\Debug\Game of the Generals.xml
+E:\Game_of_the_Generals_Elec_3\Game_of_the_Generals\Game of the Generals\bin\Debug\Interop.WMPLib.dll
+E:\Game_of_the_Generals_Elec_3\Game_of_the_Generals\Game of the Generals\bin\Debug\AxInterop.WMPLib.dll
+E:\Game_of_the_Generals_Elec_3\Game_of_the_Generals\Game of the Generals\obj\Debug\Game of the Generals.vbprojAssemblyReference.cache
+E:\Game_of_the_Generals_Elec_3\Game_of_the_Generals\Game of the Generals\obj\Debug\Interop.WMPLib.dll
+E:\Game_of_the_Generals_Elec_3\Game_of_the_Generals\Game of the Generals\obj\Debug\AxInterop.WMPLib.dll
+E:\Game_of_the_Generals_Elec_3\Game_of_the_Generals\Game of the Generals\obj\Debug\Game of the Generals.vbproj.ResolveComReference.cache
+E:\Game_of_the_Generals_Elec_3\Game_of_the_Generals\Game of the Generals\obj\Debug\Game_of_the_Generals.Room.resources
+E:\Game_of_the_Generals_Elec_3\Game_of_the_Generals\Game of the Generals\obj\Debug\Game_of_the_Generals.TutorialPage9d.resources
+E:\Game_of_the_Generals_Elec_3\Game_of_the_Generals\Game of the Generals\obj\Debug\Game_of_the_Generals.TutorialPage9a.resources
+E:\Game_of_the_Generals_Elec_3\Game_of_the_Generals\Game of the Generals\obj\Debug\Game_of_the_Generals.homepage.resources
+E:\Game_of_the_Generals_Elec_3\Game_of_the_Generals\Game of the Generals\obj\Debug\Game_of_the_Generals.gameboard.resources
+E:\Game_of_the_Generals_Elec_3\Game_of_the_Generals\Game of the Generals\obj\Debug\Game_of_the_Generals.Options.resources
+E:\Game_of_the_Generals_Elec_3\Game_of_the_Generals\Game of the Generals\obj\Debug\Game_of_the_Generals.Tutorial.resources
+E:\Game_of_the_Generals_Elec_3\Game_of_the_Generals\Game of the Generals\obj\Debug\Game_of_the_Generals.Resources.resources
+E:\Game_of_the_Generals_Elec_3\Game_of_the_Generals\Game of the Generals\obj\Debug\Game_of_the_Generals.TutorialPage1.resources
+E:\Game_of_the_Generals_Elec_3\Game_of_the_Generals\Game of the Generals\obj\Debug\Game_of_the_Generals.TutorialPage2.resources
+E:\Game_of_the_Generals_Elec_3\Game_of_the_Generals\Game of the Generals\obj\Debug\Game_of_the_Generals.TutorialPage3.resources
+E:\Game_of_the_Generals_Elec_3\Game_of_the_Generals\Game of the Generals\obj\Debug\Game_of_the_Generals.TutorialPage4.resources
+E:\Game_of_the_Generals_Elec_3\Game_of_the_Generals\Game of the Generals\obj\Debug\Game_of_the_Generals.TutorialPage5.resources
+E:\Game_of_the_Generals_Elec_3\Game_of_the_Generals\Game of the Generals\obj\Debug\Game_of_the_Generals.TutorialPage6.resources
+E:\Game_of_the_Generals_Elec_3\Game_of_the_Generals\Game of the Generals\obj\Debug\Game_of_the_Generals.TutorialPage7.resources
+E:\Game_of_the_Generals_Elec_3\Game_of_the_Generals\Game of the Generals\obj\Debug\Game_of_the_Generals.TutorialPage8.resources
+E:\Game_of_the_Generals_Elec_3\Game_of_the_Generals\Game of the Generals\obj\Debug\Game_of_the_Generals.TutorialPage9.resources
+E:\Game_of_the_Generals_Elec_3\Game_of_the_Generals\Game of the Generals\obj\Debug\Game_of_the_Generals.TutorialPage9b.resources
+E:\Game_of_the_Generals_Elec_3\Game_of_the_Generals\Game of the Generals\obj\Debug\Game_of_the_Generals.TutorialPage9c.resources
+E:\Game_of_the_Generals_Elec_3\Game_of_the_Generals\Game of the Generals\obj\Debug\Game of the Generals.vbproj.GenerateResource.cache
+E:\Game_of_the_Generals_Elec_3\Game_of_the_Generals\Game of the Generals\obj\Debug\Game of the Generals.exe
+E:\Game_of_the_Generals_Elec_3\Game_of_the_Generals\Game of the Generals\obj\Debug\Game of the Generals.xml
+E:\Game_of_the_Generals_Elec_3\Game_of_the_Generals\Game of the Generals\obj\Debug\Game of the Generals.pdb
+E:\Game_of_the_Generals_Elec_3\Game_of_the_Generals\Game of the Generals\obj\Debug\Game_of_the_Generals.PopupNameInputBox.resources

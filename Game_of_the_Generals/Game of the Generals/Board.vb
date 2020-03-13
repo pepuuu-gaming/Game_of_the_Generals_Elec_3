@@ -1,5 +1,6 @@
 ﻿Imports System.Net.Sockets
 Imports System.Net
+Imports System.IO
 
 Public Class gameboard
 
@@ -8,6 +9,9 @@ Public Class gameboard
     Dim sock As Socket
     Dim serverSocket As TcpListener
     Dim clientSocket As TcpClient
+    Dim hostName As String
+    Dim guestName As String
+    Dim host As Boolean
 
     Public Sub New(isHost As Boolean, ip As String)
 
@@ -15,7 +19,7 @@ Public Class gameboard
         CheckForIllegalCrossThreadCalls = False
 
         If (isHost) Then
-
+            host = isHost
             playerChar = "X"
             opponentChar = "O"
             serverSocket = New TcpListener(IPAddress.Any, 3306)
@@ -50,9 +54,9 @@ Public Class gameboard
 
             Return
             freezeBoard()
-            opponentName.Text = "Opponent's Turn"
+            enemyName.Text = "Opponent's Turn"
             receiveMove()
-            opponentName.Text = "Your Turn"
+            enemyName.Text = "Your Turn"
 
         End If
 
@@ -68,27 +72,27 @@ Public Class gameboard
         ' Horizontals
         If a1.Text = b1.Text And b1.Text = c1.Text And c1.Text IsNot "" Then
             If a1.Text(0) = playerChar Then
-                opponentName.Text = "You Won"
+                enemyName.Text = "You Won"
             Else
-                opponentName.Text = "You Lost"
+                enemyName.Text = "You Lost"
             End If
             Return True
         End If
 
         If a2.Text = b2.Text And b2.Text = c2.Text And c2.Text IsNot "" Then
             If a1.Text(0) = playerChar Then
-                opponentName.Text = "You Won"
+                enemyName.Text = "You Won"
             Else
-                opponentName.Text = "You Lost"
+                enemyName.Text = "You Lost"
             End If
             Return True
         End If
 
         If a3.Text = b3.Text And b3.Text = c3.Text And c3.Text IsNot "" Then
             If a1.Text(0) = playerChar Then
-                opponentName.Text = "You Won"
+                enemyName.Text = "You Won"
             Else
-                opponentName.Text = "You Lost"
+                enemyName.Text = "You Lost"
             End If
             Return True
         End If
@@ -680,7 +684,23 @@ Public Class gameboard
     End Sub
 
     Private Sub gameboard_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        'Set NAME
 
+        Using reader As StreamReader = New StreamReader("host.txt")
+            hostName = reader.ReadLine
+        End Using
+
+        Using reader As StreamReader = New StreamReader("guest.txt")
+            guestName = reader.ReadLine
+        End Using
+
+        If host Then
+            myName.Text = hostName
+            enemyName.Text = guestName
+        Else
+            myName.Text = guestName
+            enemyName.Text = hostName
+        End If
 
 
         Dim tile_a As RoundButton = New RoundButton
@@ -1293,10 +1313,6 @@ Public Class gameboard
     End Sub
 
     Private Sub ready_Click(sender As Object, e As EventArgs) Handles ready.Click
-
-    End Sub
-
-    Private Sub opponentName_Click(sender As Object, e As EventArgs) Handles opponentName.Click
 
     End Sub
 End Class

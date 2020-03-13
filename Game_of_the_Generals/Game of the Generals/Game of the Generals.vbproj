@@ -74,6 +74,12 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="PopupNameInputBox.Designer.vb">
+      <DependentUpon>PopupNameInputBox.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PopupNameInputBox.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Room.Designer.vb">
       <DependentUpon>Room.vb</DependentUpon>
     </Compile>
@@ -201,6 +207,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="PopupNameInputBox.resx">
+      <DependentUpon>PopupNameInputBox.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Room.resx">
       <DependentUpon>Room.vb</DependentUpon>
     </EmbeddedResource>

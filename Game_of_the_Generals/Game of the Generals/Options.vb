@@ -7,8 +7,9 @@
 
     End Sub
 
-    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles BtnPlayerName.Click
-
+    Private Sub BtnPlayerName_Click(sender As Object, e As EventArgs) Handles BtnPlayerName.Click
+        Dim name = New PopupNameInputBox()
+        name.Show()
     End Sub
 
     Private Sub BtnSounds_Click(sender As Object, e As EventArgs) Handles BtnSounds.Click
