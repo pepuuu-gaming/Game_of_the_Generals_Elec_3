@@ -681,6 +681,7 @@ Public Class gameboard
 
     Private Sub gameboard_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
+
         Dim tile_a As RoundButton = New RoundButton
         tile_a.Round(a1, 10)
         tile_a.Round(a2, 10)
