@@ -50,9 +50,9 @@ Public Class gameboard
 
             Return
             freezeBoard()
-            Label1.Text = "Opponent's Turn"
+            opponentName.Text = "Opponent's Turn"
             receiveMove()
-            Label1.Text = "Your Turn"
+            opponentName.Text = "Your Turn"
 
         End If
 
@@ -68,27 +68,27 @@ Public Class gameboard
         ' Horizontals
         If a1.Text = b1.Text And b1.Text = c1.Text And c1.Text IsNot "" Then
             If a1.Text(0) = playerChar Then
-                Label1.Text = "You Won"
+                opponentName.Text = "You Won"
             Else
-                Label1.Text = "You Lost"
+                opponentName.Text = "You Lost"
             End If
             Return True
         End If
 
         If a2.Text = b2.Text And b2.Text = c2.Text And c2.Text IsNot "" Then
             If a1.Text(0) = playerChar Then
-                Label1.Text = "You Won"
+                opponentName.Text = "You Won"
             Else
-                Label1.Text = "You Lost"
+                opponentName.Text = "You Lost"
             End If
             Return True
         End If
 
         If a3.Text = b3.Text And b3.Text = c3.Text And c3.Text IsNot "" Then
             If a1.Text(0) = playerChar Then
-                Label1.Text = "You Won"
+                opponentName.Text = "You Won"
             Else
-                Label1.Text = "You Lost"
+                opponentName.Text = "You Lost"
             End If
             Return True
         End If
@@ -682,6 +682,7 @@ Public Class gameboard
     Private Sub gameboard_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
 
+
         Dim tile_a As RoundButton = New RoundButton
         tile_a.Round(a1, 10)
         tile_a.Round(a2, 10)
@@ -771,6 +772,8 @@ Public Class gameboard
         tile_i.Round(i6, 10)
         tile_i.Round(i7, 10)
         tile_i.Round(i8, 10)
+
+        tile_a.Round(ready, 10)
 
     End Sub
 
@@ -1289,4 +1292,11 @@ Public Class gameboard
 
     End Sub
 
+    Private Sub ready_Click(sender As Object, e As EventArgs) Handles ready.Click
+
+    End Sub
+
+    Private Sub opponentName_Click(sender As Object, e As EventArgs) Handles opponentName.Click
+
+    End Sub
 End Class

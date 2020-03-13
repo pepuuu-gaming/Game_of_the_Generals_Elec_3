@@ -100,7 +100,7 @@ Partial Class gameboard
         Me.pause = New System.Windows.Forms.Button()
         Me.back_to_menu = New System.Windows.Forms.Button()
         Me.BackgroundWorker1 = New System.ComponentModel.BackgroundWorker()
-        Me.Label1 = New System.Windows.Forms.Label()
+        Me.opponentName = New System.Windows.Forms.Label()
         Me.ready = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
@@ -1095,21 +1095,23 @@ Partial Class gameboard
         'BackgroundWorker1
         '
         '
-        'Label1
+        'opponentName
         '
-        Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(590, 130)
-        Me.Label1.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(33, 13)
-        Me.Label1.TabIndex = 211
-        Me.Label1.Text = "Label"
+        Me.opponentName.Font = New System.Drawing.Font("OCR A Extended", 30.0!)
+        Me.opponentName.Location = New System.Drawing.Point(564, 104)
+        Me.opponentName.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.opponentName.Name = "opponentName"
+        Me.opponentName.Size = New System.Drawing.Size(138, 41)
+        Me.opponentName.TabIndex = 211
+        Me.opponentName.Text = "Label"
+        Me.opponentName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'ready
         '
-        Me.ready.Location = New System.Drawing.Point(612, 537)
+        Me.ready.Font = New System.Drawing.Font("OCR A Extended", 15.0!)
+        Me.ready.Location = New System.Drawing.Point(564, 521)
         Me.ready.Name = "ready"
-        Me.ready.Size = New System.Drawing.Size(75, 23)
+        Me.ready.Size = New System.Drawing.Size(138, 32)
         Me.ready.TabIndex = 212
         Me.ready.Text = "READY!"
         Me.ready.UseVisualStyleBackColor = True
@@ -1122,7 +1124,7 @@ Partial Class gameboard
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(236, Byte), Integer), CType(CType(236, Byte), Integer), CType(CType(236, Byte), Integer))
         Me.ClientSize = New System.Drawing.Size(1028, 609)
         Me.Controls.Add(Me.ready)
-        Me.Controls.Add(Me.Label1)
+        Me.Controls.Add(Me.opponentName)
         Me.Controls.Add(Me.back_to_menu)
         Me.Controls.Add(Me.pause)
         Me.Controls.Add(Me.message)
@@ -1203,7 +1205,6 @@ Partial Class gameboard
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Game of the Generals"
         Me.ResumeLayout(False)
-        Me.PerformLayout()
 
     End Sub
 
@@ -1284,6 +1285,6 @@ Partial Class gameboard
     Friend WithEvents pause As Button
     Friend WithEvents back_to_menu As Button
     Friend WithEvents BackgroundWorker1 As System.ComponentModel.BackgroundWorker
-    Friend WithEvents Label1 As Label
+    Friend WithEvents opponentName As Label
     Friend WithEvents ready As Button
 End Class
