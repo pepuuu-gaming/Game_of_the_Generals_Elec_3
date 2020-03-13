@@ -1,15 +1,8 @@
-﻿Imports System.Net.Sockets
-Imports System.Net
+﻿
 Imports System.IO
-Imports System.ComponentModel
 
 Public Class gameboard
 
-    Dim playerChar As Char
-    Dim opponentChar As Char
-    Dim sock As Socket
-    Dim serverSocket As TcpListener
-    Dim clientSocket As TcpClient
     Dim hostName As String
     Dim guestName As String
     Dim host As Boolean
