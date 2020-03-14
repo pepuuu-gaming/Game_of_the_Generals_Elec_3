@@ -8,7 +8,6 @@ Public Class gameboard
     Dim room As String = "rooms/"
     Dim piecePlayer As String = "/piece"
 
-
     Private client As IFirebaseClient
     Dim isGameTime As Boolean = False
     Dim hostName As String
@@ -35,7 +34,39 @@ Public Class gameboard
         .BasePath = "https://game-of-the-generals-vb.firebaseio.com/"
         }
 
+    'Public Sub New(Host As Boolean)
+
+    '    ' This call is required by the designer.
+    '    InitializeComponent()
+
+    '    ' Add any initialization after the InitializeComponent() call.
+
+    'End Sub
+
     Public Sub SetPiecesToDatabase()
+        Dim piece As New Piece() With {
+            .p1 = pieceCoordinate(0),
+            .p2 = pieceCoordinate(1),
+            .p3 = pieceCoordinate(2),
+            .p4 = pieceCoordinate(3),
+            .p5 = pieceCoordinate(4),
+            .p6 = pieceCoordinate(5),
+            .p7 = pieceCoordinate(6),
+            .p8 = pieceCoordinate(7),
+            .p9 = pieceCoordinate(8),
+            .p10 = pieceCoordinate(9),
+            .p11 = pieceCoordinate(10),
+            .p12 = pieceCoordinate(11),
+            .p13 = pieceCoordinate(12),
+            .p14 = pieceCoordinate(13),
+            .p15 = pieceCoordinate(14),
+            .p16 = pieceCoordinate(15),
+            .p17 = pieceCoordinate(16),
+            .p18 = pieceCoordinate(17),
+            .p19 = pieceCoordinate(18),
+            .p20 = pieceCoordinate(19),
+            .p21 = pieceCoordinate(20)
+        }
 
     End Sub
 
@@ -100,15 +131,6 @@ Public Class gameboard
 
 
     End Sub
-
-    'Public Function LocationGet(a As Button) As Integer()
-    '    Dim b(2) As Integer
-    '    Dim c As Button = DirectCast(a, Button)
-    '    b(0) = c.Location.X
-    '    b(1) = c.Location.Y
-
-    '    Return b
-    'End Function
 
     Public Sub GetLocation()
         SetPiecesAndCoordinateObject()
@@ -358,33 +380,10 @@ Public Class gameboard
         GetLocation()
         isGameTime = True
 
-        Dim piece As New Piece() With {
-            .p1 = pieceCoordinate(0),
-            .p2 = pieceCoordinate(1),
-            .p3 = pieceCoordinate(2),
-            .p4 = pieceCoordinate(3),
-            .p5 = pieceCoordinate(4),
-            .p6 = pieceCoordinate(5),
-            .p7 = pieceCoordinate(6),
-            .p8 = pieceCoordinate(7),
-            .p9 = pieceCoordinate(8),
-            .p10 = pieceCoordinate(9),
-            .p11 = pieceCoordinate(10),
-            .p12 = pieceCoordinate(11),
-            .p13 = pieceCoordinate(12),
-            .p14 = pieceCoordinate(13),
-            .p15 = pieceCoordinate(14),
-            .p16 = pieceCoordinate(15),
-            .p17 = pieceCoordinate(16),
-            .p18 = pieceCoordinate(17),
-            .p19 = pieceCoordinate(18),
-            .p20 = pieceCoordinate(19),
-            .p21 = pieceCoordinate(20)
-        }
 
-        For index = 0 To pieceCoordinate.Length - 1
-            MessageBox.Show(pieceCoordinate(index))
-        Next
+        'For index = 0 To pieceCoordinate.Length - 1
+        '    MessageBox.Show(pieceCoordinate(index))
+        'Next
     End Sub
 
     Private Sub gameboard_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -393,6 +392,9 @@ Public Class gameboard
         Catch
             MessageBox.Show("there was a problem in the internet connection")
         End Try
+
+
+
 
         Dim a As RoundButton = New RoundButton
         a.Round(a1, 10)
@@ -523,4 +525,6 @@ Public Class gameboard
 
         SetPieces()
     End Sub
+
+
 End Class

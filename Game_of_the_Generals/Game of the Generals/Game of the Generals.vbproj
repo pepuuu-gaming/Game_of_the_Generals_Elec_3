@@ -97,7 +97,11 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Arbitrary.vb" />
+    <Compile Include="Move.vb" />
     <Compile Include="Piece.vb" />
+    <Compile Include="Player1.vb" />
+    <Compile Include="Player2.vb" />
     <Compile Include="PopupNameInputBox.Designer.vb">
       <DependentUpon>PopupNameInputBox.vb</DependentUpon>
     </Compile>
@@ -111,6 +115,7 @@
     <Compile Include="Room.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="RoomDatabase.vb" />
     <Compile Include="TutorialPage9d.Designer.vb">
       <DependentUpon>TutorialPage9d.vb</DependentUpon>
     </Compile>

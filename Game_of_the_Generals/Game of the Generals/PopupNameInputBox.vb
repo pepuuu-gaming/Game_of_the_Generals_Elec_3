@@ -2,6 +2,7 @@
 Imports FireSharp.Config
 Imports FireSharp.Response
 Imports FireSharp.Interfaces
+Imports FireSharp
 
 Public Class PopupNameInputBox
 
@@ -25,38 +26,24 @@ Public Class PopupNameInputBox
                 file_write.WriteLine(name_input)
             End Using
 
-            Dim res = client.Get("Users/" + TextBox1.Text)
-            If Not res Is Nothing Then
+            Dim res = client.Get("Users/" + name_input)
+            Dim b As String
+            b = res.ResultAs(Of String)
+
+            If Not IsNothing(b) Then
                 MessageBox.Show("Name already Taken")
+                TextBox1.BackColor = Color.Red
             Else
-                'MessageBox.Show("Name available")
+                MessageBox.Show("Name available")
                 client.Set("Users/" + name_input, "")
                 MessageBox.Show("Hi " & name_input & " your data was stored successfully.")
+                TextBox1.BackColor = Color.White
             End If
-            'If isCheck Then
-
-            'Else
-            '    MessageBox.Show("Hi " & name_input & " your data was stored successfully.")
-            'End If
         Catch ex As Exception
             Dim error_key As String = ex.ToString
             MessageBox.Show("The file can't be processed " + error_key)
         End Try
     End Sub
-
-    'Private Sub setGuestName_Click(sender As Object, e As EventArgs)
-    '    file_name = "guest"
-    '    name_input = TextBox1.Text
-    '    file_name += ".txt"
-    '    Try
-    '        Using file_write As StreamWriter = New StreamWriter(file_name)
-    '            file_write.WriteLine(name_input)
-    '        End Using
-    '    Catch ex As Exception
-    '        Dim error_key As String = ex.ToString
-    '        MessageBox.Show("The file can't be processed " + error_key)
-    '    End Try
-    'End Sub
 
     Private Sub PopupNameInputBox_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Dim r As RoundButton = New RoundButton
@@ -67,6 +54,6 @@ Public Class PopupNameInputBox
         Catch
             MessageBox.Show("there was a problem in the internet connection")
         End Try
-        'r.Round(setGuestName, 10)
+
     End Sub
 End Class
