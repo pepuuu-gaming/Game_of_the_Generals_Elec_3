@@ -110,7 +110,7 @@ Partial Class gameboard
         Me.i1.BackColor = System.Drawing.Color.White
         Me.i1.Cursor = System.Windows.Forms.Cursors.Hand
         Me.i1.FlatAppearance.BorderSize = 0
-        Me.i1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White
+        Me.i1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent
         Me.i1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.i1.Location = New System.Drawing.Point(793, 111)
         Me.i1.Name = "i1"
@@ -123,7 +123,7 @@ Partial Class gameboard
         Me.h1.BackColor = System.Drawing.Color.White
         Me.h1.Cursor = System.Windows.Forms.Cursors.Hand
         Me.h1.FlatAppearance.BorderSize = 0
-        Me.h1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White
+        Me.h1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent
         Me.h1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.h1.Location = New System.Drawing.Point(745, 111)
         Me.h1.Name = "h1"
@@ -136,7 +136,7 @@ Partial Class gameboard
         Me.g1.BackColor = System.Drawing.Color.White
         Me.g1.Cursor = System.Windows.Forms.Cursors.Hand
         Me.g1.FlatAppearance.BorderSize = 0
-        Me.g1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White
+        Me.g1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent
         Me.g1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.g1.Location = New System.Drawing.Point(697, 111)
         Me.g1.Name = "g1"
@@ -149,7 +149,7 @@ Partial Class gameboard
         Me.f1.BackColor = System.Drawing.Color.White
         Me.f1.Cursor = System.Windows.Forms.Cursors.Hand
         Me.f1.FlatAppearance.BorderSize = 0
-        Me.f1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White
+        Me.f1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent
         Me.f1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.f1.Location = New System.Drawing.Point(649, 111)
         Me.f1.Name = "f1"
@@ -162,7 +162,7 @@ Partial Class gameboard
         Me.d1.BackColor = System.Drawing.Color.White
         Me.d1.Cursor = System.Windows.Forms.Cursors.Hand
         Me.d1.FlatAppearance.BorderSize = 0
-        Me.d1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White
+        Me.d1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent
         Me.d1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.d1.Location = New System.Drawing.Point(553, 111)
         Me.d1.Name = "d1"
@@ -175,7 +175,7 @@ Partial Class gameboard
         Me.e1.BackColor = System.Drawing.Color.White
         Me.e1.Cursor = System.Windows.Forms.Cursors.Hand
         Me.e1.FlatAppearance.BorderSize = 0
-        Me.e1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White
+        Me.e1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent
         Me.e1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.e1.Location = New System.Drawing.Point(601, 111)
         Me.e1.Name = "e1"
@@ -188,7 +188,7 @@ Partial Class gameboard
         Me.c1.BackColor = System.Drawing.Color.White
         Me.c1.Cursor = System.Windows.Forms.Cursors.Hand
         Me.c1.FlatAppearance.BorderSize = 0
-        Me.c1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White
+        Me.c1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent
         Me.c1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.c1.Location = New System.Drawing.Point(505, 111)
         Me.c1.Name = "c1"
@@ -201,7 +201,7 @@ Partial Class gameboard
         Me.b1.BackColor = System.Drawing.Color.White
         Me.b1.Cursor = System.Windows.Forms.Cursors.Hand
         Me.b1.FlatAppearance.BorderSize = 0
-        Me.b1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White
+        Me.b1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent
         Me.b1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.b1.Location = New System.Drawing.Point(457, 111)
         Me.b1.Name = "b1"
@@ -214,7 +214,7 @@ Partial Class gameboard
         Me.a1.BackColor = System.Drawing.Color.White
         Me.a1.Cursor = System.Windows.Forms.Cursors.Hand
         Me.a1.FlatAppearance.BorderSize = 0
-        Me.a1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White
+        Me.a1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent
         Me.a1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.a1.Location = New System.Drawing.Point(409, 111)
         Me.a1.Name = "a1"
@@ -227,7 +227,7 @@ Partial Class gameboard
         Me.i2.BackColor = System.Drawing.Color.White
         Me.i2.Cursor = System.Windows.Forms.Cursors.Hand
         Me.i2.FlatAppearance.BorderSize = 0
-        Me.i2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White
+        Me.i2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent
         Me.i2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.i2.Location = New System.Drawing.Point(793, 154)
         Me.i2.Name = "i2"
@@ -240,7 +240,7 @@ Partial Class gameboard
         Me.h2.BackColor = System.Drawing.Color.White
         Me.h2.Cursor = System.Windows.Forms.Cursors.Hand
         Me.h2.FlatAppearance.BorderSize = 0
-        Me.h2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White
+        Me.h2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent
         Me.h2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.h2.Location = New System.Drawing.Point(745, 154)
         Me.h2.Name = "h2"
@@ -253,7 +253,7 @@ Partial Class gameboard
         Me.g2.BackColor = System.Drawing.Color.White
         Me.g2.Cursor = System.Windows.Forms.Cursors.Hand
         Me.g2.FlatAppearance.BorderSize = 0
-        Me.g2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White
+        Me.g2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent
         Me.g2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.g2.Location = New System.Drawing.Point(697, 154)
         Me.g2.Name = "g2"
@@ -266,7 +266,7 @@ Partial Class gameboard
         Me.f2.BackColor = System.Drawing.Color.White
         Me.f2.Cursor = System.Windows.Forms.Cursors.Hand
         Me.f2.FlatAppearance.BorderSize = 0
-        Me.f2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White
+        Me.f2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent
         Me.f2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.f2.Location = New System.Drawing.Point(649, 154)
         Me.f2.Name = "f2"
@@ -279,7 +279,7 @@ Partial Class gameboard
         Me.d2.BackColor = System.Drawing.Color.White
         Me.d2.Cursor = System.Windows.Forms.Cursors.Hand
         Me.d2.FlatAppearance.BorderSize = 0
-        Me.d2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White
+        Me.d2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent
         Me.d2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.d2.Location = New System.Drawing.Point(553, 154)
         Me.d2.Name = "d2"
@@ -292,7 +292,7 @@ Partial Class gameboard
         Me.e2.BackColor = System.Drawing.Color.White
         Me.e2.Cursor = System.Windows.Forms.Cursors.Hand
         Me.e2.FlatAppearance.BorderSize = 0
-        Me.e2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White
+        Me.e2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent
         Me.e2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.e2.Location = New System.Drawing.Point(601, 154)
         Me.e2.Name = "e2"
@@ -305,7 +305,7 @@ Partial Class gameboard
         Me.c2.BackColor = System.Drawing.Color.White
         Me.c2.Cursor = System.Windows.Forms.Cursors.Hand
         Me.c2.FlatAppearance.BorderSize = 0
-        Me.c2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White
+        Me.c2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent
         Me.c2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.c2.Location = New System.Drawing.Point(505, 154)
         Me.c2.Name = "c2"
@@ -318,7 +318,7 @@ Partial Class gameboard
         Me.b2.BackColor = System.Drawing.Color.White
         Me.b2.Cursor = System.Windows.Forms.Cursors.Hand
         Me.b2.FlatAppearance.BorderSize = 0
-        Me.b2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White
+        Me.b2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent
         Me.b2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.b2.Location = New System.Drawing.Point(457, 154)
         Me.b2.Name = "b2"
@@ -331,7 +331,7 @@ Partial Class gameboard
         Me.a2.BackColor = System.Drawing.Color.White
         Me.a2.Cursor = System.Windows.Forms.Cursors.Hand
         Me.a2.FlatAppearance.BorderSize = 0
-        Me.a2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White
+        Me.a2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent
         Me.a2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.a2.Location = New System.Drawing.Point(409, 154)
         Me.a2.Name = "a2"
@@ -344,7 +344,7 @@ Partial Class gameboard
         Me.i3.BackColor = System.Drawing.Color.White
         Me.i3.Cursor = System.Windows.Forms.Cursors.Hand
         Me.i3.FlatAppearance.BorderSize = 0
-        Me.i3.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White
+        Me.i3.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent
         Me.i3.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.i3.Location = New System.Drawing.Point(793, 197)
         Me.i3.Name = "i3"
@@ -357,7 +357,7 @@ Partial Class gameboard
         Me.h3.BackColor = System.Drawing.Color.White
         Me.h3.Cursor = System.Windows.Forms.Cursors.Hand
         Me.h3.FlatAppearance.BorderSize = 0
-        Me.h3.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White
+        Me.h3.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent
         Me.h3.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.h3.Location = New System.Drawing.Point(745, 197)
         Me.h3.Name = "h3"
@@ -370,7 +370,7 @@ Partial Class gameboard
         Me.g3.BackColor = System.Drawing.Color.White
         Me.g3.Cursor = System.Windows.Forms.Cursors.Hand
         Me.g3.FlatAppearance.BorderSize = 0
-        Me.g3.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White
+        Me.g3.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent
         Me.g3.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.g3.Location = New System.Drawing.Point(697, 197)
         Me.g3.Name = "g3"
@@ -383,7 +383,7 @@ Partial Class gameboard
         Me.f3.BackColor = System.Drawing.Color.White
         Me.f3.Cursor = System.Windows.Forms.Cursors.Hand
         Me.f3.FlatAppearance.BorderSize = 0
-        Me.f3.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White
+        Me.f3.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent
         Me.f3.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.f3.Location = New System.Drawing.Point(649, 197)
         Me.f3.Name = "f3"
@@ -396,7 +396,7 @@ Partial Class gameboard
         Me.d3.BackColor = System.Drawing.Color.White
         Me.d3.Cursor = System.Windows.Forms.Cursors.Hand
         Me.d3.FlatAppearance.BorderSize = 0
-        Me.d3.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White
+        Me.d3.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent
         Me.d3.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.d3.Location = New System.Drawing.Point(553, 197)
         Me.d3.Name = "d3"
@@ -409,7 +409,7 @@ Partial Class gameboard
         Me.e3.BackColor = System.Drawing.Color.White
         Me.e3.Cursor = System.Windows.Forms.Cursors.Hand
         Me.e3.FlatAppearance.BorderSize = 0
-        Me.e3.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White
+        Me.e3.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent
         Me.e3.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.e3.Location = New System.Drawing.Point(601, 197)
         Me.e3.Name = "e3"
@@ -422,7 +422,7 @@ Partial Class gameboard
         Me.c3.BackColor = System.Drawing.Color.White
         Me.c3.Cursor = System.Windows.Forms.Cursors.Hand
         Me.c3.FlatAppearance.BorderSize = 0
-        Me.c3.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White
+        Me.c3.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent
         Me.c3.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.c3.Location = New System.Drawing.Point(505, 197)
         Me.c3.Name = "c3"
@@ -435,7 +435,7 @@ Partial Class gameboard
         Me.b3.BackColor = System.Drawing.Color.White
         Me.b3.Cursor = System.Windows.Forms.Cursors.Hand
         Me.b3.FlatAppearance.BorderSize = 0
-        Me.b3.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White
+        Me.b3.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent
         Me.b3.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.b3.Location = New System.Drawing.Point(457, 197)
         Me.b3.Name = "b3"
@@ -448,7 +448,7 @@ Partial Class gameboard
         Me.a3.BackColor = System.Drawing.Color.White
         Me.a3.Cursor = System.Windows.Forms.Cursors.Hand
         Me.a3.FlatAppearance.BorderSize = 0
-        Me.a3.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White
+        Me.a3.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent
         Me.a3.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.a3.Location = New System.Drawing.Point(409, 197)
         Me.a3.Name = "a3"
@@ -461,7 +461,7 @@ Partial Class gameboard
         Me.i4.BackColor = System.Drawing.Color.White
         Me.i4.Cursor = System.Windows.Forms.Cursors.Hand
         Me.i4.FlatAppearance.BorderSize = 0
-        Me.i4.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White
+        Me.i4.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent
         Me.i4.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.i4.Location = New System.Drawing.Point(793, 240)
         Me.i4.Name = "i4"
@@ -474,7 +474,7 @@ Partial Class gameboard
         Me.h4.BackColor = System.Drawing.Color.White
         Me.h4.Cursor = System.Windows.Forms.Cursors.Hand
         Me.h4.FlatAppearance.BorderSize = 0
-        Me.h4.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White
+        Me.h4.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent
         Me.h4.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.h4.Location = New System.Drawing.Point(745, 240)
         Me.h4.Name = "h4"
@@ -487,7 +487,7 @@ Partial Class gameboard
         Me.g4.BackColor = System.Drawing.Color.White
         Me.g4.Cursor = System.Windows.Forms.Cursors.Hand
         Me.g4.FlatAppearance.BorderSize = 0
-        Me.g4.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White
+        Me.g4.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent
         Me.g4.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.g4.Location = New System.Drawing.Point(697, 240)
         Me.g4.Name = "g4"
@@ -500,7 +500,7 @@ Partial Class gameboard
         Me.f4.BackColor = System.Drawing.Color.White
         Me.f4.Cursor = System.Windows.Forms.Cursors.Hand
         Me.f4.FlatAppearance.BorderSize = 0
-        Me.f4.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White
+        Me.f4.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent
         Me.f4.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.f4.Location = New System.Drawing.Point(649, 240)
         Me.f4.Name = "f4"
@@ -513,7 +513,7 @@ Partial Class gameboard
         Me.d4.BackColor = System.Drawing.Color.White
         Me.d4.Cursor = System.Windows.Forms.Cursors.Hand
         Me.d4.FlatAppearance.BorderSize = 0
-        Me.d4.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White
+        Me.d4.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent
         Me.d4.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.d4.Location = New System.Drawing.Point(553, 240)
         Me.d4.Name = "d4"
@@ -526,7 +526,7 @@ Partial Class gameboard
         Me.e4.BackColor = System.Drawing.Color.White
         Me.e4.Cursor = System.Windows.Forms.Cursors.Hand
         Me.e4.FlatAppearance.BorderSize = 0
-        Me.e4.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White
+        Me.e4.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent
         Me.e4.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.e4.Location = New System.Drawing.Point(601, 240)
         Me.e4.Name = "e4"
@@ -539,7 +539,7 @@ Partial Class gameboard
         Me.c4.BackColor = System.Drawing.Color.White
         Me.c4.Cursor = System.Windows.Forms.Cursors.Hand
         Me.c4.FlatAppearance.BorderSize = 0
-        Me.c4.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White
+        Me.c4.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent
         Me.c4.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.c4.Location = New System.Drawing.Point(505, 240)
         Me.c4.Name = "c4"
@@ -552,7 +552,7 @@ Partial Class gameboard
         Me.b4.BackColor = System.Drawing.Color.White
         Me.b4.Cursor = System.Windows.Forms.Cursors.Hand
         Me.b4.FlatAppearance.BorderSize = 0
-        Me.b4.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White
+        Me.b4.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent
         Me.b4.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.b4.Location = New System.Drawing.Point(457, 240)
         Me.b4.Name = "b4"
@@ -565,7 +565,7 @@ Partial Class gameboard
         Me.a4.BackColor = System.Drawing.Color.White
         Me.a4.Cursor = System.Windows.Forms.Cursors.Hand
         Me.a4.FlatAppearance.BorderSize = 0
-        Me.a4.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White
+        Me.a4.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent
         Me.a4.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.a4.Location = New System.Drawing.Point(409, 240)
         Me.a4.Name = "a4"
@@ -578,7 +578,7 @@ Partial Class gameboard
         Me.i5.BackColor = System.Drawing.Color.White
         Me.i5.Cursor = System.Windows.Forms.Cursors.Hand
         Me.i5.FlatAppearance.BorderSize = 0
-        Me.i5.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White
+        Me.i5.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent
         Me.i5.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.i5.Location = New System.Drawing.Point(793, 283)
         Me.i5.Name = "i5"
@@ -591,7 +591,7 @@ Partial Class gameboard
         Me.h5.BackColor = System.Drawing.Color.White
         Me.h5.Cursor = System.Windows.Forms.Cursors.Hand
         Me.h5.FlatAppearance.BorderSize = 0
-        Me.h5.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White
+        Me.h5.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent
         Me.h5.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.h5.Location = New System.Drawing.Point(745, 283)
         Me.h5.Name = "h5"
@@ -604,7 +604,7 @@ Partial Class gameboard
         Me.g5.BackColor = System.Drawing.Color.White
         Me.g5.Cursor = System.Windows.Forms.Cursors.Hand
         Me.g5.FlatAppearance.BorderSize = 0
-        Me.g5.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White
+        Me.g5.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent
         Me.g5.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.g5.Location = New System.Drawing.Point(697, 283)
         Me.g5.Name = "g5"
@@ -617,7 +617,7 @@ Partial Class gameboard
         Me.f5.BackColor = System.Drawing.Color.White
         Me.f5.Cursor = System.Windows.Forms.Cursors.Hand
         Me.f5.FlatAppearance.BorderSize = 0
-        Me.f5.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White
+        Me.f5.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent
         Me.f5.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.f5.Location = New System.Drawing.Point(649, 283)
         Me.f5.Name = "f5"
@@ -630,7 +630,7 @@ Partial Class gameboard
         Me.d5.BackColor = System.Drawing.Color.White
         Me.d5.Cursor = System.Windows.Forms.Cursors.Hand
         Me.d5.FlatAppearance.BorderSize = 0
-        Me.d5.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White
+        Me.d5.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent
         Me.d5.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.d5.Location = New System.Drawing.Point(553, 283)
         Me.d5.Name = "d5"
@@ -643,7 +643,7 @@ Partial Class gameboard
         Me.e5.BackColor = System.Drawing.Color.White
         Me.e5.Cursor = System.Windows.Forms.Cursors.Hand
         Me.e5.FlatAppearance.BorderSize = 0
-        Me.e5.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White
+        Me.e5.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent
         Me.e5.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.e5.Location = New System.Drawing.Point(601, 283)
         Me.e5.Name = "e5"
@@ -656,7 +656,7 @@ Partial Class gameboard
         Me.c5.BackColor = System.Drawing.Color.White
         Me.c5.Cursor = System.Windows.Forms.Cursors.Hand
         Me.c5.FlatAppearance.BorderSize = 0
-        Me.c5.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White
+        Me.c5.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent
         Me.c5.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.c5.Location = New System.Drawing.Point(505, 283)
         Me.c5.Name = "c5"
@@ -669,7 +669,7 @@ Partial Class gameboard
         Me.b5.BackColor = System.Drawing.Color.White
         Me.b5.Cursor = System.Windows.Forms.Cursors.Hand
         Me.b5.FlatAppearance.BorderSize = 0
-        Me.b5.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White
+        Me.b5.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent
         Me.b5.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.b5.Location = New System.Drawing.Point(457, 283)
         Me.b5.Name = "b5"
@@ -682,7 +682,7 @@ Partial Class gameboard
         Me.a5.BackColor = System.Drawing.Color.White
         Me.a5.Cursor = System.Windows.Forms.Cursors.Hand
         Me.a5.FlatAppearance.BorderSize = 0
-        Me.a5.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White
+        Me.a5.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent
         Me.a5.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.a5.Location = New System.Drawing.Point(409, 283)
         Me.a5.Name = "a5"
@@ -695,7 +695,7 @@ Partial Class gameboard
         Me.i6.BackColor = System.Drawing.Color.White
         Me.i6.Cursor = System.Windows.Forms.Cursors.Hand
         Me.i6.FlatAppearance.BorderSize = 0
-        Me.i6.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White
+        Me.i6.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent
         Me.i6.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.i6.Location = New System.Drawing.Point(793, 326)
         Me.i6.Name = "i6"
@@ -708,7 +708,7 @@ Partial Class gameboard
         Me.h6.BackColor = System.Drawing.Color.White
         Me.h6.Cursor = System.Windows.Forms.Cursors.Hand
         Me.h6.FlatAppearance.BorderSize = 0
-        Me.h6.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White
+        Me.h6.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent
         Me.h6.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.h6.Location = New System.Drawing.Point(745, 326)
         Me.h6.Name = "h6"
@@ -721,7 +721,7 @@ Partial Class gameboard
         Me.g6.BackColor = System.Drawing.Color.White
         Me.g6.Cursor = System.Windows.Forms.Cursors.Hand
         Me.g6.FlatAppearance.BorderSize = 0
-        Me.g6.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White
+        Me.g6.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent
         Me.g6.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.g6.Location = New System.Drawing.Point(697, 326)
         Me.g6.Name = "g6"
@@ -734,7 +734,7 @@ Partial Class gameboard
         Me.f6.BackColor = System.Drawing.Color.White
         Me.f6.Cursor = System.Windows.Forms.Cursors.Hand
         Me.f6.FlatAppearance.BorderSize = 0
-        Me.f6.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White
+        Me.f6.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent
         Me.f6.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.f6.Location = New System.Drawing.Point(649, 326)
         Me.f6.Name = "f6"
@@ -747,7 +747,7 @@ Partial Class gameboard
         Me.d6.BackColor = System.Drawing.Color.White
         Me.d6.Cursor = System.Windows.Forms.Cursors.Hand
         Me.d6.FlatAppearance.BorderSize = 0
-        Me.d6.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White
+        Me.d6.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent
         Me.d6.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.d6.Location = New System.Drawing.Point(553, 326)
         Me.d6.Name = "d6"
@@ -760,7 +760,7 @@ Partial Class gameboard
         Me.e6.BackColor = System.Drawing.Color.White
         Me.e6.Cursor = System.Windows.Forms.Cursors.Hand
         Me.e6.FlatAppearance.BorderSize = 0
-        Me.e6.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White
+        Me.e6.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent
         Me.e6.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.e6.Location = New System.Drawing.Point(601, 326)
         Me.e6.Name = "e6"
@@ -773,7 +773,7 @@ Partial Class gameboard
         Me.c6.BackColor = System.Drawing.Color.White
         Me.c6.Cursor = System.Windows.Forms.Cursors.Hand
         Me.c6.FlatAppearance.BorderSize = 0
-        Me.c6.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White
+        Me.c6.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent
         Me.c6.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.c6.Location = New System.Drawing.Point(505, 326)
         Me.c6.Name = "c6"
@@ -786,7 +786,7 @@ Partial Class gameboard
         Me.b6.BackColor = System.Drawing.Color.White
         Me.b6.Cursor = System.Windows.Forms.Cursors.Hand
         Me.b6.FlatAppearance.BorderSize = 0
-        Me.b6.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White
+        Me.b6.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent
         Me.b6.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.b6.Location = New System.Drawing.Point(457, 326)
         Me.b6.Name = "b6"
@@ -799,7 +799,7 @@ Partial Class gameboard
         Me.a6.BackColor = System.Drawing.Color.White
         Me.a6.Cursor = System.Windows.Forms.Cursors.Hand
         Me.a6.FlatAppearance.BorderSize = 0
-        Me.a6.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White
+        Me.a6.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent
         Me.a6.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.a6.Location = New System.Drawing.Point(409, 326)
         Me.a6.Name = "a6"
@@ -812,7 +812,7 @@ Partial Class gameboard
         Me.i7.BackColor = System.Drawing.Color.White
         Me.i7.Cursor = System.Windows.Forms.Cursors.Hand
         Me.i7.FlatAppearance.BorderSize = 0
-        Me.i7.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White
+        Me.i7.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent
         Me.i7.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.i7.Location = New System.Drawing.Point(793, 369)
         Me.i7.Name = "i7"
@@ -825,7 +825,7 @@ Partial Class gameboard
         Me.h7.BackColor = System.Drawing.Color.White
         Me.h7.Cursor = System.Windows.Forms.Cursors.Hand
         Me.h7.FlatAppearance.BorderSize = 0
-        Me.h7.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White
+        Me.h7.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent
         Me.h7.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.h7.Location = New System.Drawing.Point(745, 369)
         Me.h7.Name = "h7"
@@ -838,7 +838,7 @@ Partial Class gameboard
         Me.g7.BackColor = System.Drawing.Color.White
         Me.g7.Cursor = System.Windows.Forms.Cursors.Hand
         Me.g7.FlatAppearance.BorderSize = 0
-        Me.g7.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White
+        Me.g7.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent
         Me.g7.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.g7.Location = New System.Drawing.Point(697, 369)
         Me.g7.Name = "g7"
@@ -851,7 +851,7 @@ Partial Class gameboard
         Me.f7.BackColor = System.Drawing.Color.White
         Me.f7.Cursor = System.Windows.Forms.Cursors.Hand
         Me.f7.FlatAppearance.BorderSize = 0
-        Me.f7.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White
+        Me.f7.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent
         Me.f7.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.f7.Location = New System.Drawing.Point(649, 369)
         Me.f7.Name = "f7"
@@ -864,7 +864,7 @@ Partial Class gameboard
         Me.d7.BackColor = System.Drawing.Color.White
         Me.d7.Cursor = System.Windows.Forms.Cursors.Hand
         Me.d7.FlatAppearance.BorderSize = 0
-        Me.d7.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White
+        Me.d7.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent
         Me.d7.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.d7.Location = New System.Drawing.Point(553, 369)
         Me.d7.Name = "d7"
@@ -877,7 +877,7 @@ Partial Class gameboard
         Me.e7.BackColor = System.Drawing.Color.White
         Me.e7.Cursor = System.Windows.Forms.Cursors.Hand
         Me.e7.FlatAppearance.BorderSize = 0
-        Me.e7.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White
+        Me.e7.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent
         Me.e7.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.e7.Location = New System.Drawing.Point(601, 369)
         Me.e7.Name = "e7"
@@ -890,7 +890,7 @@ Partial Class gameboard
         Me.c7.BackColor = System.Drawing.Color.White
         Me.c7.Cursor = System.Windows.Forms.Cursors.Hand
         Me.c7.FlatAppearance.BorderSize = 0
-        Me.c7.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White
+        Me.c7.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent
         Me.c7.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.c7.Location = New System.Drawing.Point(505, 369)
         Me.c7.Name = "c7"
@@ -903,7 +903,7 @@ Partial Class gameboard
         Me.b7.BackColor = System.Drawing.Color.White
         Me.b7.Cursor = System.Windows.Forms.Cursors.Hand
         Me.b7.FlatAppearance.BorderSize = 0
-        Me.b7.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White
+        Me.b7.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent
         Me.b7.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.b7.Location = New System.Drawing.Point(457, 369)
         Me.b7.Name = "b7"
@@ -916,7 +916,7 @@ Partial Class gameboard
         Me.a7.BackColor = System.Drawing.Color.White
         Me.a7.Cursor = System.Windows.Forms.Cursors.Hand
         Me.a7.FlatAppearance.BorderSize = 0
-        Me.a7.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White
+        Me.a7.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent
         Me.a7.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.a7.Location = New System.Drawing.Point(409, 369)
         Me.a7.Name = "a7"
@@ -929,7 +929,7 @@ Partial Class gameboard
         Me.i8.BackColor = System.Drawing.Color.White
         Me.i8.Cursor = System.Windows.Forms.Cursors.Hand
         Me.i8.FlatAppearance.BorderSize = 0
-        Me.i8.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White
+        Me.i8.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent
         Me.i8.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.i8.Location = New System.Drawing.Point(793, 412)
         Me.i8.Name = "i8"
@@ -942,7 +942,7 @@ Partial Class gameboard
         Me.h8.BackColor = System.Drawing.Color.White
         Me.h8.Cursor = System.Windows.Forms.Cursors.Hand
         Me.h8.FlatAppearance.BorderSize = 0
-        Me.h8.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White
+        Me.h8.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent
         Me.h8.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.h8.Location = New System.Drawing.Point(745, 412)
         Me.h8.Name = "h8"
@@ -955,7 +955,7 @@ Partial Class gameboard
         Me.g8.BackColor = System.Drawing.Color.White
         Me.g8.Cursor = System.Windows.Forms.Cursors.Hand
         Me.g8.FlatAppearance.BorderSize = 0
-        Me.g8.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White
+        Me.g8.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent
         Me.g8.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.g8.Location = New System.Drawing.Point(697, 412)
         Me.g8.Name = "g8"
@@ -968,7 +968,7 @@ Partial Class gameboard
         Me.f8.BackColor = System.Drawing.Color.White
         Me.f8.Cursor = System.Windows.Forms.Cursors.Hand
         Me.f8.FlatAppearance.BorderSize = 0
-        Me.f8.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White
+        Me.f8.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent
         Me.f8.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.f8.Location = New System.Drawing.Point(649, 412)
         Me.f8.Name = "f8"
@@ -981,7 +981,7 @@ Partial Class gameboard
         Me.d8.BackColor = System.Drawing.Color.White
         Me.d8.Cursor = System.Windows.Forms.Cursors.Hand
         Me.d8.FlatAppearance.BorderSize = 0
-        Me.d8.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White
+        Me.d8.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent
         Me.d8.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.d8.Location = New System.Drawing.Point(553, 412)
         Me.d8.Name = "d8"
@@ -994,7 +994,7 @@ Partial Class gameboard
         Me.e8.BackColor = System.Drawing.Color.White
         Me.e8.Cursor = System.Windows.Forms.Cursors.Hand
         Me.e8.FlatAppearance.BorderSize = 0
-        Me.e8.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White
+        Me.e8.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent
         Me.e8.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.e8.Location = New System.Drawing.Point(601, 412)
         Me.e8.Name = "e8"
@@ -1007,7 +1007,7 @@ Partial Class gameboard
         Me.c8.BackColor = System.Drawing.Color.White
         Me.c8.Cursor = System.Windows.Forms.Cursors.Hand
         Me.c8.FlatAppearance.BorderSize = 0
-        Me.c8.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White
+        Me.c8.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent
         Me.c8.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.c8.Location = New System.Drawing.Point(505, 412)
         Me.c8.Name = "c8"
@@ -1020,7 +1020,7 @@ Partial Class gameboard
         Me.b8.BackColor = System.Drawing.Color.White
         Me.b8.Cursor = System.Windows.Forms.Cursors.Hand
         Me.b8.FlatAppearance.BorderSize = 0
-        Me.b8.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White
+        Me.b8.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent
         Me.b8.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.b8.Location = New System.Drawing.Point(457, 412)
         Me.b8.Name = "b8"
@@ -1033,7 +1033,7 @@ Partial Class gameboard
         Me.a8.BackColor = System.Drawing.Color.White
         Me.a8.Cursor = System.Windows.Forms.Cursors.Hand
         Me.a8.FlatAppearance.BorderSize = 0
-        Me.a8.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White
+        Me.a8.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent
         Me.a8.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.a8.Location = New System.Drawing.Point(409, 412)
         Me.a8.Name = "a8"
@@ -1092,6 +1092,9 @@ Partial Class gameboard
         Me.back_to_menu.Size = New System.Drawing.Size(63, 54)
         Me.back_to_menu.TabIndex = 210
         Me.back_to_menu.UseVisualStyleBackColor = True
+        '
+        'BackgroundWorker1
+        '
         '
         'enemyName
         '
