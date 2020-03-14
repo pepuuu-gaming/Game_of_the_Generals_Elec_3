@@ -102,10 +102,53 @@ Partial Class gameboard
         Me.enemyName = New System.Windows.Forms.Label()
         Me.ready = New System.Windows.Forms.Button()
         Me.myName = New System.Windows.Forms.Label()
+        Me.ep2 = New System.Windows.Forms.Button()
+        Me.ep3 = New System.Windows.Forms.Button()
+        Me.ep5 = New System.Windows.Forms.Button()
+        Me.ep4 = New System.Windows.Forms.Button()
+        Me.ep7 = New System.Windows.Forms.Button()
+        Me.ep6 = New System.Windows.Forms.Button()
+        Me.ep1 = New System.Windows.Forms.Button()
+        Me.ep8 = New System.Windows.Forms.Button()
+        Me.ep14 = New System.Windows.Forms.Button()
+        Me.ep13 = New System.Windows.Forms.Button()
+        Me.ep12 = New System.Windows.Forms.Button()
+        Me.ep11 = New System.Windows.Forms.Button()
+        Me.ep10 = New System.Windows.Forms.Button()
+        Me.ep9 = New System.Windows.Forms.Button()
+        Me.ep15 = New System.Windows.Forms.Button()
+        Me.ep21 = New System.Windows.Forms.Button()
+        Me.ep20 = New System.Windows.Forms.Button()
+        Me.ep19 = New System.Windows.Forms.Button()
+        Me.ep18 = New System.Windows.Forms.Button()
+        Me.ep17 = New System.Windows.Forms.Button()
+        Me.ep16 = New System.Windows.Forms.Button()
+        Me.hp15 = New System.Windows.Forms.Button()
+        Me.hp21 = New System.Windows.Forms.Button()
+        Me.hp20 = New System.Windows.Forms.Button()
+        Me.hp19 = New System.Windows.Forms.Button()
+        Me.hp18 = New System.Windows.Forms.Button()
+        Me.hp17 = New System.Windows.Forms.Button()
+        Me.hp16 = New System.Windows.Forms.Button()
+        Me.hp8 = New System.Windows.Forms.Button()
+        Me.hp14 = New System.Windows.Forms.Button()
+        Me.hp13 = New System.Windows.Forms.Button()
+        Me.hp12 = New System.Windows.Forms.Button()
+        Me.hp11 = New System.Windows.Forms.Button()
+        Me.hp10 = New System.Windows.Forms.Button()
+        Me.hp9 = New System.Windows.Forms.Button()
+        Me.hp1 = New System.Windows.Forms.Button()
+        Me.hp7 = New System.Windows.Forms.Button()
+        Me.hp6 = New System.Windows.Forms.Button()
+        Me.hp5 = New System.Windows.Forms.Button()
+        Me.hp4 = New System.Windows.Forms.Button()
+        Me.hp3 = New System.Windows.Forms.Button()
+        Me.hp2 = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'i1
         '
+        Me.i1.AutoSize = True
         Me.i1.BackColor = System.Drawing.Color.White
         Me.i1.Cursor = System.Windows.Forms.Cursors.Hand
         Me.i1.FlatAppearance.BorderSize = 0
@@ -119,6 +162,7 @@ Partial Class gameboard
         '
         'h1
         '
+        Me.h1.AutoSize = True
         Me.h1.BackColor = System.Drawing.Color.White
         Me.h1.Cursor = System.Windows.Forms.Cursors.Hand
         Me.h1.FlatAppearance.BorderSize = 0
@@ -132,6 +176,7 @@ Partial Class gameboard
         '
         'g1
         '
+        Me.g1.AutoSize = True
         Me.g1.BackColor = System.Drawing.Color.White
         Me.g1.Cursor = System.Windows.Forms.Cursors.Hand
         Me.g1.FlatAppearance.BorderSize = 0
@@ -145,6 +190,7 @@ Partial Class gameboard
         '
         'f1
         '
+        Me.f1.AutoSize = True
         Me.f1.BackColor = System.Drawing.Color.White
         Me.f1.Cursor = System.Windows.Forms.Cursors.Hand
         Me.f1.FlatAppearance.BorderSize = 0
@@ -158,6 +204,7 @@ Partial Class gameboard
         '
         'd1
         '
+        Me.d1.AutoSize = True
         Me.d1.BackColor = System.Drawing.Color.White
         Me.d1.Cursor = System.Windows.Forms.Cursors.Hand
         Me.d1.FlatAppearance.BorderSize = 0
@@ -171,6 +218,7 @@ Partial Class gameboard
         '
         'e1
         '
+        Me.e1.AutoSize = True
         Me.e1.BackColor = System.Drawing.Color.White
         Me.e1.Cursor = System.Windows.Forms.Cursors.Hand
         Me.e1.FlatAppearance.BorderSize = 0
@@ -184,6 +232,7 @@ Partial Class gameboard
         '
         'c1
         '
+        Me.c1.AutoSize = True
         Me.c1.BackColor = System.Drawing.Color.White
         Me.c1.Cursor = System.Windows.Forms.Cursors.Hand
         Me.c1.FlatAppearance.BorderSize = 0
@@ -197,6 +246,7 @@ Partial Class gameboard
         '
         'b1
         '
+        Me.b1.AutoSize = True
         Me.b1.BackColor = System.Drawing.Color.White
         Me.b1.Cursor = System.Windows.Forms.Cursors.Hand
         Me.b1.FlatAppearance.BorderSize = 0
@@ -210,6 +260,7 @@ Partial Class gameboard
         '
         'a1
         '
+        Me.a1.AutoSize = True
         Me.a1.BackColor = System.Drawing.Color.White
         Me.a1.Cursor = System.Windows.Forms.Cursors.Hand
         Me.a1.FlatAppearance.BorderSize = 0
@@ -223,6 +274,7 @@ Partial Class gameboard
         '
         'i2
         '
+        Me.i2.AutoSize = True
         Me.i2.BackColor = System.Drawing.Color.White
         Me.i2.Cursor = System.Windows.Forms.Cursors.Hand
         Me.i2.FlatAppearance.BorderSize = 0
@@ -236,6 +288,7 @@ Partial Class gameboard
         '
         'h2
         '
+        Me.h2.AutoSize = True
         Me.h2.BackColor = System.Drawing.Color.White
         Me.h2.Cursor = System.Windows.Forms.Cursors.Hand
         Me.h2.FlatAppearance.BorderSize = 0
@@ -249,6 +302,7 @@ Partial Class gameboard
         '
         'g2
         '
+        Me.g2.AutoSize = True
         Me.g2.BackColor = System.Drawing.Color.White
         Me.g2.Cursor = System.Windows.Forms.Cursors.Hand
         Me.g2.FlatAppearance.BorderSize = 0
@@ -262,6 +316,7 @@ Partial Class gameboard
         '
         'f2
         '
+        Me.f2.AutoSize = True
         Me.f2.BackColor = System.Drawing.Color.White
         Me.f2.Cursor = System.Windows.Forms.Cursors.Hand
         Me.f2.FlatAppearance.BorderSize = 0
@@ -275,6 +330,7 @@ Partial Class gameboard
         '
         'd2
         '
+        Me.d2.AutoSize = True
         Me.d2.BackColor = System.Drawing.Color.White
         Me.d2.Cursor = System.Windows.Forms.Cursors.Hand
         Me.d2.FlatAppearance.BorderSize = 0
@@ -288,6 +344,7 @@ Partial Class gameboard
         '
         'e2
         '
+        Me.e2.AutoSize = True
         Me.e2.BackColor = System.Drawing.Color.White
         Me.e2.Cursor = System.Windows.Forms.Cursors.Hand
         Me.e2.FlatAppearance.BorderSize = 0
@@ -301,6 +358,7 @@ Partial Class gameboard
         '
         'c2
         '
+        Me.c2.AutoSize = True
         Me.c2.BackColor = System.Drawing.Color.White
         Me.c2.Cursor = System.Windows.Forms.Cursors.Hand
         Me.c2.FlatAppearance.BorderSize = 0
@@ -314,6 +372,7 @@ Partial Class gameboard
         '
         'b2
         '
+        Me.b2.AutoSize = True
         Me.b2.BackColor = System.Drawing.Color.White
         Me.b2.Cursor = System.Windows.Forms.Cursors.Hand
         Me.b2.FlatAppearance.BorderSize = 0
@@ -327,6 +386,7 @@ Partial Class gameboard
         '
         'a2
         '
+        Me.a2.AutoSize = True
         Me.a2.BackColor = System.Drawing.Color.White
         Me.a2.Cursor = System.Windows.Forms.Cursors.Hand
         Me.a2.FlatAppearance.BorderSize = 0
@@ -340,6 +400,7 @@ Partial Class gameboard
         '
         'i3
         '
+        Me.i3.AutoSize = True
         Me.i3.BackColor = System.Drawing.Color.White
         Me.i3.Cursor = System.Windows.Forms.Cursors.Hand
         Me.i3.FlatAppearance.BorderSize = 0
@@ -353,6 +414,7 @@ Partial Class gameboard
         '
         'h3
         '
+        Me.h3.AutoSize = True
         Me.h3.BackColor = System.Drawing.Color.White
         Me.h3.Cursor = System.Windows.Forms.Cursors.Hand
         Me.h3.FlatAppearance.BorderSize = 0
@@ -366,6 +428,7 @@ Partial Class gameboard
         '
         'g3
         '
+        Me.g3.AutoSize = True
         Me.g3.BackColor = System.Drawing.Color.White
         Me.g3.Cursor = System.Windows.Forms.Cursors.Hand
         Me.g3.FlatAppearance.BorderSize = 0
@@ -379,6 +442,7 @@ Partial Class gameboard
         '
         'f3
         '
+        Me.f3.AutoSize = True
         Me.f3.BackColor = System.Drawing.Color.White
         Me.f3.Cursor = System.Windows.Forms.Cursors.Hand
         Me.f3.FlatAppearance.BorderSize = 0
@@ -392,6 +456,7 @@ Partial Class gameboard
         '
         'd3
         '
+        Me.d3.AutoSize = True
         Me.d3.BackColor = System.Drawing.Color.White
         Me.d3.Cursor = System.Windows.Forms.Cursors.Hand
         Me.d3.FlatAppearance.BorderSize = 0
@@ -405,6 +470,7 @@ Partial Class gameboard
         '
         'e3
         '
+        Me.e3.AutoSize = True
         Me.e3.BackColor = System.Drawing.Color.White
         Me.e3.Cursor = System.Windows.Forms.Cursors.Hand
         Me.e3.FlatAppearance.BorderSize = 0
@@ -418,6 +484,7 @@ Partial Class gameboard
         '
         'c3
         '
+        Me.c3.AutoSize = True
         Me.c3.BackColor = System.Drawing.Color.White
         Me.c3.Cursor = System.Windows.Forms.Cursors.Hand
         Me.c3.FlatAppearance.BorderSize = 0
@@ -431,6 +498,7 @@ Partial Class gameboard
         '
         'b3
         '
+        Me.b3.AutoSize = True
         Me.b3.BackColor = System.Drawing.Color.White
         Me.b3.Cursor = System.Windows.Forms.Cursors.Hand
         Me.b3.FlatAppearance.BorderSize = 0
@@ -444,6 +512,7 @@ Partial Class gameboard
         '
         'a3
         '
+        Me.a3.AutoSize = True
         Me.a3.BackColor = System.Drawing.Color.White
         Me.a3.Cursor = System.Windows.Forms.Cursors.Hand
         Me.a3.FlatAppearance.BorderSize = 0
@@ -457,6 +526,7 @@ Partial Class gameboard
         '
         'i4
         '
+        Me.i4.AutoSize = True
         Me.i4.BackColor = System.Drawing.Color.White
         Me.i4.Cursor = System.Windows.Forms.Cursors.Hand
         Me.i4.FlatAppearance.BorderSize = 0
@@ -470,6 +540,7 @@ Partial Class gameboard
         '
         'h4
         '
+        Me.h4.AutoSize = True
         Me.h4.BackColor = System.Drawing.Color.White
         Me.h4.Cursor = System.Windows.Forms.Cursors.Hand
         Me.h4.FlatAppearance.BorderSize = 0
@@ -483,6 +554,7 @@ Partial Class gameboard
         '
         'g4
         '
+        Me.g4.AutoSize = True
         Me.g4.BackColor = System.Drawing.Color.White
         Me.g4.Cursor = System.Windows.Forms.Cursors.Hand
         Me.g4.FlatAppearance.BorderSize = 0
@@ -496,6 +568,7 @@ Partial Class gameboard
         '
         'f4
         '
+        Me.f4.AutoSize = True
         Me.f4.BackColor = System.Drawing.Color.White
         Me.f4.Cursor = System.Windows.Forms.Cursors.Hand
         Me.f4.FlatAppearance.BorderSize = 0
@@ -509,6 +582,7 @@ Partial Class gameboard
         '
         'd4
         '
+        Me.d4.AutoSize = True
         Me.d4.BackColor = System.Drawing.Color.White
         Me.d4.Cursor = System.Windows.Forms.Cursors.Hand
         Me.d4.FlatAppearance.BorderSize = 0
@@ -522,6 +596,7 @@ Partial Class gameboard
         '
         'e4
         '
+        Me.e4.AutoSize = True
         Me.e4.BackColor = System.Drawing.Color.White
         Me.e4.Cursor = System.Windows.Forms.Cursors.Hand
         Me.e4.FlatAppearance.BorderSize = 0
@@ -535,6 +610,7 @@ Partial Class gameboard
         '
         'c4
         '
+        Me.c4.AutoSize = True
         Me.c4.BackColor = System.Drawing.Color.White
         Me.c4.Cursor = System.Windows.Forms.Cursors.Hand
         Me.c4.FlatAppearance.BorderSize = 0
@@ -548,6 +624,7 @@ Partial Class gameboard
         '
         'b4
         '
+        Me.b4.AutoSize = True
         Me.b4.BackColor = System.Drawing.Color.White
         Me.b4.Cursor = System.Windows.Forms.Cursors.Hand
         Me.b4.FlatAppearance.BorderSize = 0
@@ -561,6 +638,7 @@ Partial Class gameboard
         '
         'a4
         '
+        Me.a4.AutoSize = True
         Me.a4.BackColor = System.Drawing.Color.White
         Me.a4.Cursor = System.Windows.Forms.Cursors.Hand
         Me.a4.FlatAppearance.BorderSize = 0
@@ -574,6 +652,7 @@ Partial Class gameboard
         '
         'i5
         '
+        Me.i5.AutoSize = True
         Me.i5.BackColor = System.Drawing.Color.White
         Me.i5.Cursor = System.Windows.Forms.Cursors.Hand
         Me.i5.FlatAppearance.BorderSize = 0
@@ -587,6 +666,7 @@ Partial Class gameboard
         '
         'h5
         '
+        Me.h5.AutoSize = True
         Me.h5.BackColor = System.Drawing.Color.White
         Me.h5.Cursor = System.Windows.Forms.Cursors.Hand
         Me.h5.FlatAppearance.BorderSize = 0
@@ -600,6 +680,7 @@ Partial Class gameboard
         '
         'g5
         '
+        Me.g5.AutoSize = True
         Me.g5.BackColor = System.Drawing.Color.White
         Me.g5.Cursor = System.Windows.Forms.Cursors.Hand
         Me.g5.FlatAppearance.BorderSize = 0
@@ -613,6 +694,7 @@ Partial Class gameboard
         '
         'f5
         '
+        Me.f5.AutoSize = True
         Me.f5.BackColor = System.Drawing.Color.White
         Me.f5.Cursor = System.Windows.Forms.Cursors.Hand
         Me.f5.FlatAppearance.BorderSize = 0
@@ -626,6 +708,7 @@ Partial Class gameboard
         '
         'd5
         '
+        Me.d5.AutoSize = True
         Me.d5.BackColor = System.Drawing.Color.White
         Me.d5.Cursor = System.Windows.Forms.Cursors.Hand
         Me.d5.FlatAppearance.BorderSize = 0
@@ -639,6 +722,7 @@ Partial Class gameboard
         '
         'e5
         '
+        Me.e5.AutoSize = True
         Me.e5.BackColor = System.Drawing.Color.White
         Me.e5.Cursor = System.Windows.Forms.Cursors.Hand
         Me.e5.FlatAppearance.BorderSize = 0
@@ -652,6 +736,7 @@ Partial Class gameboard
         '
         'c5
         '
+        Me.c5.AutoSize = True
         Me.c5.BackColor = System.Drawing.Color.White
         Me.c5.Cursor = System.Windows.Forms.Cursors.Hand
         Me.c5.FlatAppearance.BorderSize = 0
@@ -665,6 +750,7 @@ Partial Class gameboard
         '
         'b5
         '
+        Me.b5.AutoSize = True
         Me.b5.BackColor = System.Drawing.Color.White
         Me.b5.Cursor = System.Windows.Forms.Cursors.Hand
         Me.b5.FlatAppearance.BorderSize = 0
@@ -678,6 +764,7 @@ Partial Class gameboard
         '
         'a5
         '
+        Me.a5.AutoSize = True
         Me.a5.BackColor = System.Drawing.Color.White
         Me.a5.Cursor = System.Windows.Forms.Cursors.Hand
         Me.a5.FlatAppearance.BorderSize = 0
@@ -691,6 +778,7 @@ Partial Class gameboard
         '
         'i6
         '
+        Me.i6.AutoSize = True
         Me.i6.BackColor = System.Drawing.Color.White
         Me.i6.Cursor = System.Windows.Forms.Cursors.Hand
         Me.i6.FlatAppearance.BorderSize = 0
@@ -704,6 +792,7 @@ Partial Class gameboard
         '
         'h6
         '
+        Me.h6.AutoSize = True
         Me.h6.BackColor = System.Drawing.Color.White
         Me.h6.Cursor = System.Windows.Forms.Cursors.Hand
         Me.h6.FlatAppearance.BorderSize = 0
@@ -717,6 +806,7 @@ Partial Class gameboard
         '
         'g6
         '
+        Me.g6.AutoSize = True
         Me.g6.BackColor = System.Drawing.Color.White
         Me.g6.Cursor = System.Windows.Forms.Cursors.Hand
         Me.g6.FlatAppearance.BorderSize = 0
@@ -730,6 +820,7 @@ Partial Class gameboard
         '
         'f6
         '
+        Me.f6.AutoSize = True
         Me.f6.BackColor = System.Drawing.Color.White
         Me.f6.Cursor = System.Windows.Forms.Cursors.Hand
         Me.f6.FlatAppearance.BorderSize = 0
@@ -743,6 +834,7 @@ Partial Class gameboard
         '
         'd6
         '
+        Me.d6.AutoSize = True
         Me.d6.BackColor = System.Drawing.Color.White
         Me.d6.Cursor = System.Windows.Forms.Cursors.Hand
         Me.d6.FlatAppearance.BorderSize = 0
@@ -756,6 +848,7 @@ Partial Class gameboard
         '
         'e6
         '
+        Me.e6.AutoSize = True
         Me.e6.BackColor = System.Drawing.Color.White
         Me.e6.Cursor = System.Windows.Forms.Cursors.Hand
         Me.e6.FlatAppearance.BorderSize = 0
@@ -769,6 +862,7 @@ Partial Class gameboard
         '
         'c6
         '
+        Me.c6.AutoSize = True
         Me.c6.BackColor = System.Drawing.Color.White
         Me.c6.Cursor = System.Windows.Forms.Cursors.Hand
         Me.c6.FlatAppearance.BorderSize = 0
@@ -782,6 +876,7 @@ Partial Class gameboard
         '
         'b6
         '
+        Me.b6.AutoSize = True
         Me.b6.BackColor = System.Drawing.Color.White
         Me.b6.Cursor = System.Windows.Forms.Cursors.Hand
         Me.b6.FlatAppearance.BorderSize = 0
@@ -795,6 +890,7 @@ Partial Class gameboard
         '
         'a6
         '
+        Me.a6.AutoSize = True
         Me.a6.BackColor = System.Drawing.Color.White
         Me.a6.Cursor = System.Windows.Forms.Cursors.Hand
         Me.a6.FlatAppearance.BorderSize = 0
@@ -808,6 +904,7 @@ Partial Class gameboard
         '
         'i7
         '
+        Me.i7.AutoSize = True
         Me.i7.BackColor = System.Drawing.Color.White
         Me.i7.Cursor = System.Windows.Forms.Cursors.Hand
         Me.i7.FlatAppearance.BorderSize = 0
@@ -821,6 +918,7 @@ Partial Class gameboard
         '
         'h7
         '
+        Me.h7.AutoSize = True
         Me.h7.BackColor = System.Drawing.Color.White
         Me.h7.Cursor = System.Windows.Forms.Cursors.Hand
         Me.h7.FlatAppearance.BorderSize = 0
@@ -834,6 +932,7 @@ Partial Class gameboard
         '
         'g7
         '
+        Me.g7.AutoSize = True
         Me.g7.BackColor = System.Drawing.Color.White
         Me.g7.Cursor = System.Windows.Forms.Cursors.Hand
         Me.g7.FlatAppearance.BorderSize = 0
@@ -847,6 +946,7 @@ Partial Class gameboard
         '
         'f7
         '
+        Me.f7.AutoSize = True
         Me.f7.BackColor = System.Drawing.Color.White
         Me.f7.Cursor = System.Windows.Forms.Cursors.Hand
         Me.f7.FlatAppearance.BorderSize = 0
@@ -860,6 +960,7 @@ Partial Class gameboard
         '
         'd7
         '
+        Me.d7.AutoSize = True
         Me.d7.BackColor = System.Drawing.Color.White
         Me.d7.Cursor = System.Windows.Forms.Cursors.Hand
         Me.d7.FlatAppearance.BorderSize = 0
@@ -873,6 +974,7 @@ Partial Class gameboard
         '
         'e7
         '
+        Me.e7.AutoSize = True
         Me.e7.BackColor = System.Drawing.Color.White
         Me.e7.Cursor = System.Windows.Forms.Cursors.Hand
         Me.e7.FlatAppearance.BorderSize = 0
@@ -886,6 +988,7 @@ Partial Class gameboard
         '
         'c7
         '
+        Me.c7.AutoSize = True
         Me.c7.BackColor = System.Drawing.Color.White
         Me.c7.Cursor = System.Windows.Forms.Cursors.Hand
         Me.c7.FlatAppearance.BorderSize = 0
@@ -899,6 +1002,7 @@ Partial Class gameboard
         '
         'b7
         '
+        Me.b7.AutoSize = True
         Me.b7.BackColor = System.Drawing.Color.White
         Me.b7.Cursor = System.Windows.Forms.Cursors.Hand
         Me.b7.FlatAppearance.BorderSize = 0
@@ -912,6 +1016,7 @@ Partial Class gameboard
         '
         'a7
         '
+        Me.a7.AutoSize = True
         Me.a7.BackColor = System.Drawing.Color.White
         Me.a7.Cursor = System.Windows.Forms.Cursors.Hand
         Me.a7.FlatAppearance.BorderSize = 0
@@ -925,6 +1030,7 @@ Partial Class gameboard
         '
         'i8
         '
+        Me.i8.AutoSize = True
         Me.i8.BackColor = System.Drawing.Color.White
         Me.i8.Cursor = System.Windows.Forms.Cursors.Hand
         Me.i8.FlatAppearance.BorderSize = 0
@@ -938,6 +1044,7 @@ Partial Class gameboard
         '
         'h8
         '
+        Me.h8.AutoSize = True
         Me.h8.BackColor = System.Drawing.Color.White
         Me.h8.Cursor = System.Windows.Forms.Cursors.Hand
         Me.h8.FlatAppearance.BorderSize = 0
@@ -951,6 +1058,7 @@ Partial Class gameboard
         '
         'g8
         '
+        Me.g8.AutoSize = True
         Me.g8.BackColor = System.Drawing.Color.White
         Me.g8.Cursor = System.Windows.Forms.Cursors.Hand
         Me.g8.FlatAppearance.BorderSize = 0
@@ -964,6 +1072,7 @@ Partial Class gameboard
         '
         'f8
         '
+        Me.f8.AutoSize = True
         Me.f8.BackColor = System.Drawing.Color.White
         Me.f8.Cursor = System.Windows.Forms.Cursors.Hand
         Me.f8.FlatAppearance.BorderSize = 0
@@ -977,6 +1086,7 @@ Partial Class gameboard
         '
         'd8
         '
+        Me.d8.AutoSize = True
         Me.d8.BackColor = System.Drawing.Color.White
         Me.d8.Cursor = System.Windows.Forms.Cursors.Hand
         Me.d8.FlatAppearance.BorderSize = 0
@@ -990,6 +1100,7 @@ Partial Class gameboard
         '
         'e8
         '
+        Me.e8.AutoSize = True
         Me.e8.BackColor = System.Drawing.Color.White
         Me.e8.Cursor = System.Windows.Forms.Cursors.Hand
         Me.e8.FlatAppearance.BorderSize = 0
@@ -1003,6 +1114,7 @@ Partial Class gameboard
         '
         'c8
         '
+        Me.c8.AutoSize = True
         Me.c8.BackColor = System.Drawing.Color.White
         Me.c8.Cursor = System.Windows.Forms.Cursors.Hand
         Me.c8.FlatAppearance.BorderSize = 0
@@ -1016,6 +1128,7 @@ Partial Class gameboard
         '
         'b8
         '
+        Me.b8.AutoSize = True
         Me.b8.BackColor = System.Drawing.Color.White
         Me.b8.Cursor = System.Windows.Forms.Cursors.Hand
         Me.b8.FlatAppearance.BorderSize = 0
@@ -1029,6 +1142,7 @@ Partial Class gameboard
         '
         'a8
         '
+        Me.a8.AutoSize = True
         Me.a8.BackColor = System.Drawing.Color.White
         Me.a8.Cursor = System.Windows.Forms.Cursors.Hand
         Me.a8.FlatAppearance.BorderSize = 0
@@ -1094,12 +1208,9 @@ Partial Class gameboard
         '
         'enemyName
         '
-        Me.enemyName.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.enemyName.Enabled = False
         Me.enemyName.Font = New System.Drawing.Font("OCR A Extended", 24.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.enemyName.Location = New System.Drawing.Point(409, 53)
+        Me.enemyName.Location = New System.Drawing.Point(409, 67)
         Me.enemyName.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.enemyName.Name = "enemyName"
         Me.enemyName.Size = New System.Drawing.Size(426, 41)
@@ -1110,7 +1221,7 @@ Partial Class gameboard
         'ready
         '
         Me.ready.Font = New System.Drawing.Font("OCR A Extended", 15.0!)
-        Me.ready.Location = New System.Drawing.Point(553, 519)
+        Me.ready.Location = New System.Drawing.Point(553, 496)
         Me.ready.Name = "ready"
         Me.ready.Size = New System.Drawing.Size(138, 32)
         Me.ready.TabIndex = 212
@@ -1119,12 +1230,9 @@ Partial Class gameboard
         '
         'myName
         '
-        Me.myName.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.myName.Enabled = False
         Me.myName.Font = New System.Drawing.Font("OCR A Extended", 25.0!)
-        Me.myName.Location = New System.Drawing.Point(409, 465)
+        Me.myName.Location = New System.Drawing.Point(409, 452)
         Me.myName.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.myName.Name = "myName"
         Me.myName.Size = New System.Drawing.Size(426, 41)
@@ -1132,13 +1240,644 @@ Partial Class gameboard
         Me.myName.Text = "Label"
         Me.myName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
+        'ep2
+        '
+        Me.ep2.AutoSize = True
+        Me.ep2.BackColor = System.Drawing.Color.White
+        Me.ep2.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.ep2.FlatAppearance.BorderSize = 0
+        Me.ep2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent
+        Me.ep2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.ep2.Location = New System.Drawing.Point(88, 154)
+        Me.ep2.Name = "ep2"
+        Me.ep2.Size = New System.Drawing.Size(42, 37)
+        Me.ep2.TabIndex = 213
+        Me.ep2.UseVisualStyleBackColor = False
+        '
+        'ep3
+        '
+        Me.ep3.AutoSize = True
+        Me.ep3.BackColor = System.Drawing.Color.White
+        Me.ep3.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.ep3.FlatAppearance.BorderSize = 0
+        Me.ep3.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent
+        Me.ep3.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.ep3.Location = New System.Drawing.Point(136, 154)
+        Me.ep3.Name = "ep3"
+        Me.ep3.Size = New System.Drawing.Size(42, 37)
+        Me.ep3.TabIndex = 214
+        Me.ep3.UseVisualStyleBackColor = False
+        '
+        'ep5
+        '
+        Me.ep5.AutoSize = True
+        Me.ep5.BackColor = System.Drawing.Color.White
+        Me.ep5.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.ep5.FlatAppearance.BorderSize = 0
+        Me.ep5.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent
+        Me.ep5.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.ep5.Location = New System.Drawing.Point(232, 154)
+        Me.ep5.Name = "ep5"
+        Me.ep5.Size = New System.Drawing.Size(42, 37)
+        Me.ep5.TabIndex = 216
+        Me.ep5.UseVisualStyleBackColor = False
+        '
+        'ep4
+        '
+        Me.ep4.AutoSize = True
+        Me.ep4.BackColor = System.Drawing.Color.White
+        Me.ep4.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.ep4.FlatAppearance.BorderSize = 0
+        Me.ep4.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent
+        Me.ep4.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.ep4.Location = New System.Drawing.Point(184, 154)
+        Me.ep4.Name = "ep4"
+        Me.ep4.Size = New System.Drawing.Size(42, 37)
+        Me.ep4.TabIndex = 215
+        Me.ep4.UseVisualStyleBackColor = False
+        '
+        'ep7
+        '
+        Me.ep7.AutoSize = True
+        Me.ep7.BackColor = System.Drawing.Color.White
+        Me.ep7.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.ep7.FlatAppearance.BorderSize = 0
+        Me.ep7.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent
+        Me.ep7.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.ep7.Location = New System.Drawing.Point(328, 154)
+        Me.ep7.Name = "ep7"
+        Me.ep7.Size = New System.Drawing.Size(42, 37)
+        Me.ep7.TabIndex = 218
+        Me.ep7.UseVisualStyleBackColor = False
+        '
+        'ep6
+        '
+        Me.ep6.AutoSize = True
+        Me.ep6.BackColor = System.Drawing.Color.White
+        Me.ep6.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.ep6.FlatAppearance.BorderSize = 0
+        Me.ep6.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent
+        Me.ep6.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.ep6.Location = New System.Drawing.Point(280, 154)
+        Me.ep6.Name = "ep6"
+        Me.ep6.Size = New System.Drawing.Size(42, 37)
+        Me.ep6.TabIndex = 217
+        Me.ep6.UseVisualStyleBackColor = False
+        '
+        'ep1
+        '
+        Me.ep1.AutoSize = True
+        Me.ep1.BackColor = System.Drawing.Color.White
+        Me.ep1.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.ep1.FlatAppearance.BorderSize = 0
+        Me.ep1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent
+        Me.ep1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.ep1.Location = New System.Drawing.Point(40, 154)
+        Me.ep1.Name = "ep1"
+        Me.ep1.Size = New System.Drawing.Size(42, 37)
+        Me.ep1.TabIndex = 219
+        Me.ep1.UseVisualStyleBackColor = False
+        '
+        'ep8
+        '
+        Me.ep8.AutoSize = True
+        Me.ep8.BackColor = System.Drawing.Color.White
+        Me.ep8.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.ep8.FlatAppearance.BorderSize = 0
+        Me.ep8.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent
+        Me.ep8.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.ep8.Location = New System.Drawing.Point(40, 197)
+        Me.ep8.Name = "ep8"
+        Me.ep8.Size = New System.Drawing.Size(42, 37)
+        Me.ep8.TabIndex = 226
+        Me.ep8.UseVisualStyleBackColor = False
+        '
+        'ep14
+        '
+        Me.ep14.AutoSize = True
+        Me.ep14.BackColor = System.Drawing.Color.White
+        Me.ep14.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.ep14.FlatAppearance.BorderSize = 0
+        Me.ep14.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent
+        Me.ep14.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.ep14.Location = New System.Drawing.Point(328, 197)
+        Me.ep14.Name = "ep14"
+        Me.ep14.Size = New System.Drawing.Size(42, 37)
+        Me.ep14.TabIndex = 225
+        Me.ep14.UseVisualStyleBackColor = False
+        '
+        'ep13
+        '
+        Me.ep13.AutoSize = True
+        Me.ep13.BackColor = System.Drawing.Color.White
+        Me.ep13.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.ep13.FlatAppearance.BorderSize = 0
+        Me.ep13.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent
+        Me.ep13.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.ep13.Location = New System.Drawing.Point(280, 197)
+        Me.ep13.Name = "ep13"
+        Me.ep13.Size = New System.Drawing.Size(42, 37)
+        Me.ep13.TabIndex = 224
+        Me.ep13.UseVisualStyleBackColor = False
+        '
+        'ep12
+        '
+        Me.ep12.AutoSize = True
+        Me.ep12.BackColor = System.Drawing.Color.White
+        Me.ep12.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.ep12.FlatAppearance.BorderSize = 0
+        Me.ep12.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent
+        Me.ep12.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.ep12.Location = New System.Drawing.Point(232, 197)
+        Me.ep12.Name = "ep12"
+        Me.ep12.Size = New System.Drawing.Size(42, 37)
+        Me.ep12.TabIndex = 223
+        Me.ep12.UseVisualStyleBackColor = False
+        '
+        'ep11
+        '
+        Me.ep11.AutoSize = True
+        Me.ep11.BackColor = System.Drawing.Color.White
+        Me.ep11.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.ep11.FlatAppearance.BorderSize = 0
+        Me.ep11.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent
+        Me.ep11.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.ep11.Location = New System.Drawing.Point(184, 197)
+        Me.ep11.Name = "ep11"
+        Me.ep11.Size = New System.Drawing.Size(42, 37)
+        Me.ep11.TabIndex = 222
+        Me.ep11.UseVisualStyleBackColor = False
+        '
+        'ep10
+        '
+        Me.ep10.AutoSize = True
+        Me.ep10.BackColor = System.Drawing.Color.White
+        Me.ep10.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.ep10.FlatAppearance.BorderSize = 0
+        Me.ep10.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent
+        Me.ep10.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.ep10.Location = New System.Drawing.Point(136, 197)
+        Me.ep10.Name = "ep10"
+        Me.ep10.Size = New System.Drawing.Size(42, 37)
+        Me.ep10.TabIndex = 221
+        Me.ep10.UseVisualStyleBackColor = False
+        '
+        'ep9
+        '
+        Me.ep9.AutoSize = True
+        Me.ep9.BackColor = System.Drawing.Color.White
+        Me.ep9.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.ep9.FlatAppearance.BorderSize = 0
+        Me.ep9.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent
+        Me.ep9.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.ep9.Location = New System.Drawing.Point(88, 197)
+        Me.ep9.Name = "ep9"
+        Me.ep9.Size = New System.Drawing.Size(42, 37)
+        Me.ep9.TabIndex = 220
+        Me.ep9.UseVisualStyleBackColor = False
+        '
+        'ep15
+        '
+        Me.ep15.AutoSize = True
+        Me.ep15.BackColor = System.Drawing.Color.White
+        Me.ep15.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.ep15.FlatAppearance.BorderSize = 0
+        Me.ep15.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent
+        Me.ep15.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.ep15.Location = New System.Drawing.Point(40, 240)
+        Me.ep15.Name = "ep15"
+        Me.ep15.Size = New System.Drawing.Size(42, 37)
+        Me.ep15.TabIndex = 233
+        Me.ep15.UseVisualStyleBackColor = False
+        '
+        'ep21
+        '
+        Me.ep21.AutoSize = True
+        Me.ep21.BackColor = System.Drawing.Color.White
+        Me.ep21.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.ep21.FlatAppearance.BorderSize = 0
+        Me.ep21.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent
+        Me.ep21.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.ep21.Location = New System.Drawing.Point(328, 240)
+        Me.ep21.Name = "ep21"
+        Me.ep21.Size = New System.Drawing.Size(42, 37)
+        Me.ep21.TabIndex = 232
+        Me.ep21.UseVisualStyleBackColor = False
+        '
+        'ep20
+        '
+        Me.ep20.AutoSize = True
+        Me.ep20.BackColor = System.Drawing.Color.White
+        Me.ep20.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.ep20.FlatAppearance.BorderSize = 0
+        Me.ep20.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent
+        Me.ep20.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.ep20.Location = New System.Drawing.Point(280, 240)
+        Me.ep20.Name = "ep20"
+        Me.ep20.Size = New System.Drawing.Size(42, 37)
+        Me.ep20.TabIndex = 231
+        Me.ep20.UseVisualStyleBackColor = False
+        '
+        'ep19
+        '
+        Me.ep19.AutoSize = True
+        Me.ep19.BackColor = System.Drawing.Color.White
+        Me.ep19.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.ep19.FlatAppearance.BorderSize = 0
+        Me.ep19.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent
+        Me.ep19.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.ep19.Location = New System.Drawing.Point(232, 240)
+        Me.ep19.Name = "ep19"
+        Me.ep19.Size = New System.Drawing.Size(42, 37)
+        Me.ep19.TabIndex = 230
+        Me.ep19.UseVisualStyleBackColor = False
+        '
+        'ep18
+        '
+        Me.ep18.AutoSize = True
+        Me.ep18.BackColor = System.Drawing.Color.White
+        Me.ep18.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.ep18.FlatAppearance.BorderSize = 0
+        Me.ep18.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent
+        Me.ep18.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.ep18.Location = New System.Drawing.Point(184, 240)
+        Me.ep18.Name = "ep18"
+        Me.ep18.Size = New System.Drawing.Size(42, 37)
+        Me.ep18.TabIndex = 229
+        Me.ep18.UseVisualStyleBackColor = False
+        '
+        'ep17
+        '
+        Me.ep17.AutoSize = True
+        Me.ep17.BackColor = System.Drawing.Color.White
+        Me.ep17.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.ep17.FlatAppearance.BorderSize = 0
+        Me.ep17.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent
+        Me.ep17.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.ep17.Location = New System.Drawing.Point(136, 240)
+        Me.ep17.Name = "ep17"
+        Me.ep17.Size = New System.Drawing.Size(42, 37)
+        Me.ep17.TabIndex = 228
+        Me.ep17.UseVisualStyleBackColor = False
+        '
+        'ep16
+        '
+        Me.ep16.AutoSize = True
+        Me.ep16.BackColor = System.Drawing.Color.White
+        Me.ep16.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.ep16.FlatAppearance.BorderSize = 0
+        Me.ep16.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent
+        Me.ep16.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.ep16.Location = New System.Drawing.Point(88, 240)
+        Me.ep16.Name = "ep16"
+        Me.ep16.Size = New System.Drawing.Size(42, 37)
+        Me.ep16.TabIndex = 227
+        Me.ep16.UseVisualStyleBackColor = False
+        '
+        'hp15
+        '
+        Me.hp15.AutoSize = True
+        Me.hp15.BackColor = System.Drawing.Color.White
+        Me.hp15.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.hp15.FlatAppearance.BorderSize = 0
+        Me.hp15.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent
+        Me.hp15.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.hp15.Location = New System.Drawing.Point(40, 412)
+        Me.hp15.Name = "hp15"
+        Me.hp15.Size = New System.Drawing.Size(42, 37)
+        Me.hp15.TabIndex = 254
+        Me.hp15.UseVisualStyleBackColor = False
+        '
+        'hp21
+        '
+        Me.hp21.AutoSize = True
+        Me.hp21.BackColor = System.Drawing.Color.White
+        Me.hp21.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.hp21.FlatAppearance.BorderSize = 0
+        Me.hp21.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent
+        Me.hp21.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.hp21.Location = New System.Drawing.Point(328, 412)
+        Me.hp21.Name = "hp21"
+        Me.hp21.Size = New System.Drawing.Size(42, 37)
+        Me.hp21.TabIndex = 253
+        Me.hp21.UseVisualStyleBackColor = False
+        '
+        'hp20
+        '
+        Me.hp20.AutoSize = True
+        Me.hp20.BackColor = System.Drawing.Color.White
+        Me.hp20.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.hp20.FlatAppearance.BorderSize = 0
+        Me.hp20.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent
+        Me.hp20.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.hp20.Location = New System.Drawing.Point(280, 412)
+        Me.hp20.Name = "hp20"
+        Me.hp20.Size = New System.Drawing.Size(42, 37)
+        Me.hp20.TabIndex = 252
+        Me.hp20.UseVisualStyleBackColor = False
+        '
+        'hp19
+        '
+        Me.hp19.AutoSize = True
+        Me.hp19.BackColor = System.Drawing.Color.White
+        Me.hp19.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.hp19.FlatAppearance.BorderSize = 0
+        Me.hp19.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent
+        Me.hp19.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.hp19.Location = New System.Drawing.Point(232, 412)
+        Me.hp19.Name = "hp19"
+        Me.hp19.Size = New System.Drawing.Size(42, 37)
+        Me.hp19.TabIndex = 251
+        Me.hp19.UseVisualStyleBackColor = False
+        '
+        'hp18
+        '
+        Me.hp18.AutoSize = True
+        Me.hp18.BackColor = System.Drawing.Color.White
+        Me.hp18.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.hp18.FlatAppearance.BorderSize = 0
+        Me.hp18.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent
+        Me.hp18.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.hp18.Location = New System.Drawing.Point(184, 412)
+        Me.hp18.Name = "hp18"
+        Me.hp18.Size = New System.Drawing.Size(42, 37)
+        Me.hp18.TabIndex = 250
+        Me.hp18.UseVisualStyleBackColor = False
+        '
+        'hp17
+        '
+        Me.hp17.AutoSize = True
+        Me.hp17.BackColor = System.Drawing.Color.White
+        Me.hp17.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.hp17.FlatAppearance.BorderSize = 0
+        Me.hp17.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent
+        Me.hp17.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.hp17.Location = New System.Drawing.Point(136, 412)
+        Me.hp17.Name = "hp17"
+        Me.hp17.Size = New System.Drawing.Size(42, 37)
+        Me.hp17.TabIndex = 249
+        Me.hp17.UseVisualStyleBackColor = False
+        '
+        'hp16
+        '
+        Me.hp16.AutoSize = True
+        Me.hp16.BackColor = System.Drawing.Color.White
+        Me.hp16.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.hp16.FlatAppearance.BorderSize = 0
+        Me.hp16.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent
+        Me.hp16.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.hp16.Location = New System.Drawing.Point(88, 412)
+        Me.hp16.Name = "hp16"
+        Me.hp16.Size = New System.Drawing.Size(42, 37)
+        Me.hp16.TabIndex = 248
+        Me.hp16.UseVisualStyleBackColor = False
+        '
+        'hp8
+        '
+        Me.hp8.AutoSize = True
+        Me.hp8.BackColor = System.Drawing.Color.White
+        Me.hp8.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.hp8.FlatAppearance.BorderSize = 0
+        Me.hp8.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent
+        Me.hp8.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.hp8.Location = New System.Drawing.Point(40, 369)
+        Me.hp8.Name = "hp8"
+        Me.hp8.Size = New System.Drawing.Size(42, 37)
+        Me.hp8.TabIndex = 247
+        Me.hp8.UseVisualStyleBackColor = False
+        '
+        'hp14
+        '
+        Me.hp14.AutoSize = True
+        Me.hp14.BackColor = System.Drawing.Color.White
+        Me.hp14.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.hp14.FlatAppearance.BorderSize = 0
+        Me.hp14.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent
+        Me.hp14.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.hp14.Location = New System.Drawing.Point(328, 369)
+        Me.hp14.Name = "hp14"
+        Me.hp14.Size = New System.Drawing.Size(42, 37)
+        Me.hp14.TabIndex = 246
+        Me.hp14.UseVisualStyleBackColor = False
+        '
+        'hp13
+        '
+        Me.hp13.AutoSize = True
+        Me.hp13.BackColor = System.Drawing.Color.White
+        Me.hp13.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.hp13.FlatAppearance.BorderSize = 0
+        Me.hp13.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent
+        Me.hp13.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.hp13.Location = New System.Drawing.Point(280, 369)
+        Me.hp13.Name = "hp13"
+        Me.hp13.Size = New System.Drawing.Size(42, 37)
+        Me.hp13.TabIndex = 245
+        Me.hp13.UseVisualStyleBackColor = False
+        '
+        'hp12
+        '
+        Me.hp12.AutoSize = True
+        Me.hp12.BackColor = System.Drawing.Color.White
+        Me.hp12.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.hp12.FlatAppearance.BorderSize = 0
+        Me.hp12.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent
+        Me.hp12.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.hp12.Location = New System.Drawing.Point(232, 369)
+        Me.hp12.Name = "hp12"
+        Me.hp12.Size = New System.Drawing.Size(42, 37)
+        Me.hp12.TabIndex = 244
+        Me.hp12.UseVisualStyleBackColor = False
+        '
+        'hp11
+        '
+        Me.hp11.AutoSize = True
+        Me.hp11.BackColor = System.Drawing.Color.White
+        Me.hp11.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.hp11.FlatAppearance.BorderSize = 0
+        Me.hp11.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent
+        Me.hp11.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.hp11.Location = New System.Drawing.Point(184, 369)
+        Me.hp11.Name = "hp11"
+        Me.hp11.Size = New System.Drawing.Size(42, 37)
+        Me.hp11.TabIndex = 243
+        Me.hp11.UseVisualStyleBackColor = False
+        '
+        'hp10
+        '
+        Me.hp10.AutoSize = True
+        Me.hp10.BackColor = System.Drawing.Color.White
+        Me.hp10.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.hp10.FlatAppearance.BorderSize = 0
+        Me.hp10.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent
+        Me.hp10.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.hp10.Location = New System.Drawing.Point(136, 369)
+        Me.hp10.Name = "hp10"
+        Me.hp10.Size = New System.Drawing.Size(42, 37)
+        Me.hp10.TabIndex = 242
+        Me.hp10.UseVisualStyleBackColor = False
+        '
+        'hp9
+        '
+        Me.hp9.AutoSize = True
+        Me.hp9.BackColor = System.Drawing.Color.White
+        Me.hp9.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.hp9.FlatAppearance.BorderSize = 0
+        Me.hp9.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent
+        Me.hp9.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.hp9.Location = New System.Drawing.Point(88, 369)
+        Me.hp9.Name = "hp9"
+        Me.hp9.Size = New System.Drawing.Size(42, 37)
+        Me.hp9.TabIndex = 241
+        Me.hp9.UseVisualStyleBackColor = False
+        '
+        'hp1
+        '
+        Me.hp1.AutoSize = True
+        Me.hp1.BackColor = System.Drawing.Color.White
+        Me.hp1.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.hp1.FlatAppearance.BorderSize = 0
+        Me.hp1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent
+        Me.hp1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.hp1.Location = New System.Drawing.Point(40, 326)
+        Me.hp1.Name = "hp1"
+        Me.hp1.Size = New System.Drawing.Size(42, 37)
+        Me.hp1.TabIndex = 240
+        Me.hp1.UseVisualStyleBackColor = False
+        '
+        'hp7
+        '
+        Me.hp7.AutoSize = True
+        Me.hp7.BackColor = System.Drawing.Color.White
+        Me.hp7.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.hp7.FlatAppearance.BorderSize = 0
+        Me.hp7.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent
+        Me.hp7.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.hp7.Location = New System.Drawing.Point(328, 326)
+        Me.hp7.Name = "hp7"
+        Me.hp7.Size = New System.Drawing.Size(42, 37)
+        Me.hp7.TabIndex = 239
+        Me.hp7.UseVisualStyleBackColor = False
+        '
+        'hp6
+        '
+        Me.hp6.AutoSize = True
+        Me.hp6.BackColor = System.Drawing.Color.White
+        Me.hp6.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.hp6.FlatAppearance.BorderSize = 0
+        Me.hp6.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent
+        Me.hp6.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.hp6.Location = New System.Drawing.Point(280, 326)
+        Me.hp6.Name = "hp6"
+        Me.hp6.Size = New System.Drawing.Size(42, 37)
+        Me.hp6.TabIndex = 238
+        Me.hp6.UseVisualStyleBackColor = False
+        '
+        'hp5
+        '
+        Me.hp5.AutoSize = True
+        Me.hp5.BackColor = System.Drawing.Color.White
+        Me.hp5.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.hp5.FlatAppearance.BorderSize = 0
+        Me.hp5.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent
+        Me.hp5.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.hp5.Location = New System.Drawing.Point(232, 326)
+        Me.hp5.Name = "hp5"
+        Me.hp5.Size = New System.Drawing.Size(42, 37)
+        Me.hp5.TabIndex = 237
+        Me.hp5.UseVisualStyleBackColor = False
+        '
+        'hp4
+        '
+        Me.hp4.AutoSize = True
+        Me.hp4.BackColor = System.Drawing.Color.White
+        Me.hp4.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.hp4.FlatAppearance.BorderSize = 0
+        Me.hp4.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent
+        Me.hp4.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.hp4.Location = New System.Drawing.Point(184, 326)
+        Me.hp4.Name = "hp4"
+        Me.hp4.Size = New System.Drawing.Size(42, 37)
+        Me.hp4.TabIndex = 236
+        Me.hp4.UseVisualStyleBackColor = False
+        '
+        'hp3
+        '
+        Me.hp3.AutoSize = True
+        Me.hp3.BackColor = System.Drawing.Color.White
+        Me.hp3.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.hp3.FlatAppearance.BorderSize = 0
+        Me.hp3.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent
+        Me.hp3.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.hp3.Location = New System.Drawing.Point(136, 326)
+        Me.hp3.Name = "hp3"
+        Me.hp3.Size = New System.Drawing.Size(42, 37)
+        Me.hp3.TabIndex = 235
+        Me.hp3.UseVisualStyleBackColor = False
+        '
+        'hp2
+        '
+        Me.hp2.AutoSize = True
+        Me.hp2.BackColor = System.Drawing.Color.White
+        Me.hp2.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.hp2.FlatAppearance.BorderSize = 0
+        Me.hp2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent
+        Me.hp2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.hp2.Location = New System.Drawing.Point(88, 326)
+        Me.hp2.Name = "hp2"
+        Me.hp2.Size = New System.Drawing.Size(42, 37)
+        Me.hp2.TabIndex = 234
+        Me.hp2.UseVisualStyleBackColor = False
+        '
         'gameboard
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
         Me.AutoValidate = System.Windows.Forms.AutoValidate.Disable
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(236, Byte), Integer), CType(CType(236, Byte), Integer), CType(CType(236, Byte), Integer))
-        Me.ClientSize = New System.Drawing.Size(1028, 609)
+        Me.ClientSize = New System.Drawing.Size(1264, 681)
+        Me.Controls.Add(Me.hp15)
+        Me.Controls.Add(Me.hp21)
+        Me.Controls.Add(Me.hp20)
+        Me.Controls.Add(Me.hp19)
+        Me.Controls.Add(Me.hp18)
+        Me.Controls.Add(Me.hp17)
+        Me.Controls.Add(Me.hp16)
+        Me.Controls.Add(Me.hp8)
+        Me.Controls.Add(Me.hp14)
+        Me.Controls.Add(Me.hp13)
+        Me.Controls.Add(Me.hp12)
+        Me.Controls.Add(Me.hp11)
+        Me.Controls.Add(Me.hp10)
+        Me.Controls.Add(Me.hp9)
+        Me.Controls.Add(Me.hp1)
+        Me.Controls.Add(Me.hp7)
+        Me.Controls.Add(Me.hp6)
+        Me.Controls.Add(Me.hp5)
+        Me.Controls.Add(Me.hp4)
+        Me.Controls.Add(Me.hp3)
+        Me.Controls.Add(Me.hp2)
+        Me.Controls.Add(Me.ep15)
+        Me.Controls.Add(Me.ep21)
+        Me.Controls.Add(Me.ep20)
+        Me.Controls.Add(Me.ep19)
+        Me.Controls.Add(Me.ep18)
+        Me.Controls.Add(Me.ep17)
+        Me.Controls.Add(Me.ep16)
+        Me.Controls.Add(Me.ep8)
+        Me.Controls.Add(Me.ep14)
+        Me.Controls.Add(Me.ep13)
+        Me.Controls.Add(Me.ep12)
+        Me.Controls.Add(Me.ep11)
+        Me.Controls.Add(Me.ep10)
+        Me.Controls.Add(Me.ep9)
+        Me.Controls.Add(Me.ep1)
+        Me.Controls.Add(Me.ep7)
+        Me.Controls.Add(Me.ep6)
+        Me.Controls.Add(Me.ep5)
+        Me.Controls.Add(Me.ep4)
+        Me.Controls.Add(Me.ep3)
+        Me.Controls.Add(Me.ep2)
         Me.Controls.Add(Me.myName)
         Me.Controls.Add(Me.ready)
         Me.Controls.Add(Me.enemyName)
@@ -1222,6 +1961,7 @@ Partial Class gameboard
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Game of the Generals"
         Me.ResumeLayout(False)
+        Me.PerformLayout()
 
     End Sub
 
@@ -1304,4 +2044,46 @@ Partial Class gameboard
     Friend WithEvents enemyName As Label
     Friend WithEvents ready As Button
     Friend WithEvents myName As Label
+    Friend WithEvents ep2 As Button
+    Friend WithEvents ep3 As Button
+    Friend WithEvents ep5 As Button
+    Friend WithEvents ep4 As Button
+    Friend WithEvents ep7 As Button
+    Friend WithEvents ep6 As Button
+    Friend WithEvents ep1 As Button
+    Friend WithEvents ep8 As Button
+    Friend WithEvents ep14 As Button
+    Friend WithEvents ep13 As Button
+    Friend WithEvents ep12 As Button
+    Friend WithEvents ep11 As Button
+    Friend WithEvents ep10 As Button
+    Friend WithEvents ep9 As Button
+    Friend WithEvents ep15 As Button
+    Friend WithEvents ep21 As Button
+    Friend WithEvents ep20 As Button
+    Friend WithEvents ep19 As Button
+    Friend WithEvents ep18 As Button
+    Friend WithEvents ep17 As Button
+    Friend WithEvents ep16 As Button
+    Friend WithEvents hp15 As Button
+    Friend WithEvents hp21 As Button
+    Friend WithEvents hp20 As Button
+    Friend WithEvents hp19 As Button
+    Friend WithEvents hp18 As Button
+    Friend WithEvents hp17 As Button
+    Friend WithEvents hp16 As Button
+    Friend WithEvents hp8 As Button
+    Friend WithEvents hp14 As Button
+    Friend WithEvents hp13 As Button
+    Friend WithEvents hp12 As Button
+    Friend WithEvents hp11 As Button
+    Friend WithEvents hp10 As Button
+    Friend WithEvents hp9 As Button
+    Friend WithEvents hp1 As Button
+    Friend WithEvents hp7 As Button
+    Friend WithEvents hp6 As Button
+    Friend WithEvents hp5 As Button
+    Friend WithEvents hp4 As Button
+    Friend WithEvents hp3 As Button
+    Friend WithEvents hp2 As Button
 End Class
