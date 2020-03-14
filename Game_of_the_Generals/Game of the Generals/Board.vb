@@ -5,8 +5,15 @@ Imports System.IO
 
 Public Class gameboard
 
-    Dim room As String = "rooms/"
-    Dim piecePlayer As String = "/piece"
+    Dim roomName As String
+    Dim roomNamePath As String
+    Dim piecePlayer1Path As String
+    Dim piecePlayer2Path As String
+    Dim arbitraryPath As String
+    Dim movePath As String
+    Dim player1Path As String
+    Dim player2Path As String
+    Dim 
 
     Private client As IFirebaseClient
     Dim isGameTime As Boolean = False
@@ -42,6 +49,8 @@ Public Class gameboard
     '    ' Add any initialization after the InitializeComponent() call.
 
     'End Sub
+
+
 
     Public Sub SetPiecesToDatabase()
         Dim piece As New Piece() With {
@@ -393,6 +402,20 @@ Public Class gameboard
             MessageBox.Show("there was a problem in the internet connection")
         End Try
 
+
+        'Dim name As String
+        Dim file_name2 = "Roomname.txt"
+        Using file_read As StreamReader = New StreamReader(file_name2)
+            roomName = file_read.ReadLine
+        End Using
+
+        roomNamePath = "rooms/" + roomName
+        piecePlayer1Path = roomNamePath + "/player1" + "/piece"
+        piecePlayer2Path = roomNamePath + "/player2" + "/piece"
+        arbitraryPath = roomNamePath + "/arbitrary"
+        movePath = roomNamePath + "/move"
+        player1Path = roomNamePath + "/player1"
+        player2Path = roomNamePath + "/player2"
 
 
 
