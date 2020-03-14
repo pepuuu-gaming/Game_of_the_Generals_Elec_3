@@ -108,7 +108,7 @@
     <Compile Include="PopupNameInputBox.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Resources\Location.vb" />
+    <Compile Include="Location.vb" />
     <Compile Include="Room.Designer.vb">
       <DependentUpon>Room.vb</DependentUpon>
     </Compile>

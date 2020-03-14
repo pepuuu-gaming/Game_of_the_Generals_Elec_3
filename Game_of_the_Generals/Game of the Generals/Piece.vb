@@ -111,6 +111,11 @@
         a.BackgroundImageLayout = ImageLayout.Center
         a.BackColor = Color.FromArgb(r(0), r(1), r(1))
     End Sub
+
+    Public Sub Setenemy(a As Button, r As Integer())
+        a.BackColor = Color.FromArgb(r(0), r(1), r(1))
+    End Sub
+
     Public Sub UnsetButtonImage(a As Button)
         a.BackgroundImage = Nothing
         a.BackColor = Nothing

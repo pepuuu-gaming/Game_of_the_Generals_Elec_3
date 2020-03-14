@@ -2,9 +2,11 @@
 Imports FireSharp.Response
 Imports FireSharp.Interfaces
 Imports System.IO
+Imports FireSharp.EventStreaming
 
-Public Class gameboard
+Public Class Gameboard
 
+    Dim name As String
     Dim roomName As String
     Dim roomNamePath As String
     Dim piecePlayer1Path As String
@@ -16,6 +18,7 @@ Public Class gameboard
 
     Private client As IFirebaseClient
     Dim isGameTime As Boolean = False
+    Dim isGameTimeDB As Boolean = False
     Dim hostName As String
     Dim guestName As String
     Dim host As Boolean
@@ -39,6 +42,7 @@ Public Class gameboard
         .AuthSecret = "XMpD0khO3QHVDvlc1C3qyeWBu5OYC6Ctk2FupkIN",
         .BasePath = "https://game-of-the-generals-vb.firebaseio.com/"
         }
+
 
     'Public Sub New(Host As Boolean)
 
@@ -75,7 +79,12 @@ Public Class gameboard
             .p20 = pieceCoordinate(19),
             .p21 = pieceCoordinate(20)
         }
-        client.Set(piecePlayer1Path, piece)
+        If host Then
+            client.Update(piecePlayer1Path, piece)
+        Else
+            client.Update(piecePlayer2Path, piece)
+        End If
+
 
     End Sub
 
@@ -220,73 +229,95 @@ Public Class gameboard
         Return b
     End Function
 
-    Public Sub SetPiecesHost()
+    Public Sub SetYourPieces(colorSet As Integer())
         Dim piece As Piece = New Piece
-        piece.Setprivate(hp1, hostColor)
-        piece.Setprivate(hp2, hostColor)
-        piece.Setprivate(hp3, hostColor)
-        piece.Setprivate(hp4, hostColor)
-        piece.Setprivate(hp5, hostColor)
-        piece.Setprivate(hp6, hostColor)
-        piece.Setsergeant(hp7, hostColor)
+        piece.Setprivate(hp1, colorSet)
+        piece.Setprivate(hp2, colorSet)
+        piece.Setprivate(hp3, colorSet)
+        piece.Setprivate(hp4, colorSet)
+        piece.Setprivate(hp5, colorSet)
+        piece.Setprivate(hp6, colorSet)
+        piece.Setsergeant(hp7, colorSet)
 
-        piece.Setlieutenant_2nd(hp8, hostColor)
-        piece.Setlieutenant_1st(hp9, hostColor)
-        piece.Setcaptain(hp10, hostColor)
-        piece.Setmajor(hp11, hostColor)
-        piece.Setlieutenant_colonel(hp12, hostColor)
-        piece.Setcolonel(hp13, hostColor)
-        piece.Setbrigadier_general(hp14, hostColor)
+        piece.Setlieutenant_2nd(hp8, colorSet)
+        piece.Setlieutenant_1st(hp9, colorSet)
+        piece.Setcaptain(hp10, colorSet)
+        piece.Setmajor(hp11, colorSet)
+        piece.Setlieutenant_colonel(hp12, colorSet)
+        piece.Setcolonel(hp13, colorSet)
+        piece.Setbrigadier_general(hp14, colorSet)
 
-        piece.Setmajor_general(hp15, hostColor)
-        piece.Setlieutenant_general(hp16, hostColor)
-        piece.Setgeneral(hp17, hostColor)
-        piece.Setgeneral_of_the_army(hp18, hostColor)
-        piece.Setspy(hp19, hostColor)
-        piece.Setspy(hp20, hostColor)
-        piece.Setflag(hp21, hostColor)
-    End Sub
-
-    Public Sub SetPiecesGuest()
-        Dim piece As Piece = New Piece
-        piece.Setprivate(ep1, guestColor)
-        piece.Setprivate(ep2, guestColor)
-        piece.Setprivate(ep3, guestColor)
-        piece.Setprivate(ep4, guestColor)
-        piece.Setprivate(ep5, guestColor)
-        piece.Setprivate(ep6, guestColor)
-        piece.Setsergeant(ep7, guestColor)
-
-        piece.Setlieutenant_2nd(ep8, guestColor)
-        piece.Setlieutenant_1st(ep9, guestColor)
-        piece.Setcaptain(ep10, guestColor)
-        piece.Setmajor(ep11, guestColor)
-        piece.Setlieutenant_colonel(ep12, guestColor)
-        piece.Setcolonel(ep13, guestColor)
-        piece.Setbrigadier_general(ep14, guestColor)
-
-        piece.Setmajor_general(ep15, guestColor)
-        piece.Setlieutenant_general(ep16, guestColor)
-        piece.Setgeneral(ep17, guestColor)
-        piece.Setgeneral_of_the_army(ep18, guestColor)
-        piece.Setspy(ep19, guestColor)
-        piece.Setspy(ep20, guestColor)
-        piece.Setflag(ep21, guestColor)
+        piece.Setmajor_general(hp15, colorSet)
+        piece.Setlieutenant_general(hp16, colorSet)
+        piece.Setgeneral(hp17, colorSet)
+        piece.Setgeneral_of_the_army(hp18, colorSet)
+        piece.Setspy(hp19, colorSet)
+        piece.Setspy(hp20, colorSet)
+        piece.Setflag(hp21, colorSet)
     End Sub
 
     Public Sub SetPieces()
-        SetPiecesHost()
-        SetPiecesGuest()
+        If host Then
+            SetYourPieces(hostColor)
+        Else
+            SetYourPieces(guestColor)
+        End If
+    End Sub
 
+    Public Sub SetPieceToBoard()
+        hp1.Location = New Point(b6.Location.X, b6.Location.Y)
+        hp2.Location = New Point(c6.Location.X, c6.Location.Y)
+        hp3.Location = New Point(d6.Location.X, d6.Location.Y)
+        hp4.Location = New Point(e6.Location.X, e6.Location.Y)
+        hp5.Location = New Point(f6.Location.X, f6.Location.Y)
+        hp6.Location = New Point(g6.Location.X, g6.Location.Y)
+        hp7.Location = New Point(h6.Location.X, h6.Location.Y)
+        hp8.Location = New Point(b7.Location.X, b7.Location.Y)
+        hp9.Location = New Point(c7.Location.X, c7.Location.Y)
+        hp10.Location = New Point(d7.Location.X, d7.Location.Y)
 
+        hp11.Location = New Point(e7.Location.X, e7.Location.Y)
+        hp12.Location = New Point(f7.Location.X, f7.Location.Y)
+        hp13.Location = New Point(g7.Location.X, g7.Location.Y)
+        hp14.Location = New Point(h7.Location.X, h7.Location.Y)
+        hp15.Location = New Point(b8.Location.X, b8.Location.Y)
+        hp16.Location = New Point(c8.Location.X, c8.Location.Y)
+        hp17.Location = New Point(d8.Location.X, d8.Location.Y)
+        hp18.Location = New Point(e8.Location.X, e8.Location.Y)
+        hp19.Location = New Point(f8.Location.X, f8.Location.Y)
+        hp20.Location = New Point(g8.Location.X, g8.Location.Y)
+
+        hp21.Location = New Point(h8.Location.X, h8.Location.Y)
 
     End Sub
 
-    Public Sub getClickButton(sender As Object, e As EventArgs) Handles a6.Click, a7.Click, a8.Click, b6.Click, b7.Click, b8.Click, c6.Click, c7.Click, c8.Click, d6.Click, d7.Click, d8.Click, e6.Click, e7.Click, e8.Click, f6.Click, f7.Click, f8.Click, g6.Click, g7.Click, g8.Click, h6.Click, h7.Click, h8.Click, i6.Click, i7.Click, i8.Click,
+    Dim stopListening As Boolean = False
+
+    Public Function Check() As Boolean
+        If guestName <> "Waiting for opponent" Then
+            Return True
+        Else
+            Return False
+        End If
+    End Function
+
+    Public Sub GetClickButton(sender As Object, e As EventArgs) Handles a6.Click, a7.Click, a8.Click, b6.Click, b7.Click, b8.Click, c6.Click, c7.Click, c8.Click, d6.Click, d7.Click, d8.Click, e6.Click, e7.Click, e8.Click, f6.Click, f7.Click, f8.Click, g6.Click, g7.Click, g8.Click, h6.Click, h7.Click, h8.Click, i6.Click, i7.Click, i8.Click,
         hp1.Click, hp2.Click, hp3.Click, hp4.Click, hp5.Click, hp6.Click, hp7.Click, hp8.Click, hp9.Click, hp10.Click,
         hp11.Click, hp12.Click, hp13.Click, hp14.Click, hp15.Click, hp16.Click, hp17.Click, hp18.Click, hp19.Click, hp20.Click, hp21.Click
 
-        If Not isGameTime Then
+
+        'LISTEN MOVES
+
+
+        If isGameTime And isGameTimeDB Then
+            MessageBox.Show("GAME TIME")
+            'CHECK IF ENEMY IS READY
+            'IF ENEMY IS READY PIECE WILL SHOW TO YOU
+        Else
+            If Not Check() Then
+                GetName()
+                SetName()
+            End If
             If firstClick Then
                 piece1 = DirectCast(sender, Button)
                 If sender.Equals(hp1) Or
@@ -315,7 +346,6 @@ Public Class gameboard
                     y = piece1.Location.Y
                 Else
                     swapEnabled = False
-                    piece1.BackColor = Color.Red
                     x = piece1.Location.X
                     y = piece1.Location.Y
                 End If
@@ -357,9 +387,6 @@ Public Class gameboard
                 End If
                 firstClick = True
             End If
-        Else
-            MessageBox.Show("GAME TIME")
-            'CHECK IF ENEMY IS READY
         End If
     End Sub
 
@@ -381,11 +408,70 @@ Public Class gameboard
         Me.Close()
     End Sub
 
-    Public Sub SetPiece()
+    Public Sub ShowHideEnemyPiece(b As Boolean)
+        ep1.Visible = b
+        ep2.Visible = b
+        ep3.Visible = b
+        ep4.Visible = b
+        ep5.Visible = b
+        ep6.Visible = b
+        ep7.Visible = b
+        ep8.Visible = b
+        ep9.Visible = b
+        ep10.Visible = b
 
+        ep11.Visible = b
+        ep12.Visible = b
+        ep13.Visible = b
+        ep14.Visible = b
+        ep15.Visible = b
+        ep16.Visible = b
+        ep17.Visible = b
+        ep18.Visible = b
+        ep19.Visible = b
+        ep20.Visible = b
+
+        ep21.Visible = b
     End Sub
 
-    Private Sub ready_Click(sender As Object, e As EventArgs) Handles ready.Click
+    Public Sub SetEnemyPiece(b As Integer())
+        Dim piece As Piece = New Piece
+        piece.Setenemy(ep1, b)
+        piece.Setenemy(ep2, b)
+        piece.Setenemy(ep3, b)
+        piece.Setenemy(ep4, b)
+        piece.Setenemy(ep5, b)
+        piece.Setenemy(ep6, b)
+        piece.Setenemy(ep7, b)
+        piece.Setenemy(ep8, b)
+        piece.Setenemy(ep9, b)
+        piece.Setenemy(ep10, b)
+
+        piece.Setenemy(ep11, b)
+        piece.Setenemy(ep12, b)
+        piece.Setenemy(ep13, b)
+        piece.Setenemy(ep14, b)
+        piece.Setenemy(ep15, b)
+        piece.Setenemy(ep16, b)
+        piece.Setenemy(ep17, b)
+        piece.Setenemy(ep18, b)
+        piece.Setenemy(ep19, b)
+        piece.Setenemy(ep20, b)
+
+        piece.Setenemy(ep21, b)
+    End Sub
+
+    Public Sub ShowPiece(b As Boolean)
+        If host Then
+            SetEnemyPiece(guestColor)
+            ShowHideEnemyPiece(True)
+        Else
+            SetEnemyPiece(hostColor)
+            ShowHideEnemyPiece(True)
+        End If
+    End Sub
+
+    Private Sub Ready_Click(sender As Object, e As EventArgs) Handles ready.Click
         GetLocation()
         isGameTime = True
 
@@ -393,7 +479,40 @@ Public Class gameboard
         SetPiecesToDatabase()
     End Sub
 
-    Private Sub gameboard_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
+    Public Sub GetName()
+        hostName = roomName
+        If host Then
+            Dim res2 = client.Get(player2Path + "/name")
+            guestName = res2.ResultAs(Of String)
+        Else
+            guestName = name
+        End If
+    End Sub
+
+    Public Sub SetName()
+        If host Then
+            enemyName.Text = guestName
+            myName.Text = hostName
+        Else
+            enemyName.Text = hostName
+            myName.Text = guestName
+        End If
+    End Sub
+
+    Public Sub GetRole()
+        Dim file_name = "name.txt"
+        Using file_read As StreamReader = New StreamReader(file_name)
+            name = file_read.ReadLine
+        End Using
+        If name = roomName Then
+            host = True
+        Else
+            host = False
+        End If
+    End Sub
+
+    Private Sub Gameboard_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Try
             client = New FireSharp.FirebaseClient(fcon)
         Catch
@@ -414,8 +533,6 @@ Public Class gameboard
         movePath = roomNamePath + "/move"
         player1Path = roomNamePath + "/player1"
         player2Path = roomNamePath + "/player2"
-
-
 
         Dim a As RoundButton = New RoundButton
         a.Round(a1, 10)
@@ -543,9 +660,11 @@ Public Class gameboard
         a.Round(ep20, 10)
         a.Round(ep21, 10)
 
-
+        GetRole()
+        GetName()
+        SetName()
+        ShowHideEnemyPiece(False)
+        SetPieceToBoard()
         SetPieces()
     End Sub
-
-
 End Class
