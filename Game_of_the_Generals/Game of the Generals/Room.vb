@@ -16,8 +16,9 @@ Public Class Room
         '    newGame.ShowDialog()
         '    Visible = True
         'End If
-        ''gameboard.Show()
-        ''Me.Close()
+        Dim gameboard As New gameboard
+        gameboard.Show()
+        Me.Close()
     End Sub
 
     Private Sub ButtonHostGame_Click(sender As Object, e As EventArgs) Handles ButtonHostGame.Click

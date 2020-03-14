@@ -1093,9 +1093,6 @@ Partial Class gameboard
         Me.back_to_menu.TabIndex = 210
         Me.back_to_menu.UseVisualStyleBackColor = True
         '
-        'BackgroundWorker1
-        '
-        '
         'enemyName
         '
         Me.enemyName.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _

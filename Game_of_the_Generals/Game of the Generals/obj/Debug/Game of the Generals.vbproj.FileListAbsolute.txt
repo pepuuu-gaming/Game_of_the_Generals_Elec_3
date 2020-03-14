@@ -65,3 +65,18 @@ E:\Game_of_the_Generals_Elec_3\Game_of_the_Generals\Game of the Generals\obj\Deb
 E:\Game_of_the_Generals_Elec_3\Game_of_the_Generals\Game of the Generals\obj\Debug\Game of the Generals.xml
 E:\Game_of_the_Generals_Elec_3\Game_of_the_Generals\Game of the Generals\obj\Debug\Game of the Generals.pdb
 E:\Game_of_the_Generals_Elec_3\Game_of_the_Generals\Game of the Generals\obj\Debug\Game_of_the_Generals.PopupNameInputBox.resources
+E:\Game_of_the_Generals_Elec_3\Game_of_the_Generals\Game of the Generals\bin\Debug\FireSharp.dll
+E:\Game_of_the_Generals_Elec_3\Game_of_the_Generals\Game of the Generals\bin\Debug\Microsoft.Threading.Tasks.dll
+E:\Game_of_the_Generals_Elec_3\Game_of_the_Generals\Game of the Generals\bin\Debug\Microsoft.Threading.Tasks.Extensions.Desktop.dll
+E:\Game_of_the_Generals_Elec_3\Game_of_the_Generals\Game of the Generals\bin\Debug\Microsoft.Threading.Tasks.Extensions.dll
+E:\Game_of_the_Generals_Elec_3\Game_of_the_Generals\Game of the Generals\bin\Debug\Newtonsoft.Json.dll
+E:\Game_of_the_Generals_Elec_3\Game_of_the_Generals\Game of the Generals\bin\Debug\System.Net.Http.Extensions.dll
+E:\Game_of_the_Generals_Elec_3\Game_of_the_Generals\Game of the Generals\bin\Debug\System.Net.Http.Primitives.dll
+E:\Game_of_the_Generals_Elec_3\Game_of_the_Generals\Game of the Generals\bin\Debug\Microsoft.Threading.Tasks.xml
+E:\Game_of_the_Generals_Elec_3\Game_of_the_Generals\Game of the Generals\bin\Debug\Microsoft.Threading.Tasks.Extensions.xml
+E:\Game_of_the_Generals_Elec_3\Game_of_the_Generals\Game of the Generals\bin\Debug\Microsoft.Threading.Tasks.Extensions.Desktop.xml
+E:\Game_of_the_Generals_Elec_3\Game_of_the_Generals\Game of the Generals\bin\Debug\Newtonsoft.Json.xml
+E:\Game_of_the_Generals_Elec_3\Game_of_the_Generals\Game of the Generals\bin\Debug\System.Net.Http.Extensions.xml
+E:\Game_of_the_Generals_Elec_3\Game_of_the_Generals\Game of the Generals\bin\Debug\System.Net.Http.Primitives.xml
+E:\Game_of_the_Generals_Elec_3\Game_of_the_Generals\Game of the Generals\obj\Debug\Game of the Generals.vbproj.App.config
+E:\Game_of_the_Generals_Elec_3\Game_of_the_Generals\Game of the Generals\obj\Debug\Game of the Generals.vbproj.CopyComplete

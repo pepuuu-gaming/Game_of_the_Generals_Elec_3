@@ -61,11 +61,161 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Looks up a localized resource of type System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property brigadier_general_2x() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("brigadier_general_2x", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized resource of type System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property Captain_2x() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("Captain_2x", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized resource of type System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property colonel_2x() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("colonel_2x", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized resource of type System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property flag_2x() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("flag_2x", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized resource of type System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property general_2x() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("general_2x", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized resource of type System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property general_of_the_army_2x() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("general_of_the_army_2x", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
         '''</summary>
         Friend ReadOnly Property GOG() As System.IO.UnmanagedMemoryStream
             Get
                 Return ResourceManager.GetStream("GOG", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized resource of type System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property lieutenant_1st_2x() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("lieutenant_1st_2x", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized resource of type System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property lieutenant_2nd_2x() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("lieutenant_2nd_2x", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized resource of type System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property lieutenant_colonel_2x() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("lieutenant_colonel_2x", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized resource of type System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property lieutenant_general_2x() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("lieutenant_general_2x", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized resource of type System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property major_2x() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("major_2x", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized resource of type System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property major_general_2x() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("major_general_2x", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized resource of type System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property private_2x() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("private_2x", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized resource of type System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property sergeant_2x() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("sergeant_2x", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized resource of type System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property spy_2x() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("spy_2x", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
             End Get
         End Property
     End Module

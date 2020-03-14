@@ -97,6 +97,7 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Piece.vb" />
     <Compile Include="PopupNameInputBox.Designer.vb">
       <DependentUpon>PopupNameInputBox.vb</DependentUpon>
     </Compile>
@@ -331,6 +332,23 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\GOG.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\lieutenant_1st%402x.png" />
+    <EmbeddedResource Include="Resources\lieutenant_2nd%402x.png" />
+    <EmbeddedResource Include="Resources\brigadier_general%402x.png" />
+    <EmbeddedResource Include="Resources\Captain%402x.png" />
+    <EmbeddedResource Include="Resources\colonel%402x.png" />
+    <EmbeddedResource Include="Resources\flag%402x.png" />
+    <EmbeddedResource Include="Resources\general%402x.png" />
+    <EmbeddedResource Include="Resources\general_of_the_army%402x.png" />
+    <EmbeddedResource Include="Resources\lieutenant_colonel%402x.png" />
+    <EmbeddedResource Include="Resources\lieutenant_general%402x.png" />
+    <EmbeddedResource Include="Resources\major%402x.png" />
+    <EmbeddedResource Include="Resources\major_general%402x.png" />
+    <EmbeddedResource Include="Resources\private%402x.png" />
+    <EmbeddedResource Include="Resources\sergeant%402x.png" />
+    <EmbeddedResource Include="Resources\spy%402x.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <Import Project="..\packages\Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets" Condition="Exists('..\packages\Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets')" />
