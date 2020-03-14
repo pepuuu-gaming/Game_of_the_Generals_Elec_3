@@ -337,7 +337,7 @@
     <EmbeddedResource Include="Resources\lieutenant_1st%402x.png" />
     <EmbeddedResource Include="Resources\lieutenant_2nd%402x.png" />
     <EmbeddedResource Include="Resources\brigadier_general%402x.png" />
-    <EmbeddedResource Include="Resources\Captain%402x.png" />
+    <EmbeddedResource Include="Resources\captain%402x.png" />
     <EmbeddedResource Include="Resources\colonel%402x.png" />
     <EmbeddedResource Include="Resources\flag%402x.png" />
     <EmbeddedResource Include="Resources\general%402x.png" />

@@ -99,7 +99,6 @@ Partial Class gameboard
         Me.message = New System.Windows.Forms.Button()
         Me.pause = New System.Windows.Forms.Button()
         Me.back_to_menu = New System.Windows.Forms.Button()
-        Me.BackgroundWorker1 = New System.ComponentModel.BackgroundWorker()
         Me.enemyName = New System.Windows.Forms.Label()
         Me.ready = New System.Windows.Forms.Button()
         Me.myName = New System.Windows.Forms.Label()
@@ -1093,9 +1092,6 @@ Partial Class gameboard
         Me.back_to_menu.TabIndex = 210
         Me.back_to_menu.UseVisualStyleBackColor = True
         '
-        'BackgroundWorker1
-        '
-        '
         'enemyName
         '
         Me.enemyName.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
@@ -1305,7 +1301,6 @@ Partial Class gameboard
     Friend WithEvents message As Button
     Friend WithEvents pause As Button
     Friend WithEvents back_to_menu As Button
-    Friend WithEvents BackgroundWorker1 As System.ComponentModel.BackgroundWorker
     Friend WithEvents enemyName As Label
     Friend WithEvents ready As Button
     Friend WithEvents myName As Label

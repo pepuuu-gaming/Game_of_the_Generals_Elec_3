@@ -5,15 +5,102 @@ Imports System.IO
 
 Public Class gameboard
 
+    Dim isHost As Boolean = True
     Dim hostName As String
     Dim guestName As String
     Dim host As Boolean
+    Dim hR As Integer = 20
+    Dim hG As Integer = 45
+    Dim hB As Integer = 76
+
+    Dim gR As Integer = 159
+    Dim gG As Integer = 211
+    Dim gB As Integer = 199
 
     Private firebaseConnection As New FirebaseConfig With
         {
         .AuthSecret = "XMpD0khO3QHVDvlc1C3qyeWBu5OYC6Ctk2FupkIN",
         .BasePath = "https://game-of-the-generals-vb.firebaseio.com/"
         }
+
+
+    Public Sub SetPieces()
+        Dim piece As Piece = New Piece
+
+        If isHost Then
+            piece.Setprivate(b6, hR, hG, hB)
+            piece.Setprivate(c6, hR, hG, hB)
+            piece.Setprivate(d6, hR, hG, hB)
+            piece.Setprivate(e6, hR, hG, hB)
+            piece.Setprivate(f6, hR, hG, hB)
+            piece.Setprivate(g6, hR, hG, hB)
+            piece.Setsergeant(h6, hR, hG, hB)
+
+            piece.Setlieutenant_2nd(b7, hR, hG, hB)
+            piece.Setlieutenant_1st(c7, hR, hG, hB)
+            piece.Setcaptain(d7, hR, hG, hB)
+            piece.Setmajor(e7, hR, hG, hB)
+            piece.Setlieutenant_colonel(f7, hR, hG, hB)
+            piece.Setcolonel(g7, hR, hG, hB)
+            piece.Setbrigadier_general(h7, hR, hG, hB)
+
+            piece.Setmajor_general(b8, hR, hG, hB)
+            piece.Setlieutenant_general(c8, hR, hG, hB)
+            piece.Setgeneral(d8, hR, hG, hB)
+            piece.Setgeneral_of_the_army(e8, hR, hG, hB)
+            piece.Setspy(f8, hR, hG, hB)
+            piece.Setspy(g8, hR, hG, hB)
+            piece.Setflag(h8, hR, hG, hB)
+
+        Else
+
+            piece.Setprivate(b3, gR, gG, gB)
+            piece.Setprivate(c3, gR, gG, gB)
+            piece.Setprivate(d3, gR, gG, gB)
+            piece.Setprivate(e3, gR, gG, gB)
+            piece.Setprivate(f3, gR, gG, gB)
+            piece.Setprivate(g3, gR, gG, gB)
+            piece.Setsergeant(h3, gR, gG, gB)
+
+            piece.Setlieutenant_2nd(b2, gR, gG, gB)
+            piece.Setlieutenant_1st(c2, gR, gG, gB)
+            piece.Setcaptain(d2, gR, gG, gB)
+            piece.Setmajor(e2, gR, gG, gB)
+            piece.Setlieutenant_colonel(f2, gR, gG, gB)
+            piece.Setcolonel(g2, gR, gG, gB)
+            piece.Setbrigadier_general(h2, gR, gG, gB)
+
+            piece.Setmajor_general(b1, gR, gG, gB)
+            piece.Setlieutenant_general(c1, gR, gG, gB)
+            piece.Setgeneral(d1, gR, gG, gB)
+            piece.Setgeneral_of_the_army(e1, gR, gG, gB)
+            piece.Setspy(f1, gR, gG, gB)
+            piece.Setspy(g1, gR, gG, gB)
+            piece.Setflag(h1, gR, gG, gB)
+
+        End If
+
+    End Sub
+
+    Public Sub getClickButtonH(sender As Object, e As EventArgs) Handles a6.Click, a7.Click, a8.Click, b6.Click, b7.Click, b8.Click, c6.Click, c7.Click, c8.Click, d6.Click, d7.Click, d8.Click, e6.Click, e7.Click, e8.Click, f6.Click, f7.Click, f8.Click, g6.Click, g7.Click, g8.Click, h6.Click, h7.Click, h8.Click, i6.Click, i7.Click, i8.Click
+        If isHost Then
+            Dim test As Button
+            test = DirectCast(sender, Button)
+            test.BackColor = Color.Red
+        Else
+            MessageBox.Show("You,re coordinate is from A1 to I3")
+        End If
+    End Sub
+
+    Public Sub getClickButtonNH(sender As Object, e As EventArgs) Handles a1.Click, a2.Click, a3.Click, b1.Click, b2.Click, b3.Click, c1.Click, c2.Click, c3.Click, d1.Click, d2.Click, d3.Click, e1.Click, e2.Click, e3.Click, f1.Click, f2.Click, f3.Click, g1.Click, g2.Click, g3.Click, h1.Click, h2.Click, h3.Click, i1.Click, i2.Click, i3.Click
+        If Not isHost Then
+            Dim test As Button
+            test = DirectCast(sender, Button)
+            test.BackColor = Color.Red
+        Else
+            MessageBox.Show("You,re coordinate is from A6 to I8")
+        End If
+    End Sub
 
     'Public Sub New(isHost As Boolean, ip As String)
 
@@ -119,312 +206,6 @@ Public Class gameboard
         a.Round(i7, 10)
         a.Round(i8, 10)
 
-        c6.BackgroundImage = My.Resources.general_of_the_army_2x
-        c6.BackgroundImageLayout = ImageLayout.Center
-        c6.BackColor = Color.FromArgb(20, 45, 76)
-    End Sub
-
-    Private Sub i1_Click(sender As Object, e As EventArgs) Handles i1.Click
-
-    End Sub
-
-    Private Sub h1_Click(sender As Object, e As EventArgs) Handles h1.Click
-
-    End Sub
-
-    Private Sub g1_Click(sender As Object, e As EventArgs) Handles g1.Click
-
-    End Sub
-
-    Private Sub f1_Click(sender As Object, e As EventArgs) Handles f1.Click
-
-    End Sub
-
-    Private Sub d1_Click(sender As Object, e As EventArgs) Handles d1.Click
-
-    End Sub
-
-    Private Sub e1_Click(sender As Object, e As EventArgs) Handles e1.Click
-
-    End Sub
-
-    Private Sub c1_Click(sender As Object, e As EventArgs) Handles c1.Click
-
-    End Sub
-
-    Private Sub b1_Click(sender As Object, e As EventArgs) Handles b1.Click
-
-    End Sub
-
-    Private Sub a1_Click(sender As Object, e As EventArgs) Handles a1.Click
-
-    End Sub
-
-    Private Sub i2_Click(sender As Object, e As EventArgs) Handles i2.Click
-
-    End Sub
-
-    Private Sub h2_Click(sender As Object, e As EventArgs) Handles h2.Click
-
-    End Sub
-
-    Private Sub g2_Click(sender As Object, e As EventArgs) Handles g2.Click
-
-    End Sub
-
-    Private Sub f2_Click(sender As Object, e As EventArgs) Handles f2.Click
-
-    End Sub
-
-    Private Sub d2_Click(sender As Object, e As EventArgs) Handles d2.Click
-
-    End Sub
-
-    Private Sub e2_Click(sender As Object, e As EventArgs) Handles e2.Click
-
-    End Sub
-
-    Private Sub c2_Click(sender As Object, e As EventArgs) Handles c2.Click
-
-    End Sub
-
-    Private Sub b2_Click(sender As Object, e As EventArgs) Handles b2.Click
-
-    End Sub
-
-    Private Sub a2_Click(sender As Object, e As EventArgs) Handles a2.Click
-
-    End Sub
-
-    Private Sub i3_Click(sender As Object, e As EventArgs) Handles i3.Click
-
-    End Sub
-
-    Private Sub h3_Click(sender As Object, e As EventArgs) Handles h3.Click
-
-    End Sub
-
-    Private Sub g3_Click(sender As Object, e As EventArgs) Handles g3.Click
-
-    End Sub
-
-    Private Sub f3_Click(sender As Object, e As EventArgs) Handles f3.Click
-
-    End Sub
-
-    Private Sub d3_Click(sender As Object, e As EventArgs) Handles d3.Click
-
-    End Sub
-
-    Private Sub e3_Click(sender As Object, e As EventArgs) Handles e3.Click
-
-    End Sub
-
-    Private Sub c3_Click(sender As Object, e As EventArgs) Handles c3.Click
-
-    End Sub
-
-    Private Sub b3_Click(sender As Object, e As EventArgs) Handles b3.Click
-
-    End Sub
-
-    Private Sub a3_Click(sender As Object, e As EventArgs) Handles a3.Click
-
-    End Sub
-
-    Private Sub i4_Click(sender As Object, e As EventArgs) Handles i4.Click
-
-    End Sub
-
-    Private Sub h4_Click(sender As Object, e As EventArgs) Handles h4.Click
-
-    End Sub
-
-    Private Sub g4_Click(sender As Object, e As EventArgs) Handles g4.Click
-
-    End Sub
-
-    Private Sub f4_Click(sender As Object, e As EventArgs) Handles f4.Click
-
-    End Sub
-
-    Private Sub d4_Click(sender As Object, e As EventArgs) Handles d4.Click
-
-    End Sub
-
-    Private Sub e4_Click(sender As Object, e As EventArgs) Handles e4.Click
-
-    End Sub
-
-    Private Sub c4_Click(sender As Object, e As EventArgs) Handles c4.Click
-
-    End Sub
-
-    Private Sub b4_Click(sender As Object, e As EventArgs) Handles b4.Click
-
-    End Sub
-
-    Private Sub a4_Click(sender As Object, e As EventArgs) Handles a4.Click
-
-    End Sub
-
-    Private Sub i5_Click(sender As Object, e As EventArgs) Handles i5.Click
-
-    End Sub
-
-    Private Sub h5_Click(sender As Object, e As EventArgs) Handles h5.Click
-
-    End Sub
-
-    Private Sub g5_Click(sender As Object, e As EventArgs) Handles g5.Click
-
-    End Sub
-
-    Private Sub f5_Click(sender As Object, e As EventArgs) Handles f5.Click
-
-    End Sub
-
-    Private Sub d5_Click(sender As Object, e As EventArgs) Handles d5.Click
-
-    End Sub
-
-    Private Sub e5_Click(sender As Object, e As EventArgs) Handles e5.Click
-
-    End Sub
-
-    Private Sub c5_Click(sender As Object, e As EventArgs) Handles c5.Click
-
-    End Sub
-
-    Private Sub b5_Click(sender As Object, e As EventArgs) Handles b5.Click
-
-    End Sub
-
-    Private Sub a5_Click(sender As Object, e As EventArgs) Handles a5.Click
-
-    End Sub
-
-    Private Sub i6_Click(sender As Object, e As EventArgs) Handles i6.Click
-
-    End Sub
-
-    Private Sub h6_Click(sender As Object, e As EventArgs) Handles h6.Click
-
-    End Sub
-
-    Private Sub g6_Click(sender As Object, e As EventArgs) Handles g6.Click
-
-    End Sub
-
-    Private Sub f6_Click(sender As Object, e As EventArgs) Handles f6.Click
-
-    End Sub
-
-    Private Sub d6_Click(sender As Object, e As EventArgs) Handles d6.Click
-
-    End Sub
-
-    Private Sub e6_Click(sender As Object, e As EventArgs) Handles e6.Click
-
-    End Sub
-
-    Private Sub c6_Click(sender As Object, e As EventArgs) Handles c6.Click
-
-    End Sub
-
-    Private Sub b6_Click(sender As Object, e As EventArgs) Handles b6.Click
-
-    End Sub
-
-    Private Sub a6_Click(sender As Object, e As EventArgs) Handles a6.Click
-
-    End Sub
-
-    Private Sub i7_Click(sender As Object, e As EventArgs) Handles i7.Click
-
-    End Sub
-
-    Private Sub h7_Click(sender As Object, e As EventArgs) Handles h7.Click
-
-    End Sub
-
-    Private Sub g7_Click(sender As Object, e As EventArgs) Handles g7.Click
-
-    End Sub
-
-    Private Sub f7_Click(sender As Object, e As EventArgs) Handles f7.Click
-
-    End Sub
-
-    Private Sub d7_Click(sender As Object, e As EventArgs) Handles d7.Click
-
-    End Sub
-
-    Private Sub e7_Click(sender As Object, e As EventArgs) Handles e7.Click
-
-    End Sub
-
-    Private Sub c7_Click(sender As Object, e As EventArgs) Handles c7.Click
-
-    End Sub
-
-    Private Sub b7_Click(sender As Object, e As EventArgs) Handles b7.Click
-
-    End Sub
-
-    Private Sub a7_Click(sender As Object, e As EventArgs) Handles a7.Click
-
-    End Sub
-
-    Private Sub i8_Click(sender As Object, e As EventArgs) Handles i8.Click
-
-    End Sub
-
-    Private Sub h8_Click(sender As Object, e As EventArgs) Handles h8.Click
-
-    End Sub
-
-    Private Sub g8_Click(sender As Object, e As EventArgs) Handles g8.Click
-
-    End Sub
-
-    Private Sub f8_Click(sender As Object, e As EventArgs) Handles f8.Click
-
-    End Sub
-
-    Private Sub d8_Click(sender As Object, e As EventArgs) Handles d8.Click
-
-    End Sub
-
-    Private Sub e8_Click(sender As Object, e As EventArgs) Handles e8.Click
-
-    End Sub
-
-    Private Sub c8_Click(sender As Object, e As EventArgs) Handles c8.Click
-
-    End Sub
-
-    Private Sub b8_Click(sender As Object, e As EventArgs) Handles b8.Click
-
-    End Sub
-
-    Private Sub a8_Click(sender As Object, e As EventArgs) Handles a8.Click
-
-    End Sub
-
-    Private Sub settings_Click(sender As Object, e As EventArgs) Handles settings.Click
-
-    End Sub
-
-    Private Sub message_Click(sender As Object, e As EventArgs) Handles message.Click
-
-    End Sub
-
-    Private Sub pause_Click(sender As Object, e As EventArgs) Handles pause.Click
-
-    End Sub
-
-    Private Sub BackgroundWorker1_DoWork(sender As Object, e As System.ComponentModel.DoWorkEventArgs) Handles BackgroundWorker1.DoWork
-
+        SetPieces()
     End Sub
 End Class
