@@ -5,7 +5,12 @@ Imports System.IO
 
 Public Class gameboard
 
-    Dim isHost As Boolean = True
+    Dim room As String = "rooms/"
+    Dim piecePlayer As String = "/piece"
+
+
+    Private client As IFirebaseClient
+    Dim isGameTime As Boolean = False
     Dim hostName As String
     Dim guestName As String
     Dim host As Boolean
@@ -17,17 +22,172 @@ Public Class gameboard
     Dim x2 As Integer = 0
     Dim y2 As Integer = 0
     Dim swapEnabled As Boolean
-    Dim test As Button
+    Dim piece1 As Button
     Dim piece2 As Button
+    Dim pieceObject(21) As Object
+    Dim pieceObjectList As New List(Of Location)
+    Dim coordinateObject(27) As Object
+    Dim pieceCoordinate(21) As String
 
-    Private firebaseConnection As New FirebaseConfig With
+    Private fcon As New FirebaseConfig With
         {
         .AuthSecret = "XMpD0khO3QHVDvlc1C3qyeWBu5OYC6Ctk2FupkIN",
         .BasePath = "https://game-of-the-generals-vb.firebaseio.com/"
         }
 
-    Public SwapPieces()
+    Public Sub SetPiecesToDatabase()
 
+    End Sub
+
+    Public Sub SetPiecesAndCoordinateObject()
+        pieceObject(0) = hp1
+        pieceObject(1) = hp2
+        pieceObject(2) = hp3
+        pieceObject(3) = hp4
+        pieceObject(4) = hp5
+        pieceObject(5) = hp6
+        pieceObject(6) = hp7
+        pieceObject(7) = hp8
+        pieceObject(8) = hp9
+        pieceObject(9) = hp10
+        pieceObject(10) = hp11
+        pieceObject(11) = hp12
+        pieceObject(12) = hp13
+        pieceObject(13) = hp14
+        pieceObject(14) = hp15
+        pieceObject(15) = hp16
+        pieceObject(16) = hp17
+        pieceObject(17) = hp18
+        pieceObject(18) = hp19
+        pieceObject(19) = hp20
+        pieceObject(20) = hp21
+
+        coordinateObject(0) = a6
+        coordinateObject(1) = a7
+        coordinateObject(2) = a8
+
+        coordinateObject(3) = b6
+        coordinateObject(4) = b7
+        coordinateObject(5) = b8
+
+        coordinateObject(6) = c6
+        coordinateObject(7) = c7
+        coordinateObject(8) = c8
+
+        coordinateObject(9) = d6
+        coordinateObject(10) = d7
+        coordinateObject(11) = d8
+
+        coordinateObject(12) = e6
+        coordinateObject(13) = e7
+        coordinateObject(14) = e8
+
+        coordinateObject(15) = f6
+        coordinateObject(16) = f7
+        coordinateObject(17) = f8
+
+        coordinateObject(18) = g6
+        coordinateObject(19) = g7
+        coordinateObject(20) = g8
+
+        coordinateObject(21) = h6
+        coordinateObject(22) = h7
+        coordinateObject(23) = h8
+
+        coordinateObject(24) = i6
+        coordinateObject(25) = i7
+        coordinateObject(26) = i8
+
+
+    End Sub
+
+    'Public Function LocationGet(a As Button) As Integer()
+    '    Dim b(2) As Integer
+    '    Dim c As Button = DirectCast(a, Button)
+    '    b(0) = c.Location.X
+    '    b(1) = c.Location.Y
+
+    '    Return b
+    'End Function
+
+    Public Sub GetLocation()
+        SetPiecesAndCoordinateObject()
+        Dim loc As Location = New Location
+        Dim pieceCoor(2) As Integer
+        Dim coorVal(2) As Integer
+
+        For i = 0 To 20
+            For j = 0 To 26
+                pieceCoor = loc.LocationGet(pieceObject(i))
+                coorVal = loc.LocationGet(coordinateObject(j))
+
+                If pieceCoor(0) = coorVal(0) And pieceCoor(1) = coorVal(1) Then
+                    pieceCoordinate(i) = GetCoordinateString(j)
+                End If
+            Next
+        Next
+    End Sub
+
+    Public Function GetCoordinateString(a As Integer) As String
+        Dim b As String
+        Select Case a
+            Case 0
+                b = "a6"
+            Case 1
+                b = "a7"
+            Case 2
+                b = "a8"
+            Case 3
+                b = "b6"
+            Case 4
+                b = "b7"
+            Case 5
+                b = "b8"
+            Case 6
+                b = "c6"
+            Case 7
+                b = "c7"
+            Case 8
+                b = "c8"
+            Case 9
+                b = "d6"
+            Case 10
+                b = "d7"
+            Case 11
+                b = "d8"
+            Case 12
+                b = "e6"
+            Case 13
+                b = "e7"
+            Case 14
+                b = "e8"
+            Case 15
+                b = "f6"
+            Case 16
+                b = "f7"
+            Case 17
+                b = "f8"
+            Case 18
+                b = "g6"
+            Case 19
+                b = "g7"
+            Case 20
+                b = "g8"
+            Case 21
+                b = "h6"
+            Case 22
+                b = "h7"
+            Case 23
+                b = "h8"
+            Case 24
+                b = "i6"
+            Case 25
+                b = "i7"
+            Case 26
+                b = "i8"
+        End Select
+        Return b
+    End Function
 
     Public Sub SetPiecesHost()
         Dim piece As Piece = New Piece
@@ -95,9 +255,9 @@ Public Class gameboard
         hp1.Click, hp2.Click, hp3.Click, hp4.Click, hp5.Click, hp6.Click, hp7.Click, hp8.Click, hp9.Click, hp10.Click,
         hp11.Click, hp12.Click, hp13.Click, hp14.Click, hp15.Click, hp16.Click, hp17.Click, hp18.Click, hp19.Click, hp20.Click, hp21.Click
 
-        If isHost Then
+        If Not isGameTime Then
             If firstClick Then
-                test = DirectCast(sender, Button)
+                piece1 = DirectCast(sender, Button)
                 If sender.Equals(hp1) Or
                     sender.Equals(hp2) Or
                     sender.Equals(hp3) Or
@@ -120,13 +280,13 @@ Public Class gameboard
                     sender.Equals(hp20) Or
                     sender.Equals(hp21) Then
                     swapEnabled = True
-                    x = test.Location.X
-                    y = test.Location.Y
+                    x = piece1.Location.X
+                    y = piece1.Location.Y
                 Else
                     swapEnabled = False
-                    test.BackColor = Color.Red
-                    x = test.Location.X
-                    y = test.Location.Y
+                    piece1.BackColor = Color.Red
+                    x = piece1.Location.X
+                    y = piece1.Location.Y
                 End If
                 firstClick = False
             Else
@@ -167,7 +327,8 @@ Public Class gameboard
                 firstClick = True
             End If
         Else
-            MessageBox.Show("You,re coordinate is from A1 to I3")
+            MessageBox.Show("GAME TIME")
+            'CHECK IF ENEMY IS READY
         End If
     End Sub
 
@@ -179,43 +340,60 @@ Public Class gameboard
     End Sub
 
     Public Sub SwapPiece(a As Integer, b As Integer, a2 As Integer, b2 As Integer)
-        test.Location = New Point(a2, b2) ' SECOND COORDINATE A2 And B2
+        piece1.Location = New Point(a2, b2) ' SECOND COORDINATE A2 And B2
         piece2.Location = New Point(a, b) 'FIRST COORDINATE A and B
 
     End Sub
-
-    'Public Sub getClickButtonNH(sender As Object, e As EventArgs) Handles a1.Click, a2.Click, a3.Click, b1.Click, b2.Click, b3.Click, c1.Click, c2.Click, c3.Click, d1.Click, d2.Click, d3.Click, e1.Click, e2.Click, e3.Click, f1.Click, f2.Click, f3.Click, g1.Click, g2.Click, g3.Click, h1.Click, h2.Click, h3.Click, i1.Click, i2.Click, i3.Click
-    '    If Not isHost Then
-    '        Dim test As Button
-    '        test = DirectCast(sender, Button)
-    '        test.BackColor = Color.Red
-    '    Else
-    '        MessageBox.Show("You,re coordinate is from A6 to I8")
-    '    End If
-    'End Sub
-
-    'Public Sub New(isHost As Boolean, ip As String)
-
-    '    If (isHost) Then
-    '        host = isHost
-
-    '    Else
-
-
-    '    End If
-
-    'End Sub
 
     Private Sub back_to_menu_Click(sender As Object, e As EventArgs) Handles back_to_menu.Click
         homepage.Show()
         Me.Close()
     End Sub
 
+    Public Sub SetPiece()
+
+    End Sub
+
     Private Sub ready_Click(sender As Object, e As EventArgs) Handles ready.Click
-        MessageBox.Show("ALL SET")
+        GetLocation()
+        isGameTime = True
+
+        Dim piece As New Piece() With {
+            .p1 = pieceCoordinate(0),
+            .p2 = pieceCoordinate(1),
+            .p3 = pieceCoordinate(2),
+            .p4 = pieceCoordinate(3),
+            .p5 = pieceCoordinate(4),
+            .p6 = pieceCoordinate(5),
+            .p7 = pieceCoordinate(6),
+            .p8 = pieceCoordinate(7),
+            .p9 = pieceCoordinate(8),
+            .p10 = pieceCoordinate(9),
+            .p11 = pieceCoordinate(10),
+            .p12 = pieceCoordinate(11),
+            .p13 = pieceCoordinate(12),
+            .p14 = pieceCoordinate(13),
+            .p15 = pieceCoordinate(14),
+            .p16 = pieceCoordinate(15),
+            .p17 = pieceCoordinate(16),
+            .p18 = pieceCoordinate(17),
+            .p19 = pieceCoordinate(18),
+            .p20 = pieceCoordinate(19),
+            .p21 = pieceCoordinate(20)
+        }
+
+        For index = 0 To pieceCoordinate.Length - 1
+            MessageBox.Show(pieceCoordinate(index))
+        Next
     End Sub
 
     Private Sub gameboard_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Try
+            client = New FireSharp.FirebaseClient(fcon)
+        Catch
+            MessageBox.Show("there was a problem in the internet connection")
+        End Try
+
         Dim a As RoundButton = New RoundButton
         a.Round(a1, 10)
         a.Round(a2, 10)

@@ -1215,7 +1215,6 @@ Partial Class gameboard
         Me.enemyName.Name = "enemyName"
         Me.enemyName.Size = New System.Drawing.Size(426, 41)
         Me.enemyName.TabIndex = 211
-        Me.enemyName.Text = "Label"
         Me.enemyName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'ready
@@ -1237,7 +1236,6 @@ Partial Class gameboard
         Me.myName.Name = "myName"
         Me.myName.Size = New System.Drawing.Size(426, 41)
         Me.myName.TabIndex = 211
-        Me.myName.Text = "Label"
         Me.myName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'ep2

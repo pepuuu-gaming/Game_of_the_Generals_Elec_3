@@ -1,5 +1,27 @@
 ﻿Public Class Piece
 
+    Public Property p1() As String = ""
+    Public Property p2() As String = ""
+    Public Property p3() As String = ""
+    Public Property p4() As String = ""
+    Public Property p5() As String = ""
+    Public Property p6() As String = ""
+    Public Property p7() As String = ""
+    Public Property p8() As String = ""
+    Public Property p9() As String = ""
+    Public Property p10() As String = ""
+    Public Property p11() As String = ""
+    Public Property p12() As String = ""
+    Public Property p13() As String = ""
+    Public Property p14() As String = ""
+    Public Property p15() As String = ""
+    Public Property p16() As String = ""
+    Public Property p17() As String = ""
+    Public Property p18() As String = ""
+    Public Property p19() As String = ""
+    Public Property p20() As String = ""
+    Public Property p21() As String = ""
+
     Public Sub Setprivate(a As Button, r As Integer())
         a.BackgroundImage = My.Resources.private_2x
         a.BackgroundImageLayout = ImageLayout.Center
