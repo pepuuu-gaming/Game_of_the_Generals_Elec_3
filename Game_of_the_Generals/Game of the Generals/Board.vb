@@ -13,7 +13,6 @@ Public Class gameboard
     Dim movePath As String
     Dim player1Path As String
     Dim player2Path As String
-    Dim 
 
     Private client As IFirebaseClient
     Dim isGameTime As Boolean = False
@@ -54,15 +53,15 @@ Public Class gameboard
 
     Public Sub SetPiecesToDatabase()
         Dim piece As New Piece() With {
-            .p1 = pieceCoordinate(0),
-            .p2 = pieceCoordinate(1),
-            .p3 = pieceCoordinate(2),
-            .p4 = pieceCoordinate(3),
-            .p5 = pieceCoordinate(4),
-            .p6 = pieceCoordinate(5),
-            .p7 = pieceCoordinate(6),
-            .p8 = pieceCoordinate(7),
-            .p9 = pieceCoordinate(8),
+            .p01 = pieceCoordinate(0),
+            .p02 = pieceCoordinate(1),
+            .p03 = pieceCoordinate(2),
+            .p04 = pieceCoordinate(3),
+            .p05 = pieceCoordinate(4),
+            .p06 = pieceCoordinate(5),
+            .p07 = pieceCoordinate(6),
+            .p08 = pieceCoordinate(7),
+            .p09 = pieceCoordinate(8),
             .p10 = pieceCoordinate(9),
             .p11 = pieceCoordinate(10),
             .p12 = pieceCoordinate(11),
@@ -76,6 +75,7 @@ Public Class gameboard
             .p20 = pieceCoordinate(19),
             .p21 = pieceCoordinate(20)
         }
+        client.Set(piecePlayer1Path, piece)
 
     End Sub
 
@@ -353,7 +353,7 @@ Public Class gameboard
                         piece2.Location = New Point(x, y)
                     End If
                 Else
-                    MessageBox.Show("Select piece to move")
+                    MessageBox.Show("Select piece to swap")
                 End If
                 firstClick = True
             End If
@@ -390,9 +390,7 @@ Public Class gameboard
         isGameTime = True
 
 
-        'For index = 0 To pieceCoordinate.Length - 1
-        '    MessageBox.Show(pieceCoordinate(index))
-        'Next
+        SetPiecesToDatabase()
     End Sub
 
     Private Sub gameboard_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -409,7 +407,7 @@ Public Class gameboard
             roomName = file_read.ReadLine
         End Using
 
-        roomNamePath = "rooms/" + roomName
+        roomNamePath = "room/" + roomName
         piecePlayer1Path = roomNamePath + "/player1" + "/piece"
         piecePlayer2Path = roomNamePath + "/player2" + "/piece"
         arbitraryPath = roomNamePath + "/arbitrary"
