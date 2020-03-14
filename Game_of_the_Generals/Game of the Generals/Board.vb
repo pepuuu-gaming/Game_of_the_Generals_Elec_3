@@ -307,17 +307,17 @@ Public Class Gameboard
 
 
         'LISTEN MOVES
-
+        If Not Check() Then
+            GetName()
+            SetName()
+        End If
 
         If isGameTime And isGameTimeDB Then
             MessageBox.Show("GAME TIME")
             'CHECK IF ENEMY IS READY
             'IF ENEMY IS READY PIECE WILL SHOW TO YOU
         Else
-            If Not Check() Then
-                GetName()
-                SetName()
-            End If
+
             If firstClick Then
                 piece1 = DirectCast(sender, Button)
                 If sender.Equals(hp1) Or
@@ -341,15 +341,16 @@ Public Class Gameboard
                     sender.Equals(hp19) Or
                     sender.Equals(hp20) Or
                     sender.Equals(hp21) Then
-                    swapEnabled = True
+                    'swapEnabled = True
                     x = piece1.Location.X
                     y = piece1.Location.Y
+                    firstClick = False
                 Else
-                    swapEnabled = False
-                    x = piece1.Location.X
-                    y = piece1.Location.Y
+                    MessageBox.Show("Please select a piece")
+                    '    swapEnabled = False
+                    '    x = piece1.Location.X
+                    '    y = piece1.Location.Y
                 End If
-                firstClick = False
             Else
                 piece2 = DirectCast(sender, Button)
                 If sender.Equals(hp1) Or
@@ -373,17 +374,17 @@ Public Class Gameboard
                     sender.Equals(hp19) Or
                     sender.Equals(hp20) Or
                     sender.Equals(hp21) Then
-                    If swapEnabled Then
-                        x2 = piece2.Location.X
-                        y2 = piece2.Location.Y
+                    x2 = piece2.Location.X
+                    y2 = piece2.Location.Y
 
-                        SwapPiece(x, y, x2, y2)
-                        ResetValue()
-                    Else
-                        piece2.Location = New Point(x, y)
-                    End If
+                    SwapPiece(x, y, x2, y2)
+                    ResetValue()
                 Else
-                    MessageBox.Show("Select piece to swap")
+                    'MessageBox.Show("Select piece to swap")
+                    x2 = piece2.Location.X
+                    y2 = piece2.Location.Y
+                    piece1.Location = New Point(x2, y2)
+                    ResetValue()
                 End If
                 firstClick = True
             End If
@@ -474,7 +475,6 @@ Public Class Gameboard
     Private Sub Ready_Click(sender As Object, e As EventArgs) Handles ready.Click
         GetLocation()
         isGameTime = True
-
 
         SetPiecesToDatabase()
     End Sub
