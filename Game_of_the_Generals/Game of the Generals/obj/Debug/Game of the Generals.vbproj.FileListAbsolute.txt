@@ -80,3 +80,7 @@ E:\Game_of_the_Generals_Elec_3\Game_of_the_Generals\Game of the Generals\bin\Deb
 E:\Game_of_the_Generals_Elec_3\Game_of_the_Generals\Game of the Generals\bin\Debug\System.Net.Http.Primitives.xml
 E:\Game_of_the_Generals_Elec_3\Game_of_the_Generals\Game of the Generals\obj\Debug\Game of the Generals.vbproj.App.config
 E:\Game_of_the_Generals_Elec_3\Game_of_the_Generals\Game of the Generals\obj\Debug\Game of the Generals.vbproj.CopyComplete
+E:\Game_of_the_Generals_Elec_3\Game_of_the_Generals\Game of the Generals\bin\Debug\Game of the Generals.exe.manifest
+E:\Game_of_the_Generals_Elec_3\Game_of_the_Generals\Game of the Generals\bin\Debug\Game of the Generals.application
+E:\Game_of_the_Generals_Elec_3\Game_of_the_Generals\Game of the Generals\obj\Debug\Game of the Generals.exe.manifest
+E:\Game_of_the_Generals_Elec_3\Game_of_the_Generals\Game of the Generals\obj\Debug\Game of the Generals.application

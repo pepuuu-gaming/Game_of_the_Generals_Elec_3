@@ -133,7 +133,7 @@ Public Class Room
 
             Dim roomDatabase As New RoomDatabase With
             {
-            .firstMove = True,
+            .counter = 0,
             .playerTurn = True,
             .whoWin = ""
             }

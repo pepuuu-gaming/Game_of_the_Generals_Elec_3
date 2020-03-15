@@ -120,9 +120,10 @@
         a.BackColor = Color.FromArgb(r(0), r(1), r(1))
     End Sub
 
-    Public Sub Defeat(a As Button)
-        a.BackgroundImage = Nothing
-        a.BackColor = Nothing
+    Public Sub Defeat(a As Button, b As Integer())
+        a.Location = New Point(b(0), b(1))
+        a.Visible = False
+        a.Enabled = False
     End Sub
 
 End Class

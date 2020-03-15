@@ -43,13 +43,13 @@ Public Class Gameboard
     Dim enemyPieceCoordinate(21) As String
     Dim gridCoordinateObject(71) As Object
     Dim enemyGridCoordinateObject(71) As Object
-    'Dim playerTurn As Boolean = True
     Dim firstPieceLocation As Integer()
     Dim firstClickPiece As Integer
     Dim clickedCoordinateValue As String
     Dim enemyClickedPiece As Integer
     Dim enemyClickedCoordinateValue As String
     Dim enemyClickedPieceObject As Object
+    Dim counter As Integer = 0
 
     Private fcon As New FirebaseConfig With
         {
@@ -1327,15 +1327,74 @@ Public Class Gameboard
 
     End Sub
 
-    Public Function CheckfirstMove() As Boolean
-        Dim b As Boolean
-        Dim res = client.Get(roomNamePath + "/firstMove")
-        b = res.ResultAs(Of Boolean)
+    Public Sub SetCounter(a As Integer)
+        'Dim a As Integer = GetCounter()
+        client.Set(roomNamePath + "/counter", a + 1)
+    End Sub
+
+    Public Function GetCounter() As Integer
+        Dim res = client.Get(roomNamePath + "/counter")
+        Dim b As Integer = res.ResultAs(Of Integer)
         Return b
     End Function
 
-    Public Sub SetFirstMove(b As Boolean)
-        client.Set(roomNamePath + "/firstMove", b)
+    Public Function GetPieceValue(sender) As Integer
+        Dim b As Integer
+        If sender.Equals(hp1) Or sender.Equals(hp2) Or sender.Equals(hp3) Or sender.Equals(hp4) Or sender.Equals(hp5) Or sender.Equals(hp6) Or sender.Equals(ep1) Or sender.Equals(ep2) Or sender.Equals(ep3) Or sender.Equals(ep4) Or sender.Equals(ep5) Or sender.Equals(ep6) Then
+            b = 1
+        ElseIf sender.Equals(hp7) Or sender.Equals(hp7) Then
+            b = 2
+        ElseIf sender.Equals(hp8) Or sender.Equals(ep8) Then
+            b = 3
+        ElseIf sender.Equals(hp9) Or sender.Equals(hp8) Then
+            b = 4
+        ElseIf sender.Equals(hp10) Or sender.Equals(ep10) Then
+            b = 5
+        ElseIf sender.Equals(hp11) Or sender.Equals(ep11) Then
+            b = 6
+        ElseIf sender.Equals(hp12) Or sender.Equals(ep12) Then
+            b = 7
+        ElseIf sender.Equals(hp13) Or sender.Equals(ep13) Then
+            b = 8
+        ElseIf sender.Equals(hp14) Or sender.Equals(ep14) Then
+            b = 9
+        ElseIf sender.Equals(hp15) Or sender.Equals(ep15) Then
+            b = 10
+        ElseIf sender.Equals(hp16) Or sender.Equals(ep16) Then
+            b = 11
+        ElseIf sender.Equals(hp17) Or sender.Equals(ep17) Then
+            b = 12
+        ElseIf sender.Equals(hp18) Or sender.Equals(ep18) Then
+            b = 13
+        ElseIf sender.Equals(hp19) Or sender.Equals(hp20) Or sender.Equals(ep19) Or sender.Equals(ep20) Then
+            b = 14
+        ElseIf sender.Equals(hp21) Or sender.Equals(ep21) Then
+            b = 0
+        End If
+        Return b
+    End Function
+
+    Public Sub Arbitrary(a As Integer, b As Integer)
+        If a = 0 And b = 0 Then
+            'SPECIAL ARBITRARY
+            'AGGRESION VALUE
+        Else
+            If a = b Then
+                'STALEMATE
+            Else
+                If a = 14 And b = 1 Then
+                    'b wins
+                ElseIf a = 1 And b = 14 Then
+                    'awins
+                Else
+                    If a > b Then
+                        'awins
+                    Else
+                        'b wins
+                    End If
+                End If
+            End If
+        End If
     End Sub
 
     Private Sub Gameboard_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -1508,10 +1567,13 @@ Public Class Gameboard
         End Select
     End Sub
 
+    Dim showed = True
     Public Sub GetClickButton(sender As Object, e As EventArgs) Handles a6.Click, a7.Click, a8.Click, b6.Click, b7.Click, b8.Click, c6.Click, c7.Click, c8.Click, d6.Click, d7.Click, d8.Click, e6.Click, e7.Click, e8.Click, f6.Click, f7.Click, f8.Click, g6.Click, g7.Click, g8.Click, h6.Click, h7.Click, h8.Click, i6.Click, i7.Click, i8.Click,
         hp1.Click, hp2.Click, hp3.Click, hp4.Click, hp5.Click, hp6.Click, hp7.Click, hp8.Click, hp9.Click, hp10.Click,
         hp11.Click, hp12.Click, hp13.Click, hp14.Click, hp15.Click, hp16.Click, hp17.Click, hp18.Click, hp19.Click, hp20.Click, hp21.Click, a1.Click, a2.Click, a3.Click, a4.Click, a5.Click, b1.Click, b2.Click, b3.Click, b4.Click, b5.Click, c1.Click, c2.Click, c3.Click, c4.Click, c5.Click, d1.Click, d2.Click, d3.Click, d4.Click, d5.Click, e1.Click, e2.Click, e3.Click, e4.Click, e5.Click, f1.Click, f2.Click, f3.Click, f4.Click, f5.Click, g1.Click, g2.Click, g3.Click, g4.Click, g5.Click, h1.Click, h2.Click, h3.Click, h4.Click, h5.Click, i1.Click, i2.Click, i3.Click, i4.Click, i5.Click, ep1.Click,
         ep2.Click, ep3.Click, ep4.Click, ep5.Click, ep6.Click, ep7.Click, ep8.Click, ep9.Click, ep10.Click, ep11.Click, ep13.Click, ep14.Click, ep15.Click, ep16.Click, ep17.Click, ep18.Click, ep19.Click, ep20.Click, ready.Click, myName.Click
+
+        'CHECK WHO WIN
 
         'If sender.Equals(ep1) Then
         '    MessageBox.Show("EP1 CLICKED")
@@ -1527,22 +1589,32 @@ Public Class Gameboard
 
         'CHECK IF ENEMY IS READY
         'IF ENEMY IS READY PIECE WILL SHOW TO YOU
-        If host Then
+        If host And showed Then
             If GetPlayer2ReadyStatus() Then
                 GetAndSetEnemyLocation()
                 ShowPiece(host)
+                showed = False
             End If
-        Else
+        ElseIf Not host And showed Then
             If GetPlayer1ReadyStatus() Then
                 GetAndSetEnemyLocation()
                 ShowPiece(host)
+                showed = False
             End If
         End If
 
         If sender.Equals(ready) Then
             If isGameTime And isGameTimeDB Then
-                'UPDATE METHOD
-                'GET LOCATION MOVED
+                Dim l As Integer = GetCounter()
+                If Not host Then
+                    GetAndSetEnemyMove()
+                    SetCounter(l)
+                Else
+                    If l > 0 Then
+                        SetCounter(l)
+                        GetAndSetEnemyMove()
+                    End If
+                End If
             Else
                 GetLocation()
                 isGameTime = True
@@ -1630,12 +1702,13 @@ Public Class Gameboard
                             'If sender.Equals(a6) Then
                             '    piece1.Location = New Point(x2, y2)&
                             If IsItPossibleToMove(piece2, firstPieceLocation) Then
+                                'ARBITRARY
                                 piece1.Location = New Point(x2, y2)
                                 'METHOD TO SEND TO DATABASE
                                 SetCoordinateObject(x2, y2)
                                 SetMoveToDatabase()
-                                SetPlayerTurn(Not host)
                                 firstClick = True
+                                SetPlayerTurn(Not host)
                             Else
                                 MessageBox.Show("You can only move one tile away")
                                 ResetValue()
@@ -1648,11 +1721,11 @@ Public Class Gameboard
                     MessageBox.Show("Opponent's Turn")
                     enemyNameLine.BackColor = Color.Green
                     myNameLine.BackColor = Color.Red
-                    If Not CheckfirstMove() Then
-                        GetAndSetEnemyMove()
-                    Else
-                        SetFirstMove(False)
-                    End If
+                    'If Not CheckfirstMove() Then
+                    '    GetAndSetEnemyMove()
+                    'Else
+                    '    SetFirstMove(False)
+                    'End If
                 End If
             Else
                 If GetPlayerTurn() Then
@@ -1661,9 +1734,9 @@ Public Class Gameboard
                     enemyNameLine.BackColor = Color.Green
                     myNameLine.BackColor = Color.Red
                 Else
-                    If Not CheckfirstMove() Then
-                        GetAndSetEnemyMove()
-                    End If
+                    'If Not CheckfirstMove() Then
+                    '    GetAndSetEnemyMove()
+                    'End If
                     ready.Text = "SEND"
                     myNameLine.BackColor = Color.Green
                     enemyNameLine.BackColor = Color.Red
@@ -1722,13 +1795,13 @@ Public Class Gameboard
                                 sender.Equals(hp20) Or
                                 sender.Equals(hp21) Then
                             MessageBox.Show("You can't swap now. Please select on the coordinate")
-                            SetPlayerTurn(Not host)
                             firstClick = True
                         Else
                             x2 = piece2.Location.X
                             y2 = piece2.Location.Y
                             'METHOD FOR Move
                             If IsItPossibleToMove(piece2, firstPieceLocation) Then
+                                'ARBITRARY
                                 piece1.Location = New Point(x2, y2)
                                 'METHOD TO SEND TO DATABASE
                                 SetCoordinateObject(x2, y2)
@@ -1742,7 +1815,6 @@ Public Class Gameboard
                             End If
                         End If
                     End If
-
                 End If
             End If
         Else
