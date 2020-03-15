@@ -40,9 +40,12 @@ Public Class Gameboard
     Dim enemyCoordinateObject(27) As Object
     Dim pieceCoordinate(21) As String
     Dim enemyPieceCoordinate(21) As String
-    Dim gridCoordinate(71) As Object
-    Dim enemyGridCoordinate(71) As Object
+    Dim gridCoordinateObject(71) As Object
+    Dim enemyGridCoordinateObject(71) As Object
     Dim playerTurn As Boolean = True
+    Dim firstPieceLocation As Integer()
+    Dim firstClickPiece As Integer
+    Dim clickedCoordinateValue As String
 
     Private fcon As New FirebaseConfig With
         {
@@ -360,167 +363,167 @@ Public Class Gameboard
         enemyCoordinateObject(26) = a1
 
 
-        gridCoordinate(0) = a1
-        gridCoordinate(1) = a2
-        gridCoordinate(2) = a3
-        gridCoordinate(3) = a4
-        gridCoordinate(4) = a5
-        gridCoordinate(5) = a6
-        gridCoordinate(6) = a7
-        gridCoordinate(7) = a8
+        gridCoordinateObject(0) = a1
+        gridCoordinateObject(1) = a2
+        gridCoordinateObject(2) = a3
+        gridCoordinateObject(3) = a4
+        gridCoordinateObject(4) = a5
+        gridCoordinateObject(5) = a6
+        gridCoordinateObject(6) = a7
+        gridCoordinateObject(7) = a8
 
-        gridCoordinate(8) = b1
-        gridCoordinate(9) = b2
-        gridCoordinate(10) = b3
-        gridCoordinate(11) = b4
-        gridCoordinate(12) = b5
-        gridCoordinate(13) = b6
-        gridCoordinate(14) = b7
-        gridCoordinate(15) = b8
+        gridCoordinateObject(8) = b1
+        gridCoordinateObject(9) = b2
+        gridCoordinateObject(10) = b3
+        gridCoordinateObject(11) = b4
+        gridCoordinateObject(12) = b5
+        gridCoordinateObject(13) = b6
+        gridCoordinateObject(14) = b7
+        gridCoordinateObject(15) = b8
 
-        gridCoordinate(16) = c1
-        gridCoordinate(17) = c2
-        gridCoordinate(18) = c3
-        gridCoordinate(19) = c4
-        gridCoordinate(20) = c5
-        gridCoordinate(21) = c6
-        gridCoordinate(22) = c7
-        gridCoordinate(23) = c8
+        gridCoordinateObject(16) = c1
+        gridCoordinateObject(17) = c2
+        gridCoordinateObject(18) = c3
+        gridCoordinateObject(19) = c4
+        gridCoordinateObject(20) = c5
+        gridCoordinateObject(21) = c6
+        gridCoordinateObject(22) = c7
+        gridCoordinateObject(23) = c8
 
-        gridCoordinate(24) = d1
-        gridCoordinate(25) = d2
-        gridCoordinate(26) = d3
-        gridCoordinate(27) = d4
-        gridCoordinate(28) = d5
-        gridCoordinate(29) = d6
-        gridCoordinate(30) = d7
-        gridCoordinate(31) = d8
+        gridCoordinateObject(24) = d1
+        gridCoordinateObject(25) = d2
+        gridCoordinateObject(26) = d3
+        gridCoordinateObject(27) = d4
+        gridCoordinateObject(28) = d5
+        gridCoordinateObject(29) = d6
+        gridCoordinateObject(30) = d7
+        gridCoordinateObject(31) = d8
 
-        gridCoordinate(32) = e1
-        gridCoordinate(33) = e2
-        gridCoordinate(34) = e3
-        gridCoordinate(35) = e4
-        gridCoordinate(36) = e5
-        gridCoordinate(37) = e6
-        gridCoordinate(38) = e7
-        gridCoordinate(39) = e8
+        gridCoordinateObject(32) = e1
+        gridCoordinateObject(33) = e2
+        gridCoordinateObject(34) = e3
+        gridCoordinateObject(35) = e4
+        gridCoordinateObject(36) = e5
+        gridCoordinateObject(37) = e6
+        gridCoordinateObject(38) = e7
+        gridCoordinateObject(39) = e8
 
-        gridCoordinate(40) = f1
-        gridCoordinate(41) = f2
-        gridCoordinate(42) = f3
-        gridCoordinate(43) = f4
-        gridCoordinate(44) = f5
-        gridCoordinate(45) = f6
-        gridCoordinate(46) = f7
-        gridCoordinate(47) = f8
+        gridCoordinateObject(40) = f1
+        gridCoordinateObject(41) = f2
+        gridCoordinateObject(42) = f3
+        gridCoordinateObject(43) = f4
+        gridCoordinateObject(44) = f5
+        gridCoordinateObject(45) = f6
+        gridCoordinateObject(46) = f7
+        gridCoordinateObject(47) = f8
 
-        gridCoordinate(48) = g1
-        gridCoordinate(49) = g2
-        gridCoordinate(50) = g3
-        gridCoordinate(51) = g4
-        gridCoordinate(52) = g5
-        gridCoordinate(53) = g6
-        gridCoordinate(54) = g7
-        gridCoordinate(55) = g8
+        gridCoordinateObject(48) = g1
+        gridCoordinateObject(49) = g2
+        gridCoordinateObject(50) = g3
+        gridCoordinateObject(51) = g4
+        gridCoordinateObject(52) = g5
+        gridCoordinateObject(53) = g6
+        gridCoordinateObject(54) = g7
+        gridCoordinateObject(55) = g8
 
-        gridCoordinate(56) = h1
-        gridCoordinate(57) = h2
-        gridCoordinate(58) = h3
-        gridCoordinate(59) = h4
-        gridCoordinate(60) = h5
-        gridCoordinate(61) = h6
-        gridCoordinate(62) = h7
-        gridCoordinate(63) = h8
+        gridCoordinateObject(56) = h1
+        gridCoordinateObject(57) = h2
+        gridCoordinateObject(58) = h3
+        gridCoordinateObject(59) = h4
+        gridCoordinateObject(60) = h5
+        gridCoordinateObject(61) = h6
+        gridCoordinateObject(62) = h7
+        gridCoordinateObject(63) = h8
 
-        gridCoordinate(64) = i1
-        gridCoordinate(65) = i2
-        gridCoordinate(66) = i3
-        gridCoordinate(67) = i4
-        gridCoordinate(68) = i5
-        gridCoordinate(69) = i6
-        gridCoordinate(70) = i7
-        gridCoordinate(71) = i8
+        gridCoordinateObject(64) = i1
+        gridCoordinateObject(65) = i2
+        gridCoordinateObject(66) = i3
+        gridCoordinateObject(67) = i4
+        gridCoordinateObject(68) = i5
+        gridCoordinateObject(69) = i6
+        gridCoordinateObject(70) = i7
+        gridCoordinateObject(71) = i8
 
-        enemyGridCoordinate(0) = i8
-        enemyGridCoordinate(1) = i7
-        enemyGridCoordinate(2) = i6
-        enemyGridCoordinate(3) = i5
-        enemyGridCoordinate(4) = i4
-        enemyGridCoordinate(5) = i3
-        enemyGridCoordinate(6) = i2
-        enemyGridCoordinate(7) = i1
+        enemyGridCoordinateObject(0) = i8
+        enemyGridCoordinateObject(1) = i7
+        enemyGridCoordinateObject(2) = i6
+        enemyGridCoordinateObject(3) = i5
+        enemyGridCoordinateObject(4) = i4
+        enemyGridCoordinateObject(5) = i3
+        enemyGridCoordinateObject(6) = i2
+        enemyGridCoordinateObject(7) = i1
 
-        enemyGridCoordinate(8) = h8
-        enemyGridCoordinate(9) = h7
-        enemyGridCoordinate(10) = h6
-        enemyGridCoordinate(11) = h5
-        enemyGridCoordinate(12) = h4
-        enemyGridCoordinate(13) = h3
-        enemyGridCoordinate(14) = h2
-        enemyGridCoordinate(15) = h1
+        enemyGridCoordinateObject(8) = h8
+        enemyGridCoordinateObject(9) = h7
+        enemyGridCoordinateObject(10) = h6
+        enemyGridCoordinateObject(11) = h5
+        enemyGridCoordinateObject(12) = h4
+        enemyGridCoordinateObject(13) = h3
+        enemyGridCoordinateObject(14) = h2
+        enemyGridCoordinateObject(15) = h1
 
-        enemyGridCoordinate(16) = g8
-        enemyGridCoordinate(17) = g7
-        enemyGridCoordinate(18) = g6
-        enemyGridCoordinate(19) = g5
-        enemyGridCoordinate(20) = g4
-        enemyGridCoordinate(21) = g3
-        enemyGridCoordinate(22) = g2
-        enemyGridCoordinate(23) = g1
+        enemyGridCoordinateObject(16) = g8
+        enemyGridCoordinateObject(17) = g7
+        enemyGridCoordinateObject(18) = g6
+        enemyGridCoordinateObject(19) = g5
+        enemyGridCoordinateObject(20) = g4
+        enemyGridCoordinateObject(21) = g3
+        enemyGridCoordinateObject(22) = g2
+        enemyGridCoordinateObject(23) = g1
 
-        enemyGridCoordinate(24) = f8
-        enemyGridCoordinate(25) = f7
-        enemyGridCoordinate(26) = f6
-        enemyGridCoordinate(27) = f5
-        enemyGridCoordinate(28) = f4
-        enemyGridCoordinate(29) = f3
-        enemyGridCoordinate(30) = f2
-        enemyGridCoordinate(31) = f1
+        enemyGridCoordinateObject(24) = f8
+        enemyGridCoordinateObject(25) = f7
+        enemyGridCoordinateObject(26) = f6
+        enemyGridCoordinateObject(27) = f5
+        enemyGridCoordinateObject(28) = f4
+        enemyGridCoordinateObject(29) = f3
+        enemyGridCoordinateObject(30) = f2
+        enemyGridCoordinateObject(31) = f1
 
-        enemyGridCoordinate(32) = e8
-        enemyGridCoordinate(33) = e7
-        enemyGridCoordinate(34) = e6
-        enemyGridCoordinate(35) = e5
-        enemyGridCoordinate(36) = e4
-        enemyGridCoordinate(37) = e3
-        enemyGridCoordinate(38) = e2
-        enemyGridCoordinate(39) = e1
+        enemyGridCoordinateObject(32) = e8
+        enemyGridCoordinateObject(33) = e7
+        enemyGridCoordinateObject(34) = e6
+        enemyGridCoordinateObject(35) = e5
+        enemyGridCoordinateObject(36) = e4
+        enemyGridCoordinateObject(37) = e3
+        enemyGridCoordinateObject(38) = e2
+        enemyGridCoordinateObject(39) = e1
 
-        enemyGridCoordinate(40) = d8
-        enemyGridCoordinate(41) = d7
-        enemyGridCoordinate(42) = d6
-        enemyGridCoordinate(43) = d5
-        enemyGridCoordinate(44) = d4
-        enemyGridCoordinate(45) = d3
-        enemyGridCoordinate(46) = d2
-        enemyGridCoordinate(47) = d1
+        enemyGridCoordinateObject(40) = d8
+        enemyGridCoordinateObject(41) = d7
+        enemyGridCoordinateObject(42) = d6
+        enemyGridCoordinateObject(43) = d5
+        enemyGridCoordinateObject(44) = d4
+        enemyGridCoordinateObject(45) = d3
+        enemyGridCoordinateObject(46) = d2
+        enemyGridCoordinateObject(47) = d1
 
-        enemyGridCoordinate(48) = c8
-        enemyGridCoordinate(49) = c7
-        enemyGridCoordinate(50) = c6
-        enemyGridCoordinate(51) = c5
-        enemyGridCoordinate(52) = c4
-        enemyGridCoordinate(53) = c3
-        enemyGridCoordinate(54) = c2
-        enemyGridCoordinate(55) = c1
+        enemyGridCoordinateObject(48) = c8
+        enemyGridCoordinateObject(49) = c7
+        enemyGridCoordinateObject(50) = c6
+        enemyGridCoordinateObject(51) = c5
+        enemyGridCoordinateObject(52) = c4
+        enemyGridCoordinateObject(53) = c3
+        enemyGridCoordinateObject(54) = c2
+        enemyGridCoordinateObject(55) = c1
 
-        enemyGridCoordinate(56) = b8
-        enemyGridCoordinate(57) = b7
-        enemyGridCoordinate(58) = b6
-        enemyGridCoordinate(59) = b5
-        enemyGridCoordinate(60) = b4
-        enemyGridCoordinate(61) = b3
-        enemyGridCoordinate(62) = b2
-        enemyGridCoordinate(63) = b1
+        enemyGridCoordinateObject(56) = b8
+        enemyGridCoordinateObject(57) = b7
+        enemyGridCoordinateObject(58) = b6
+        enemyGridCoordinateObject(59) = b5
+        enemyGridCoordinateObject(60) = b4
+        enemyGridCoordinateObject(61) = b3
+        enemyGridCoordinateObject(62) = b2
+        enemyGridCoordinateObject(63) = b1
 
-        enemyGridCoordinate(64) = a8
-        enemyGridCoordinate(65) = a7
-        enemyGridCoordinate(66) = a6
-        enemyGridCoordinate(67) = a5
-        enemyGridCoordinate(68) = a4
-        enemyGridCoordinate(69) = a3
-        enemyGridCoordinate(70) = a2
-        enemyGridCoordinate(71) = a1
+        enemyGridCoordinateObject(64) = a8
+        enemyGridCoordinateObject(65) = a7
+        enemyGridCoordinateObject(66) = a6
+        enemyGridCoordinateObject(67) = a5
+        enemyGridCoordinateObject(68) = a4
+        enemyGridCoordinateObject(69) = a3
+        enemyGridCoordinateObject(70) = a2
+        enemyGridCoordinateObject(71) = a1
     End Sub
 
     Public Sub GetLocation()
@@ -832,50 +835,295 @@ Public Class Gameboard
         Return b
     End Function
 
-    Public Sub CheckPossibleMove(sender As Object)
+    Public Function GetLocationFirstPiece(sender As Object) As Integer()
+        Dim retVal(2) As Integer
+
+        SetPiecesAndCoordinateObject()
+        Dim loc As Location = New Location
+        Dim pieceCoor As Integer()
+        Dim coorVal As Integer()
+
+        pieceCoor = loc.LocationGet(sender)
+        For j = 0 To 71
+            coorVal = loc.LocationGet(gridCoordinateObject(j))
+            If pieceCoor(0) = coorVal(0) And pieceCoor(1) = coorVal(1) Then
+                retVal = coorVal
+            End If
+        Next
+        Return retVal
+    End Function
+
+    Public Function IsItPossibleToMove(sender As Object, r As Integer()) As Boolean
+        SetPiecesAndCoordinateObject()
+        Dim loc As Location = New Location
+        Dim pieceCoor As Integer()
+        Dim coorVal As Integer()
+        Dim coorVal1 As Integer()
+        Dim coorVal2 As Integer()
+        Dim coorVal3 As Integer()
+        Dim coorVal4 As Integer()
+
+        Dim b As Boolean
+
+        pieceCoor = loc.LocationGet(sender)
+        For i = 0 To 71
+            coorVal = loc.LocationGet(gridCoordinateObject(i))
+            If r(0) = coorVal(0) And r(1) = coorVal(1) Then
+                If i <= 7 And i >= 0 Then
+                    If i = 0 Then
+                        coorVal1 = loc.LocationGet(gridCoordinateObject(i + 8))
+                        coorVal2 = loc.LocationGet(gridCoordinateObject(i + 1))
+                        If pieceCoor(0) = coorVal1(0) And pieceCoor(1) = coorVal1(1) Then
+                            b = True
+                        ElseIf pieceCoor(0) = coorVal2(1) And pieceCoor(1) = coorVal2(1) Then
+                            b = True
+                        Else
+                            b = False
+                        End If
+                    ElseIf i = 7 Then
+                        coorVal1 = loc.LocationGet(gridCoordinateObject(i + 8))
+                        coorVal4 = loc.LocationGet(gridCoordinateObject(i - 1))
+                        If pieceCoor(0) = coorVal1(0) And pieceCoor(1) = coorVal1(1) Then
+                            b = True
+                        ElseIf pieceCoor(0) = coorVal4(1) And pieceCoor(1) = coorVal4(1) Then
+                            b = True
+                        Else
+                            b = False
+                        End If
+                    Else
+                        coorVal1 = loc.LocationGet(gridCoordinateObject(i + 8))
+                        coorVal2 = loc.LocationGet(gridCoordinateObject(i + 1))
+                        coorVal4 = loc.LocationGet(gridCoordinateObject(i - 1))
+                        If pieceCoor(0) = coorVal1(0) And pieceCoor(1) = coorVal1(1) Then
+                            b = True
+                        ElseIf pieceCoor(0) = coorVal2(0) And pieceCoor(1) = coorVal2(1) Then
+                            b = True
+                        ElseIf pieceCoor(0) = coorVal4(0) And pieceCoor(1) = coorVal4(1) Then
+                            b = True
+                        Else
+                            b = False
+                        End If
+
+                    End If
+                ElseIf i <= 71 And i >= 64 Then
+                    If i = 64 Then
+                        coorVal2 = loc.LocationGet(gridCoordinateObject(i + 1))
+                        coorVal3 = loc.LocationGet(gridCoordinateObject(i - 8))
+                        If pieceCoor(0) = coorVal2(0) And pieceCoor(1) = coorVal2(1) Then
+                            b = True
+                        ElseIf pieceCoor(0) = coorVal3(0) And pieceCoor(1) = coorVal3(1) Then
+                            b = True
+                        Else
+                            b = False
+                        End If
+                    ElseIf i = 71 Then
+                        coorVal3 = loc.LocationGet(gridCoordinateObject(i - 8))
+                        coorVal4 = loc.LocationGet(gridCoordinateObject(i - 1))
+                        If pieceCoor(0) = coorVal3(0) And pieceCoor(1) = coorVal3(1) Then
+                            b = True
+                        ElseIf pieceCoor(0) = coorVal4(0) And pieceCoor(1) = coorVal4(1) Then
+                            b = True
+                        Else
+                            b = False
+                        End If
+                    Else
+                        coorVal2 = loc.LocationGet(gridCoordinateObject(i + 1))
+                        coorVal3 = loc.LocationGet(gridCoordinateObject(i - 8))
+                        coorVal4 = loc.LocationGet(gridCoordinateObject(i - 1))
+                        If pieceCoor(0) = coorVal2(0) And pieceCoor(1) = coorVal2(1) Then
+                            b = True
+                        ElseIf pieceCoor(0) = coorVal3(0) And pieceCoor(1) = coorVal3(1) Then
+                            b = True
+                        ElseIf pieceCoor(0) = coorVal4(0) And pieceCoor(1) = coorVal4(1) Then
+                            b = True
+                        Else
+                            b = False
+                        End If
+                    End If
+
+                ElseIf i = 8 Or i = 16 Or i = 24 Or i = 32 Or i = 40 Or i = 48 Or i = 56 Then
+                    coorVal1 = loc.LocationGet(gridCoordinateObject(i + 8))
+                    coorVal2 = loc.LocationGet(gridCoordinateObject(i + 1))
+                    coorVal3 = loc.LocationGet(gridCoordinateObject(i - 8))
+                    If pieceCoor(0) = coorVal1(0) And pieceCoor(1) = coorVal1(1) Then
+                        b = True
+                    ElseIf pieceCoor(0) = coorVal2(0) And pieceCoor(1) = coorVal2(1) Then
+                        b = True
+                    ElseIf pieceCoor(0) = coorVal3(0) And pieceCoor(1) = coorVal3(1) Then
+                        b = True
+                    Else
+                        b = False
+                    End If
+
+                ElseIf i = 15 Or i = 23 Or i = 31 Or i = 39 Or i = 47 Or i = 55 Or i = 63 Then
+                    coorVal1 = loc.LocationGet(gridCoordinateObject(i + 8))
+                    coorVal3 = loc.LocationGet(gridCoordinateObject(i - 8))
+                    coorVal4 = loc.LocationGet(gridCoordinateObject(i - 1))
+                    If pieceCoor(0) = coorVal1(0) And pieceCoor(1) = coorVal1(1) Then
+                        b = True
+                    ElseIf pieceCoor(0) = coorVal3(0) And pieceCoor(1) = coorVal3(1) Then
+                        b = True
+                    ElseIf pieceCoor(0) = coorVal4(0) And pieceCoor(1) = coorVal4(1) Then
+                        b = True
+                    Else
+                        b = False
+                    End If
+
+                Else
+                    coorVal1 = loc.LocationGet(gridCoordinateObject(i + 8))
+                    coorVal2 = loc.LocationGet(gridCoordinateObject(i + 1))
+                    coorVal3 = loc.LocationGet(gridCoordinateObject(i - 8))
+                    coorVal4 = loc.LocationGet(gridCoordinateObject(i - 1))
+                    If pieceCoor(0) = coorVal1(0) And pieceCoor(1) = coorVal1(1) Then
+                        b = True
+                    ElseIf pieceCoor(0) = coorVal2(0) And pieceCoor(1) = coorVal2(1) Then
+                        b = True
+                    ElseIf pieceCoor(0) = coorVal3(0) And pieceCoor(1) = coorVal3(1) Then
+                        b = True
+                    ElseIf pieceCoor(0) = coorVal4(0) And pieceCoor(1) = coorVal4(1) Then
+                        b = True
+                    Else
+                        b = False
+                    End If
+                End If
+            End If
+        Next
+        Return b
+    End Function
+
+    Public Sub CheckPossibleMove(sender As Object, r As Integer())
         SetPiecesAndCoordinateObject()
         Dim piece As Piece = New Piece
-        pieceCoordinate =
+        Dim loc As Location = New Location
+        Dim pieceCoor(2) As Integer
+        Dim coorVal(2) As Integer
 
-        'If sender.Equals(hp1) Then
-        '    piece.SetPossibleMove(a7, hostPossibleColor)
-        '    piece.SetPossibleMove(b8, hostPossibleColor)
-        'End If
+        pieceCoor = loc.LocationGet(sender)
+        For i = 0 To 71
+            coorVal = loc.LocationGet(gridCoordinateObject(i))
+            If pieceCoor(0) = coorVal(0) And pieceCoor(1) = coorVal(1) Then
+                If i <= 7 And i >= 0 Then
+                    If i = 0 Then
+                        piece.SetPossibleMove(gridCoordinateObject(i + 8), r)
+                        piece.SetPossibleMove(gridCoordinateObject(i + 1), r)
+                    ElseIf i = 7 Then
+                        piece.SetPossibleMove(gridCoordinateObject(i + 8), r)
+                        piece.SetPossibleMove(gridCoordinateObject(i - 1), r)
+                    Else
+                        piece.SetPossibleMove(gridCoordinateObject(i + 8), r)
+                        piece.SetPossibleMove(gridCoordinateObject(i - 1), r)
+                        piece.SetPossibleMove(gridCoordinateObject(i + 1), r)
+                    End If
+                ElseIf i <= 71 And i >= 64 Then
+                    If i = 64 Then
+                        piece.SetPossibleMove(gridCoordinateObject(i + 1), r)
+                        piece.SetPossibleMove(gridCoordinateObject(i - 8), r)
+                    ElseIf i = 71 Then
+                        piece.SetPossibleMove(gridCoordinateObject(i - 8), r)
+                        piece.SetPossibleMove(gridCoordinateObject(i - 1), r)
+                    Else
+                        piece.SetPossibleMove(gridCoordinateObject(i - 1), r)
+                        piece.SetPossibleMove(gridCoordinateObject(i + 1), r)
+                        piece.SetPossibleMove(gridCoordinateObject(i - 8), r)
+                    End If
+
+                ElseIf i = 8 Or i = 16 Or i = 24 Or i = 32 Or i = 40 Or i = 48 Or i = 56 Then
+                    piece.SetPossibleMove(gridCoordinateObject(i - 8), r)
+                    piece.SetPossibleMove(gridCoordinateObject(i + 1), r)
+                    piece.SetPossibleMove(gridCoordinateObject(i + 8), r)
+
+                ElseIf i = 15 Or i = 23 Or i = 31 Or i = 39 Or i = 47 Or i = 55 Or i = 63 Then
+                    piece.SetPossibleMove(gridCoordinateObject(i - 8), r)
+                    piece.SetPossibleMove(gridCoordinateObject(i - 1), r)
+                    piece.SetPossibleMove(gridCoordinateObject(i + 8), r)
+
+                Else
+                    piece.SetPossibleMove(gridCoordinateObject(i + 8), r)
+                    piece.SetPossibleMove(gridCoordinateObject(i - 1), r)
+                    piece.SetPossibleMove(gridCoordinateObject(i + 1), r)
+                    piece.SetPossibleMove(gridCoordinateObject(i - 8), r)
+                End If
+            End If
+        Next
+    End Sub
+
+    Public Sub SetMoveToDatabase()
+        Dim move As Move = New Move With
+            {
+            .coordinate = clickedCoordinateValue,
+            .piece = firstClickPiece
+            }
+
+        client.Set(MovePath, move)
+    End Sub
+
+    Public Sub SetCoordinateObject(a As Integer, b As Integer)
+        SetPiecesAndCoordinateObject()
+        Dim loc As Location = New Location
+        Dim coorVal As Integer()
+
+        'FIND COORDINATE AND SET IT
+        'pieceCoor = loc.LocationGet(sender)
+        For j = 0 To 71
+            coorVal = loc.LocationGet(gridCoordinateObject(j))
+            If a = coorVal(0) And b = coorVal(1) Then
+                clickedCoordinateValue = GetFullCoordinateString(j)
+            End If
+        Next
+    End Sub
 
 
-
-        'For i = 0 To 71
-        '    gridCoordinate(i)
-        'Next
+    Public Sub SetFirstClickObject(sender)
+        If sender.Equals(hp1) Then
+            firstClickPiece = 1
+        ElseIf sender.Equals(hp2) Then
+            firstClickPiece = 2
+        ElseIf sender.Equals(hp3) Then
+            firstClickPiece = 3
+        ElseIf sender.Equals(hp4) Then
+            firstClickPiece = 4
+        ElseIf sender.Equals(hp5) Then
+            firstClickPiece = 5
+        ElseIf sender.Equals(hp6) Then
+            firstClickPiece = 6
+        ElseIf sender.Equals(hp7) Then
+            firstClickPiece = 7
+        ElseIf sender.Equals(hp8) Then
+            firstClickPiece = 8
+        ElseIf sender.Equals(hp9) Then
+            firstClickPiece = 9
+        ElseIf sender.Equals(hp10) Then
+            firstClickPiece = 10
+        ElseIf sender.Equals(hp11) Then
+            firstClickPiece = 11
+        ElseIf sender.Equals(hp12) Then
+            firstClickPiece = 12
+        ElseIf sender.Equals(hp13) Then
+            firstClickPiece = 13
+        ElseIf sender.Equals(hp14) Then
+            firstClickPiece = 14
+        ElseIf sender.Equals(hp15) Then
+            firstClickPiece = 15
+        ElseIf sender.Equals(hp16) Then
+            firstClickPiece = 16
+        ElseIf sender.Equals(hp17) Then
+            firstClickPiece = 17
+        ElseIf sender.Equals(hp18) Then
+            firstClickPiece = 18
+        ElseIf sender.Equals(hp19) Then
+            firstClickPiece = 19
+        ElseIf sender.Equals(hp20) Then
+            firstClickPiece = 20
+        ElseIf sender.Equals(hp21) Then
+            firstClickPiece = 21
+        End If
     End Sub
 
     Public Sub GetClickButton(sender As Object, e As EventArgs) Handles a6.Click, a7.Click, a8.Click, b6.Click, b7.Click, b8.Click, c6.Click, c7.Click, c8.Click, d6.Click, d7.Click, d8.Click, e6.Click, e7.Click, e8.Click, f6.Click, f7.Click, f8.Click, g6.Click, g7.Click, g8.Click, h6.Click, h7.Click, h8.Click, i6.Click, i7.Click, i8.Click,
         hp1.Click, hp2.Click, hp3.Click, hp4.Click, hp5.Click, hp6.Click, hp7.Click, hp8.Click, hp9.Click, hp10.Click,
         hp11.Click, hp12.Click, hp13.Click, hp14.Click, hp15.Click, hp16.Click, hp17.Click, hp18.Click, hp19.Click, hp20.Click, hp21.Click, a1.Click, a2.Click, a3.Click, a4.Click, a5.Click, b1.Click, b2.Click, b3.Click, b4.Click, b5.Click, c1.Click, c2.Click, c3.Click, c4.Click, c5.Click, d1.Click, d2.Click, d3.Click, d4.Click, d5.Click, e1.Click, e2.Click, e3.Click, e4.Click, e5.Click, f1.Click, f2.Click, f3.Click, f4.Click, f5.Click, g1.Click, g2.Click, g3.Click, g4.Click, g5.Click, h1.Click, h2.Click, h3.Click, h4.Click, h5.Click, i1.Click, i2.Click, i3.Click, i4.Click, i5.Click, ep1.Click,
-        ep2.Click, ep3.Click, ep4.Click, ep5.Click, ep6.Click, ep7.Click, ep8.Click, ep9.Click, ep10.Click, ep11.Click, ep13.Click, ep14.Click, ep15.Click, ep16.Click, ep17.Click, ep18.Click, ep19.Click, ep20.Click, ready.Click
+        ep2.Click, ep3.Click, ep4.Click, ep5.Click, ep6.Click, ep7.Click, ep8.Click, ep9.Click, ep10.Click, ep11.Click, ep13.Click, ep14.Click, ep15.Click, ep16.Click, ep17.Click, ep18.Click, ep19.Click, ep20.Click, ready.Click, myName.Click
 
-        If sender.Equals(ready) Then
-            If isGameTime And isGameTimeDB Then
-                'UPDATE METHOD
-
-
-            Else
-                GetLocation()
-                isGameTime = True
-                SetReadyToDatabase()
-                SetPiecesToDatabase()
-                MessageBox.Show("All Set!")
-                ready.Enabled = False
-            End If
-
-        End If
-
-
-        'LISTEN IF SOMEONE JOIN THE ROOM
-        If Not Check() Then
-            GetName()
-            SetName()
-        End If
 
         'CHECK IF ENEMY IS READY
         'IF ENEMY IS READY PIECE WILL SHOW TO YOU
@@ -891,20 +1139,46 @@ Public Class Gameboard
             End If
         End If
 
+        'If sender.Equals(myName) Then
+        '    'LISTEN FOR MOVE
+        'End If
+
+
+        If sender.Equals(ready) Then
+            If isGameTime And isGameTimeDB Then
+                'UPDATE METHOD
+                'GET LOCATION MOVED
+                'RESET COLORS
+            Else
+                GetLocation()
+                isGameTime = True
+                SetReadyToDatabase()
+                SetPiecesToDatabase()
+                MessageBox.Show("All Set!")
+                ready.Enabled = False
+            End If
+        End If
+
+        'LISTEN IF SOMEONE JOIN THE ROOM
+        If Not Check() Then
+            GetName()
+            SetName()
+        End If
+
         'LISTEN MOVES
 
         If isGameTime And isGameTimeDB Then
+            myName.Enabled = False
+            ready.Enabled = True
             MessageBox.Show("GAME TIME")
-            ready.Text = "UPDATE BOARD"
             'METHOD GAME TIME
             'ready.Visible = False
             If host Then
                 If GetPlayerTurn() Then
-                    ready.Enabled = True
-                    myName.BackColor = Color.Green
-                    enemyName.BackColor = Color.Red
+                    ready.Text = "SEND"
+                    myNameLine.BackColor = Color.Green
+                    enemyNameLine.BackColor = Color.Red
                     If firstClick Then
-                        piece1 = DirectCast(sender, Button)
                         If sender.Equals(hp1) Or
                                 sender.Equals(hp2) Or
                                 sender.Equals(hp3) Or
@@ -926,89 +1200,109 @@ Public Class Gameboard
                                 sender.Equals(hp19) Or
                                 sender.Equals(hp20) Or
                                 sender.Equals(hp21) Then
-                            CheckPossibleMove(sender)
-                        Else
-                            MessageBox.Show("Please select a piece")
-                        End If
-                        firstClick = False
-                    Else
-                        piece2 = DirectCast(sender, Button)
-                        If sender.Equals(hp1) Or
-                                sender.Equals(hp2) Or
-                                sender.Equals(hp3) Or
-                                sender.Equals(hp4) Or
-                                sender.Equals(hp5) Or
-                                sender.Equals(hp6) Or
-                                sender.Equals(hp7) Or
-                                sender.Equals(hp8) Or
-                                sender.Equals(hp9) Or
-                                sender.Equals(hp10) Or
-                                sender.Equals(hp11) Or
-                                sender.Equals(hp12) Or
-                                sender.Equals(hp13) Or
-                                sender.Equals(hp14) Or
-                                sender.Equals(hp15) Or
-                                sender.Equals(hp16) Or
-                                sender.Equals(hp17) Or
-                                sender.Equals(hp18) Or
-                                sender.Equals(hp19) Or
-                                sender.Equals(hp20) Or
-                                sender.Equals(hp21) Then
-                            MessageBox.Show("You can't swap now. Please select on the coordinate")
-                            SetPlayerTurn(host)
-                        Else
-                            x2 = piece2.Location.X
-                            y2 = piece2.Location.Y
-                            piece1.Location = New Point(x2, y2)
-
-                            'METHOD TO SEND TO DATABASE
-                            SetPlayerTurn(Not host)
-                        End If
-                        firstClick = True
-                    End If
-
-                Else
-                    ready.Enabled = False
-                    MessageBox.Show("Opponent's Turn")
-                    enemyName.BackColor = Color.Green
-                    myName.BackColor = Color.Red
-                End If
-            Else
-                If GetPlayerTurn() Then
-                    ready.Enabled = False
-                    MessageBox.Show("Opponent's Turn")
-                    enemyName.BackColor = Color.Green
-                    myName.BackColor = Color.Red
-                Else
-                    ready.Enabled = True
-                    myName.BackColor = Color.Green
-                    enemyName.BackColor = Color.Red
-                    If firstClick Then
-                        piece1 = DirectCast(sender, Button)
-                        If sender.Equals(hp1) Or
-                                sender.Equals(hp2) Or
-                                sender.Equals(hp3) Or
-                                sender.Equals(hp4) Or
-                                sender.Equals(hp5) Or
-                                sender.Equals(hp6) Or
-                                sender.Equals(hp7) Or
-                                sender.Equals(hp8) Or
-                                sender.Equals(hp9) Or
-                                sender.Equals(hp10) Or
-                                sender.Equals(hp11) Or
-                                sender.Equals(hp12) Or
-                                sender.Equals(hp13) Or
-                                sender.Equals(hp14) Or
-                                sender.Equals(hp15) Or
-                                sender.Equals(hp16) Or
-                                sender.Equals(hp17) Or
-                                sender.Equals(hp18) Or
-                                sender.Equals(hp19) Or
-                                sender.Equals(hp20) Or
-                                sender.Equals(hp21) Then
+                            piece1 = DirectCast(sender, Button)
+                            CheckPossibleMove(sender, hostPossibleColor)
+                            firstPieceLocation = GetLocationFirstPiece(sender)
+                            SetFirstClickObject(sender)
                             firstClick = False
                         Else
                             MessageBox.Show("Please select a piece")
+                            firstClick = True
+                        End If
+                    Else
+                        piece2 = DirectCast(sender, Button)
+                        If sender.Equals(hp1) Or
+                                sender.Equals(hp2) Or
+                                sender.Equals(hp3) Or
+                                sender.Equals(hp4) Or
+                                sender.Equals(hp5) Or
+                                sender.Equals(hp6) Or
+                                sender.Equals(hp7) Or
+                                sender.Equals(hp8) Or
+                                sender.Equals(hp9) Or
+                                sender.Equals(hp10) Or
+                                sender.Equals(hp11) Or
+                                sender.Equals(hp12) Or
+                                sender.Equals(hp13) Or
+                                sender.Equals(hp14) Or
+                                sender.Equals(hp15) Or
+                                sender.Equals(hp16) Or
+                                sender.Equals(hp17) Or
+                                sender.Equals(hp18) Or
+                                sender.Equals(hp19) Or
+                                sender.Equals(hp20) Or
+                                sender.Equals(hp21) Then
+                            MessageBox.Show("You can't swap now. Please select on the coordinate")
+                            'SetPlayerTurn(host)
+                            firstClick = False
+                        Else
+                            x2 = piece2.Location.X
+                            y2 = piece2.Location.Y
+                            'METHOD FOR Move
+                            'If sender.Equals(a6) Then
+                            '    piece1.Location = New Point(x2, y2)&
+                            If IsItPossibleToMove(piece2, firstPieceLocation) Then
+                                piece1.Location = New Point(x2, y2)
+                                'METHOD TO SEND TO DATABASE
+                                SetCoordinateObject(x2, y2)
+                                SetMoveToDatabase()
+                                SetPlayerTurn(Not host)
+                                firstClick = True
+                            Else
+                                MessageBox.Show("You can only move one tile away")
+                                ResetValue()
+                                firstClick = False
+                            End If
+                        End If
+
+                    End If
+
+                Else
+                    ready.Text = "RECEIVE"
+                    MessageBox.Show("Opponent's Turn")
+                    enemyNameLine.BackColor = Color.Green
+                    myNameLine.BackColor = Color.Red
+                End If
+            Else
+                If GetPlayerTurn() Then
+                    ready.Text = "RECEIVE"
+                    MessageBox.Show("Opponent's Turn")
+                    enemyNameLine.BackColor = Color.Green
+                    myNameLine.BackColor = Color.Red
+                Else
+                    ready.Text = "SEND"
+                    myNameLine.BackColor = Color.Green
+                    enemyNameLine.BackColor = Color.Red
+                    If firstClick Then
+                        piece1 = DirectCast(sender, Button)
+                        If sender.Equals(hp1) Or
+                                sender.Equals(hp2) Or
+                                sender.Equals(hp3) Or
+                                sender.Equals(hp4) Or
+                                sender.Equals(hp5) Or
+                                sender.Equals(hp6) Or
+                                sender.Equals(hp7) Or
+                                sender.Equals(hp8) Or
+                                sender.Equals(hp9) Or
+                                sender.Equals(hp10) Or
+                                sender.Equals(hp11) Or
+                                sender.Equals(hp12) Or
+                                sender.Equals(hp13) Or
+                                sender.Equals(hp14) Or
+                                sender.Equals(hp15) Or
+                                sender.Equals(hp16) Or
+                                sender.Equals(hp17) Or
+                                sender.Equals(hp18) Or
+                                sender.Equals(hp19) Or
+                                sender.Equals(hp20) Or
+                                sender.Equals(hp21) Then
+                            CheckPossibleMove(sender, hostPossibleColor)
+                            firstPieceLocation = GetLocationFirstPiece(sender)
+                            SetFirstClickObject(sender)
+                            firstClick = False
+                        Else
+                            MessageBox.Show("Please select a piece")
+                            firstClick = True
                         End If
                     Else
                         piece2 = DirectCast(sender, Button)
@@ -1035,14 +1329,23 @@ Public Class Gameboard
                                 sender.Equals(hp21) Then
                             MessageBox.Show("You can't swap now. Please select on the coordinate")
                             SetPlayerTurn(Not host)
+                            firstClick = False
                         Else
-                            'METHOD TO CHECK FOR MOVE
                             x2 = piece2.Location.X
                             y2 = piece2.Location.Y
-                            piece1.Location = New Point(x2, y2)
-                            firstClick = True
-                            'METHOD TO SEND TO DATABASE
-                            SetPlayerTurn(host)
+                            'METHOD FOR Move
+                            If IsItPossibleToMove(piece2, firstPieceLocation) Then
+                                piece1.Location = New Point(x2, y2)
+                                'METHOD TO SEND TO DATABASE
+                                SetCoordinateObject(x2, y2)
+                                SetMoveToDatabase()
+                                SetPlayerTurn(Not host)
+                                firstClick = True
+                            Else
+                                MessageBox.Show("You can only move one tile away")
+                                ResetValue()
+                                firstClick = False
+                            End If
                         End If
                     End If
 
@@ -1050,6 +1353,7 @@ Public Class Gameboard
             End If
         Else
             'STRATEGY TIME
+            myName.Enabled = True
             If GetPlayer1ReadyStatus() And GetPlayer2ReadyStatus() Then
                 isGameTimeDB = True
             Else

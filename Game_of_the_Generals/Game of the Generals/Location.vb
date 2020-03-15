@@ -7,7 +7,6 @@ Public Class Location
         Dim c As Button = DirectCast(a, Button)
         b(0) = c.Location.X
         b(1) = c.Location.Y
-
         Return b
     End Function
 

@@ -144,6 +144,8 @@ Partial Class Gameboard
         Me.hp4 = New System.Windows.Forms.Button()
         Me.hp3 = New System.Windows.Forms.Button()
         Me.hp2 = New System.Windows.Forms.Button()
+        Me.myNameLine = New System.Windows.Forms.Label()
+        Me.enemyNameLine = New System.Windows.Forms.Label()
         Me.SuspendLayout()
         '
         'i1
@@ -1229,7 +1231,6 @@ Partial Class Gameboard
         '
         'myName
         '
-        Me.myName.Enabled = False
         Me.myName.Font = New System.Drawing.Font("OCR A Extended", 25.0!)
         Me.myName.Location = New System.Drawing.Point(409, 452)
         Me.myName.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
@@ -1826,7 +1827,29 @@ Partial Class Gameboard
         Me.hp2.TabIndex = 234
         Me.hp2.UseVisualStyleBackColor = False
         '
-        'gameboard
+        'myNameLine
+        '
+        Me.myNameLine.Enabled = False
+        Me.myNameLine.Font = New System.Drawing.Font("OCR A Extended", 25.0!)
+        Me.myNameLine.Location = New System.Drawing.Point(409, 493)
+        Me.myNameLine.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.myNameLine.Name = "myNameLine"
+        Me.myNameLine.Size = New System.Drawing.Size(426, 3)
+        Me.myNameLine.TabIndex = 255
+        Me.myNameLine.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'enemyNameLine
+        '
+        Me.enemyNameLine.Enabled = False
+        Me.enemyNameLine.Font = New System.Drawing.Font("OCR A Extended", 25.0!)
+        Me.enemyNameLine.Location = New System.Drawing.Point(409, 105)
+        Me.enemyNameLine.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.enemyNameLine.Name = "enemyNameLine"
+        Me.enemyNameLine.Size = New System.Drawing.Size(426, 3)
+        Me.enemyNameLine.TabIndex = 256
+        Me.enemyNameLine.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'Gameboard
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
@@ -1834,6 +1857,8 @@ Partial Class Gameboard
         Me.AutoValidate = System.Windows.Forms.AutoValidate.Disable
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(236, Byte), Integer), CType(CType(236, Byte), Integer), CType(CType(236, Byte), Integer))
         Me.ClientSize = New System.Drawing.Size(1264, 681)
+        Me.Controls.Add(Me.enemyNameLine)
+        Me.Controls.Add(Me.myNameLine)
         Me.Controls.Add(Me.hp15)
         Me.Controls.Add(Me.hp21)
         Me.Controls.Add(Me.hp20)
@@ -1955,7 +1980,7 @@ Partial Class Gameboard
         Me.Controls.Add(Me.c8)
         Me.Controls.Add(Me.b8)
         Me.Controls.Add(Me.a8)
-        Me.playerName = "gameboard"
+        Me.Name = "Gameboard"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Game of the Generals"
         Me.ResumeLayout(False)
@@ -2084,4 +2109,6 @@ Partial Class Gameboard
     Friend WithEvents hp4 As Button
     Friend WithEvents hp3 As Button
     Friend WithEvents hp2 As Button
+    Friend WithEvents myNameLine As Label
+    Friend WithEvents enemyNameLine As Label
 End Class
