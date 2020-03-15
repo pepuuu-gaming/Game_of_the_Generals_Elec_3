@@ -537,70 +537,147 @@ Public Class Gameboard
             MessageBox.Show("GAME TIME")
             'METHOD GAME TIME
             ready.Visible = False
-            If PlayerTurn() Then
-                If firstClick Then
-                    piece1 = DirectCast(sender, Button)
-                    If sender.Equals(hp1) Or
-                            sender.Equals(hp2) Or
-                            sender.Equals(hp3) Or
-                            sender.Equals(hp4) Or
-                            sender.Equals(hp5) Or
-                            sender.Equals(hp6) Or
-                            sender.Equals(hp7) Or
-                            sender.Equals(hp8) Or
-                            sender.Equals(hp9) Or
-                            sender.Equals(hp10) Or
-                            sender.Equals(hp11) Or
-                            sender.Equals(hp12) Or
-                            sender.Equals(hp13) Or
-                            sender.Equals(hp14) Or
-                            sender.Equals(hp15) Or
-                            sender.Equals(hp16) Or
-                            sender.Equals(hp17) Or
-                            sender.Equals(hp18) Or
-                            sender.Equals(hp19) Or
-                            sender.Equals(hp20) Or
-                            sender.Equals(hp21) Then
-                        firstClick = False
+            If host Then
+                If PlayerTurn() Then
+                    myName.BackColor = Color.Green
+                    enemyName.BackColor = Color.Red
+                    If firstClick Then
+                        piece1 = DirectCast(sender, Button)
+                        If sender.Equals(hp1) Or
+                                sender.Equals(hp2) Or
+                                sender.Equals(hp3) Or
+                                sender.Equals(hp4) Or
+                                sender.Equals(hp5) Or
+                                sender.Equals(hp6) Or
+                                sender.Equals(hp7) Or
+                                sender.Equals(hp8) Or
+                                sender.Equals(hp9) Or
+                                sender.Equals(hp10) Or
+                                sender.Equals(hp11) Or
+                                sender.Equals(hp12) Or
+                                sender.Equals(hp13) Or
+                                sender.Equals(hp14) Or
+                                sender.Equals(hp15) Or
+                                sender.Equals(hp16) Or
+                                sender.Equals(hp17) Or
+                                sender.Equals(hp18) Or
+                                sender.Equals(hp19) Or
+                                sender.Equals(hp20) Or
+                                sender.Equals(hp21) Then
+                            firstClick = False
+                        Else
+                            MessageBox.Show("Please select a piece")
+                        End If
                     Else
-                        MessageBox.Show("Please select a piece")
+                        piece2 = DirectCast(sender, Button)
+                        If sender.Equals(hp1) Or
+                                sender.Equals(hp2) Or
+                                sender.Equals(hp3) Or
+                                sender.Equals(hp4) Or
+                                sender.Equals(hp5) Or
+                                sender.Equals(hp6) Or
+                                sender.Equals(hp7) Or
+                                sender.Equals(hp8) Or
+                                sender.Equals(hp9) Or
+                                sender.Equals(hp10) Or
+                                sender.Equals(hp11) Or
+                                sender.Equals(hp12) Or
+                                sender.Equals(hp13) Or
+                                sender.Equals(hp14) Or
+                                sender.Equals(hp15) Or
+                                sender.Equals(hp16) Or
+                                sender.Equals(hp17) Or
+                                sender.Equals(hp18) Or
+                                sender.Equals(hp19) Or
+                                sender.Equals(hp20) Or
+                                sender.Equals(hp21) Then
+                            MessageBox.Show("You can't swap now. Please select on the coordinate")
+                        Else
+                            x2 = piece2.Location.X
+                            y2 = piece2.Location.Y
+                            piece1.Location = New Point(x2, y2)
+                            firstClick = True
+                            'METHOD TO SEND TO DATABASE
+
+                        End If
                     End If
                 Else
-                    piece2 = DirectCast(sender, Button)
-                    If sender.Equals(hp1) Or
-                            sender.Equals(hp2) Or
-                            sender.Equals(hp3) Or
-                            sender.Equals(hp4) Or
-                            sender.Equals(hp5) Or
-                            sender.Equals(hp6) Or
-                            sender.Equals(hp7) Or
-                            sender.Equals(hp8) Or
-                            sender.Equals(hp9) Or
-                            sender.Equals(hp10) Or
-                            sender.Equals(hp11) Or
-                            sender.Equals(hp12) Or
-                            sender.Equals(hp13) Or
-                            sender.Equals(hp14) Or
-                            sender.Equals(hp15) Or
-                            sender.Equals(hp16) Or
-                            sender.Equals(hp17) Or
-                            sender.Equals(hp18) Or
-                            sender.Equals(hp19) Or
-                            sender.Equals(hp20) Or
-                            sender.Equals(hp21) Then
-                        MessageBox.Show("You can't swap now\nPlease select on the coordinate")
-                    Else
-                        x2 = piece2.Location.X
-                        y2 = piece2.Location.Y
-                        piece1.Location = New Point(x2, y2)
-                        firstClick = True
-                    End If
+                    MessageBox.Show("Opponent's Turn")
+                    enemyName.BackColor = Color.Green
+                    myName.BackColor = Color.Red
                 End If
             Else
+                If PlayerTurn() Then
+                    MessageBox.Show("Opponent's Turn")
+                    enemyName.BackColor = Color.Green
+                    myName.BackColor = Color.Red
+                Else
+                    myName.BackColor = Color.Green
+                    enemyName.BackColor = Color.Red
+                    If firstClick Then
+                        piece1 = DirectCast(sender, Button)
+                        If sender.Equals(hp1) Or
+                                sender.Equals(hp2) Or
+                                sender.Equals(hp3) Or
+                                sender.Equals(hp4) Or
+                                sender.Equals(hp5) Or
+                                sender.Equals(hp6) Or
+                                sender.Equals(hp7) Or
+                                sender.Equals(hp8) Or
+                                sender.Equals(hp9) Or
+                                sender.Equals(hp10) Or
+                                sender.Equals(hp11) Or
+                                sender.Equals(hp12) Or
+                                sender.Equals(hp13) Or
+                                sender.Equals(hp14) Or
+                                sender.Equals(hp15) Or
+                                sender.Equals(hp16) Or
+                                sender.Equals(hp17) Or
+                                sender.Equals(hp18) Or
+                                sender.Equals(hp19) Or
+                                sender.Equals(hp20) Or
+                                sender.Equals(hp21) Then
+                            firstClick = False
+                        Else
+                            MessageBox.Show("Please select a piece")
+                        End If
+                    Else
+                        piece2 = DirectCast(sender, Button)
+                        If sender.Equals(hp1) Or
+                                sender.Equals(hp2) Or
+                                sender.Equals(hp3) Or
+                                sender.Equals(hp4) Or
+                                sender.Equals(hp5) Or
+                                sender.Equals(hp6) Or
+                                sender.Equals(hp7) Or
+                                sender.Equals(hp8) Or
+                                sender.Equals(hp9) Or
+                                sender.Equals(hp10) Or
+                                sender.Equals(hp11) Or
+                                sender.Equals(hp12) Or
+                                sender.Equals(hp13) Or
+                                sender.Equals(hp14) Or
+                                sender.Equals(hp15) Or
+                                sender.Equals(hp16) Or
+                                sender.Equals(hp17) Or
+                                sender.Equals(hp18) Or
+                                sender.Equals(hp19) Or
+                                sender.Equals(hp20) Or
+                                sender.Equals(hp21) Then
+                            MessageBox.Show("You can't swap now. Please select on the coordinate")
+                        Else
+                            x2 = piece2.Location.X
+                            y2 = piece2.Location.Y
+                            piece1.Location = New Point(x2, y2)
+                            firstClick = True
+                            'METHOD TO SEND TO DATABASE
 
+                        End If
+                    End If
+                End If
             End If
-
         Else
+            'STRATEGY TIME
             If GetPlayer1ReadyStatus() And GetPlayer2ReadyStatus() Then
                 isGameTimeDB = True
             Else
@@ -665,12 +742,39 @@ Public Class Gameboard
 
                         SwapPiece(x, y, x2, y2)
                         ResetValue()
-                    Else
-                        'MessageBox.Show("Select piece to swap")
+                    ElseIf sender.Equals(a6) Or
+                            sender.Equals(a7) Or
+                            sender.Equals(a8) Or
+                            sender.Equals(b6) Or
+                            sender.Equals(b7) Or
+                            sender.Equals(b8) Or
+                            sender.Equals(c6) Or
+                            sender.Equals(c7) Or
+                            sender.Equals(c8) Or
+                            sender.Equals(d6) Or
+                            sender.Equals(d7) Or
+                            sender.Equals(d8) Or
+                            sender.Equals(e6) Or
+                            sender.Equals(e7) Or
+                            sender.Equals(e8) Or
+                            sender.Equals(f6) Or
+                            sender.Equals(f7) Or
+                            sender.Equals(f8) Or
+                            sender.Equals(g6) Or
+                            sender.Equals(g7) Or
+                            sender.Equals(g8) Or
+                            sender.Equals(h6) Or
+                            sender.Equals(h7) Or
+                            sender.Equals(h8) Or
+                            sender.Equals(i6) Or
+                            sender.Equals(i7) Or
+                            sender.Equals(i8) Then
                         x2 = piece2.Location.X
                         y2 = piece2.Location.Y
                         piece1.Location = New Point(x2, y2)
                         ResetValue()
+                    Else
+                        MessageBox.Show("You can only move and swap piece from A6 to I8")
                     End If
                     firstClick = True
                 End If
@@ -679,12 +783,11 @@ Public Class Gameboard
     End Sub
 
     Public Function PlayerTurn() As Boolean
-        If host Then
-            Return True
-        Else
-            Return False
-        End If
+        Dim b As Boolean
+        Dim res = client.Get(roomNamePath + "/isReady")
+        b = res.ResultAs(Of Boolean)
 
+        Return b
     End Function
 
 

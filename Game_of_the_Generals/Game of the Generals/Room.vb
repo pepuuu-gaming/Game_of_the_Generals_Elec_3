@@ -52,14 +52,14 @@ Public Class Room
                         name = file_read.ReadLine
                     End Using
                 Catch ex As Exception
-                    MessageBox.Show("Set your name first in the options menu\nThe game will now exit")
+                    MessageBox.Show("Set your name first in the options menu. The game will now exit")
                     End
                 End Try
                 client.Set("room/" + TextBox1.Text + "/player2" + "/name", name) 'SET PLAYER 2 NAME
                 Gameboard.Show()
                 Me.Close()
             Else
-                MessageBox.Show("Room isn't available\nDouble check your spelling also its Case sensitive\nYou can create the room and invite your friend")
+                MessageBox.Show("Room isn't available. Double check your spelling also its Case sensitive. You can create the room and invite your friend")
                 ButtonHostGame.BackColor = Color.Green
                 ButtonConnect.BackColor = Color.Red
             End If
@@ -156,7 +156,7 @@ Public Class Room
             Gameboard.Show()
             Me.Close()
         Catch ex As Exception
-            MessageBox.Show("Set your name first in the options menu\nThe game will now exit")
+            MessageBox.Show("Set your name first in the options menu. The game will now exit")
             End
         End Try
     End Sub
