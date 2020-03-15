@@ -12,7 +12,9 @@ Public Class Gameboard
     Dim roomNamePath As String
     Dim Player1PiecePath As String
     Dim Player2PiecePath As String
-    Dim ArbitraryPath As String
+    'Dim ArbitraryPath As String
+    Dim Player1AlivePath As String
+    Dim Player2AlivePath As String
     Dim Player2MovePath As String
     Dim Player1Path As String
     Dim Player2Path As String
@@ -1303,6 +1305,11 @@ Public Class Gameboard
     End Sub
 
     Public Sub GetEnemyMoveFromDatabase()
+        SetPiecesAndCoordinateObject()
+
+        Dim loc As Location = New Location
+        Dim pieceCoor(2) As Integer
+
         Dim res As FirebaseResponse
 
         If host Then
@@ -1311,27 +1318,40 @@ Public Class Gameboard
             res = client.Get(Player1MovePath)
         End If
         Dim move = res.ResultAs(Of Move)
-
-        enemyClickedCoordinateValue = move.coordinate
-        enemyClickedPiece = move.piece
-    End Sub
-
-    Public Sub GetAndSetEnemyMove()
-        SetPiecesAndCoordinateObject()
-        GetEnemyMoveFromDatabase()
-        GetEnemyClickedPiece()
-
-        Dim loc As Location = New Location
-        Dim pieceCoor(2) As Integer
-
-        For i = 0 To 71
-            If enemyClickedCoordinateValue = GetFullCoordinateString(i) Then
-                pieceCoor = loc.LocationGet(enemyGridCoordinateObject(i))
-                loc.SetLocation(enemyClickedPieceObject, pieceCoor(0), pieceCoor(1))
-            End If
-        Next
+        Dim b As Boolean = String.IsNullOrEmpty(move.coordinate)
+        'MessageBox.Show("WWEEEW" & b)
+        If String.IsNullOrEmpty(move.coordinate) Then
+            MessageBox.Show("Opponent hasn't set his move")
+        Else
+            enemyClickedCoordinateValue = move.coordinate
+            enemyClickedPiece = move.piece
+            GetEnemyClickedPiece()
+            For i = 0 To 71
+                If enemyClickedCoordinateValue = GetFullCoordinateString(i) Then
+                    pieceCoor = loc.LocationGet(enemyGridCoordinateObject(i))
+                    loc.SetLocation(enemyClickedPieceObject, pieceCoor(0), pieceCoor(1))
+                End If
+            Next
+        End If
 
     End Sub
+
+    'Public Sub GetAndSetEnemyMove()
+    '    SetPiecesAndCoordinateObject()
+    '    GetEnemyMoveFromDatabase()
+    '    GetEnemyClickedPiece()
+
+    '    Dim loc As Location = New Location
+    '    Dim pieceCoor(2) As Integer
+
+    '    For i = 0 To 71
+    '        If enemyClickedCoordinateValue = GetFullCoordinateString(i) Then
+    '            pieceCoor = loc.LocationGet(enemyGridCoordinateObject(i))
+    '            loc.SetLocation(enemyClickedPieceObject, pieceCoor(0), pieceCoor(1))
+    '        End If
+    '    Next
+
+    'End Sub
 
     Public Sub SetCounter(a As Integer)
         'Dim a As Integer = GetCounter()
@@ -1380,11 +1400,128 @@ Public Class Gameboard
     '    Return b
     'End Function
 
-    Public Sub SetArbitraryResult()
-
+    Public Sub SetEnemyPieceValueArbitrary(sender As Object, b As Boolean)
+        Dim a As String
+        If host Then
+            a = Player2AlivePath
+        Else
+            a = Player1AlivePath
+        End If
+        If sender.Equals(ep1) Then
+            client.Set(a + "/p01", b)
+        ElseIf sender.Equals(ep2) Then
+            client.Set(a + "/p02", b)
+        ElseIf sender.Equals(ep3) Then
+            client.Set(a + "/p03", b)
+        ElseIf sender.Equals(ep4) Then
+            client.Set(a + "/p04", b)
+        ElseIf sender.Equals(ep5) Then
+            client.Set(a + "/p05", b)
+        ElseIf sender.Equals(ep6) Then
+            client.Set(a + "/p06", b)
+        ElseIf sender.Equals(ep7) Then
+            client.Set(a + "/p07", b)
+        ElseIf sender.Equals(ep8) Then
+            client.Set(a + "/p08", b)
+        ElseIf sender.Equals(ep9) Then
+            client.Set(a + "/p09", b)
+        ElseIf sender.Equals(ep10) Then
+            client.Set(a + "/p10", b)
+        ElseIf sender.Equals(ep11) Then
+            client.Set(a + "/p11", b)
+        ElseIf sender.Equals(ep12) Then
+            client.Set(a + "/p12", b)
+        ElseIf sender.Equals(ep13) Then
+            client.Set(a + "/p13", b)
+        ElseIf sender.Equals(ep14) Then
+            client.Set(a + "/p14", b)
+        ElseIf sender.Equals(ep15) Then
+            client.Set(a + "/p15", b)
+        ElseIf sender.Equals(ep16) Then
+            client.Set(a + "/p16", b)
+        ElseIf sender.Equals(ep17) Then
+            client.Set(a + "/p17", b)
+        ElseIf sender.Equals(ep18) Then
+            client.Set(a + "/p18", b)
+        ElseIf sender.Equals(ep19) Then
+            client.Set(a + "/p19", b)
+        ElseIf sender.Equals(ep20) Then
+            client.Set(a + "/p20", b)
+        ElseIf sender.Equals(ep21) Then
+            client.Set(a + "/p21", b)
+        End If
     End Sub
 
-    Public Sub Arbitrary(sender As Object, sender2 As Object)
+    Public Sub SetYourPieceValueArbitrary(sender As Object, b As Boolean)
+        Dim a As String
+        If host Then
+            a = Player1AlivePath
+        Else
+            a = Player2AlivePath
+        End If
+        If sender.Equals(hp1) Then
+            client.Set(a + "/p01", b)
+        ElseIf sender.Equals(hp2) Then
+            client.Set(a + "/p02", b)
+        ElseIf sender.Equals(hp3) Then
+            client.Set(a + "/p03", b)
+        ElseIf sender.Equals(hp4) Then
+            client.Set(a + "/p04", b)
+        ElseIf sender.Equals(hp5) Then
+            client.Set(a + "/p05", b)
+        ElseIf sender.Equals(hp6) Then
+            client.Set(a + "/p06", b)
+        ElseIf sender.Equals(hp7) Then
+            client.Set(a + "/p07", b)
+        ElseIf sender.Equals(hp8) Then
+            client.Set(a + "/p08", b)
+        ElseIf sender.Equals(hp9) Then
+            client.Set(a + "/p09", b)
+        ElseIf sender.Equals(hp10) Then
+            client.Set(a + "/p10", b)
+        ElseIf sender.Equals(hp11) Then
+            client.Set(a + "/p11", b)
+        ElseIf sender.Equals(hp12) Then
+            client.Set(a + "/p12", b)
+        ElseIf sender.Equals(hp13) Then
+            client.Set(a + "/p13", b)
+        ElseIf sender.Equals(hp14) Then
+            client.Set(a + "/p14", b)
+        ElseIf sender.Equals(hp15) Then
+            client.Set(a + "/p15", b)
+        ElseIf sender.Equals(hp16) Then
+            client.Set(a + "/p16", b)
+        ElseIf sender.Equals(hp17) Then
+            client.Set(a + "/p17", b)
+        ElseIf sender.Equals(hp18) Then
+            client.Set(a + "/p18", b)
+        ElseIf sender.Equals(hp19) Then
+            client.Set(a + "/p19", b)
+        ElseIf sender.Equals(hp20) Then
+            client.Set(a + "/p20", b)
+        ElseIf sender.Equals(hp21) Then
+            client.Set(a + "/p21", b)
+        End If
+    End Sub
+
+    'Public Sub SetArbitraryResult(sender As Object, sender2 As Object, a As Boolean, b As Boolean)
+    '    'GET SENDER AND SENDER2 OBJECT
+    '    If a And b Then
+    '        SetYourPieceValueArbitrary(sender, a)
+    '        SetEnemyPieceValueArbitrary(sender2, b)
+    '    ElseIf Not a And Not b Then
+    '        SetYourPieceValueArbitrary(sender, a)
+    '        SetEnemyPieceValueArbitrary(sender2, b)
+    '    ElseIf Not a And b Then
+    '        SetYourPieceValueArbitrary(sender, a)
+    '        SetEnemyPieceValueArbitrary(sender2, b)
+    '    ElseIf a And Not b Then
+
+    '    End If
+    'End Sub
+
+    Public Function Arbitrary(sender As Object, sender2 As Object) As Boolean
+        Dim retVal As Boolean
         Dim a As Integer, b As Integer
         Dim c As Boolean, d As Boolean
         If sender.Equals(hp1) Or sender.Equals(hp2) Or sender.Equals(hp3) Or sender.Equals(hp4) Or sender.Equals(hp5) Or sender.Equals(hp6) Then
@@ -1550,33 +1687,328 @@ Public Class Gameboard
                 'SPECIAL ARBITRARY
                 'AGGRESION VALUE
                 'WHO CLICKED WINS
+                c = True
+                d = True
+                retVal = True
+                piece.Defeat(sender2, enemyGraveyard)
             Else
+                c = False
+                d = False
+                retVal = False
                 piece.Defeat(sender, yourGraveyard)
                 piece.Defeat(sender2, enemyGraveyard)
             End If
         Else
             If a = 14 And b = 1 Then
                 piece.Defeat(sender, yourGraveyard)
+                c = False
+                d = True
+                retVal = False
             ElseIf a = 1 And b = 14 Then
                 piece.Defeat(sender2, enemyGraveyard)
+                c = True
+                d = False
+                retVal = True
             Else
-                If a = 0 Then
-                    'ENEMY WINS
-                    'SHOW VALUE PIECE?
-                ElseIf b = 0 Then
-                    'YOU WIN
-                    'SHOW VALUE PIECE?
-                Else
-                    If a > b Then
+                If a > b Then
+                    If b = 0 Then
+                        'SET VALUE YOU WIN
+                        retVal = True
+                    Else
                         piece.Defeat(sender2, enemyGraveyard)
+                        c = True
+                        d = False
+                        retVal = True
+                    End If
+                Else
+                    If a = 0 Then
+                        'SET VALUE ENEMY WIN
+                        retVal = False
                     Else
                         piece.Defeat(sender, yourGraveyard)
+                        c = False
+                        d = True
+                        retVal = False
                     End If
+
+                    'End If
                 End If
             End If
         End If
+        SetYourPieceValueArbitrary(sender, c)
+        SetEnemyPieceValueArbitrary(sender2, d)
+        Return retVal
+    End Function
+
+    Public Sub SetEnemyAliveToBoard(b As Boolean, c As Integer)
+        If Not b Then
+            Dim piece As New Piece
+            Select Case c
+                Case 1 To 7
+                    enemyGraveyard(1) = locationY(0)
+                    If c = 1 Then
+                        enemyGraveyard(0) = locationX(0)
+                        piece.Defeat(ep1, enemyGraveyard)
+                    ElseIf c = 2 Then
+                        enemyGraveyard(0) = locationX(1)
+                        piece.Defeat(ep2, enemyGraveyard)
+                    ElseIf c = 3 Then
+                        enemyGraveyard(0) = locationX(2)
+                        piece.Defeat(ep3, enemyGraveyard)
+                    ElseIf c = 4 Then
+                        enemyGraveyard(0) = locationX(3)
+                        piece.Defeat(ep4, enemyGraveyard)
+                    ElseIf c = 5 Then
+                        enemyGraveyard(0) = locationX(4)
+                        piece.Defeat(ep5, enemyGraveyard)
+                    ElseIf c = 6 Then
+                        enemyGraveyard(0) = locationX(5)
+                        piece.Defeat(ep6, enemyGraveyard)
+                    ElseIf c = 7 Then
+                        enemyGraveyard(0) = locationX(6)
+                        piece.Defeat(ep7, enemyGraveyard)
+                    End If
+
+                Case 8 To 14
+                    enemyGraveyard(1) = locationY(1)
+                    If c = 8 Then
+                        enemyGraveyard(0) = locationX(0)
+                        piece.Defeat(ep8, enemyGraveyard)
+                    ElseIf c = 9 Then
+                        enemyGraveyard(0) = locationX(1)
+                        piece.Defeat(ep9, enemyGraveyard)
+                    ElseIf c = 10 Then
+                        enemyGraveyard(0) = locationX(2)
+                        piece.Defeat(ep10, enemyGraveyard)
+                    ElseIf c = 11 Then
+                        enemyGraveyard(0) = locationX(3)
+                        piece.Defeat(ep11, enemyGraveyard)
+                    ElseIf c = 12 Then
+                        enemyGraveyard(0) = locationX(4)
+                        piece.Defeat(ep12, enemyGraveyard)
+                    ElseIf c = 13 Then
+                        enemyGraveyard(0) = locationX(5)
+                        piece.Defeat(ep13, enemyGraveyard)
+                    ElseIf c = 14 Then
+                        enemyGraveyard(0) = locationX(6)
+                        piece.Defeat(ep14, enemyGraveyard)
+                    End If
+                Case 15 To 21
+                    enemyGraveyard(1) = locationY(2)
+                    If c = 15 Then
+                        enemyGraveyard(0) = locationX(0)
+                        piece.Defeat(ep15, enemyGraveyard)
+                    ElseIf c = 16 Then
+                        enemyGraveyard(0) = locationX(1)
+                        piece.Defeat(ep16, enemyGraveyard)
+                    ElseIf c = 17 Then
+                        enemyGraveyard(0) = locationX(2)
+                        piece.Defeat(ep17, enemyGraveyard)
+                    ElseIf c = 18 Then
+                        enemyGraveyard(0) = locationX(3)
+                        piece.Defeat(ep18, enemyGraveyard)
+                    ElseIf c = 19 Then
+                        enemyGraveyard(0) = locationX(4)
+                        piece.Defeat(ep19, enemyGraveyard)
+                    ElseIf c = 20 Then
+                        enemyGraveyard(0) = locationX(5)
+                        piece.Defeat(ep20, enemyGraveyard)
+                    ElseIf c = 21 Then
+                        enemyGraveyard(0) = locationX(6)
+                        piece.Defeat(ep21, enemyGraveyard)
+                    End If
+            End Select
+        End If
+    End Sub
+
+    Public Sub SetYourAliveToBoard(b As Boolean, c As Integer)
+
+        Dim piece As New Piece
+        If Not b Then
+            Select Case c
+                Case 1 To 7
+                    yourGraveyard(1) = locationY(3)
+                    If c = 1 Then
+                        yourGraveyard(0) = locationX(0)
+                        piece.Defeat(hp1, yourGraveyard)
+                    ElseIf c = 2 Then
+                        yourGraveyard(0) = locationX(1)
+                        piece.Defeat(hp2, yourGraveyard)
+                    ElseIf c = 3 Then
+                        yourGraveyard(0) = locationX(2)
+                        piece.Defeat(hp3, yourGraveyard)
+                    ElseIf c = 4 Then
+                        yourGraveyard(0) = locationX(3)
+                        piece.Defeat(hp4, yourGraveyard)
+                    ElseIf c = 5 Then
+                        yourGraveyard(0) = locationX(4)
+                        piece.Defeat(hp5, yourGraveyard)
+                    ElseIf c = 6 Then
+                        yourGraveyard(0) = locationX(5)
+                        piece.Defeat(hp6, yourGraveyard)
+                    ElseIf c = 7 Then
+                        yourGraveyard(0) = locationX(6)
+                        piece.Defeat(hp7, yourGraveyard)
+                    End If
+
+                Case 8 To 14
+                    yourGraveyard(1) = locationY(4)
+                    If c = 8 Then
+                        yourGraveyard(0) = locationX(0)
+                        piece.Defeat(hp8, yourGraveyard)
+                    ElseIf c = 9 Then
+                        yourGraveyard(0) = locationX(1)
+                        piece.Defeat(hp9, yourGraveyard)
+                    ElseIf c = 10 Then
+                        yourGraveyard(0) = locationX(2)
+                        piece.Defeat(hp10, yourGraveyard)
+                    ElseIf c = 11 Then
+                        yourGraveyard(0) = locationX(3)
+                        piece.Defeat(hp11, yourGraveyard)
+                    ElseIf c = 12 Then
+                        yourGraveyard(0) = locationX(4)
+                        piece.Defeat(hp12, yourGraveyard)
+                    ElseIf c = 13 Then
+                        yourGraveyard(0) = locationX(5)
+                        piece.Defeat(hp13, yourGraveyard)
+                    ElseIf c = 14 Then
+                        yourGraveyard(0) = locationX(6)
+                        piece.Defeat(hp14, yourGraveyard)
+                    End If
+                Case 15 To 21
+                    yourGraveyard(1) = locationY(5)
+                    If c = 15 Then
+                        yourGraveyard(0) = locationX(0)
+                        piece.Defeat(hp15, yourGraveyard)
+                    ElseIf c = 16 Then
+                        yourGraveyard(0) = locationX(1)
+                        piece.Defeat(hp16, yourGraveyard)
+                    ElseIf c = 17 Then
+                        yourGraveyard(0) = locationX(2)
+                        piece.Defeat(hp17, yourGraveyard)
+                    ElseIf c = 18 Then
+                        yourGraveyard(0) = locationX(3)
+                        piece.Defeat(hp18, yourGraveyard)
+                    ElseIf c = 19 Then
+                        yourGraveyard(0) = locationX(4)
+                        piece.Defeat(hp19, yourGraveyard)
+                    ElseIf c = 20 Then
+                        yourGraveyard(0) = locationX(5)
+                        piece.Defeat(hp20, yourGraveyard)
+                    ElseIf c = 21 Then
+                        yourGraveyard(0) = locationX(6)
+                        piece.Defeat(hp21, yourGraveyard)
+                    End If
+            End Select
+        End If
+    End Sub
+
+    Public Sub GetAlivePiece()
+        Dim alive As New Alive
+        Dim alive2 As New Alive
+        Dim res = client.Get(Player1AlivePath)
+        Dim res2 = client.Get(Player2AlivePath)
+        If host Then
+            alive = res.ResultAs(Of Alive)
+            alive2 = res2.ResultAs(Of Alive)
+
+            SetYourAliveToBoard(alive.p01, 1)
+            SetYourAliveToBoard(alive.p02, 2)
+            SetYourAliveToBoard(alive.p03, 3)
+            SetYourAliveToBoard(alive.p04, 4)
+            SetYourAliveToBoard(alive.p05, 5)
+            SetYourAliveToBoard(alive.p06, 6)
+            SetYourAliveToBoard(alive.p07, 7)
+            SetYourAliveToBoard(alive.p08, 8)
+            SetYourAliveToBoard(alive.p09, 9)
+            SetYourAliveToBoard(alive.p10, 10)
+            SetYourAliveToBoard(alive.p11, 11)
+            SetYourAliveToBoard(alive.p12, 12)
+            SetYourAliveToBoard(alive.p13, 13)
+            SetYourAliveToBoard(alive.p14, 14)
+            SetYourAliveToBoard(alive.p15, 15)
+            SetYourAliveToBoard(alive.p16, 16)
+            SetYourAliveToBoard(alive.p17, 17)
+            SetYourAliveToBoard(alive.p18, 18)
+            SetYourAliveToBoard(alive.p19, 19)
+            SetYourAliveToBoard(alive.p20, 20)
+            SetYourAliveToBoard(alive.p21, 21)
+
+            SetEnemyAliveToBoard(alive2.p01, 1)
+            SetEnemyAliveToBoard(alive2.p02, 2)
+            SetEnemyAliveToBoard(alive2.p03, 3)
+            SetEnemyAliveToBoard(alive2.p04, 4)
+            SetEnemyAliveToBoard(alive2.p05, 5)
+            SetEnemyAliveToBoard(alive2.p06, 6)
+            SetEnemyAliveToBoard(alive2.p07, 7)
+            SetEnemyAliveToBoard(alive2.p08, 8)
+            SetEnemyAliveToBoard(alive2.p09, 9)
+            SetEnemyAliveToBoard(alive2.p10, 10)
+            SetEnemyAliveToBoard(alive2.p11, 11)
+            SetEnemyAliveToBoard(alive2.p12, 12)
+            SetEnemyAliveToBoard(alive2.p13, 13)
+            SetEnemyAliveToBoard(alive2.p14, 14)
+            SetEnemyAliveToBoard(alive2.p15, 15)
+            SetEnemyAliveToBoard(alive2.p16, 16)
+            SetEnemyAliveToBoard(alive2.p17, 17)
+            SetEnemyAliveToBoard(alive2.p18, 18)
+            SetEnemyAliveToBoard(alive2.p19, 19)
+            SetEnemyAliveToBoard(alive2.p20, 20)
+            SetEnemyAliveToBoard(alive2.p21, 21)
+        Else
+            alive = res2.ResultAs(Of Alive)
+            alive2 = res.ResultAs(Of Alive)
+
+            SetYourAliveToBoard(alive.p01, 1)
+            SetYourAliveToBoard(alive.p02, 2)
+            SetYourAliveToBoard(alive.p03, 3)
+            SetYourAliveToBoard(alive.p04, 4)
+            SetYourAliveToBoard(alive.p05, 5)
+            SetYourAliveToBoard(alive.p06, 6)
+            SetYourAliveToBoard(alive.p07, 7)
+            SetYourAliveToBoard(alive.p08, 8)
+            SetYourAliveToBoard(alive.p09, 9)
+            SetYourAliveToBoard(alive.p10, 10)
+            SetYourAliveToBoard(alive.p11, 11)
+            SetYourAliveToBoard(alive.p12, 12)
+            SetYourAliveToBoard(alive.p13, 13)
+            SetYourAliveToBoard(alive.p14, 14)
+            SetYourAliveToBoard(alive.p15, 15)
+            SetYourAliveToBoard(alive.p16, 16)
+            SetYourAliveToBoard(alive.p17, 17)
+            SetYourAliveToBoard(alive.p18, 18)
+            SetYourAliveToBoard(alive.p19, 19)
+            SetYourAliveToBoard(alive.p20, 20)
+            SetYourAliveToBoard(alive.p21, 21)
+
+            SetEnemyAliveToBoard(alive2.p01, 1)
+            SetEnemyAliveToBoard(alive2.p02, 2)
+            SetEnemyAliveToBoard(alive2.p03, 3)
+            SetEnemyAliveToBoard(alive2.p04, 4)
+            SetEnemyAliveToBoard(alive2.p05, 5)
+            SetEnemyAliveToBoard(alive2.p06, 6)
+            SetEnemyAliveToBoard(alive2.p07, 7)
+            SetEnemyAliveToBoard(alive2.p08, 8)
+            SetEnemyAliveToBoard(alive2.p09, 9)
+            SetEnemyAliveToBoard(alive2.p10, 10)
+            SetEnemyAliveToBoard(alive2.p11, 11)
+            SetEnemyAliveToBoard(alive2.p12, 12)
+            SetEnemyAliveToBoard(alive2.p13, 13)
+            SetEnemyAliveToBoard(alive2.p14, 14)
+            SetEnemyAliveToBoard(alive2.p15, 15)
+            SetEnemyAliveToBoard(alive2.p16, 16)
+            SetEnemyAliveToBoard(alive2.p17, 17)
+            SetEnemyAliveToBoard(alive2.p18, 18)
+            SetEnemyAliveToBoard(alive2.p19, 19)
+            SetEnemyAliveToBoard(alive2.p20, 20)
+            SetEnemyAliveToBoard(alive2.p21, 21)
+        End If
 
     End Sub
+
+    Public Function DidYouWin() As Boolean
+
+    End Function
 
     Private Sub Gameboard_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Try
@@ -1593,9 +2025,11 @@ Public Class Gameboard
         roomNamePath = "room/" + roomName
         Player1Path = roomNamePath + "/player1"
         Player2Path = roomNamePath + "/player2"
+        Player1AlivePath = Player1Path + "/alive"
+        Player2AlivePath = Player2Path + "/alive"
         Player1PiecePath = Player1Path + "/piece"
         Player2PiecePath = Player2Path + "/piece"
-        ArbitraryPath = roomNamePath + "/arbitrary"
+        'ArbitraryPath = roomNamePath + "/arbitrary"
         Player2MovePath = Player2Path + "/move"
         Player1MovePath = Player1Path + "/move"
 
@@ -1790,12 +2224,16 @@ Public Class Gameboard
             If isGameTime And isGameTimeDB Then
                 Dim l As Integer = GetCounter()
                 If Not host Then
-                    GetAndSetEnemyMove()
+                    'GetAndSetEnemyMove()
+                    GetEnemyMoveFromDatabase()
                     SetCounter(l)
+                    GetAlivePiece()
                 Else
                     If l > 0 Then
                         SetCounter(l)
-                        GetAndSetEnemyMove()
+                        'GetAndSetEnemyMove()
+                        GetEnemyMoveFromDatabase()
+                        GetAlivePiece()
                     End If
                 End If
             Else
@@ -1909,9 +2347,10 @@ Public Class Gameboard
                                 sender.Equals(ep20) Or
                                 sender.Equals(ep21) Then
                                     'secondPieceArbitrary = GetPieceValue(sender)
-                                    Arbitrary(piece1, piece2)
-                                    'HIDE/SHOW PIECE TO ENEMY
-                                    piece1.Location = New Point(x2, y2)
+                                    If Arbitrary(piece1, piece2) Then
+                                        'HIDE/SHOW PIECE TO ENEMY
+                                        piece1.Location = New Point(x2, y2)
+                                    End If
                                     'METHOD TO SEND TO DATABASE
                                     SetCoordinateObject(x2, y2)
                                     SetMoveToDatabase()
@@ -2040,9 +2479,10 @@ Public Class Gameboard
                                 sender.Equals(ep20) Or
                                 sender.Equals(ep21) Then
                                     'secondPieceArbitrary = GetPieceValue(sender)
-                                    Arbitrary(piece1, piece2)
-                                    'HIDE/SHOW PIECE TO ENEMY
-                                    piece1.Location = New Point(x2, y2)
+                                    If Arbitrary(piece1, piece2) Then
+                                        'HIDE/SHOW PIECE TO ENEMY
+                                        piece1.Location = New Point(x2, y2)
+                                    End If
                                     'METHOD TO SEND TO DATABASE
                                     SetCoordinateObject(x2, y2)
                                     SetMoveToDatabase()
