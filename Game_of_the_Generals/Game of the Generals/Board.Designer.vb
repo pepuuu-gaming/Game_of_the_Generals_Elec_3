@@ -1168,6 +1168,7 @@ Partial Class Gameboard
         Me.settings.Size = New System.Drawing.Size(63, 54)
         Me.settings.TabIndex = 207
         Me.settings.UseVisualStyleBackColor = True
+        Me.settings.Visible = False
         '
         'message
         '
@@ -1194,6 +1195,7 @@ Partial Class Gameboard
         Me.pause.Size = New System.Drawing.Size(63, 54)
         Me.pause.TabIndex = 209
         Me.pause.UseVisualStyleBackColor = True
+        Me.pause.Visible = False
         '
         'back_to_menu
         '

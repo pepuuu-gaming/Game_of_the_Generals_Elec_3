@@ -1380,6 +1380,10 @@ Public Class Gameboard
     '    Return b
     'End Function
 
+    Public Sub SetArbitraryResult()
+
+    End Sub
+
     Public Sub Arbitrary(sender As Object, sender2 As Object)
         Dim a As Integer, b As Integer
         Dim c As Boolean, d As Boolean
