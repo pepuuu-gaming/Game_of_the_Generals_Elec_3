@@ -13,9 +13,10 @@ Public Class Gameboard
     Dim Player1PiecePath As String
     Dim Player2PiecePath As String
     Dim ArbitraryPath As String
-    Dim MovePath As String
+    Dim Player2MovePath As String
     Dim Player1Path As String
     Dim Player2Path As String
+    Dim Player1MovePath As String
 
     Private client As IFirebaseClient
     Dim isGameTime As Boolean = False
@@ -42,10 +43,13 @@ Public Class Gameboard
     Dim enemyPieceCoordinate(21) As String
     Dim gridCoordinateObject(71) As Object
     Dim enemyGridCoordinateObject(71) As Object
-    Dim playerTurn As Boolean = True
+    'Dim playerTurn As Boolean = True
     Dim firstPieceLocation As Integer()
     Dim firstClickPiece As Integer
     Dim clickedCoordinateValue As String
+    Dim enemyClickedPiece As Integer
+    Dim enemyClickedCoordinateValue As String
+    Dim enemyClickedPieceObject As Object
 
     Private fcon As New FirebaseConfig With
         {
@@ -53,66 +57,66 @@ Public Class Gameboard
         .BasePath = "https://game-of-the-generals-vb.firebaseio.com/"
         }
 
-    Public Function GetCoordinateInvertedString(a As Integer) As String
-        Dim b As String
-        Select Case a
-            Case 0
-                b = "i8"
-            Case 1
-                b = "i7"
-            Case 2
-                b = "i6"
-            Case 3
-                b = "i5"
-            Case 4
-                b = "i4"
-            Case 5
-                b = "i3"
-            Case 6
-                b = "i2"
-            Case 7
-                b = "i1"
-            Case 8
-                b = "h8"
-            Case 9
-                b = "h7"
-            Case 10
-                b = "f2"
-            Case 11
-                b = "f1"
-            Case 12
-                b = "e3"
-            Case 13
-                b = "e2"
-            Case 14
-                b = "e1"
-            Case 15
-                b = "d3"
-            Case 16
-                b = "d2"
-            Case 17
-                b = "d1"
-            Case 18
-                b = "c3"
-            Case 19
-                b = "c2"
-            Case 20
-                b = "c1"
-            Case 21
-                b = "b3"
-            Case 22
-                b = "b2"
-            Case 23
-                b = "b1"
-            Case 24
-                b = "a3"
-            Case 25
-                b = "a2"
-            Case 26
-                b = "a1"
-        End Select
-        Return b
-    End Function
+    'Public Function GetCoordinateInvertedString(a As Integer) As String
+    '    Dim b As String
+    '    Select Case a
+    '        Case 0
+    '            b = "i8"
+    '        Case 1
+    '            b = "i7"
+    '        Case 2
+    '            b = "i6"
+    '        Case 3
+    '            b = "i5"
+    '        Case 4
+    '            b = "i4"
+    '        Case 5
+    '            b = "i3"
+    '        Case 6
+    '            b = "i2"
+    '        Case 7
+    '            b = "i1"
+    '        Case 8
+    '            b = "h8"
+    '        Case 9
+    '            b = "h7"
+    '        Case 10
+    '            b = "f2"
+    '        Case 11
+    '            b = "f1"
+    '        Case 12
+    '            b = "e3"
+    '        Case 13
+    '            b = "e2"
+    '        Case 14
+    '            b = "e1"
+    '        Case 15
+    '            b = "d3"
+    '        Case 16
+    '            b = "d2"
+    '        Case 17
+    '            b = "d1"
+    '        Case 18
+    '            b = "c3"
+    '        Case 19
+    '            b = "c2"
+    '        Case 20
+    '            b = "c1"
+    '        Case 21
+    '            b = "b3"
+    '        Case 22
+    '            b = "b2"
+    '        Case 23
+    '            b = "b1"
+    '        Case 24
+    '            b = "a3"
+    '        Case 25
+    '            b = "a2"
+    '        Case 26
+    '            b = "a1"
+    '    End Select
+    '    Return b
+    'End Function
 
     Public Sub GetAndSetEnemyLocation()
         SetPiecesAndCoordinateObject()
@@ -120,23 +124,6 @@ Public Class Gameboard
 
         Dim loc As Location = New Location
         Dim pieceCoor(2) As Integer
-        'Dim coorVal(2) As Integer
-
-        'If enemyPieceCoordinate(0) = GetCoordinateString(0) Then
-        '    enemyObject(0) = GetCoordinateInvertedString(0)
-        'End If
-
-
-        'For i = 0 To 20
-        '    For j = 0 To 26
-        '        pieceCoor = loc.LocationGet(pieceObject(i))
-        '        coorVal = loc.LocationGet(coordinateObject(j))
-
-        '        If pieceCoor(0) = coorVal(0) And pieceCoor(1) = coorVal(1) Then
-        '            pieceCoordinate(i) = GetCoordinateString(j)
-        '        End If
-        '    Next
-        'Next
 
         For i = 0 To 20
             For j = 0 To 26
@@ -1026,7 +1013,7 @@ Public Class Gameboard
             .piece = firstClickPiece
             }
 
-        client.Set(MovePath, move)
+        client.Set(Player2MovePath, move)
     End Sub
 
     Public Sub SetCoordinateObject(a As Integer, b As Integer)
@@ -1250,6 +1237,84 @@ Public Class Gameboard
         End If
     End Sub
 
+    Public Sub ResetColors()
+        Dim piece As New Piece
+        Dim r As Integer() = {255, 255, 255}
+        For i = 0 To 71
+            piece.SetPossibleMove(gridCoordinateObject(i), r)
+        Next
+    End Sub
+
+    Public Sub GetEnemyClickedPiece()
+        If enemyClickedPiece = 1 Then
+            enemyClickedPieceObject = ep1
+        ElseIf enemyClickedPiece = 2 Then
+            enemyClickedPieceObject = ep2
+        ElseIf enemyClickedPiece = 3 Then
+            enemyClickedPieceObject = ep3
+        ElseIf enemyClickedPiece = 4 Then
+            enemyClickedPieceObject = ep4
+        ElseIf enemyClickedPiece = 5 Then
+            enemyClickedPieceObject = ep5
+        ElseIf enemyClickedPiece = 6 Then
+            enemyClickedPieceObject = ep6
+        ElseIf enemyClickedPiece = 7 Then
+            enemyClickedPieceObject = ep7
+        ElseIf enemyClickedPiece = 8 Then
+            enemyClickedPieceObject = ep8
+        ElseIf enemyClickedPiece = 9 Then
+            enemyClickedPieceObject = ep9
+        ElseIf enemyClickedPiece = 10 Then
+            enemyClickedPieceObject = ep10
+        ElseIf enemyClickedPiece = 11 Then
+            enemyClickedPieceObject = ep11
+        ElseIf enemyClickedPiece = 12 Then
+            enemyClickedPieceObject = ep12
+        ElseIf enemyClickedPiece = 13 Then
+            enemyClickedPieceObject = ep13
+        ElseIf enemyClickedPiece = 14 Then
+            enemyClickedPieceObject = ep14
+        ElseIf enemyClickedPiece = 15 Then
+            enemyClickedPieceObject = ep15
+        ElseIf enemyClickedPiece = 16 Then
+            enemyClickedPieceObject = ep16
+        ElseIf enemyClickedPiece = 17 Then
+            enemyClickedPieceObject = ep17
+        ElseIf enemyClickedPiece = 18 Then
+            enemyClickedPieceObject = ep18
+        ElseIf enemyClickedPiece = 19 Then
+            enemyClickedPieceObject = ep19
+        ElseIf enemyClickedPiece = 20 Then
+            enemyClickedPieceObject = ep20
+        ElseIf enemyClickedPiece = 21 Then
+            enemyClickedPieceObject = ep21
+        End If
+    End Sub
+
+    Public Sub GetEnemyMoveFromDatabase()
+        Dim res = client.Get(Player2MovePath)
+        Dim move = res.ResultAs(Of Move)
+        enemyClickedCoordinateValue = move.coordinate
+        enemyClickedPiece = move.piece
+    End Sub
+
+    Public Sub GetAndSetEnemyMove()
+        SetPiecesAndCoordinateObject()
+        GetEnemyMoveFromDatabase()
+        GetEnemyClickedPiece()
+
+        Dim loc As Location = New Location
+        Dim pieceCoor(2) As Integer
+
+        For i = 0 To 71
+            If enemyClickedCoordinateValue = GetFullCoordinateString(i) Then
+                pieceCoor = loc.LocationGet(enemyGridCoordinateObject(i))
+                loc.SetLocation(enemyClickedPieceObject, pieceCoor(0), pieceCoor(1))
+            End If
+        Next
+
+    End Sub
+
     Private Sub Gameboard_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Try
             client = New FireSharp.FirebaseClient(fcon)
@@ -1263,12 +1328,14 @@ Public Class Gameboard
         End Using
 
         roomNamePath = "room/" + roomName
-        Player1PiecePath = roomNamePath + "/player1" + "/piece"
-        Player2PiecePath = roomNamePath + "/player2" + "/piece"
-        ArbitraryPath = roomNamePath + "/arbitrary"
-        MovePath = roomNamePath + "/move"
         Player1Path = roomNamePath + "/player1"
         Player2Path = roomNamePath + "/player2"
+        Player1PiecePath = Player1Path + "/piece"
+        Player2PiecePath = Player2Path + "/piece"
+        ArbitraryPath = roomNamePath + "/arbitrary"
+        Player2MovePath = Player2Path + "/move"
+        Player1MovePath = Player1Path + "/move"
+
 
         Dim a As RoundButton = New RoundButton
         a.Round(a1, 10)
@@ -1423,6 +1490,17 @@ Public Class Gameboard
         hp11.Click, hp12.Click, hp13.Click, hp14.Click, hp15.Click, hp16.Click, hp17.Click, hp18.Click, hp19.Click, hp20.Click, hp21.Click, a1.Click, a2.Click, a3.Click, a4.Click, a5.Click, b1.Click, b2.Click, b3.Click, b4.Click, b5.Click, c1.Click, c2.Click, c3.Click, c4.Click, c5.Click, d1.Click, d2.Click, d3.Click, d4.Click, d5.Click, e1.Click, e2.Click, e3.Click, e4.Click, e5.Click, f1.Click, f2.Click, f3.Click, f4.Click, f5.Click, g1.Click, g2.Click, g3.Click, g4.Click, g5.Click, h1.Click, h2.Click, h3.Click, h4.Click, h5.Click, i1.Click, i2.Click, i3.Click, i4.Click, i5.Click, ep1.Click,
         ep2.Click, ep3.Click, ep4.Click, ep5.Click, ep6.Click, ep7.Click, ep8.Click, ep9.Click, ep10.Click, ep11.Click, ep13.Click, ep14.Click, ep15.Click, ep16.Click, ep17.Click, ep18.Click, ep19.Click, ep20.Click, ready.Click, myName.Click
 
+        If sender.Equals(ep1) Then
+            MessageBox.Show("EP1 CLICKED")
+        End If
+
+        'CHECK IF PLAYER LEFT
+
+        'LISTEN IF SOMEONE JOIN THE ROOM
+        If Not Check() Then
+            GetName()
+            SetName()
+        End If
 
         'CHECK IF ENEMY IS READY
         'IF ENEMY IS READY PIECE WILL SHOW TO YOU
@@ -1438,16 +1516,10 @@ Public Class Gameboard
             End If
         End If
 
-        'If sender.Equals(myName) Then
-        '    'LISTEN FOR MOVE
-        'End If
-
-
         If sender.Equals(ready) Then
             If isGameTime And isGameTimeDB Then
                 'UPDATE METHOD
                 'GET LOCATION MOVED
-                'RESET COLORS
             Else
                 GetLocation()
                 isGameTime = True
@@ -1457,19 +1529,13 @@ Public Class Gameboard
                 ready.Enabled = False
             End If
         End If
-
-        'LISTEN IF SOMEONE JOIN THE ROOM
-        If Not Check() Then
-            GetName()
-            SetName()
-        End If
-
         'LISTEN MOVES
-
         If isGameTime And isGameTimeDB Then
             myName.Enabled = False
             ready.Enabled = True
             MessageBox.Show("GAME TIME")
+            'RESET COLORS
+            ResetColors()
             'METHOD GAME TIME
             'ready.Visible = False
             If host Then
@@ -1533,7 +1599,7 @@ Public Class Gameboard
                                 sender.Equals(hp21) Then
                             MessageBox.Show("You can't swap now. Please select on the coordinate")
                             'SetPlayerTurn(host)
-                            firstClick = False
+                            firstClick = True
                         Else
                             x2 = piece2.Location.X
                             y2 = piece2.Location.Y
@@ -1553,11 +1619,10 @@ Public Class Gameboard
                                 firstClick = False
                             End If
                         End If
-
                     End If
-
                 Else
                     ready.Text = "RECEIVE"
+                    GetAndSetEnemyMove()
                     MessageBox.Show("Opponent's Turn")
                     enemyNameLine.BackColor = Color.Green
                     myNameLine.BackColor = Color.Red
@@ -1565,6 +1630,7 @@ Public Class Gameboard
             Else
                 If GetPlayerTurn() Then
                     ready.Text = "RECEIVE"
+                    GetAndSetEnemyMove()
                     MessageBox.Show("Opponent's Turn")
                     enemyNameLine.BackColor = Color.Green
                     myNameLine.BackColor = Color.Red
@@ -1595,7 +1661,7 @@ Public Class Gameboard
                                 sender.Equals(hp19) Or
                                 sender.Equals(hp20) Or
                                 sender.Equals(hp21) Then
-                            CheckPossibleMove(sender, hostPossibleColor)
+                            CheckPossibleMove(sender, guestPossibleColor)
                             firstPieceLocation = GetLocationFirstPiece(sender)
                             SetFirstClickObject(sender)
                             firstClick = False
@@ -1628,7 +1694,7 @@ Public Class Gameboard
                                 sender.Equals(hp21) Then
                             MessageBox.Show("You can't swap now. Please select on the coordinate")
                             SetPlayerTurn(Not host)
-                            firstClick = False
+                            firstClick = True
                         Else
                             x2 = piece2.Location.X
                             y2 = piece2.Location.Y

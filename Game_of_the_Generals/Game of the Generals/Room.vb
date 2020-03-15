@@ -175,19 +175,4 @@ Public Class Room
             TextBox1.BackColor = Color.White
         End If
     End Sub
-
-    'Private Sub Room_Closing(sender As Object, e As CancelEventArgs) Handles Me.Closing
-    '    Select Case MessageBox.Show("Would you like to exit",
-    '                                "CAREFUL", MessageBoxButtons.YesNo,
-    '                                    MessageBoxIcon.Question)
-    '        Case DialogResult.Yes
-    '            'Dim res = client.Delete(roomNamePath)
-    '            End
-    '        Case DialogResult.No
-    '            e.Cancel = True
-    '        Case DialogResult.Ignore
-    '            Me.Close()
-    '        Case DialogResult.
-    '    End Select
-    'End Sub
 End Class
