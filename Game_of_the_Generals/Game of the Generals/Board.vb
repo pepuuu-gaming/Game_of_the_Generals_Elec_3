@@ -50,7 +50,6 @@ Public Class Gameboard
     Dim enemyClickedPiece As Integer
     Dim enemyClickedCoordinateValue As String
     Dim enemyClickedPieceObject As Object
-    Dim firstMove As Boolean = True
 
     Private fcon As New FirebaseConfig With
         {
@@ -1328,10 +1327,16 @@ Public Class Gameboard
 
     End Sub
 
-    Public Function FirstMove() As Boolean
+    Public Function CheckfirstMove() As Boolean
+        Dim b As Boolean
         Dim res = client.Get(roomNamePath + "/firstMove")
-
+        b = res.ResultAs(Of Boolean)
+        Return b
     End Function
+
+    Public Sub SetFirstMove(b As Boolean)
+        client.Set(roomNamePath + "/firstMove", b)
+    End Sub
 
     Private Sub Gameboard_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Try
@@ -1508,9 +1513,9 @@ Public Class Gameboard
         hp11.Click, hp12.Click, hp13.Click, hp14.Click, hp15.Click, hp16.Click, hp17.Click, hp18.Click, hp19.Click, hp20.Click, hp21.Click, a1.Click, a2.Click, a3.Click, a4.Click, a5.Click, b1.Click, b2.Click, b3.Click, b4.Click, b5.Click, c1.Click, c2.Click, c3.Click, c4.Click, c5.Click, d1.Click, d2.Click, d3.Click, d4.Click, d5.Click, e1.Click, e2.Click, e3.Click, e4.Click, e5.Click, f1.Click, f2.Click, f3.Click, f4.Click, f5.Click, g1.Click, g2.Click, g3.Click, g4.Click, g5.Click, h1.Click, h2.Click, h3.Click, h4.Click, h5.Click, i1.Click, i2.Click, i3.Click, i4.Click, i5.Click, ep1.Click,
         ep2.Click, ep3.Click, ep4.Click, ep5.Click, ep6.Click, ep7.Click, ep8.Click, ep9.Click, ep10.Click, ep11.Click, ep13.Click, ep14.Click, ep15.Click, ep16.Click, ep17.Click, ep18.Click, ep19.Click, ep20.Click, ready.Click, myName.Click
 
-        If sender.Equals(ep1) Then
-            MessageBox.Show("EP1 CLICKED")
-        End If
+        'If sender.Equals(ep1) Then
+        '    MessageBox.Show("EP1 CLICKED")
+        'End If
 
         'CHECK IF PLAYER LEFT
 
@@ -1631,7 +1636,6 @@ Public Class Gameboard
                                 SetMoveToDatabase()
                                 SetPlayerTurn(Not host)
                                 firstClick = True
-
                             Else
                                 MessageBox.Show("You can only move one tile away")
                                 ResetValue()
@@ -1644,20 +1648,22 @@ Public Class Gameboard
                     MessageBox.Show("Opponent's Turn")
                     enemyNameLine.BackColor = Color.Green
                     myNameLine.BackColor = Color.Red
-                    If Not firstMove Then
+                    If Not CheckfirstMove() Then
                         GetAndSetEnemyMove()
+                    Else
+                        SetFirstMove(False)
                     End If
                 End If
             Else
                 If GetPlayerTurn() Then
                     ready.Text = "RECEIVE"
-                    If Not firstMove Then
-                        GetAndSetEnemyMove()
-                    End If
                     MessageBox.Show("Opponent's Turn")
                     enemyNameLine.BackColor = Color.Green
                     myNameLine.BackColor = Color.Red
                 Else
+                    If Not CheckfirstMove() Then
+                        GetAndSetEnemyMove()
+                    End If
                     ready.Text = "SEND"
                     myNameLine.BackColor = Color.Green
                     enemyNameLine.BackColor = Color.Red
