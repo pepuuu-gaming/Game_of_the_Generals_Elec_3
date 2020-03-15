@@ -3,18 +3,19 @@ Imports FireSharp.Response
 Imports FireSharp.Interfaces
 Imports System.IO
 Imports FireSharp.EventStreaming
+Imports System.ComponentModel
 
 Public Class Gameboard
 
     Dim name As String
     Dim roomName As String
     Dim roomNamePath As String
-    Dim piecePlayer1Path As String
-    Dim piecePlayer2Path As String
-    Dim arbitraryPath As String
-    Dim movePath As String
-    Dim player1Path As String
-    Dim player2Path As String
+    Dim Player1PiecePath As String
+    Dim Player2PiecePath As String
+    Dim ArbitraryPath As String
+    Dim MovePath As String
+    Dim Player1Path As String
+    Dim Player2Path As String
 
     Private client As IFirebaseClient
     Dim isGameTime As Boolean = False
@@ -29,13 +30,14 @@ Public Class Gameboard
     Dim y As Integer = 0
     Dim x2 As Integer = 0
     Dim y2 As Integer = 0
-    Dim swapEnabled As Boolean
     Dim piece1 As Button
     Dim piece2 As Button
     Dim pieceObject(21) As Object
-    Dim pieceObjectList As New List(Of Location)
+    Dim enemyObject(21) As Object
     Dim coordinateObject(27) As Object
+    Dim enemyCoordinateObject(27) As Object
     Dim pieceCoordinate(21) As String
+    Dim enemyPieceCoordinate(21) As String
 
     Private fcon As New FirebaseConfig With
         {
@@ -43,17 +45,163 @@ Public Class Gameboard
         .BasePath = "https://game-of-the-generals-vb.firebaseio.com/"
         }
 
+    Public Function GetCoordinateInvertedString(a As Integer) As String
+        Dim b As String
+        Select Case a
+            Case 0
+                b = "i3"
+            Case 1
+                b = "i2"
+            Case 2
+                b = "i1"
+            Case 3
+                b = "h3"
+            Case 4
+                b = "h2"
+            Case 5
+                b = "h1"
+            Case 6
+                b = "g3"
+            Case 7
+                b = "g2"
+            Case 8
+                b = "g1"
+            Case 9
+                b = "f3"
+            Case 10
+                b = "f2"
+            Case 11
+                b = "f1"
+            Case 12
+                b = "e3"
+            Case 13
+                b = "e2"
+            Case 14
+                b = "e1"
+            Case 15
+                b = "d3"
+            Case 16
+                b = "d2"
+            Case 17
+                b = "d1"
+            Case 18
+                b = "c3"
+            Case 19
+                b = "c2"
+            Case 20
+                b = "c1"
+            Case 21
+                b = "b3"
+            Case 22
+                b = "b2"
+            Case 23
+                b = "b1"
+            Case 24
+                b = "a3"
+            Case 25
+                b = "a2"
+            Case 26
+                b = "a1"
+        End Select
+        Return b
+    End Function
 
-    'Public Sub New(Host As Boolean)
+    Public Sub GetAndSetEnemyLocation()
+        SetPiecesAndCoordinateObject()
+        GetEnemyPieceFromDatabase()
 
-    '    ' This call is required by the designer.
-    '    InitializeComponent()
+        Dim loc As Location = New Location
+        Dim pieceCoor(2) As Integer
+        'Dim coorVal(2) As Integer
 
-    '    ' Add any initialization after the InitializeComponent() call.
+        'If enemyPieceCoordinate(0) = GetCoordinateString(0) Then
+        '    enemyObject(0) = GetCoordinateInvertedString(0)
+        'End If
 
+
+        'For i = 0 To 20
+        '    For j = 0 To 26
+        '        pieceCoor = loc.LocationGet(pieceObject(i))
+        '        coorVal = loc.LocationGet(coordinateObject(j))
+
+        '        If pieceCoor(0) = coorVal(0) And pieceCoor(1) = coorVal(1) Then
+        '            pieceCoordinate(i) = GetCoordinateString(j)
+        '        End If
+        '    Next
+        'Next
+
+        For i = 0 To 20
+            For j = 0 To 26
+                If enemyPieceCoordinate(i) = GetCoordinateString(j) Then
+                    pieceCoor = loc.LocationGet(enemyCoordinateObject(j))
+                    loc.SetLocation(enemyObject(i), pieceCoor(0), pieceCoor(1))
+                End If
+            Next
+        Next
+    End Sub
+
+    'Public Sub SetEnemyPieceToBoard()
+    '    GetEnemyLocation()
+    '    ep1.Location = New Point(b6.Location.X, b6.Location.Y)
+    '    ep2.Location = New Point(c6.Location.X, c6.Location.Y)
+    '    ep3.Location = New Point(d6.Location.X, d6.Location.Y)
+    '    ep4.Location = New Point(e6.Location.X, e6.Location.Y)
+    '    ep5.Location = New Point(f6.Location.X, f6.Location.Y)
+    '    ep6.Location = New Point(g6.Location.X, g6.Location.Y)
+    '    ep7.Location = New Point(h6.Location.X, h6.Location.Y)
+    '    ep8.Location = New Point(b7.Location.X, b7.Location.Y)
+    '    ep9.Location = New Point(c7.Location.X, c7.Location.Y)
+    '    ep10.Location = New Point(d7.Location.X, d7.Location.Y)
+
+    '    ep11.Location = New Point(e7.Location.X, e7.Location.Y)
+    '    ep12.Location = New Point(f7.Location.X, f7.Location.Y)
+    '    ep13.Location = New Point(g7.Location.X, g7.Location.Y)
+    '    ep14.Location = New Point(h7.Location.X, h7.Location.Y)
+    '    ep15.Location = New Point(b8.Location.X, b8.Location.Y)
+    '    ep16.Location = New Point(c8.Location.X, c8.Location.Y)
+    '    ep17.Location = New Point(d8.Location.X, d8.Location.Y)
+    '    ep18.Location = New Point(e8.Location.X, e8.Location.Y)
+    '    ep19.Location = New Point(f8.Location.X, f8.Location.Y)
+    '    ep20.Location = New Point(g8.Location.X, g8.Location.Y)
+
+    '    ep21.Location = New Point(h8.Location.X, h8.Location.Y)
     'End Sub
 
 
+    Public Sub GetEnemyPieceFromDatabase()
+        Dim piece As New Piece()
+        Dim res As FirebaseResponse
+        If host Then
+            res = client.Get(Player2PiecePath)
+        Else
+            res = client.Get(Player1PiecePath)
+        End If
+        piece = res.ResultAs(Of Piece)
+        enemyPieceCoordinate(0) = piece.p01
+        enemyPieceCoordinate(1) = piece.p02
+        enemyPieceCoordinate(2) = piece.p03
+        enemyPieceCoordinate(3) = piece.p04
+        enemyPieceCoordinate(4) = piece.p05
+        enemyPieceCoordinate(5) = piece.p06
+        enemyPieceCoordinate(6) = piece.p07
+        enemyPieceCoordinate(7) = piece.p08
+        enemyPieceCoordinate(8) = piece.p09
+        enemyPieceCoordinate(9) = piece.p10
+
+        enemyPieceCoordinate(10) = piece.p11
+        enemyPieceCoordinate(11) = piece.p12
+        enemyPieceCoordinate(12) = piece.p13
+        enemyPieceCoordinate(13) = piece.p14
+        enemyPieceCoordinate(14) = piece.p15
+        enemyPieceCoordinate(15) = piece.p16
+        enemyPieceCoordinate(16) = piece.p17
+        enemyPieceCoordinate(17) = piece.p18
+        enemyPieceCoordinate(18) = piece.p19
+        enemyPieceCoordinate(19) = piece.p20
+
+        enemyPieceCoordinate(20) = piece.p21
+
+    End Sub
 
     Public Sub SetPiecesToDatabase()
         Dim piece As New Piece() With {
@@ -80,12 +228,10 @@ Public Class Gameboard
             .p21 = pieceCoordinate(20)
         }
         If host Then
-            client.Update(piecePlayer1Path, piece)
+            client.Update(Player1PiecePath, piece)
         Else
-            client.Update(piecePlayer2Path, piece)
+            client.Update(Player2PiecePath, piece)
         End If
-
-
     End Sub
 
     Public Sub SetPiecesAndCoordinateObject()
@@ -110,6 +256,30 @@ Public Class Gameboard
         pieceObject(18) = hp19
         pieceObject(19) = hp20
         pieceObject(20) = hp21
+
+
+        enemyObject(0) = ep1
+        enemyObject(1) = ep2
+        enemyObject(2) = ep3
+        enemyObject(3) = ep4
+        enemyObject(4) = ep5
+        enemyObject(5) = ep6
+        enemyObject(6) = ep7
+        enemyObject(7) = ep8
+        enemyObject(8) = ep9
+        enemyObject(9) = ep10
+        enemyObject(10) = ep11
+        enemyObject(11) = ep12
+        enemyObject(12) = ep13
+        enemyObject(13) = ep14
+        enemyObject(14) = ep15
+        enemyObject(15) = ep16
+        enemyObject(16) = ep17
+        enemyObject(17) = ep18
+        enemyObject(18) = ep19
+        enemyObject(19) = ep20
+        enemyObject(20) = ep21
+
 
         coordinateObject(0) = a6
         coordinateObject(1) = a7
@@ -146,6 +316,43 @@ Public Class Gameboard
         coordinateObject(24) = i6
         coordinateObject(25) = i7
         coordinateObject(26) = i8
+
+
+        enemyCoordinateObject(0) = i3
+        enemyCoordinateObject(1) = i2
+        enemyCoordinateObject(2) = i1
+
+        enemyCoordinateObject(3) = h3
+        enemyCoordinateObject(4) = h2
+        enemyCoordinateObject(5) = h1
+
+        enemyCoordinateObject(6) = g3
+        enemyCoordinateObject(7) = g2
+        enemyCoordinateObject(8) = g1
+
+        enemyCoordinateObject(9) = f3
+        enemyCoordinateObject(10) = f2
+        enemyCoordinateObject(11) = f1
+
+        enemyCoordinateObject(12) = e3
+        enemyCoordinateObject(13) = e2
+        enemyCoordinateObject(14) = e1
+
+        enemyCoordinateObject(15) = d3
+        enemyCoordinateObject(16) = d2
+        enemyCoordinateObject(17) = d1
+
+        enemyCoordinateObject(18) = c3
+        enemyCoordinateObject(19) = c2
+        enemyCoordinateObject(20) = c1
+
+        enemyCoordinateObject(21) = b3
+        enemyCoordinateObject(22) = b2
+        enemyCoordinateObject(23) = b1
+
+        enemyCoordinateObject(24) = a3
+        enemyCoordinateObject(25) = a2
+        enemyCoordinateObject(26) = a1
 
 
     End Sub
@@ -291,8 +498,6 @@ Public Class Gameboard
 
     End Sub
 
-    Dim stopListening As Boolean = False
-
     Public Function Check() As Boolean
         If guestName <> "Waiting for opponent" Then
             Return True
@@ -306,90 +511,183 @@ Public Class Gameboard
         hp11.Click, hp12.Click, hp13.Click, hp14.Click, hp15.Click, hp16.Click, hp17.Click, hp18.Click, hp19.Click, hp20.Click, hp21.Click
 
 
-        'LISTEN MOVES
+        'LISTEN IF SOMEONE JOIN THE ROOM
         If Not Check() Then
             GetName()
             SetName()
         End If
 
+        'CHECK IF ENEMY IS READY
+        'IF ENEMY IS READY PIECE WILL SHOW TO YOU
+        If host Then
+            If GetPlayer2ReadyStatus() Then
+                GetAndSetEnemyLocation()
+                ShowPiece(host)
+            End If
+        Else
+            If GetPlayer1ReadyStatus() Then
+                GetAndSetEnemyLocation()
+                ShowPiece(host)
+            End If
+        End If
+
+        'LISTEN MOVES
+
         If isGameTime And isGameTimeDB Then
             MessageBox.Show("GAME TIME")
-            'CHECK IF ENEMY IS READY
-            'IF ENEMY IS READY PIECE WILL SHOW TO YOU
-        Else
-
-            If firstClick Then
-                piece1 = DirectCast(sender, Button)
-                If sender.Equals(hp1) Or
-                    sender.Equals(hp2) Or
-                    sender.Equals(hp3) Or
-                    sender.Equals(hp4) Or
-                    sender.Equals(hp5) Or
-                    sender.Equals(hp6) Or
-                    sender.Equals(hp7) Or
-                    sender.Equals(hp8) Or
-                    sender.Equals(hp9) Or
-                    sender.Equals(hp10) Or
-                    sender.Equals(hp11) Or
-                    sender.Equals(hp12) Or
-                    sender.Equals(hp13) Or
-                    sender.Equals(hp14) Or
-                    sender.Equals(hp15) Or
-                    sender.Equals(hp16) Or
-                    sender.Equals(hp17) Or
-                    sender.Equals(hp18) Or
-                    sender.Equals(hp19) Or
-                    sender.Equals(hp20) Or
-                    sender.Equals(hp21) Then
-                    'swapEnabled = True
-                    x = piece1.Location.X
-                    y = piece1.Location.Y
-                    firstClick = False
+            'METHOD GAME TIME
+            ready.Visible = False
+            If PlayerTurn() Then
+                If firstClick Then
+                    piece1 = DirectCast(sender, Button)
+                    If sender.Equals(hp1) Or
+                            sender.Equals(hp2) Or
+                            sender.Equals(hp3) Or
+                            sender.Equals(hp4) Or
+                            sender.Equals(hp5) Or
+                            sender.Equals(hp6) Or
+                            sender.Equals(hp7) Or
+                            sender.Equals(hp8) Or
+                            sender.Equals(hp9) Or
+                            sender.Equals(hp10) Or
+                            sender.Equals(hp11) Or
+                            sender.Equals(hp12) Or
+                            sender.Equals(hp13) Or
+                            sender.Equals(hp14) Or
+                            sender.Equals(hp15) Or
+                            sender.Equals(hp16) Or
+                            sender.Equals(hp17) Or
+                            sender.Equals(hp18) Or
+                            sender.Equals(hp19) Or
+                            sender.Equals(hp20) Or
+                            sender.Equals(hp21) Then
+                        firstClick = False
+                    Else
+                        MessageBox.Show("Please select a piece")
+                    End If
                 Else
-                    MessageBox.Show("Please select a piece")
-                    '    swapEnabled = False
-                    '    x = piece1.Location.X
-                    '    y = piece1.Location.Y
+                    piece2 = DirectCast(sender, Button)
+                    If sender.Equals(hp1) Or
+                            sender.Equals(hp2) Or
+                            sender.Equals(hp3) Or
+                            sender.Equals(hp4) Or
+                            sender.Equals(hp5) Or
+                            sender.Equals(hp6) Or
+                            sender.Equals(hp7) Or
+                            sender.Equals(hp8) Or
+                            sender.Equals(hp9) Or
+                            sender.Equals(hp10) Or
+                            sender.Equals(hp11) Or
+                            sender.Equals(hp12) Or
+                            sender.Equals(hp13) Or
+                            sender.Equals(hp14) Or
+                            sender.Equals(hp15) Or
+                            sender.Equals(hp16) Or
+                            sender.Equals(hp17) Or
+                            sender.Equals(hp18) Or
+                            sender.Equals(hp19) Or
+                            sender.Equals(hp20) Or
+                            sender.Equals(hp21) Then
+                        MessageBox.Show("You can't swap now\nPlease select on the coordinate")
+                    Else
+                        x2 = piece2.Location.X
+                        y2 = piece2.Location.Y
+                        piece1.Location = New Point(x2, y2)
+                        firstClick = True
+                    End If
                 End If
             Else
-                piece2 = DirectCast(sender, Button)
-                If sender.Equals(hp1) Or
-                    sender.Equals(hp2) Or
-                    sender.Equals(hp3) Or
-                    sender.Equals(hp4) Or
-                    sender.Equals(hp5) Or
-                    sender.Equals(hp6) Or
-                    sender.Equals(hp7) Or
-                    sender.Equals(hp8) Or
-                    sender.Equals(hp9) Or
-                    sender.Equals(hp10) Or
-                    sender.Equals(hp11) Or
-                    sender.Equals(hp12) Or
-                    sender.Equals(hp13) Or
-                    sender.Equals(hp14) Or
-                    sender.Equals(hp15) Or
-                    sender.Equals(hp16) Or
-                    sender.Equals(hp17) Or
-                    sender.Equals(hp18) Or
-                    sender.Equals(hp19) Or
-                    sender.Equals(hp20) Or
-                    sender.Equals(hp21) Then
-                    x2 = piece2.Location.X
-                    y2 = piece2.Location.Y
 
-                    SwapPiece(x, y, x2, y2)
-                    ResetValue()
+            End If
+
+        Else
+            If GetPlayer1ReadyStatus() And GetPlayer2ReadyStatus() Then
+                isGameTimeDB = True
+            Else
+                If firstClick Then
+                    piece1 = DirectCast(sender, Button)
+                    If sender.Equals(hp1) Or
+                            sender.Equals(hp2) Or
+                            sender.Equals(hp3) Or
+                            sender.Equals(hp4) Or
+                            sender.Equals(hp5) Or
+                            sender.Equals(hp6) Or
+                            sender.Equals(hp7) Or
+                            sender.Equals(hp8) Or
+                            sender.Equals(hp9) Or
+                            sender.Equals(hp10) Or
+                            sender.Equals(hp11) Or
+                            sender.Equals(hp12) Or
+                            sender.Equals(hp13) Or
+                            sender.Equals(hp14) Or
+                            sender.Equals(hp15) Or
+                            sender.Equals(hp16) Or
+                            sender.Equals(hp17) Or
+                            sender.Equals(hp18) Or
+                            sender.Equals(hp19) Or
+                            sender.Equals(hp20) Or
+                            sender.Equals(hp21) Then
+                        'swapEnabled = True
+                        x = piece1.Location.X
+                        y = piece1.Location.Y
+                        firstClick = False
+                    Else
+                        MessageBox.Show("Please select a piece")
+                        '    swapEnabled = False
+                        '    x = piece1.Location.X
+                        '    y = piece1.Location.Y
+                    End If
                 Else
-                    'MessageBox.Show("Select piece to swap")
-                    x2 = piece2.Location.X
-                    y2 = piece2.Location.Y
-                    piece1.Location = New Point(x2, y2)
-                    ResetValue()
+                    piece2 = DirectCast(sender, Button)
+                    If sender.Equals(hp1) Or
+                            sender.Equals(hp2) Or
+                            sender.Equals(hp3) Or
+                            sender.Equals(hp4) Or
+                            sender.Equals(hp5) Or
+                            sender.Equals(hp6) Or
+                            sender.Equals(hp7) Or
+                            sender.Equals(hp8) Or
+                            sender.Equals(hp9) Or
+                            sender.Equals(hp10) Or
+                            sender.Equals(hp11) Or
+                            sender.Equals(hp12) Or
+                            sender.Equals(hp13) Or
+                            sender.Equals(hp14) Or
+                            sender.Equals(hp15) Or
+                            sender.Equals(hp16) Or
+                            sender.Equals(hp17) Or
+                            sender.Equals(hp18) Or
+                            sender.Equals(hp19) Or
+                            sender.Equals(hp20) Or
+                            sender.Equals(hp21) Then
+                        x2 = piece2.Location.X
+                        y2 = piece2.Location.Y
+
+                        SwapPiece(x, y, x2, y2)
+                        ResetValue()
+                    Else
+                        'MessageBox.Show("Select piece to swap")
+                        x2 = piece2.Location.X
+                        y2 = piece2.Location.Y
+                        piece1.Location = New Point(x2, y2)
+                        ResetValue()
+                    End If
+                    firstClick = True
                 End If
-                firstClick = True
             End If
         End If
     End Sub
+
+    Public Function PlayerTurn() As Boolean
+        If host Then
+            Return True
+        Else
+            Return False
+        End If
+
+    End Function
+
+
 
     Public Sub ResetValue()
         x = 0
@@ -397,6 +695,22 @@ Public Class Gameboard
         x2 = 0
         y2 = 0
     End Sub
+
+    Public Function GetPlayer2ReadyStatus() As Boolean
+        Dim a As Boolean
+        Dim res = client.Get(Player2Path + "/isReady")
+        a = res.ResultAs(Of Boolean)
+
+        Return a
+    End Function
+
+    Public Function GetPlayer1ReadyStatus() As Boolean
+        Dim b As Boolean
+        Dim res2 = client.Get(Player1Path + "/isReady")
+        b = res2.ResultAs(Of Boolean)
+        Return b
+    End Function
+
 
     Public Sub SwapPiece(a As Integer, b As Integer, a2 As Integer, b2 As Integer)
         piece1.Location = New Point(a2, b2) ' SECOND COORDINATE A2 And B2
@@ -463,7 +777,7 @@ Public Class Gameboard
     End Sub
 
     Public Sub ShowPiece(b As Boolean)
-        If host Then
+        If b Then
             SetEnemyPiece(guestColor)
             ShowHideEnemyPiece(True)
         Else
@@ -472,18 +786,29 @@ Public Class Gameboard
         End If
     End Sub
 
+    Public Sub SetReadyToDatabase()
+        Dim res As FirebaseResponse
+        If host Then
+            res = client.Set(Player1Path + "/isReady", True)
+        Else
+            res = client.Set(Player2Path + "/isReady", True)
+        End If
+    End Sub
+
     Private Sub Ready_Click(sender As Object, e As EventArgs) Handles ready.Click
         GetLocation()
         isGameTime = True
-
+        SetReadyToDatabase()
         SetPiecesToDatabase()
+        MessageBox.Show("All Set!")
+        ready.Enabled = False
     End Sub
 
 
     Public Sub GetName()
         hostName = roomName
         If host Then
-            Dim res2 = client.Get(player2Path + "/name")
+            Dim res2 = client.Get(Player2Path + "/name")
             guestName = res2.ResultAs(Of String)
         Else
             guestName = name
@@ -519,20 +844,18 @@ Public Class Gameboard
             MessageBox.Show("there was a problem in the internet connection")
         End Try
 
-
-        'Dim name As String
         Dim file_name2 = "Roomname.txt"
         Using file_read As StreamReader = New StreamReader(file_name2)
             roomName = file_read.ReadLine
         End Using
 
         roomNamePath = "room/" + roomName
-        piecePlayer1Path = roomNamePath + "/player1" + "/piece"
-        piecePlayer2Path = roomNamePath + "/player2" + "/piece"
-        arbitraryPath = roomNamePath + "/arbitrary"
-        movePath = roomNamePath + "/move"
-        player1Path = roomNamePath + "/player1"
-        player2Path = roomNamePath + "/player2"
+        Player1PiecePath = roomNamePath + "/player1" + "/piece"
+        Player2PiecePath = roomNamePath + "/player2" + "/piece"
+        ArbitraryPath = roomNamePath + "/arbitrary"
+        MovePath = roomNamePath + "/move"
+        Player1Path = roomNamePath + "/player1"
+        Player2Path = roomNamePath + "/player2"
 
         Dim a As RoundButton = New RoundButton
         a.Round(a1, 10)
@@ -666,5 +989,19 @@ Public Class Gameboard
         ShowHideEnemyPiece(False)
         SetPieceToBoard()
         SetPieces()
+    End Sub
+
+    Private Sub Gameboard_Closing(sender As Object, e As CancelEventArgs) Handles Me.Closing
+        Select Case MessageBox.Show("Would you like to exit",
+                                    "CAREFUL", MessageBoxButtons.YesNo,
+                                        MessageBoxIcon.Question)
+            Case DialogResult.Yes
+                If host Then
+                    Dim res = client.Delete(roomNamePath)
+                End If
+                End
+            Case DialogResult.No
+                e.Cancel = True
+        End Select
     End Sub
 End Class

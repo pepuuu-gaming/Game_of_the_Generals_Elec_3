@@ -10,4 +10,11 @@ Public Class Location
 
         Return b
     End Function
+
+    Public Sub SetLocation(a As Object, x As Integer, y As Integer)
+        Dim c As Button = DirectCast(a, Button)
+
+        c.Location = New Point(x, y)
+
+    End Sub
 End Class
