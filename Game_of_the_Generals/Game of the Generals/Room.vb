@@ -16,7 +16,7 @@ Public Class Room
     Private client As IFirebaseClient
     Dim roomName As String
     Dim file_name As String
-    Dim name As String
+    Dim playerName As String
 
     Private Sub Room_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Dim d As RoundButton = New RoundButton
@@ -49,13 +49,13 @@ Public Class Room
                 Dim file_name2 = "name.txt"
                 Try
                     Using file_read As StreamReader = New StreamReader(file_name2)
-                        name = file_read.ReadLine
+                        playerName = file_read.ReadLine
                     End Using
                 Catch ex As Exception
                     MessageBox.Show("Set your name first in the options menu. The game will now exit")
                     End
                 End Try
-                client.Set("room/" + TextBox1.Text + "/player2" + "/name", name) 'SET PLAYER 2 NAME
+                client.Set("room/" + TextBox1.Text + "/player2" + "/name", playerName) 'SET PLAYER 2 NAME
                 Gameboard.Show()
                 Me.Close()
             Else
@@ -75,10 +75,10 @@ Public Class Room
         Dim file_name2 = "name.txt"
         Try
             Using file_read As StreamReader = New StreamReader(file_name2)
-                name = file_read.ReadLine
+                playerName = file_read.ReadLine
             End Using
 
-            roomName = name
+            roomName = playerName
 
             file_name = "Roomname"
 
@@ -134,7 +134,7 @@ Public Class Room
             Dim roomDatabase As New RoomDatabase With
             {
             .isReady = False,
-            .playerTurn = False,
+            .playerTurn = True,
             .whoWin = ""
             }
 
@@ -152,7 +152,7 @@ Public Class Room
             client.Set("room/" + roomName + "/player1" + "/piece", piece)
             client.Set("room/" + roomName + "/player2" + "/piece", piece)
 
-            client.Set("room/" + roomName + "/player1" + "/name", name) 'SET PLAYER 1 NAME
+            client.Set("room/" + roomName + "/player1" + "/name", playerName) 'SET PLAYER 1 NAME
             Gameboard.Show()
             Me.Close()
         Catch ex As Exception

@@ -116,7 +116,11 @@
         a.BackColor = Color.FromArgb(r(0), r(1), r(1))
     End Sub
 
-    Public Sub UnsetButtonImage(a As Button)
+    Public Sub SetPossibleMove(a As Button, r As Integer())
+        a.BackColor = Color.FromArgb(r(0), r(1), r(1))
+    End Sub
+
+    Public Sub Defeat(a As Button)
         a.BackgroundImage = Nothing
         a.BackColor = Nothing
     End Sub

@@ -7,7 +7,7 @@ Imports System.ComponentModel
 
 Public Class Gameboard
 
-    Dim name As String
+    Dim playerName As String
     Dim roomName As String
     Dim roomNamePath As String
     Dim Player1PiecePath As String
@@ -23,6 +23,8 @@ Public Class Gameboard
     Dim hostName As String
     Dim guestName As String
     Dim host As Boolean
+    Dim hostPossibleColor As Integer() = {125, 136, 159}
+    Dim guestPossibleColor As Integer() = {199, 230, 223}
     Dim hostColor As Integer() = {20, 45, 76}
     Dim guestColor As Integer() = {159, 211, 199}
     Dim firstClick As Boolean = True
@@ -38,6 +40,9 @@ Public Class Gameboard
     Dim enemyCoordinateObject(27) As Object
     Dim pieceCoordinate(21) As String
     Dim enemyPieceCoordinate(21) As String
+    Dim gridCoordinate(71) As Object
+    Dim enemyGridCoordinate(71) As Object
+    Dim playerTurn As Boolean = True
 
     Private fcon As New FirebaseConfig With
         {
@@ -49,25 +54,25 @@ Public Class Gameboard
         Dim b As String
         Select Case a
             Case 0
-                b = "i3"
+                b = "i8"
             Case 1
-                b = "i2"
+                b = "i7"
             Case 2
-                b = "i1"
+                b = "i6"
             Case 3
-                b = "h3"
+                b = "i5"
             Case 4
-                b = "h2"
+                b = "i4"
             Case 5
-                b = "h1"
+                b = "i3"
             Case 6
-                b = "g3"
+                b = "i2"
             Case 7
-                b = "g2"
+                b = "i1"
             Case 8
-                b = "g1"
+                b = "h8"
             Case 9
-                b = "f3"
+                b = "h7"
             Case 10
                 b = "f2"
             Case 11
@@ -355,6 +360,167 @@ Public Class Gameboard
         enemyCoordinateObject(26) = a1
 
 
+        gridCoordinate(0) = a1
+        gridCoordinate(1) = a2
+        gridCoordinate(2) = a3
+        gridCoordinate(3) = a4
+        gridCoordinate(4) = a5
+        gridCoordinate(5) = a6
+        gridCoordinate(6) = a7
+        gridCoordinate(7) = a8
+
+        gridCoordinate(8) = b1
+        gridCoordinate(9) = b2
+        gridCoordinate(10) = b3
+        gridCoordinate(11) = b4
+        gridCoordinate(12) = b5
+        gridCoordinate(13) = b6
+        gridCoordinate(14) = b7
+        gridCoordinate(15) = b8
+
+        gridCoordinate(16) = c1
+        gridCoordinate(17) = c2
+        gridCoordinate(18) = c3
+        gridCoordinate(19) = c4
+        gridCoordinate(20) = c5
+        gridCoordinate(21) = c6
+        gridCoordinate(22) = c7
+        gridCoordinate(23) = c8
+
+        gridCoordinate(24) = d1
+        gridCoordinate(25) = d2
+        gridCoordinate(26) = d3
+        gridCoordinate(27) = d4
+        gridCoordinate(28) = d5
+        gridCoordinate(29) = d6
+        gridCoordinate(30) = d7
+        gridCoordinate(31) = d8
+
+        gridCoordinate(32) = e1
+        gridCoordinate(33) = e2
+        gridCoordinate(34) = e3
+        gridCoordinate(35) = e4
+        gridCoordinate(36) = e5
+        gridCoordinate(37) = e6
+        gridCoordinate(38) = e7
+        gridCoordinate(39) = e8
+
+        gridCoordinate(40) = f1
+        gridCoordinate(41) = f2
+        gridCoordinate(42) = f3
+        gridCoordinate(43) = f4
+        gridCoordinate(44) = f5
+        gridCoordinate(45) = f6
+        gridCoordinate(46) = f7
+        gridCoordinate(47) = f8
+
+        gridCoordinate(48) = g1
+        gridCoordinate(49) = g2
+        gridCoordinate(50) = g3
+        gridCoordinate(51) = g4
+        gridCoordinate(52) = g5
+        gridCoordinate(53) = g6
+        gridCoordinate(54) = g7
+        gridCoordinate(55) = g8
+
+        gridCoordinate(56) = h1
+        gridCoordinate(57) = h2
+        gridCoordinate(58) = h3
+        gridCoordinate(59) = h4
+        gridCoordinate(60) = h5
+        gridCoordinate(61) = h6
+        gridCoordinate(62) = h7
+        gridCoordinate(63) = h8
+
+        gridCoordinate(64) = i1
+        gridCoordinate(65) = i2
+        gridCoordinate(66) = i3
+        gridCoordinate(67) = i4
+        gridCoordinate(68) = i5
+        gridCoordinate(69) = i6
+        gridCoordinate(70) = i7
+        gridCoordinate(71) = i8
+
+        enemyGridCoordinate(0) = i8
+        enemyGridCoordinate(1) = i7
+        enemyGridCoordinate(2) = i6
+        enemyGridCoordinate(3) = i5
+        enemyGridCoordinate(4) = i4
+        enemyGridCoordinate(5) = i3
+        enemyGridCoordinate(6) = i2
+        enemyGridCoordinate(7) = i1
+
+        enemyGridCoordinate(8) = h8
+        enemyGridCoordinate(9) = h7
+        enemyGridCoordinate(10) = h6
+        enemyGridCoordinate(11) = h5
+        enemyGridCoordinate(12) = h4
+        enemyGridCoordinate(13) = h3
+        enemyGridCoordinate(14) = h2
+        enemyGridCoordinate(15) = h1
+
+        enemyGridCoordinate(16) = g8
+        enemyGridCoordinate(17) = g7
+        enemyGridCoordinate(18) = g6
+        enemyGridCoordinate(19) = g5
+        enemyGridCoordinate(20) = g4
+        enemyGridCoordinate(21) = g3
+        enemyGridCoordinate(22) = g2
+        enemyGridCoordinate(23) = g1
+
+        enemyGridCoordinate(24) = f8
+        enemyGridCoordinate(25) = f7
+        enemyGridCoordinate(26) = f6
+        enemyGridCoordinate(27) = f5
+        enemyGridCoordinate(28) = f4
+        enemyGridCoordinate(29) = f3
+        enemyGridCoordinate(30) = f2
+        enemyGridCoordinate(31) = f1
+
+        enemyGridCoordinate(32) = e8
+        enemyGridCoordinate(33) = e7
+        enemyGridCoordinate(34) = e6
+        enemyGridCoordinate(35) = e5
+        enemyGridCoordinate(36) = e4
+        enemyGridCoordinate(37) = e3
+        enemyGridCoordinate(38) = e2
+        enemyGridCoordinate(39) = e1
+
+        enemyGridCoordinate(40) = d8
+        enemyGridCoordinate(41) = d7
+        enemyGridCoordinate(42) = d6
+        enemyGridCoordinate(43) = d5
+        enemyGridCoordinate(44) = d4
+        enemyGridCoordinate(45) = d3
+        enemyGridCoordinate(46) = d2
+        enemyGridCoordinate(47) = d1
+
+        enemyGridCoordinate(48) = c8
+        enemyGridCoordinate(49) = c7
+        enemyGridCoordinate(50) = c6
+        enemyGridCoordinate(51) = c5
+        enemyGridCoordinate(52) = c4
+        enemyGridCoordinate(53) = c3
+        enemyGridCoordinate(54) = c2
+        enemyGridCoordinate(55) = c1
+
+        enemyGridCoordinate(56) = b8
+        enemyGridCoordinate(57) = b7
+        enemyGridCoordinate(58) = b6
+        enemyGridCoordinate(59) = b5
+        enemyGridCoordinate(60) = b4
+        enemyGridCoordinate(61) = b3
+        enemyGridCoordinate(62) = b2
+        enemyGridCoordinate(63) = b1
+
+        enemyGridCoordinate(64) = a8
+        enemyGridCoordinate(65) = a7
+        enemyGridCoordinate(66) = a6
+        enemyGridCoordinate(67) = a5
+        enemyGridCoordinate(68) = a4
+        enemyGridCoordinate(69) = a3
+        enemyGridCoordinate(70) = a2
+        enemyGridCoordinate(71) = a1
     End Sub
 
     Public Sub GetLocation()
@@ -506,9 +672,203 @@ Public Class Gameboard
         End If
     End Function
 
+    Public Function GetFullCoordinateString(a As Integer) As String
+        Dim b As String
+        Select Case a
+            Case 0
+                b = "a1"
+            Case 1
+                b = "a2"
+            Case 2
+                b = "a3"
+            Case 3
+                b = "a4"
+            Case 4
+                b = "a5"
+            Case 5
+                b = "a6"
+            Case 6
+                b = "a7"
+            Case 7
+                b = "a8"
+
+            Case 8
+                b = "b1"
+            Case 9
+                b = "b2"
+            Case 10
+                b = "b3"
+            Case 11
+                b = "b4"
+            Case 12
+                b = "b5"
+            Case 13
+                b = "b6"
+            Case 14
+                b = "b7"
+            Case 15
+                b = "b8"
+
+            Case 16
+                b = "c1"
+            Case 17
+                b = "c2"
+            Case 18
+                b = "c3"
+            Case 19
+                b = "c4"
+            Case 20
+                b = "c5"
+            Case 21
+                b = "c6"
+            Case 22
+                b = "c7"
+            Case 23
+                b = "c8"
+
+            Case 25
+                b = "d1"
+            Case 25
+                b = "d2"
+            Case 26
+                b = "d3"
+            Case 27
+                b = "d4"
+            Case 28
+                b = "d5"
+            Case 29
+                b = "d6"
+            Case 30
+                b = "d7"
+            Case 31
+                b = "d8"
+
+            Case 32
+                b = "e1"
+            Case 33
+                b = "e2"
+            Case 34
+                b = "e3"
+            Case 35
+                b = "e4"
+            Case 36
+                b = "e5"
+            Case 37
+                b = "e6"
+            Case 38
+                b = "e7"
+            Case 39
+                b = "e8"
+
+            Case 40
+                b = "f1"
+            Case 41
+                b = "f2"
+            Case 42
+                b = "f3"
+            Case 43
+                b = "f4"
+            Case 44
+                b = "f5"
+            Case 45
+                b = "f6"
+            Case 46
+                b = "f7"
+            Case 47
+                b = "f8"
+
+            Case 48
+                b = "g1"
+            Case 49
+                b = "g2"
+            Case 50
+                b = "g3"
+            Case 51
+                b = "g4"
+            Case 52
+                b = "g5"
+            Case 53
+                b = "g6"
+            Case 54
+                b = "g7"
+            Case 55
+                b = "g8"
+
+            Case 56
+                b = "h1"
+            Case 57
+                b = "h2"
+            Case 58
+                b = "h3"
+            Case 59
+                b = "h4"
+            Case 60
+                b = "h5"
+            Case 61
+                b = "h6"
+            Case 62
+                b = "h7"
+            Case 63
+                b = "h8"
+
+            Case 64
+                b = "i1"
+            Case 65
+                b = "i2"
+            Case 66
+                b = "i3"
+            Case 67
+                b = "i4"
+            Case 68
+                b = "i5"
+            Case 69
+                b = "i6"
+            Case 70
+                b = "i7"
+            Case 71
+                b = "i8"
+        End Select
+
+        Return b
+    End Function
+
+    Public Sub CheckPossibleMove(sender As Object)
+        SetPiecesAndCoordinateObject()
+        Dim piece As Piece = New Piece
+        pieceCoordinate =
+
+        'If sender.Equals(hp1) Then
+        '    piece.SetPossibleMove(a7, hostPossibleColor)
+        '    piece.SetPossibleMove(b8, hostPossibleColor)
+        'End If
+
+
+
+        'For i = 0 To 71
+        '    gridCoordinate(i)
+        'Next
+    End Sub
+
     Public Sub GetClickButton(sender As Object, e As EventArgs) Handles a6.Click, a7.Click, a8.Click, b6.Click, b7.Click, b8.Click, c6.Click, c7.Click, c8.Click, d6.Click, d7.Click, d8.Click, e6.Click, e7.Click, e8.Click, f6.Click, f7.Click, f8.Click, g6.Click, g7.Click, g8.Click, h6.Click, h7.Click, h8.Click, i6.Click, i7.Click, i8.Click,
         hp1.Click, hp2.Click, hp3.Click, hp4.Click, hp5.Click, hp6.Click, hp7.Click, hp8.Click, hp9.Click, hp10.Click,
-        hp11.Click, hp12.Click, hp13.Click, hp14.Click, hp15.Click, hp16.Click, hp17.Click, hp18.Click, hp19.Click, hp20.Click, hp21.Click
+        hp11.Click, hp12.Click, hp13.Click, hp14.Click, hp15.Click, hp16.Click, hp17.Click, hp18.Click, hp19.Click, hp20.Click, hp21.Click, a1.Click, a2.Click, a3.Click, a4.Click, a5.Click, b1.Click, b2.Click, b3.Click, b4.Click, b5.Click, c1.Click, c2.Click, c3.Click, c4.Click, c5.Click, d1.Click, d2.Click, d3.Click, d4.Click, d5.Click, e1.Click, e2.Click, e3.Click, e4.Click, e5.Click, f1.Click, f2.Click, f3.Click, f4.Click, f5.Click, g1.Click, g2.Click, g3.Click, g4.Click, g5.Click, h1.Click, h2.Click, h3.Click, h4.Click, h5.Click, i1.Click, i2.Click, i3.Click, i4.Click, i5.Click, ep1.Click,
+        ep2.Click, ep3.Click, ep4.Click, ep5.Click, ep6.Click, ep7.Click, ep8.Click, ep9.Click, ep10.Click, ep11.Click, ep13.Click, ep14.Click, ep15.Click, ep16.Click, ep17.Click, ep18.Click, ep19.Click, ep20.Click, ready.Click
+
+        If sender.Equals(ready) Then
+            If isGameTime And isGameTimeDB Then
+                'UPDATE METHOD
+
+
+            Else
+                GetLocation()
+                isGameTime = True
+                SetReadyToDatabase()
+                SetPiecesToDatabase()
+                MessageBox.Show("All Set!")
+                ready.Enabled = False
+            End If
+
+        End If
 
 
         'LISTEN IF SOMEONE JOIN THE ROOM
@@ -535,10 +895,12 @@ Public Class Gameboard
 
         If isGameTime And isGameTimeDB Then
             MessageBox.Show("GAME TIME")
+            ready.Text = "UPDATE BOARD"
             'METHOD GAME TIME
-            ready.Visible = False
+            'ready.Visible = False
             If host Then
-                If PlayerTurn() Then
+                If GetPlayerTurn() Then
+                    ready.Enabled = True
                     myName.BackColor = Color.Green
                     enemyName.BackColor = Color.Red
                     If firstClick Then
@@ -564,10 +926,11 @@ Public Class Gameboard
                                 sender.Equals(hp19) Or
                                 sender.Equals(hp20) Or
                                 sender.Equals(hp21) Then
-                            firstClick = False
+                            CheckPossibleMove(sender)
                         Else
                             MessageBox.Show("Please select a piece")
                         End If
+                        firstClick = False
                     Else
                         piece2 = DirectCast(sender, Button)
                         If sender.Equals(hp1) Or
@@ -592,26 +955,32 @@ Public Class Gameboard
                                 sender.Equals(hp20) Or
                                 sender.Equals(hp21) Then
                             MessageBox.Show("You can't swap now. Please select on the coordinate")
+                            SetPlayerTurn(host)
                         Else
                             x2 = piece2.Location.X
                             y2 = piece2.Location.Y
                             piece1.Location = New Point(x2, y2)
-                            firstClick = True
-                            'METHOD TO SEND TO DATABASE
 
+                            'METHOD TO SEND TO DATABASE
+                            SetPlayerTurn(Not host)
                         End If
+                        firstClick = True
                     End If
+
                 Else
+                    ready.Enabled = False
                     MessageBox.Show("Opponent's Turn")
                     enemyName.BackColor = Color.Green
                     myName.BackColor = Color.Red
                 End If
             Else
-                If PlayerTurn() Then
+                If GetPlayerTurn() Then
+                    ready.Enabled = False
                     MessageBox.Show("Opponent's Turn")
                     enemyName.BackColor = Color.Green
                     myName.BackColor = Color.Red
                 Else
+                    ready.Enabled = True
                     myName.BackColor = Color.Green
                     enemyName.BackColor = Color.Red
                     If firstClick Then
@@ -665,15 +1034,18 @@ Public Class Gameboard
                                 sender.Equals(hp20) Or
                                 sender.Equals(hp21) Then
                             MessageBox.Show("You can't swap now. Please select on the coordinate")
+                            SetPlayerTurn(Not host)
                         Else
+                            'METHOD TO CHECK FOR MOVE
                             x2 = piece2.Location.X
                             y2 = piece2.Location.Y
                             piece1.Location = New Point(x2, y2)
                             firstClick = True
                             'METHOD TO SEND TO DATABASE
-
+                            SetPlayerTurn(host)
                         End If
                     End If
+
                 End If
             End If
         Else
@@ -782,11 +1154,14 @@ Public Class Gameboard
         End If
     End Sub
 
-    Public Function PlayerTurn() As Boolean
-        Dim b As Boolean
-        Dim res = client.Get(roomNamePath + "/isReady")
-        b = res.ResultAs(Of Boolean)
+    Public Sub SetPlayerTurn(b As Boolean)
+        client.Set(roomNamePath + "/playerTurn", b)
+    End Sub
 
+    Public Function GetPlayerTurn() As Boolean
+        Dim b As Boolean
+        Dim res = client.Get(roomNamePath + "/playerTurn")
+        b = res.ResultAs(Of Boolean)
         Return b
     End Function
 
@@ -821,9 +1196,21 @@ Public Class Gameboard
 
     End Sub
 
-    Private Sub back_to_menu_Click(sender As Object, e As EventArgs) Handles back_to_menu.Click
-        homepage.Show()
-        Me.Close()
+    Private Sub back_to_menu_Click(sender As Object, f As EventArgs) Handles back_to_menu.Click
+        Select Case MessageBox.Show("Would you like to exit",
+                                    "CAREFUL", MessageBoxButtons.YesNo,
+                                        MessageBoxIcon.Question)
+            Case DialogResult.Yes
+                If host Then
+                    Dim res = client.Delete(roomNamePath)
+                End If
+                homepage.Show()
+                Me.Close()
+            Case DialogResult.No
+
+        End Select
+
+
     End Sub
 
     Public Sub ShowHideEnemyPiece(b As Boolean)
@@ -898,15 +1285,6 @@ Public Class Gameboard
         End If
     End Sub
 
-    Private Sub Ready_Click(sender As Object, e As EventArgs) Handles ready.Click
-        GetLocation()
-        isGameTime = True
-        SetReadyToDatabase()
-        SetPiecesToDatabase()
-        MessageBox.Show("All Set!")
-        ready.Enabled = False
-    End Sub
-
 
     Public Sub GetName()
         hostName = roomName
@@ -914,7 +1292,7 @@ Public Class Gameboard
             Dim res2 = client.Get(Player2Path + "/name")
             guestName = res2.ResultAs(Of String)
         Else
-            guestName = name
+            guestName = playerName
         End If
     End Sub
 
@@ -931,9 +1309,9 @@ Public Class Gameboard
     Public Sub GetRole()
         Dim file_name = "name.txt"
         Using file_read As StreamReader = New StreamReader(file_name)
-            name = file_read.ReadLine
+            playerName = file_read.ReadLine
         End Using
-        If name = roomName Then
+        If playerName = roomName Then
             host = True
         Else
             host = False

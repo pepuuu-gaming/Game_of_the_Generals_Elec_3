@@ -119,7 +119,7 @@ Partial Class Room
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
         Me.Cursor = System.Windows.Forms.Cursors.Arrow
-        Me.Name = "Room"
+        Me.playerName = "Room"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Game of the Generals"
         Me.ResumeLayout(False)
