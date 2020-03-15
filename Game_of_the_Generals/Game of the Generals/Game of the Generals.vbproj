@@ -125,7 +125,7 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Arbitrary.vb" />
+    <Compile Include="Alive.vb" />
     <Compile Include="Move.vb" />
     <Compile Include="Piece.vb" />
     <Compile Include="Player1.vb" />

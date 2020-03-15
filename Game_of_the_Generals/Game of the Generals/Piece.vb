@@ -122,7 +122,7 @@
 
     Public Sub Defeat(a As Button, b As Integer())
         a.Location = New Point(b(0), b(1))
-        a.Visible = False
+        'a.Visible = False
         a.Enabled = False
     End Sub
 

@@ -50,6 +50,12 @@ Public Class Gameboard
     Dim enemyClickedCoordinateValue As String
     Dim enemyClickedPieceObject As Object
     Dim counter As Integer = 0
+    Dim yourGraveyard(2) As Integer
+    Dim enemyGraveyard(2) As Integer
+    Dim locationX As Integer() = {40, 88, 136, 184, 232, 280, 328}
+    Dim locationY As Integer() = {154, 197, 240, 326, 369, 412}
+    Dim winner As String = ""
+    
 
     Private fcon As New FirebaseConfig With
         {
@@ -1338,63 +1344,234 @@ Public Class Gameboard
         Return b
     End Function
 
-    Public Function GetPieceValue(sender) As Integer
-        Dim b As Integer
-        If sender.Equals(hp1) Or sender.Equals(hp2) Or sender.Equals(hp3) Or sender.Equals(hp4) Or sender.Equals(hp5) Or sender.Equals(hp6) Or sender.Equals(ep1) Or sender.Equals(ep2) Or sender.Equals(ep3) Or sender.Equals(ep4) Or sender.Equals(ep5) Or sender.Equals(ep6) Then
-            b = 1
-        ElseIf sender.Equals(hp7) Or sender.Equals(hp7) Then
-            b = 2
-        ElseIf sender.Equals(hp8) Or sender.Equals(ep8) Then
-            b = 3
-        ElseIf sender.Equals(hp9) Or sender.Equals(hp8) Then
-            b = 4
-        ElseIf sender.Equals(hp10) Or sender.Equals(ep10) Then
-            b = 5
-        ElseIf sender.Equals(hp11) Or sender.Equals(ep11) Then
-            b = 6
-        ElseIf sender.Equals(hp12) Or sender.Equals(ep12) Then
-            b = 7
-        ElseIf sender.Equals(hp13) Or sender.Equals(ep13) Then
-            b = 8
-        ElseIf sender.Equals(hp14) Or sender.Equals(ep14) Then
-            b = 9
-        ElseIf sender.Equals(hp15) Or sender.Equals(ep15) Then
-            b = 10
-        ElseIf sender.Equals(hp16) Or sender.Equals(ep16) Then
-            b = 11
-        ElseIf sender.Equals(hp17) Or sender.Equals(ep17) Then
-            b = 12
-        ElseIf sender.Equals(hp18) Or sender.Equals(ep18) Then
-            b = 13
-        ElseIf sender.Equals(hp19) Or sender.Equals(hp20) Or sender.Equals(ep19) Or sender.Equals(ep20) Then
-            b = 14
-        ElseIf sender.Equals(hp21) Or sender.Equals(ep21) Then
-            b = 0
-        End If
-        Return b
-    End Function
+    'Public Function GetPieceValue(sender As Object) As Integer
+    '    Dim b As Integer
+    '    If sender.Equals(hp1) Or sender.Equals(hp2) Or sender.Equals(hp3) Or sender.Equals(hp4) Or sender.Equals(hp5) Or sender.Equals(hp6) Or sender.Equals(ep1) Or sender.Equals(ep2) Or sender.Equals(ep3) Or sender.Equals(ep4) Or sender.Equals(ep5) Or sender.Equals(ep6) Then
+    '        b = 1
+    '    ElseIf sender.Equals(hp7) Or sender.Equals(hp7) Then
+    '        b = 2
+    '    ElseIf sender.Equals(hp8) Or sender.Equals(ep8) Then
+    '        b = 3
+    '    ElseIf sender.Equals(hp9) Or sender.Equals(hp8) Then
+    '        b = 4
+    '    ElseIf sender.Equals(hp10) Or sender.Equals(ep10) Then
+    '        b = 5
+    '    ElseIf sender.Equals(hp11) Or sender.Equals(ep11) Then
+    '        b = 6
+    '    ElseIf sender.Equals(hp12) Or sender.Equals(ep12) Then
+    '        b = 7
+    '    ElseIf sender.Equals(hp13) Or sender.Equals(ep13) Then
+    '        b = 8
+    '    ElseIf sender.Equals(hp14) Or sender.Equals(ep14) Then
+    '        b = 9
+    '    ElseIf sender.Equals(hp15) Or sender.Equals(ep15) Then
+    '        b = 10
+    '    ElseIf sender.Equals(hp16) Or sender.Equals(ep16) Then
+    '        b = 11
+    '    ElseIf sender.Equals(hp17) Or sender.Equals(ep17) Then
+    '        b = 12
+    '    ElseIf sender.Equals(hp18) Or sender.Equals(ep18) Then
+    '        b = 13
+    '    ElseIf sender.Equals(hp19) Or sender.Equals(hp20) Or sender.Equals(ep19) Or sender.Equals(ep20) Then
+    '        b = 14
+    '    ElseIf sender.Equals(hp21) Or sender.Equals(ep21) Then
+    '        b = 0
+    '    End If
+    '    Return b
+    'End Function
 
-    Public Sub Arbitrary(a As Integer, b As Integer)
-        If a = 0 And b = 0 Then
-            'SPECIAL ARBITRARY
-            'AGGRESION VALUE
-        Else
-            If a = b Then
-                'STALEMATE
+    Public Sub Arbitrary(sender As Object, sender2 As Object)
+        Dim a As Integer, b As Integer
+        Dim c As Boolean, d As Boolean
+        If sender.Equals(hp1) Or sender.Equals(hp2) Or sender.Equals(hp3) Or sender.Equals(hp4) Or sender.Equals(hp5) Or sender.Equals(hp6) Then
+            If sender.Equals(hp1) Then
+                yourGraveyard(0) = locationX(0)
+            ElseIf sender.Equals(hp2) Then
+                yourGraveyard(0) = locationX(1)
+            ElseIf sender.Equals(hp3) Then
+                yourGraveyard(0) = locationX(2)
+            ElseIf sender.Equals(hp4) Then
+                yourGraveyard(0) = locationX(3)
+            ElseIf sender.Equals(hp5) Then
+                yourGraveyard(0) = locationX(4)
+            ElseIf sender.Equals(hp6) Then
+                yourGraveyard(0) = locationX(5)
+            End If
+            a = 1
+            yourGraveyard(1) = locationY(3)
+        ElseIf sender.Equals(hp7) Then
+            a = 2
+            yourGraveyard(0) = locationX(6)
+            yourGraveyard(1) = locationY(3)
+        ElseIf sender.Equals(hp8) Then
+            a = 3
+            yourGraveyard(0) = locationX(0)
+            yourGraveyard(1) = locationY(4)
+        ElseIf sender.Equals(hp9) Then
+            a = 4
+            yourGraveyard(0) = locationX(1)
+            yourGraveyard(1) = locationY(4)
+        ElseIf sender.Equals(hp10) Then
+            a = 5
+            yourGraveyard(0) = locationX(2)
+            yourGraveyard(1) = locationY(4)
+        ElseIf sender.Equals(hp11) Then
+            a = 6
+            yourGraveyard(0) = locationX(3)
+            yourGraveyard(1) = locationY(4)
+        ElseIf sender.Equals(hp12) Then
+            a = 7
+            yourGraveyard(0) = locationX(4)
+            yourGraveyard(1) = locationY(4)
+        ElseIf sender.Equals(hp13) Then
+            a = 8
+            yourGraveyard(0) = locationX(5)
+            yourGraveyard(1) = locationY(4)
+        ElseIf sender.Equals(hp14) Then
+            a = 9
+            yourGraveyard(0) = locationX(6)
+            yourGraveyard(1) = locationY(4)
+        ElseIf sender.Equals(hp15) Then
+            a = 10
+            yourGraveyard(0) = locationX(0)
+            yourGraveyard(1) = locationY(5)
+        ElseIf sender.Equals(hp16) Then
+            a = 11
+            yourGraveyard(0) = locationX(1)
+            yourGraveyard(1) = locationY(5)
+        ElseIf sender.Equals(hp17) Then
+            a = 12
+            yourGraveyard(0) = locationX(2)
+            yourGraveyard(1) = locationY(5)
+        ElseIf sender.Equals(hp18) Then
+            a = 13
+            yourGraveyard(0) = locationX(3)
+            yourGraveyard(1) = locationY(5)
+        ElseIf sender.Equals(hp19) Or sender.Equals(hp20) Then
+            a = 14
+            If sender.Equals(hp19) Then
+                yourGraveyard(0) = locationX(4)
             Else
-                If a = 14 And b = 1 Then
-                    'b wins
-                ElseIf a = 1 And b = 14 Then
-                    'awins
+                yourGraveyard(0) = locationX(5)
+            End If
+            yourGraveyard(1) = locationY(5)
+        ElseIf sender.Equals(hp21) Then
+            a = 0
+            yourGraveyard(0) = locationX(6)
+            yourGraveyard(1) = locationY(5)
+        End If
+
+        If sender2.Equals(ep1) Or sender2.Equals(ep2) Or sender2.Equals(ep3) Or sender2.Equals(ep4) Or sender2.Equals(ep5) Or sender2.Equals(ep6) Then
+            If sender2.Equals(ep1) Then
+                enemyGraveyard(0) = locationX(0)
+            ElseIf sender2.Equals(ep2) Then
+                enemyGraveyard(0) = locationX(1)
+            ElseIf sender2.Equals(ep3) Then
+                enemyGraveyard(0) = locationX(2)
+            ElseIf sender2.Equals(ep4) Then
+                enemyGraveyard(0) = locationX(3)
+            ElseIf sender2.Equals(ep5) Then
+                enemyGraveyard(0) = locationX(4)
+            ElseIf sender2.Equals(ep6) Then
+                enemyGraveyard(0) = locationX(5)
+            End If
+            b = 1
+            enemyGraveyard(1) = locationY(0)
+        ElseIf sender2.Equals(ep7) Then
+            b = 2
+            enemyGraveyard(0) = locationX(6)
+            enemyGraveyard(1) = locationY(0)
+        ElseIf sender2.Equals(ep8) Then
+            b = 3
+            enemyGraveyard(0) = locationX(0)
+            enemyGraveyard(1) = locationY(1)
+        ElseIf sender2.Equals(ep9) Then
+            b = 4
+            enemyGraveyard(0) = locationX(1)
+            enemyGraveyard(1) = locationY(1)
+        ElseIf sender2.Equals(ep10) Then
+            b = 5
+            enemyGraveyard(0) = locationX(2)
+            enemyGraveyard(1) = locationY(1)
+        ElseIf sender2.Equals(ep11) Then
+            b = 6
+            enemyGraveyard(0) = locationX(3)
+            enemyGraveyard(1) = locationY(1)
+        ElseIf sender2.Equals(ep12) Then
+            b = 7
+            enemyGraveyard(0) = locationX(4)
+            enemyGraveyard(1) = locationY(1)
+        ElseIf sender2.Equals(ep13) Then
+            b = 8
+            enemyGraveyard(0) = locationX(5)
+            enemyGraveyard(1) = locationY(1)
+        ElseIf sender2.Equals(ep14) Then
+            b = 9
+            enemyGraveyard(0) = locationX(6)
+            enemyGraveyard(1) = locationY(1)
+        ElseIf sender2.Equals(ep15) Then
+            b = 10
+            enemyGraveyard(0) = locationX(0)
+            enemyGraveyard(1) = locationY(2)
+        ElseIf sender2.Equals(ep16) Then
+            b = 11
+            enemyGraveyard(0) = locationX(1)
+            enemyGraveyard(1) = locationY(2)
+        ElseIf sender2.Equals(ep17) Then
+            b = 12
+            enemyGraveyard(0) = locationX(2)
+            enemyGraveyard(1) = locationY(2)
+        ElseIf sender2.Equals(ep18) Then
+            b = 13
+            enemyGraveyard(0) = locationX(3)
+            enemyGraveyard(1) = locationY(2)
+        ElseIf sender2.Equals(ep19) Or sender2.Equals(ep20) Then
+            If sender2.Equals(ep19) Then
+                enemyGraveyard(0) = locationX(4)
+            Else
+                enemyGraveyard(0) = locationX(5)
+            End If
+            b = 14
+            enemyGraveyard(1) = locationY(2)
+        ElseIf sender2.Equals(ep21) Then
+            b = 0
+            enemyGraveyard(0) = locationX(6)
+            enemyGraveyard(1) = locationY(2)
+        End If
+
+        Dim piece As New Piece
+
+        If a = b Then
+            If a = 0 And b = 0 Then
+                'SPECIAL ARBITRARY
+                'AGGRESION VALUE
+                'WHO CLICKED WINS
+            Else
+                piece.Defeat(sender, yourGraveyard)
+                piece.Defeat(sender2, enemyGraveyard)
+            End If
+        Else
+            If a = 14 And b = 1 Then
+                piece.Defeat(sender, yourGraveyard)
+            ElseIf a = 1 And b = 14 Then
+                piece.Defeat(sender2, enemyGraveyard)
+            Else
+                If a = 0 Then
+                    'ENEMY WINS
+                    'SHOW VALUE PIECE?
+                ElseIf b = 0 Then
+                    'YOU WIN
+                    'SHOW VALUE PIECE?
                 Else
                     If a > b Then
-                        'awins
+                        piece.Defeat(sender2, enemyGraveyard)
                     Else
-                        'b wins
+                        piece.Defeat(sender, yourGraveyard)
                     End If
                 End If
             End If
         End If
+
     End Sub
 
     Private Sub Gameboard_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -1568,6 +1745,8 @@ Public Class Gameboard
     End Sub
 
     Dim showed = True
+    'Dim firstPieceArbitrary As Integer
+    'Dim secondPieceArbitrary As Integer
     Public Sub GetClickButton(sender As Object, e As EventArgs) Handles a6.Click, a7.Click, a8.Click, b6.Click, b7.Click, b8.Click, c6.Click, c7.Click, c8.Click, d6.Click, d7.Click, d8.Click, e6.Click, e7.Click, e8.Click, f6.Click, f7.Click, f8.Click, g6.Click, g7.Click, g8.Click, h6.Click, h7.Click, h8.Click, i6.Click, i7.Click, i8.Click,
         hp1.Click, hp2.Click, hp3.Click, hp4.Click, hp5.Click, hp6.Click, hp7.Click, hp8.Click, hp9.Click, hp10.Click,
         hp11.Click, hp12.Click, hp13.Click, hp14.Click, hp15.Click, hp16.Click, hp17.Click, hp18.Click, hp19.Click, hp20.Click, hp21.Click, a1.Click, a2.Click, a3.Click, a4.Click, a5.Click, b1.Click, b2.Click, b3.Click, b4.Click, b5.Click, c1.Click, c2.Click, c3.Click, c4.Click, c5.Click, d1.Click, d2.Click, d3.Click, d4.Click, d5.Click, e1.Click, e2.Click, e3.Click, e4.Click, e5.Click, f1.Click, f2.Click, f3.Click, f4.Click, f5.Click, g1.Click, g2.Click, g3.Click, g4.Click, g5.Click, h1.Click, h2.Click, h3.Click, h4.Click, h5.Click, i1.Click, i2.Click, i3.Click, i4.Click, i5.Click, ep1.Click,
@@ -1664,6 +1843,7 @@ Public Class Gameboard
                             CheckPossibleMove(sender, hostPossibleColor)
                             firstPieceLocation = GetLocationFirstPiece(sender)
                             SetFirstClickObject(sender)
+                            'firstPieceArbitrary = GetPieceValue(sender)
                             firstClick = False
                         Else
                             MessageBox.Show("Please select a piece")
@@ -1703,14 +1883,46 @@ Public Class Gameboard
                             '    piece1.Location = New Point(x2, y2)&
                             If IsItPossibleToMove(piece2, firstPieceLocation) Then
                                 'ARBITRARY
-                                piece1.Location = New Point(x2, y2)
-                                'METHOD TO SEND TO DATABASE
-                                SetCoordinateObject(x2, y2)
-                                SetMoveToDatabase()
-                                firstClick = True
-                                SetPlayerTurn(Not host)
+                                If sender.Equals(ep1) Or
+                                sender.Equals(ep2) Or
+                                sender.Equals(ep3) Or
+                                sender.Equals(ep4) Or
+                                sender.Equals(ep5) Or
+                                sender.Equals(ep6) Or
+                                sender.Equals(ep7) Or
+                                sender.Equals(ep8) Or
+                                sender.Equals(ep9) Or
+                                sender.Equals(ep10) Or
+                                sender.Equals(ep11) Or
+                                sender.Equals(ep12) Or
+                                sender.Equals(ep13) Or
+                                sender.Equals(ep14) Or
+                                sender.Equals(ep15) Or
+                                sender.Equals(ep16) Or
+                                sender.Equals(ep17) Or
+                                sender.Equals(ep18) Or
+                                sender.Equals(ep19) Or
+                                sender.Equals(ep20) Or
+                                sender.Equals(ep21) Then
+                                    'secondPieceArbitrary = GetPieceValue(sender)
+                                    Arbitrary(piece1, piece2)
+                                    'HIDE/SHOW PIECE TO ENEMY
+                                    piece1.Location = New Point(x2, y2)
+                                    'METHOD TO SEND TO DATABASE
+                                    SetCoordinateObject(x2, y2)
+                                    SetMoveToDatabase()
+                                    firstClick = True
+                                    SetPlayerTurn(Not host)
+                                Else
+                                    piece1.Location = New Point(x2, y2)
+                                    'METHOD TO SEND TO DATABASE
+                                    SetCoordinateObject(x2, y2)
+                                    SetMoveToDatabase()
+                                    firstClick = True
+                                    SetPlayerTurn(Not host)
+                                End If
                             Else
-                                MessageBox.Show("You can only move one tile away")
+                                    MessageBox.Show("You can only move one tile away")
                                 ResetValue()
                                 firstClick = False
                             End If
@@ -1802,12 +2014,44 @@ Public Class Gameboard
                             'METHOD FOR Move
                             If IsItPossibleToMove(piece2, firstPieceLocation) Then
                                 'ARBITRARY
-                                piece1.Location = New Point(x2, y2)
-                                'METHOD TO SEND TO DATABASE
-                                SetCoordinateObject(x2, y2)
-                                SetMoveToDatabase()
-                                SetPlayerTurn(Not host)
-                                firstClick = True
+                                If sender.Equals(ep1) Or
+                                sender.Equals(ep2) Or
+                                sender.Equals(ep3) Or
+                                sender.Equals(ep4) Or
+                                sender.Equals(ep5) Or
+                                sender.Equals(ep6) Or
+                                sender.Equals(ep7) Or
+                                sender.Equals(ep8) Or
+                                sender.Equals(ep9) Or
+                                sender.Equals(ep10) Or
+                                sender.Equals(ep11) Or
+                                sender.Equals(ep12) Or
+                                sender.Equals(ep13) Or
+                                sender.Equals(ep14) Or
+                                sender.Equals(ep15) Or
+                                sender.Equals(ep16) Or
+                                sender.Equals(ep17) Or
+                                sender.Equals(ep18) Or
+                                sender.Equals(ep19) Or
+                                sender.Equals(ep20) Or
+                                sender.Equals(ep21) Then
+                                    'secondPieceArbitrary = GetPieceValue(sender)
+                                    Arbitrary(piece1, piece2)
+                                    'HIDE/SHOW PIECE TO ENEMY
+                                    piece1.Location = New Point(x2, y2)
+                                    'METHOD TO SEND TO DATABASE
+                                    SetCoordinateObject(x2, y2)
+                                    SetMoveToDatabase()
+                                    SetPlayerTurn(Not host)
+                                    firstClick = True
+                                Else
+                                    piece1.Location = New Point(x2, y2)
+                                    'METHOD TO SEND TO DATABASE
+                                    SetCoordinateObject(x2, y2)
+                                    SetMoveToDatabase()
+                                    SetPlayerTurn(Not host)
+                                    firstClick = True
+                                End If
                             Else
                                 MessageBox.Show("You can only move one tile away")
                                 ResetValue()

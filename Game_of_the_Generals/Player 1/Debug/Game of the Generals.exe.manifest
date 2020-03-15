@@ -66,14 +66,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Game of the Generals.exe" size="15601112">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Game of the Generals.exe" size="15606232">
       <assemblyIdentity name="Game of the Generals" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>83Qq//BlHUBUA+q+9GRp7EJKE4g1aRxbUXjaA/DkJos=</dsig:DigestValue>
+        <dsig:DigestValue>d0Q4Q5U2L4+/fQ0+bC1BpHULIMpawGgC6icoNIhTkkI=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

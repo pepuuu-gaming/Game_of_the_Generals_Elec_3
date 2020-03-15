@@ -86,11 +86,28 @@ Public Class Room
             Using file_write As StreamWriter = New StreamWriter(file_name)
                 file_write.WriteLine(roomName)
             End Using
-            Dim arbitrary As New Arbitrary() With {
-            .p1 = "",
-            .p2 = "",
-            .isDraw = False,
-            .isWin = False
+            Dim arbitrary As New Alive() With {
+                .p01 = True,
+                .p02 = True,
+                .p03 = True,
+                .p04 = True,
+                .p05 = True,
+                .p06 = True,
+                .p07 = True,
+                .p08 = True,
+                .p09 = True,
+                .p10 = True,
+                .p11 = True,
+                .p12 = True,
+                .p13 = True,
+                .p14 = True,
+                .p15 = True,
+                .p16 = True,
+                .p17 = True,
+                .p18 = True,
+                .p19 = True,
+                .p20 = True,
+                .p21 = True
             }
             Dim move As New Move With
             {
@@ -145,9 +162,10 @@ Public Class Room
             'End Using
 
             client.Set("room/" + roomName, roomDatabase) 'ROOM SETTINGS
-            client.Set("room/" + roomName + "/arbitrary", arbitrary)
             client.Set("room/" + roomName + "/player1", player1)
             client.Set("room/" + roomName + "/player2", player2)
+            client.Set("room/" + roomName + "/player1" + "/alive", arbitrary)
+            client.Set("room/" + roomName + "/player2" + "/alive", arbitrary)
             client.Set("room/" + roomName + "/player1" + "/move", move)
             client.Set("room/" + roomName + "/player2" + "/move", move)
             client.Set("room/" + roomName + "/player1" + "/piece", piece)
