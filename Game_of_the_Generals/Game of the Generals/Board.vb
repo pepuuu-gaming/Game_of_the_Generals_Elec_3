@@ -148,34 +148,6 @@ Public Class Gameboard
         Next
     End Sub
 
-    'Public Sub SetEnemyPieceToBoard()
-    '    GetEnemyLocation()
-    '    ep1.Location = New Point(b6.Location.X, b6.Location.Y)
-    '    ep2.Location = New Point(c6.Location.X, c6.Location.Y)
-    '    ep3.Location = New Point(d6.Location.X, d6.Location.Y)
-    '    ep4.Location = New Point(e6.Location.X, e6.Location.Y)
-    '    ep5.Location = New Point(f6.Location.X, f6.Location.Y)
-    '    ep6.Location = New Point(g6.Location.X, g6.Location.Y)
-    '    ep7.Location = New Point(h6.Location.X, h6.Location.Y)
-    '    ep8.Location = New Point(b7.Location.X, b7.Location.Y)
-    '    ep9.Location = New Point(c7.Location.X, c7.Location.Y)
-    '    ep10.Location = New Point(d7.Location.X, d7.Location.Y)
-
-    '    ep11.Location = New Point(e7.Location.X, e7.Location.Y)
-    '    ep12.Location = New Point(f7.Location.X, f7.Location.Y)
-    '    ep13.Location = New Point(g7.Location.X, g7.Location.Y)
-    '    ep14.Location = New Point(h7.Location.X, h7.Location.Y)
-    '    ep15.Location = New Point(b8.Location.X, b8.Location.Y)
-    '    ep16.Location = New Point(c8.Location.X, c8.Location.Y)
-    '    ep17.Location = New Point(d8.Location.X, d8.Location.Y)
-    '    ep18.Location = New Point(e8.Location.X, e8.Location.Y)
-    '    ep19.Location = New Point(f8.Location.X, f8.Location.Y)
-    '    ep20.Location = New Point(g8.Location.X, g8.Location.Y)
-
-    '    ep21.Location = New Point(h8.Location.X, h8.Location.Y)
-    'End Sub
-
-
     Public Sub GetEnemyPieceFromDatabase()
         Dim piece As New Piece()
         Dim res As FirebaseResponse
@@ -1072,7 +1044,6 @@ Public Class Gameboard
         Next
     End Sub
 
-
     Public Sub SetFirstClickObject(sender)
         If sender.Equals(hp1) Then
             firstClickPiece = 1
@@ -1117,6 +1088,334 @@ Public Class Gameboard
         ElseIf sender.Equals(hp21) Then
             firstClickPiece = 21
         End If
+    End Sub
+
+    Public Sub SetPlayerTurn(b As Boolean)
+        client.Set(roomNamePath + "/playerTurn", b)
+    End Sub
+
+    Public Function GetPlayerTurn() As Boolean
+        Dim b As Boolean
+        Dim res = client.Get(roomNamePath + "/playerTurn")
+        b = res.ResultAs(Of Boolean)
+        Return b
+    End Function
+
+    Public Sub ResetValue()
+        x = 0
+        y = 0
+        x2 = 0
+        y2 = 0
+    End Sub
+
+    Public Function GetPlayer2ReadyStatus() As Boolean
+        Dim a As Boolean
+        Dim res = client.Get(Player2Path + "/isReady")
+        a = res.ResultAs(Of Boolean)
+
+        Return a
+    End Function
+
+    Public Function GetPlayer1ReadyStatus() As Boolean
+        Dim b As Boolean
+        Dim res2 = client.Get(Player1Path + "/isReady")
+        b = res2.ResultAs(Of Boolean)
+        Return b
+    End Function
+
+    Public Sub SwapPiece(a As Integer, b As Integer, a2 As Integer, b2 As Integer)
+        piece1.Location = New Point(a2, b2) ' SECOND COORDINATE A2 And B2
+        piece2.Location = New Point(a, b) 'FIRST COORDINATE A and B
+
+    End Sub
+
+    Private Sub back_to_menu_Click(sender As Object, f As EventArgs) Handles back_to_menu.Click
+        Select Case MessageBox.Show("Would you like to exit",
+                                    "CAREFUL", MessageBoxButtons.YesNo,
+                                        MessageBoxIcon.Question)
+            Case DialogResult.Yes
+                If host Then
+                    Dim res = client.Delete(roomNamePath)
+                End If
+                homepage.Show()
+                Me.Close()
+            Case DialogResult.No
+
+        End Select
+
+
+    End Sub
+
+    Public Sub ShowHideEnemyPiece(b As Boolean)
+        ep1.Visible = b
+        ep2.Visible = b
+        ep3.Visible = b
+        ep4.Visible = b
+        ep5.Visible = b
+        ep6.Visible = b
+        ep7.Visible = b
+        ep8.Visible = b
+        ep9.Visible = b
+        ep10.Visible = b
+
+        ep11.Visible = b
+        ep12.Visible = b
+        ep13.Visible = b
+        ep14.Visible = b
+        ep15.Visible = b
+        ep16.Visible = b
+        ep17.Visible = b
+        ep18.Visible = b
+        ep19.Visible = b
+        ep20.Visible = b
+
+        ep21.Visible = b
+    End Sub
+
+    Public Sub SetEnemyPiece(b As Integer())
+        Dim piece As Piece = New Piece
+        piece.Setenemy(ep1, b)
+        piece.Setenemy(ep2, b)
+        piece.Setenemy(ep3, b)
+        piece.Setenemy(ep4, b)
+        piece.Setenemy(ep5, b)
+        piece.Setenemy(ep6, b)
+        piece.Setenemy(ep7, b)
+        piece.Setenemy(ep8, b)
+        piece.Setenemy(ep9, b)
+        piece.Setenemy(ep10, b)
+
+        piece.Setenemy(ep11, b)
+        piece.Setenemy(ep12, b)
+        piece.Setenemy(ep13, b)
+        piece.Setenemy(ep14, b)
+        piece.Setenemy(ep15, b)
+        piece.Setenemy(ep16, b)
+        piece.Setenemy(ep17, b)
+        piece.Setenemy(ep18, b)
+        piece.Setenemy(ep19, b)
+        piece.Setenemy(ep20, b)
+
+        piece.Setenemy(ep21, b)
+    End Sub
+
+    Public Sub ShowPiece(b As Boolean)
+        If b Then
+            SetEnemyPiece(guestColor)
+            ShowHideEnemyPiece(True)
+        Else
+            SetEnemyPiece(hostColor)
+            ShowHideEnemyPiece(True)
+        End If
+    End Sub
+
+    Public Sub SetReadyToDatabase()
+        Dim res As FirebaseResponse
+        If host Then
+            res = client.Set(Player1Path + "/isReady", True)
+        Else
+            res = client.Set(Player2Path + "/isReady", True)
+        End If
+    End Sub
+
+    Public Sub GetName()
+        hostName = roomName
+        If host Then
+            Dim res2 = client.Get(Player2Path + "/name")
+            guestName = res2.ResultAs(Of String)
+        Else
+            guestName = playerName
+        End If
+    End Sub
+
+    Public Sub SetName()
+        If host Then
+            enemyName.Text = guestName
+            myName.Text = hostName
+        Else
+            enemyName.Text = hostName
+            myName.Text = guestName
+        End If
+    End Sub
+
+    Public Sub GetRole()
+        Dim file_name = "name.txt"
+        Using file_read As StreamReader = New StreamReader(file_name)
+            playerName = file_read.ReadLine
+        End Using
+        If playerName = roomName Then
+            host = True
+        Else
+            host = False
+        End If
+    End Sub
+
+    Private Sub Gameboard_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Try
+            client = New FireSharp.FirebaseClient(fcon)
+        Catch
+            MessageBox.Show("there was a problem in the internet connection")
+        End Try
+
+        Dim file_name2 = "Roomname.txt"
+        Using file_read As StreamReader = New StreamReader(file_name2)
+            roomName = file_read.ReadLine
+        End Using
+
+        roomNamePath = "room/" + roomName
+        Player1PiecePath = roomNamePath + "/player1" + "/piece"
+        Player2PiecePath = roomNamePath + "/player2" + "/piece"
+        ArbitraryPath = roomNamePath + "/arbitrary"
+        MovePath = roomNamePath + "/move"
+        Player1Path = roomNamePath + "/player1"
+        Player2Path = roomNamePath + "/player2"
+
+        Dim a As RoundButton = New RoundButton
+        a.Round(a1, 10)
+        a.Round(a2, 10)
+        a.Round(a3, 10)
+        a.Round(a4, 10)
+        a.Round(a5, 10)
+        a.Round(a6, 10)
+        a.Round(a7, 10)
+        a.Round(a8, 10)
+
+        a.Round(b1, 10)
+        a.Round(b2, 10)
+        a.Round(b3, 10)
+        a.Round(b4, 10)
+        a.Round(b5, 10)
+        a.Round(b6, 10)
+        a.Round(b7, 10)
+        a.Round(b8, 10)
+
+        a.Round(c1, 10)
+        a.Round(c2, 10)
+        a.Round(c3, 10)
+        a.Round(c4, 10)
+        a.Round(c5, 10)
+        a.Round(c6, 10)
+        a.Round(c7, 10)
+        a.Round(c8, 10)
+
+        a.Round(d1, 10)
+        a.Round(d2, 10)
+        a.Round(d3, 10)
+        a.Round(d4, 10)
+        a.Round(d5, 10)
+        a.Round(d6, 10)
+        a.Round(d7, 10)
+        a.Round(d8, 10)
+
+        a.Round(e1, 10)
+        a.Round(e2, 10)
+        a.Round(e3, 10)
+        a.Round(e4, 10)
+        a.Round(e5, 10)
+        a.Round(e6, 10)
+        a.Round(e7, 10)
+        a.Round(e8, 10)
+
+        a.Round(f1, 10)
+        a.Round(f2, 10)
+        a.Round(f3, 10)
+        a.Round(f4, 10)
+        a.Round(f5, 10)
+        a.Round(f6, 10)
+        a.Round(f7, 10)
+        a.Round(f8, 10)
+
+        a.Round(g1, 10)
+        a.Round(g2, 10)
+        a.Round(g3, 10)
+        a.Round(g4, 10)
+        a.Round(g5, 10)
+        a.Round(g6, 10)
+        a.Round(g7, 10)
+        a.Round(g8, 10)
+
+        a.Round(h1, 10)
+        a.Round(h2, 10)
+        a.Round(h3, 10)
+        a.Round(h4, 10)
+        a.Round(h5, 10)
+        a.Round(h6, 10)
+        a.Round(h7, 10)
+        a.Round(h8, 10)
+
+        a.Round(i1, 10)
+        a.Round(i2, 10)
+        a.Round(i3, 10)
+        a.Round(i4, 10)
+        a.Round(i5, 10)
+        a.Round(i6, 10)
+        a.Round(i7, 10)
+        a.Round(i8, 10)
+
+        a.Round(hp1, 10)
+        a.Round(hp2, 10)
+        a.Round(hp3, 10)
+        a.Round(hp4, 10)
+        a.Round(hp5, 10)
+        a.Round(hp6, 10)
+        a.Round(hp7, 10)
+        a.Round(hp8, 10)
+        a.Round(hp9, 10)
+        a.Round(hp10, 10)
+        a.Round(hp11, 10)
+        a.Round(hp12, 10)
+        a.Round(hp13, 10)
+        a.Round(hp14, 10)
+        a.Round(hp15, 10)
+        a.Round(hp16, 10)
+        a.Round(hp17, 10)
+        a.Round(hp18, 10)
+        a.Round(hp19, 10)
+        a.Round(hp20, 10)
+        a.Round(hp21, 10)
+
+        a.Round(ep1, 10)
+        a.Round(ep2, 10)
+        a.Round(ep3, 10)
+        a.Round(ep4, 10)
+        a.Round(ep5, 10)
+        a.Round(ep6, 10)
+        a.Round(ep7, 10)
+        a.Round(ep8, 10)
+        a.Round(ep9, 10)
+        a.Round(ep10, 10)
+        a.Round(ep11, 10)
+        a.Round(ep12, 10)
+        a.Round(ep13, 10)
+        a.Round(ep14, 10)
+        a.Round(ep15, 10)
+        a.Round(ep16, 10)
+        a.Round(ep17, 10)
+        a.Round(ep18, 10)
+        a.Round(ep19, 10)
+        a.Round(ep20, 10)
+        a.Round(ep21, 10)
+
+        GetRole()
+        GetName()
+        SetName()
+        ShowHideEnemyPiece(False)
+        SetPieceToBoard()
+        SetPieces()
+    End Sub
+
+    Private Sub Gameboard_Closing(sender As Object, e As CancelEventArgs) Handles Me.Closing
+        Select Case MessageBox.Show("Would you like to exit",
+                                    "CAREFUL", MessageBoxButtons.YesNo,
+                                        MessageBoxIcon.Question)
+            Case DialogResult.Yes
+                If host Then
+                    Dim res = client.Delete(roomNamePath)
+                End If
+                End
+            Case DialogResult.No
+                e.Cancel = True
+        End Select
     End Sub
 
     Public Sub GetClickButton(sender As Object, e As EventArgs) Handles a6.Click, a7.Click, a8.Click, b6.Click, b7.Click, b8.Click, c6.Click, c7.Click, c8.Click, d6.Click, d7.Click, d8.Click, e6.Click, e7.Click, e8.Click, f6.Click, f7.Click, f8.Click, g6.Click, g7.Click, g8.Click, h6.Click, h7.Click, h8.Click, i6.Click, i7.Click, i8.Click,
@@ -1456,337 +1755,5 @@ Public Class Gameboard
                 End If
             End If
         End If
-    End Sub
-
-    Public Sub SetPlayerTurn(b As Boolean)
-        client.Set(roomNamePath + "/playerTurn", b)
-    End Sub
-
-    Public Function GetPlayerTurn() As Boolean
-        Dim b As Boolean
-        Dim res = client.Get(roomNamePath + "/playerTurn")
-        b = res.ResultAs(Of Boolean)
-        Return b
-    End Function
-
-
-
-    Public Sub ResetValue()
-        x = 0
-        y = 0
-        x2 = 0
-        y2 = 0
-    End Sub
-
-    Public Function GetPlayer2ReadyStatus() As Boolean
-        Dim a As Boolean
-        Dim res = client.Get(Player2Path + "/isReady")
-        a = res.ResultAs(Of Boolean)
-
-        Return a
-    End Function
-
-    Public Function GetPlayer1ReadyStatus() As Boolean
-        Dim b As Boolean
-        Dim res2 = client.Get(Player1Path + "/isReady")
-        b = res2.ResultAs(Of Boolean)
-        Return b
-    End Function
-
-
-    Public Sub SwapPiece(a As Integer, b As Integer, a2 As Integer, b2 As Integer)
-        piece1.Location = New Point(a2, b2) ' SECOND COORDINATE A2 And B2
-        piece2.Location = New Point(a, b) 'FIRST COORDINATE A and B
-
-    End Sub
-
-    Private Sub back_to_menu_Click(sender As Object, f As EventArgs) Handles back_to_menu.Click
-        Select Case MessageBox.Show("Would you like to exit",
-                                    "CAREFUL", MessageBoxButtons.YesNo,
-                                        MessageBoxIcon.Question)
-            Case DialogResult.Yes
-                If host Then
-                    Dim res = client.Delete(roomNamePath)
-                End If
-                homepage.Show()
-                Me.Close()
-            Case DialogResult.No
-
-        End Select
-
-
-    End Sub
-
-    Public Sub ShowHideEnemyPiece(b As Boolean)
-        ep1.Visible = b
-        ep2.Visible = b
-        ep3.Visible = b
-        ep4.Visible = b
-        ep5.Visible = b
-        ep6.Visible = b
-        ep7.Visible = b
-        ep8.Visible = b
-        ep9.Visible = b
-        ep10.Visible = b
-
-        ep11.Visible = b
-        ep12.Visible = b
-        ep13.Visible = b
-        ep14.Visible = b
-        ep15.Visible = b
-        ep16.Visible = b
-        ep17.Visible = b
-        ep18.Visible = b
-        ep19.Visible = b
-        ep20.Visible = b
-
-        ep21.Visible = b
-    End Sub
-
-    Public Sub SetEnemyPiece(b As Integer())
-        Dim piece As Piece = New Piece
-        piece.Setenemy(ep1, b)
-        piece.Setenemy(ep2, b)
-        piece.Setenemy(ep3, b)
-        piece.Setenemy(ep4, b)
-        piece.Setenemy(ep5, b)
-        piece.Setenemy(ep6, b)
-        piece.Setenemy(ep7, b)
-        piece.Setenemy(ep8, b)
-        piece.Setenemy(ep9, b)
-        piece.Setenemy(ep10, b)
-
-        piece.Setenemy(ep11, b)
-        piece.Setenemy(ep12, b)
-        piece.Setenemy(ep13, b)
-        piece.Setenemy(ep14, b)
-        piece.Setenemy(ep15, b)
-        piece.Setenemy(ep16, b)
-        piece.Setenemy(ep17, b)
-        piece.Setenemy(ep18, b)
-        piece.Setenemy(ep19, b)
-        piece.Setenemy(ep20, b)
-
-        piece.Setenemy(ep21, b)
-    End Sub
-
-    Public Sub ShowPiece(b As Boolean)
-        If b Then
-            SetEnemyPiece(guestColor)
-            ShowHideEnemyPiece(True)
-        Else
-            SetEnemyPiece(hostColor)
-            ShowHideEnemyPiece(True)
-        End If
-    End Sub
-
-    Public Sub SetReadyToDatabase()
-        Dim res As FirebaseResponse
-        If host Then
-            res = client.Set(Player1Path + "/isReady", True)
-        Else
-            res = client.Set(Player2Path + "/isReady", True)
-        End If
-    End Sub
-
-
-    Public Sub GetName()
-        hostName = roomName
-        If host Then
-            Dim res2 = client.Get(Player2Path + "/name")
-            guestName = res2.ResultAs(Of String)
-        Else
-            guestName = playerName
-        End If
-    End Sub
-
-    Public Sub SetName()
-        If host Then
-            enemyName.Text = guestName
-            myName.Text = hostName
-        Else
-            enemyName.Text = hostName
-            myName.Text = guestName
-        End If
-    End Sub
-
-    Public Sub GetRole()
-        Dim file_name = "name.txt"
-        Using file_read As StreamReader = New StreamReader(file_name)
-            playerName = file_read.ReadLine
-        End Using
-        If playerName = roomName Then
-            host = True
-        Else
-            host = False
-        End If
-    End Sub
-
-    Private Sub Gameboard_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        Try
-            client = New FireSharp.FirebaseClient(fcon)
-        Catch
-            MessageBox.Show("there was a problem in the internet connection")
-        End Try
-
-        Dim file_name2 = "Roomname.txt"
-        Using file_read As StreamReader = New StreamReader(file_name2)
-            roomName = file_read.ReadLine
-        End Using
-
-        roomNamePath = "room/" + roomName
-        Player1PiecePath = roomNamePath + "/player1" + "/piece"
-        Player2PiecePath = roomNamePath + "/player2" + "/piece"
-        ArbitraryPath = roomNamePath + "/arbitrary"
-        MovePath = roomNamePath + "/move"
-        Player1Path = roomNamePath + "/player1"
-        Player2Path = roomNamePath + "/player2"
-
-        Dim a As RoundButton = New RoundButton
-        a.Round(a1, 10)
-        a.Round(a2, 10)
-        a.Round(a3, 10)
-        a.Round(a4, 10)
-        a.Round(a5, 10)
-        a.Round(a6, 10)
-        a.Round(a7, 10)
-        a.Round(a8, 10)
-
-        a.Round(b1, 10)
-        a.Round(b2, 10)
-        a.Round(b3, 10)
-        a.Round(b4, 10)
-        a.Round(b5, 10)
-        a.Round(b6, 10)
-        a.Round(b7, 10)
-        a.Round(b8, 10)
-
-        a.Round(c1, 10)
-        a.Round(c2, 10)
-        a.Round(c3, 10)
-        a.Round(c4, 10)
-        a.Round(c5, 10)
-        a.Round(c6, 10)
-        a.Round(c7, 10)
-        a.Round(c8, 10)
-
-        a.Round(d1, 10)
-        a.Round(d2, 10)
-        a.Round(d3, 10)
-        a.Round(d4, 10)
-        a.Round(d5, 10)
-        a.Round(d6, 10)
-        a.Round(d7, 10)
-        a.Round(d8, 10)
-
-        a.Round(e1, 10)
-        a.Round(e2, 10)
-        a.Round(e3, 10)
-        a.Round(e4, 10)
-        a.Round(e5, 10)
-        a.Round(e6, 10)
-        a.Round(e7, 10)
-        a.Round(e8, 10)
-
-        a.Round(f1, 10)
-        a.Round(f2, 10)
-        a.Round(f3, 10)
-        a.Round(f4, 10)
-        a.Round(f5, 10)
-        a.Round(f6, 10)
-        a.Round(f7, 10)
-        a.Round(f8, 10)
-
-        a.Round(g1, 10)
-        a.Round(g2, 10)
-        a.Round(g3, 10)
-        a.Round(g4, 10)
-        a.Round(g5, 10)
-        a.Round(g6, 10)
-        a.Round(g7, 10)
-        a.Round(g8, 10)
-
-        a.Round(h1, 10)
-        a.Round(h2, 10)
-        a.Round(h3, 10)
-        a.Round(h4, 10)
-        a.Round(h5, 10)
-        a.Round(h6, 10)
-        a.Round(h7, 10)
-        a.Round(h8, 10)
-
-        a.Round(i1, 10)
-        a.Round(i2, 10)
-        a.Round(i3, 10)
-        a.Round(i4, 10)
-        a.Round(i5, 10)
-        a.Round(i6, 10)
-        a.Round(i7, 10)
-        a.Round(i8, 10)
-
-        a.Round(hp1, 10)
-        a.Round(hp2, 10)
-        a.Round(hp3, 10)
-        a.Round(hp4, 10)
-        a.Round(hp5, 10)
-        a.Round(hp6, 10)
-        a.Round(hp7, 10)
-        a.Round(hp8, 10)
-        a.Round(hp9, 10)
-        a.Round(hp10, 10)
-        a.Round(hp11, 10)
-        a.Round(hp12, 10)
-        a.Round(hp13, 10)
-        a.Round(hp14, 10)
-        a.Round(hp15, 10)
-        a.Round(hp16, 10)
-        a.Round(hp17, 10)
-        a.Round(hp18, 10)
-        a.Round(hp19, 10)
-        a.Round(hp20, 10)
-        a.Round(hp21, 10)
-
-        a.Round(ep1, 10)
-        a.Round(ep2, 10)
-        a.Round(ep3, 10)
-        a.Round(ep4, 10)
-        a.Round(ep5, 10)
-        a.Round(ep6, 10)
-        a.Round(ep7, 10)
-        a.Round(ep8, 10)
-        a.Round(ep9, 10)
-        a.Round(ep10, 10)
-        a.Round(ep11, 10)
-        a.Round(ep12, 10)
-        a.Round(ep13, 10)
-        a.Round(ep14, 10)
-        a.Round(ep15, 10)
-        a.Round(ep16, 10)
-        a.Round(ep17, 10)
-        a.Round(ep18, 10)
-        a.Round(ep19, 10)
-        a.Round(ep20, 10)
-        a.Round(ep21, 10)
-
-        GetRole()
-        GetName()
-        SetName()
-        ShowHideEnemyPiece(False)
-        SetPieceToBoard()
-        SetPieces()
-    End Sub
-
-    Private Sub Gameboard_Closing(sender As Object, e As CancelEventArgs) Handles Me.Closing
-        Select Case MessageBox.Show("Would you like to exit",
-                                    "CAREFUL", MessageBoxButtons.YesNo,
-                                        MessageBoxIcon.Question)
-            Case DialogResult.Yes
-                If host Then
-                    Dim res = client.Delete(roomNamePath)
-                End If
-                End
-            Case DialogResult.No
-                e.Cancel = True
-        End Select
     End Sub
 End Class
