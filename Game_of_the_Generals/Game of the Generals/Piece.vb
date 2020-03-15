@@ -126,4 +126,8 @@
         a.Enabled = False
     End Sub
 
+    Public Sub HideOrShowPiece(a As Button, b As Boolean)
+        a.Visible = b
+    End Sub
+
 End Class

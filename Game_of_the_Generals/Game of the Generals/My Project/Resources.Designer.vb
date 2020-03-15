@@ -172,6 +172,16 @@ Namespace My.Resources
         '''<summary>
         '''  Looks up a localized resource of type System.Drawing.Bitmap.
         '''</summary>
+        Friend ReadOnly Property lose() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("lose", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized resource of type System.Drawing.Bitmap.
+        '''</summary>
         Friend ReadOnly Property major_2x() As System.Drawing.Bitmap
             Get
                 Dim obj As Object = ResourceManager.GetObject("major_2x", resourceCulture)
@@ -215,6 +225,16 @@ Namespace My.Resources
         Friend ReadOnly Property spy_2x() As System.Drawing.Bitmap
             Get
                 Dim obj As Object = ResourceManager.GetObject("spy_2x", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized resource of type System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property win() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("win", resourceCulture)
                 Return CType(obj,System.Drawing.Bitmap)
             End Get
         End Property

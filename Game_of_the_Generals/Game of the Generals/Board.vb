@@ -57,7 +57,7 @@ Public Class Gameboard
     Dim locationX As Integer() = {40, 88, 136, 184, 232, 280, 328}
     Dim locationY As Integer() = {154, 197, 240, 326, 369, 412}
     Dim winner As String = ""
-    
+    Dim winFromArbitrary As Boolean
 
     Private fcon As New FirebaseConfig With
         {
@@ -1689,14 +1689,17 @@ Public Class Gameboard
                 'WHO CLICKED WINS
                 c = True
                 d = True
+                winFromArbitrary = True
                 retVal = True
                 piece.Defeat(sender2, enemyGraveyard)
+                piece.HideOrShowPiece(sender2, False)
             Else
                 c = False
                 d = False
                 retVal = False
                 piece.Defeat(sender, yourGraveyard)
                 piece.Defeat(sender2, enemyGraveyard)
+                piece.HideOrShowPiece(sender2, False)
             End If
         Else
             If a = 14 And b = 1 Then
@@ -1706,6 +1709,7 @@ Public Class Gameboard
                 retVal = False
             ElseIf a = 1 And b = 14 Then
                 piece.Defeat(sender2, enemyGraveyard)
+                piece.HideOrShowPiece(sender2, False)
                 c = True
                 d = False
                 retVal = True
@@ -1713,9 +1717,11 @@ Public Class Gameboard
                 If a > b Then
                     If b = 0 Then
                         'SET VALUE YOU WIN
+                        winFromArbitrary = True
                         retVal = True
                     Else
                         piece.Defeat(sender2, enemyGraveyard)
+                        piece.HideOrShowPiece(sender2, False)
                         c = True
                         d = False
                         retVal = True
@@ -1723,6 +1729,7 @@ Public Class Gameboard
                 Else
                     If a = 0 Then
                         'SET VALUE ENEMY WIN
+                        winFromArbitrary = False
                         retVal = False
                     Else
                         piece.Defeat(sender, yourGraveyard)
@@ -1730,8 +1737,6 @@ Public Class Gameboard
                         d = True
                         retVal = False
                     End If
-
-                    'End If
                 End If
             End If
         End If
@@ -1749,24 +1754,31 @@ Public Class Gameboard
                     If c = 1 Then
                         enemyGraveyard(0) = locationX(0)
                         piece.Defeat(ep1, enemyGraveyard)
+                        piece.HideOrShowPiece(ep1, False)
                     ElseIf c = 2 Then
                         enemyGraveyard(0) = locationX(1)
                         piece.Defeat(ep2, enemyGraveyard)
+                        piece.HideOrShowPiece(ep2, False)
                     ElseIf c = 3 Then
                         enemyGraveyard(0) = locationX(2)
                         piece.Defeat(ep3, enemyGraveyard)
+                        piece.HideOrShowPiece(ep3, False)
                     ElseIf c = 4 Then
                         enemyGraveyard(0) = locationX(3)
                         piece.Defeat(ep4, enemyGraveyard)
+                        piece.HideOrShowPiece(ep4, False)
                     ElseIf c = 5 Then
                         enemyGraveyard(0) = locationX(4)
                         piece.Defeat(ep5, enemyGraveyard)
+                        piece.HideOrShowPiece(ep5, False)
                     ElseIf c = 6 Then
                         enemyGraveyard(0) = locationX(5)
                         piece.Defeat(ep6, enemyGraveyard)
+                        piece.HideOrShowPiece(ep6, False)
                     ElseIf c = 7 Then
                         enemyGraveyard(0) = locationX(6)
                         piece.Defeat(ep7, enemyGraveyard)
+                        piece.HideOrShowPiece(ep7, False)
                     End If
 
                 Case 8 To 14
@@ -1774,48 +1786,62 @@ Public Class Gameboard
                     If c = 8 Then
                         enemyGraveyard(0) = locationX(0)
                         piece.Defeat(ep8, enemyGraveyard)
+                        piece.HideOrShowPiece(ep8, False)
                     ElseIf c = 9 Then
                         enemyGraveyard(0) = locationX(1)
                         piece.Defeat(ep9, enemyGraveyard)
+                        piece.HideOrShowPiece(ep9, False)
                     ElseIf c = 10 Then
                         enemyGraveyard(0) = locationX(2)
                         piece.Defeat(ep10, enemyGraveyard)
+                        piece.HideOrShowPiece(ep10, False)
                     ElseIf c = 11 Then
                         enemyGraveyard(0) = locationX(3)
                         piece.Defeat(ep11, enemyGraveyard)
+                        piece.HideOrShowPiece(ep11, False)
                     ElseIf c = 12 Then
                         enemyGraveyard(0) = locationX(4)
                         piece.Defeat(ep12, enemyGraveyard)
+                        piece.HideOrShowPiece(ep12, False)
                     ElseIf c = 13 Then
                         enemyGraveyard(0) = locationX(5)
                         piece.Defeat(ep13, enemyGraveyard)
+                        piece.HideOrShowPiece(ep13, False)
                     ElseIf c = 14 Then
                         enemyGraveyard(0) = locationX(6)
                         piece.Defeat(ep14, enemyGraveyard)
+                        piece.HideOrShowPiece(ep14, False)
                     End If
                 Case 15 To 21
                     enemyGraveyard(1) = locationY(2)
                     If c = 15 Then
                         enemyGraveyard(0) = locationX(0)
                         piece.Defeat(ep15, enemyGraveyard)
+                        piece.HideOrShowPiece(ep15, False)
                     ElseIf c = 16 Then
                         enemyGraveyard(0) = locationX(1)
                         piece.Defeat(ep16, enemyGraveyard)
+                        piece.HideOrShowPiece(ep16, False)
                     ElseIf c = 17 Then
                         enemyGraveyard(0) = locationX(2)
                         piece.Defeat(ep17, enemyGraveyard)
+                        piece.HideOrShowPiece(ep17, False)
                     ElseIf c = 18 Then
                         enemyGraveyard(0) = locationX(3)
                         piece.Defeat(ep18, enemyGraveyard)
+                        piece.HideOrShowPiece(ep18, False)
                     ElseIf c = 19 Then
                         enemyGraveyard(0) = locationX(4)
                         piece.Defeat(ep19, enemyGraveyard)
+                        piece.HideOrShowPiece(ep19, False)
                     ElseIf c = 20 Then
                         enemyGraveyard(0) = locationX(5)
                         piece.Defeat(ep20, enemyGraveyard)
+                        piece.HideOrShowPiece(ep20, False)
                     ElseIf c = 21 Then
                         enemyGraveyard(0) = locationX(6)
                         piece.Defeat(ep21, enemyGraveyard)
+                        piece.HideOrShowPiece(ep21, False)
                     End If
             End Select
         End If
@@ -2006,8 +2032,131 @@ Public Class Gameboard
 
     End Sub
 
-    Public Function DidYouWin() As Boolean
+    Public Function CheckFlagIfReachEndPosition() As Boolean
+        SetPiecesAndCoordinateObject()
 
+        Dim loc As New Location
+
+        'For j = 0 To 26
+        '    pieceCoor = loc.LocationGet(pieceObject(i))
+        '    coorVal = loc.LocationGet(coordinateObject(j))
+
+        '    If pieceCoor(0) = coorVal(0) And pieceCoor(1) = coorVal(1) Then
+        '        pieceCoordinate(i) = GetCoordinateString(j)
+        '    End If
+        'Next
+        Dim pieceCoor As Integer()
+        Dim coorVal As Integer()
+
+        pieceCoor = loc.LocationGet(hp21)
+
+        Dim retVal As Boolean
+
+        For i = 0 To 71
+            If i = 0 Or i = 8 Or i = 16 Or i = 24 Or i = 32 Or i = 40 Or i = 48 Or i = 56 Or i = 64 Then
+                coorVal = loc.LocationGet(gridCoordinateObject(i))
+                If pieceCoor(0) = coorVal(0) And pieceCoor(1) = coorVal(1) Then
+                    retVal = True
+                Else
+                    retVal = False
+                End If
+            End If
+        Next
+
+        Return retVal
+    End Function
+
+    Public Function CheckSurroundingFlag() As Boolean
+        SetPiecesAndCoordinateObject()
+        Dim loc As Location = New Location
+        Dim pieceCoor As Integer()
+        Dim coorVal As Integer()
+        Dim coorVal1 As Integer()
+        Dim coorVal2 As Integer()
+        Dim coorVal3 As Integer()
+        'Dim coorVal4 As Integer()
+        Dim r As Integer()
+        Dim b As Boolean
+
+        r = loc.LocationGet(hp21)
+        If CheckFlagIfReachEndPosition() Then
+            'MessageBox.Show("IT RUUNS!")
+            For j = 0 To 20
+                pieceCoor = loc.LocationGet(enemyObject(j)) 'enemy piece
+                For i = 0 To 71
+                    coorVal = loc.LocationGet(gridCoordinateObject(i))
+                    If r(0) = coorVal(0) And r(1) = coorVal(1) Then
+                        MessageBox.Show("IT RUNS")
+                        If i = 0 Or i = 64 Then
+                            If i = 0 Then
+                                coorVal1 = loc.LocationGet(gridCoordinateObject(i + 8))
+                                coorVal2 = loc.LocationGet(gridCoordinateObject(i + 1))
+                                If pieceCoor(0) = coorVal1(0) And pieceCoor(1) = coorVal1(1) Then
+                                    b = False
+                                ElseIf pieceCoor(0) = coorVal2(1) And pieceCoor(1) = coorVal2(1) Then
+                                    b = False
+                                Else
+                                    b = True
+                                End If
+
+                            ElseIf i = 64 Then
+                                coorVal2 = loc.LocationGet(gridCoordinateObject(i + 1))
+                                coorVal3 = loc.LocationGet(gridCoordinateObject(i - 8))
+                                If pieceCoor(0) = coorVal2(0) And pieceCoor(1) = coorVal2(1) Then
+                                    b = False
+                                ElseIf pieceCoor(0) = coorVal3(0) And pieceCoor(1) = coorVal3(1) Then
+                                    b = False
+                                Else
+                                    b = True
+                                End If
+
+                            ElseIf i = 8 Or i = 16 Or i = 24 Or i = 32 Or i = 40 Or i = 48 Or i = 56 Then
+                                coorVal1 = loc.LocationGet(gridCoordinateObject(i + 8))
+                                coorVal2 = loc.LocationGet(gridCoordinateObject(i + 1))
+                                coorVal3 = loc.LocationGet(gridCoordinateObject(i - 8))
+                                If pieceCoor(0) = coorVal1(0) And pieceCoor(1) = coorVal1(1) Then
+                                    b = False
+                                ElseIf pieceCoor(0) = coorVal2(0) And pieceCoor(1) = coorVal2(1) Then
+                                    b = False
+                                ElseIf pieceCoor(0) = coorVal3(0) And pieceCoor(1) = coorVal3(1) Then
+                                    b = False
+                                Else
+                                    b = True
+                                End If
+                            End If
+                        End If
+                    End If
+                Next
+            Next
+        End If
+
+        Return b
+    End Function
+
+    Public Function DidYouWin() As Boolean
+        If CheckSurroundingFlag() Then
+            Return True
+        ElseIf winFromArbitrary Then
+            Return True
+        Else
+            Return False
+        End If
+    End Function
+
+    Public Sub SetWinner(a As String)
+        client.Set(roomNamePath + "/whoWin", a)
+    End Sub
+
+    Public Function GetWinner() As Boolean
+        'Dim b As Boolean
+        Dim res = client.Get(roomNamePath + "/whoWin")
+        winner = res.ResultAs(Of String)
+
+        If String.IsNullOrEmpty(winner) Then
+            Return False
+        Else
+            Return True
+        End If
     End Function
 
     Private Sub Gameboard_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -2033,6 +2182,7 @@ Public Class Gameboard
         Player2MovePath = Player2Path + "/move"
         Player1MovePath = Player1Path + "/move"
 
+        WinOrLose.Visible = False
 
         Dim a As RoundButton = New RoundButton
         a.Round(a1, 10)
@@ -2190,7 +2340,7 @@ Public Class Gameboard
         hp11.Click, hp12.Click, hp13.Click, hp14.Click, hp15.Click, hp16.Click, hp17.Click, hp18.Click, hp19.Click, hp20.Click, hp21.Click, a1.Click, a2.Click, a3.Click, a4.Click, a5.Click, b1.Click, b2.Click, b3.Click, b4.Click, b5.Click, c1.Click, c2.Click, c3.Click, c4.Click, c5.Click, d1.Click, d2.Click, d3.Click, d4.Click, d5.Click, e1.Click, e2.Click, e3.Click, e4.Click, e5.Click, f1.Click, f2.Click, f3.Click, f4.Click, f5.Click, g1.Click, g2.Click, g3.Click, g4.Click, g5.Click, h1.Click, h2.Click, h3.Click, h4.Click, h5.Click, i1.Click, i2.Click, i3.Click, i4.Click, i5.Click, ep1.Click,
         ep2.Click, ep3.Click, ep4.Click, ep5.Click, ep6.Click, ep7.Click, ep8.Click, ep9.Click, ep10.Click, ep11.Click, ep13.Click, ep14.Click, ep15.Click, ep16.Click, ep17.Click, ep18.Click, ep19.Click, ep20.Click, ready.Click, myName.Click
 
-        'CHECK WHO WIN
+
 
         'If sender.Equals(ep1) Then
         '    MessageBox.Show("EP1 CLICKED")
@@ -2247,6 +2397,31 @@ Public Class Gameboard
         End If
         'LISTEN MOVES
         If isGameTime And isGameTimeDB Then
+            'CHECK WHO WIN
+            If GetWinner() Then
+                WinOrLose.Visible = True
+                'DISABLED ALL CLICK EXCEPT READY
+                If winner = "player1" Then
+                    If host Then
+                        WinOrLose.Image = My.Resources.win
+                    Else
+                        WinOrLose.Image = My.Resources.lose
+                    End If
+                Else
+                    If host Then
+                        WinOrLose.Image = My.Resources.lose
+                    Else
+                        WinOrLose.Image = My.Resources.win
+                    End If
+                End If
+            End If
+            If DidYouWin() Then
+                If host Then
+                    SetWinner("player1")
+                Else
+                    SetWinner("player2")
+                End If
+            End If
             myName.Enabled = False
             ready.Enabled = True
             MessageBox.Show("GAME TIME")
@@ -2367,7 +2542,7 @@ Public Class Gameboard
                             Else
                                     MessageBox.Show("You can only move one tile away")
                                 ResetValue()
-                                firstClick = False
+                                firstClick = True
                             End If
                         End If
                     End If
@@ -2499,7 +2674,7 @@ Public Class Gameboard
                             Else
                                 MessageBox.Show("You can only move one tile away")
                                 ResetValue()
-                                firstClick = False
+                                firstClick = True
                             End If
                         End If
                     End If
@@ -2512,7 +2687,6 @@ Public Class Gameboard
                 isGameTimeDB = True
             Else
                 If firstClick Then
-                    piece1 = DirectCast(sender, Button)
                     If sender.Equals(hp1) Or
                             sender.Equals(hp2) Or
                             sender.Equals(hp3) Or
@@ -2535,6 +2709,7 @@ Public Class Gameboard
                             sender.Equals(hp20) Or
                             sender.Equals(hp21) Then
                         'swapEnabled = True
+                        piece1 = DirectCast(sender, Button)
                         x = piece1.Location.X
                         y = piece1.Location.Y
                         firstClick = False

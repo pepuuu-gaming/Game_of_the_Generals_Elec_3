@@ -146,6 +146,8 @@ Partial Class Gameboard
         Me.hp2 = New System.Windows.Forms.Button()
         Me.myNameLine = New System.Windows.Forms.Label()
         Me.enemyNameLine = New System.Windows.Forms.Label()
+        Me.WinOrLose = New System.Windows.Forms.PictureBox()
+        CType(Me.WinOrLose, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'i1
@@ -1851,6 +1853,15 @@ Partial Class Gameboard
         Me.enemyNameLine.TabIndex = 256
         Me.enemyNameLine.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
+        'WinOrLose
+        '
+        Me.WinOrLose.Enabled = False
+        Me.WinOrLose.Location = New System.Drawing.Point(409, 534)
+        Me.WinOrLose.Name = "WinOrLose"
+        Me.WinOrLose.Size = New System.Drawing.Size(426, 111)
+        Me.WinOrLose.TabIndex = 257
+        Me.WinOrLose.TabStop = False
+        '
         'Gameboard
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -1859,6 +1870,7 @@ Partial Class Gameboard
         Me.AutoValidate = System.Windows.Forms.AutoValidate.Disable
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(236, Byte), Integer), CType(CType(236, Byte), Integer), CType(CType(236, Byte), Integer))
         Me.ClientSize = New System.Drawing.Size(1264, 681)
+        Me.Controls.Add(Me.WinOrLose)
         Me.Controls.Add(Me.enemyNameLine)
         Me.Controls.Add(Me.myNameLine)
         Me.Controls.Add(Me.hp15)
@@ -1985,6 +1997,7 @@ Partial Class Gameboard
         Me.Name = "Gameboard"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Game of the Generals"
+        CType(Me.WinOrLose, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -2113,4 +2126,5 @@ Partial Class Gameboard
     Friend WithEvents hp2 As Button
     Friend WithEvents myNameLine As Label
     Friend WithEvents enemyNameLine As Label
+    Friend WithEvents WinOrLose As PictureBox
 End Class
