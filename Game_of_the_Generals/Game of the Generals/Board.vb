@@ -50,6 +50,7 @@ Public Class Gameboard
     Dim enemyClickedPiece As Integer
     Dim enemyClickedCoordinateValue As String
     Dim enemyClickedPieceObject As Object
+    Dim firstMove As Boolean = True
 
     Private fcon As New FirebaseConfig With
         {
@@ -1013,7 +1014,12 @@ Public Class Gameboard
             .piece = firstClickPiece
             }
 
-        client.Set(Player2MovePath, move)
+        If host Then
+            client.Set(Player1MovePath, move)
+        Else
+            client.Set(Player2MovePath, move)
+        End If
+
     End Sub
 
     Public Sub SetCoordinateObject(a As Integer, b As Integer)
@@ -1292,8 +1298,15 @@ Public Class Gameboard
     End Sub
 
     Public Sub GetEnemyMoveFromDatabase()
-        Dim res = client.Get(Player2MovePath)
+        Dim res As FirebaseResponse
+
+        If host Then
+            res = client.Get(Player2MovePath)
+        Else
+            res = client.Get(Player1MovePath)
+        End If
         Dim move = res.ResultAs(Of Move)
+
         enemyClickedCoordinateValue = move.coordinate
         enemyClickedPiece = move.piece
     End Sub
@@ -1314,6 +1327,11 @@ Public Class Gameboard
         Next
 
     End Sub
+
+    Public Function FirstMove() As Boolean
+        Dim res = client.Get(roomNamePath + "/firstMove")
+
+    End Function
 
     Private Sub Gameboard_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Try
@@ -1613,6 +1631,7 @@ Public Class Gameboard
                                 SetMoveToDatabase()
                                 SetPlayerTurn(Not host)
                                 firstClick = True
+
                             Else
                                 MessageBox.Show("You can only move one tile away")
                                 ResetValue()
@@ -1622,15 +1641,19 @@ Public Class Gameboard
                     End If
                 Else
                     ready.Text = "RECEIVE"
-                    GetAndSetEnemyMove()
                     MessageBox.Show("Opponent's Turn")
                     enemyNameLine.BackColor = Color.Green
                     myNameLine.BackColor = Color.Red
+                    If Not firstMove Then
+                        GetAndSetEnemyMove()
+                    End If
                 End If
             Else
                 If GetPlayerTurn() Then
                     ready.Text = "RECEIVE"
-                    GetAndSetEnemyMove()
+                    If Not firstMove Then
+                        GetAndSetEnemyMove()
+                    End If
                     MessageBox.Show("Opponent's Turn")
                     enemyNameLine.BackColor = Color.Green
                     myNameLine.BackColor = Color.Red

@@ -133,7 +133,7 @@ Public Class Room
 
             Dim roomDatabase As New RoomDatabase With
             {
-            .isReady = False,
+            .firstMove = True,
             .playerTurn = True,
             .whoWin = ""
             }
@@ -146,9 +146,10 @@ Public Class Room
 
             client.Set("room/" + roomName, roomDatabase) 'ROOM SETTINGS
             client.Set("room/" + roomName + "/arbitrary", arbitrary)
-            client.Set("room/" + roomName + "/move", move)
             client.Set("room/" + roomName + "/player1", player1)
             client.Set("room/" + roomName + "/player2", player2)
+            client.Set("room/" + roomName + "/player1" + "/move", move)
+            client.Set("room/" + roomName + "/player2" + "/move", move)
             client.Set("room/" + roomName + "/player1" + "/piece", piece)
             client.Set("room/" + roomName + "/player2" + "/piece", piece)
 
