@@ -1688,7 +1688,7 @@ Public Class Gameboard
                 'AGGRESION VALUE
                 'WHO CLICKED WINS
                 c = True
-                d = True
+                d = False
                 winFromArbitrary = True
                 retVal = True
                 piece.Defeat(sender2, enemyGraveyard)
@@ -2086,7 +2086,7 @@ Public Class Gameboard
                 For i = 0 To 71
                     coorVal = loc.LocationGet(gridCoordinateObject(i))
                     If r(0) = coorVal(0) And r(1) = coorVal(1) Then
-                        MessageBox.Show("IT RUNS")
+                        'MessageBox.Show("IT RUNS")
                         If i = 0 Or i = 64 Then
                             If i = 0 Then
                                 coorVal1 = loc.LocationGet(gridCoordinateObject(i + 8))
@@ -2158,6 +2158,33 @@ Public Class Gameboard
             Return True
         End If
     End Function
+
+    Public Sub SetEnemyPieceValue(colorSet As Integer())
+        Dim piece As Piece = New Piece
+        piece.Setprivate(ep1, colorSet)
+        piece.Setprivate(ep2, colorSet)
+        piece.Setprivate(ep3, colorSet)
+        piece.Setprivate(ep4, colorSet)
+        piece.Setprivate(ep5, colorSet)
+        piece.Setprivate(ep6, colorSet)
+        piece.Setsergeant(ep7, colorSet)
+
+        piece.Setlieutenant_2nd(ep8, colorSet)
+        piece.Setlieutenant_1st(ep9, colorSet)
+        piece.Setcaptain(ep10, colorSet)
+        piece.Setmajor(ep11, colorSet)
+        piece.Setlieutenant_colonel(ep12, colorSet)
+        piece.Setcolonel(ep13, colorSet)
+        piece.Setbrigadier_general(ep14, colorSet)
+
+        piece.Setmajor_general(ep15, colorSet)
+        piece.Setlieutenant_general(ep16, colorSet)
+        piece.Setgeneral(ep17, colorSet)
+        piece.Setgeneral_of_the_army(ep18, colorSet)
+        piece.Setspy(ep19, colorSet)
+        piece.Setspy(ep20, colorSet)
+        piece.Setflag(ep21, colorSet)
+    End Sub
 
     Private Sub Gameboard_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Try
@@ -2332,13 +2359,27 @@ Public Class Gameboard
         End Select
     End Sub
 
+    Public Sub DisableAllButton()
+        Dim piece As New Piece
+        SetPiecesAndCoordinateObject()
+
+        For i = 0 To 71
+            piece.DisabledButton(gridCoordinateObject(i))
+        Next
+        For i = 0 To 20
+            piece.DisabledButton(pieceObject(i))
+            piece.DisabledButton(enemyObject(i))
+        Next
+    End Sub
+
+
     Dim showed = True
     'Dim firstPieceArbitrary As Integer
     'Dim secondPieceArbitrary As Integer
     Public Sub GetClickButton(sender As Object, e As EventArgs) Handles a6.Click, a7.Click, a8.Click, b6.Click, b7.Click, b8.Click, c6.Click, c7.Click, c8.Click, d6.Click, d7.Click, d8.Click, e6.Click, e7.Click, e8.Click, f6.Click, f7.Click, f8.Click, g6.Click, g7.Click, g8.Click, h6.Click, h7.Click, h8.Click, i6.Click, i7.Click, i8.Click,
         hp1.Click, hp2.Click, hp3.Click, hp4.Click, hp5.Click, hp6.Click, hp7.Click, hp8.Click, hp9.Click, hp10.Click,
         hp11.Click, hp12.Click, hp13.Click, hp14.Click, hp15.Click, hp16.Click, hp17.Click, hp18.Click, hp19.Click, hp20.Click, hp21.Click, a1.Click, a2.Click, a3.Click, a4.Click, a5.Click, b1.Click, b2.Click, b3.Click, b4.Click, b5.Click, c1.Click, c2.Click, c3.Click, c4.Click, c5.Click, d1.Click, d2.Click, d3.Click, d4.Click, d5.Click, e1.Click, e2.Click, e3.Click, e4.Click, e5.Click, f1.Click, f2.Click, f3.Click, f4.Click, f5.Click, g1.Click, g2.Click, g3.Click, g4.Click, g5.Click, h1.Click, h2.Click, h3.Click, h4.Click, h5.Click, i1.Click, i2.Click, i3.Click, i4.Click, i5.Click, ep1.Click,
-        ep2.Click, ep3.Click, ep4.Click, ep5.Click, ep6.Click, ep7.Click, ep8.Click, ep9.Click, ep10.Click, ep11.Click, ep13.Click, ep14.Click, ep15.Click, ep16.Click, ep17.Click, ep18.Click, ep19.Click, ep20.Click, ready.Click, myName.Click
+        ep2.Click, ep3.Click, ep4.Click, ep5.Click, ep6.Click, ep7.Click, ep8.Click, ep9.Click, ep10.Click, ep11.Click, ep13.Click, ep14.Click, ep15.Click, ep16.Click, ep17.Click, ep18.Click, ep19.Click, ep20.Click, ep21.Click, ready.Click, myName.Click
 
 
 
@@ -2391,7 +2432,7 @@ Public Class Gameboard
                 isGameTime = True
                 SetReadyToDatabase()
                 SetPiecesToDatabase()
-                MessageBox.Show("All Set!")
+                'MessageBox.Show("All Set!")
                 ready.Enabled = False
             End If
         End If
@@ -2400,20 +2441,27 @@ Public Class Gameboard
             'CHECK WHO WIN
             If GetWinner() Then
                 WinOrLose.Visible = True
+                WinOrLose.BackgroundImageLayout = ImageLayout.Center
+                DisableAllButton()
                 'DISABLED ALL CLICK EXCEPT READY
                 If winner = "player1" Then
                     If host Then
                         WinOrLose.Image = My.Resources.win
+                        SetEnemyPieceValue(guestColor)
                     Else
                         WinOrLose.Image = My.Resources.lose
+                        SetEnemyPieceValue(hostColor)
                     End If
                 Else
                     If host Then
                         WinOrLose.Image = My.Resources.lose
+                        SetEnemyPieceValue(guestColor)
                     Else
                         WinOrLose.Image = My.Resources.win
+                        SetEnemyPieceValue(hostColor)
                     End If
                 End If
+                ShowHideEnemyPiece(True)
             End If
             If DidYouWin() Then
                 If host Then
@@ -2424,7 +2472,7 @@ Public Class Gameboard
             End If
             myName.Enabled = False
             ready.Enabled = True
-            MessageBox.Show("GAME TIME")
+            'MessageBox.Show("GAME TIME")
             'RESET COLORS
             ResetColors()
             'METHOD GAME TIME
@@ -2462,8 +2510,10 @@ Public Class Gameboard
                             SetFirstClickObject(sender)
                             'firstPieceArbitrary = GetPieceValue(sender)
                             firstClick = False
+                        ElseIf sender.Equals(ready) Then
+                            'DO NOTHING
                         Else
-                            MessageBox.Show("Please select a piece")
+                            MessageBox.Show("Please select a piece first")
                             firstClick = True
                         End If
                     Else
@@ -2540,7 +2590,7 @@ Public Class Gameboard
                                     SetPlayerTurn(Not host)
                                 End If
                             Else
-                                    MessageBox.Show("You can only move one tile away")
+                                MessageBox.Show("You can only move one tile away")
                                 ResetValue()
                                 firstClick = True
                             End If
@@ -2548,7 +2598,7 @@ Public Class Gameboard
                     End If
                 Else
                     ready.Text = "RECEIVE"
-                    MessageBox.Show("Opponent's Turn")
+                    'MessageBox.Show("Opponent's Turn")
                     enemyNameLine.BackColor = Color.Green
                     myNameLine.BackColor = Color.Red
                     'If Not CheckfirstMove() Then
@@ -2560,7 +2610,7 @@ Public Class Gameboard
             Else
                 If GetPlayerTurn() Then
                     ready.Text = "RECEIVE"
-                    MessageBox.Show("Opponent's Turn")
+                    'MessageBox.Show("Opponent's Turn")
                     enemyNameLine.BackColor = Color.Green
                     myNameLine.BackColor = Color.Red
                 Else
@@ -2597,8 +2647,10 @@ Public Class Gameboard
                             firstPieceLocation = GetLocationFirstPiece(sender)
                             SetFirstClickObject(sender)
                             firstClick = False
+                        ElseIf sender.Equals(ready) Then
+                            'DO NOTHING
                         Else
-                            MessageBox.Show("Please select a piece")
+                            ''MessageBox.Show("Please select a piece first")
                             firstClick = True
                         End If
                     Else
@@ -2713,8 +2765,10 @@ Public Class Gameboard
                         x = piece1.Location.X
                         y = piece1.Location.Y
                         firstClick = False
+                    ElseIf sender.Equals(ready) Then
+                        'DO NOTHING
                     Else
-                        MessageBox.Show("Please select a piece")
+                        MessageBox.Show("Please select a piece first")
                         '    swapEnabled = False
                         '    x = piece1.Location.X
                         '    y = piece1.Location.Y

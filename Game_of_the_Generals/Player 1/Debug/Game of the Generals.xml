@@ -77,6 +77,11 @@ Game of the Generals
   Looks up a localized resource of type System.Drawing.Bitmap.
 </summary>
 </member>
+<member name="P:Game_of_the_Generals.My.Resources.Resources.lose">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
 <member name="P:Game_of_the_Generals.My.Resources.Resources.major_2x">
 <summary>
   Looks up a localized resource of type System.Drawing.Bitmap.
@@ -98,6 +103,11 @@ Game of the Generals
 </summary>
 </member>
 <member name="P:Game_of_the_Generals.My.Resources.Resources.spy_2x">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:Game_of_the_Generals.My.Resources.Resources.win">
 <summary>
   Looks up a localized resource of type System.Drawing.Bitmap.
 </summary>
