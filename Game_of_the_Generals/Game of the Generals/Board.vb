@@ -58,6 +58,7 @@ Public Class Gameboard
     Dim locationY As Integer() = {154, 197, 240, 326, 369, 412}
     Dim winner As String = ""
     Dim winFromArbitrary As Boolean
+    Dim cannotSwap As Boolean = False
 
     Private fcon As New FirebaseConfig With
         {
@@ -2435,6 +2436,7 @@ Public Class Gameboard
                 SetPiecesToDatabase()
                 'MessageBox.Show("All Set!")
                 ready.Text = "RECEIVE"
+                cannotSwap = True
             End If
         End If
         'LISTEN MOVES
@@ -2738,113 +2740,107 @@ Public Class Gameboard
             myName.Enabled = True
             If GetPlayer1ReadyStatus() And GetPlayer2ReadyStatus() Then
                 isGameTimeDB = True
-            ElseIf GetPlayer1ReadyStatus() And Not GetPlayer2ReadyStatus() Then
-                If host Then
-                    EnableOrDisableAllButton(False)
-                End If
-            ElseIf Not GetPlayer1ReadyStatus() And GetPlayer2ReadyStatus() Then
-                If Not host Then
-                    EnableOrDisableAllButton(False)
-                End If
             Else
-                If firstClick Then
-                    If sender.Equals(hp1) Or
-                            sender.Equals(hp2) Or
-                            sender.Equals(hp3) Or
-                            sender.Equals(hp4) Or
-                            sender.Equals(hp5) Or
-                            sender.Equals(hp6) Or
-                            sender.Equals(hp7) Or
-                            sender.Equals(hp8) Or
-                            sender.Equals(hp9) Or
-                            sender.Equals(hp10) Or
-                            sender.Equals(hp11) Or
-                            sender.Equals(hp12) Or
-                            sender.Equals(hp13) Or
-                            sender.Equals(hp14) Or
-                            sender.Equals(hp15) Or
-                            sender.Equals(hp16) Or
-                            sender.Equals(hp17) Or
-                            sender.Equals(hp18) Or
-                            sender.Equals(hp19) Or
-                            sender.Equals(hp20) Or
-                            sender.Equals(hp21) Then
-                        'swapEnabled = True
-                        piece1 = DirectCast(sender, Button)
-                        x = piece1.Location.X
-                        y = piece1.Location.Y
-                        firstClick = False
-                    ElseIf sender.Equals(ready) Then
-                        'DO NOTHING
+                If Not cannotSwap Then
+                    If firstClick Then
+                        If sender.Equals(hp1) Or
+                                sender.Equals(hp2) Or
+                                sender.Equals(hp3) Or
+                                sender.Equals(hp4) Or
+                                sender.Equals(hp5) Or
+                                sender.Equals(hp6) Or
+                                sender.Equals(hp7) Or
+                                sender.Equals(hp8) Or
+                                sender.Equals(hp9) Or
+                                sender.Equals(hp10) Or
+                                sender.Equals(hp11) Or
+                                sender.Equals(hp12) Or
+                                sender.Equals(hp13) Or
+                                sender.Equals(hp14) Or
+                                sender.Equals(hp15) Or
+                                sender.Equals(hp16) Or
+                                sender.Equals(hp17) Or
+                                sender.Equals(hp18) Or
+                                sender.Equals(hp19) Or
+                                sender.Equals(hp20) Or
+                                sender.Equals(hp21) Then
+                            'swapEnabled = True
+                            piece1 = DirectCast(sender, Button)
+                            x = piece1.Location.X
+                            y = piece1.Location.Y
+                            firstClick = False
+                        ElseIf sender.Equals(ready) Then
+                            'DO NOTHING
+                        Else
+                            MessageBox.Show("Please select a piece first")
+                            '    swapEnabled = False
+                            '    x = piece1.Location.X
+                            '    y = piece1.Location.Y
+                        End If
                     Else
-                        MessageBox.Show("Please select a piece first")
-                        '    swapEnabled = False
-                        '    x = piece1.Location.X
-                        '    y = piece1.Location.Y
-                    End If
-                Else
-                    piece2 = DirectCast(sender, Button)
-                    If sender.Equals(hp1) Or
-                            sender.Equals(hp2) Or
-                            sender.Equals(hp3) Or
-                            sender.Equals(hp4) Or
-                            sender.Equals(hp5) Or
-                            sender.Equals(hp6) Or
-                            sender.Equals(hp7) Or
-                            sender.Equals(hp8) Or
-                            sender.Equals(hp9) Or
-                            sender.Equals(hp10) Or
-                            sender.Equals(hp11) Or
-                            sender.Equals(hp12) Or
-                            sender.Equals(hp13) Or
-                            sender.Equals(hp14) Or
-                            sender.Equals(hp15) Or
-                            sender.Equals(hp16) Or
-                            sender.Equals(hp17) Or
-                            sender.Equals(hp18) Or
-                            sender.Equals(hp19) Or
-                            sender.Equals(hp20) Or
-                            sender.Equals(hp21) Then
-                        x2 = piece2.Location.X
-                        y2 = piece2.Location.Y
+                        piece2 = DirectCast(sender, Button)
+                        If sender.Equals(hp1) Or
+                                sender.Equals(hp2) Or
+                                sender.Equals(hp3) Or
+                                sender.Equals(hp4) Or
+                                sender.Equals(hp5) Or
+                                sender.Equals(hp6) Or
+                                sender.Equals(hp7) Or
+                                sender.Equals(hp8) Or
+                                sender.Equals(hp9) Or
+                                sender.Equals(hp10) Or
+                                sender.Equals(hp11) Or
+                                sender.Equals(hp12) Or
+                                sender.Equals(hp13) Or
+                                sender.Equals(hp14) Or
+                                sender.Equals(hp15) Or
+                                sender.Equals(hp16) Or
+                                sender.Equals(hp17) Or
+                                sender.Equals(hp18) Or
+                                sender.Equals(hp19) Or
+                                sender.Equals(hp20) Or
+                                sender.Equals(hp21) Then
+                            x2 = piece2.Location.X
+                            y2 = piece2.Location.Y
 
-                        SwapPiece(x, y, x2, y2)
-                        ResetValue()
-                    ElseIf sender.Equals(a6) Or
-                            sender.Equals(a7) Or
-                            sender.Equals(a8) Or
-                            sender.Equals(b6) Or
-                            sender.Equals(b7) Or
-                            sender.Equals(b8) Or
-                            sender.Equals(c6) Or
-                            sender.Equals(c7) Or
-                            sender.Equals(c8) Or
-                            sender.Equals(d6) Or
-                            sender.Equals(d7) Or
-                            sender.Equals(d8) Or
-                            sender.Equals(e6) Or
-                            sender.Equals(e7) Or
-                            sender.Equals(e8) Or
-                            sender.Equals(f6) Or
-                            sender.Equals(f7) Or
-                            sender.Equals(f8) Or
-                            sender.Equals(g6) Or
-                            sender.Equals(g7) Or
-                            sender.Equals(g8) Or
-                            sender.Equals(h6) Or
-                            sender.Equals(h7) Or
-                            sender.Equals(h8) Or
-                            sender.Equals(i6) Or
-                            sender.Equals(i7) Or
-                            sender.Equals(i8) Then
-                        x2 = piece2.Location.X
-                        y2 = piece2.Location.Y
-                        piece1.Location = New Point(x2, y2)
-                        ResetValue()
-                    Else
-                        MessageBox.Show("You can only move and swap piece from A6 to I8")
+                            SwapPiece(x, y, x2, y2)
+                            ResetValue()
+                        ElseIf sender.Equals(a6) Or
+                                sender.Equals(a7) Or
+                                sender.Equals(a8) Or
+                                sender.Equals(b6) Or
+                                sender.Equals(b7) Or
+                                sender.Equals(b8) Or
+                                sender.Equals(c6) Or
+                                sender.Equals(c7) Or
+                                sender.Equals(c8) Or
+                                sender.Equals(d6) Or
+                                sender.Equals(d7) Or
+                                sender.Equals(d8) Or
+                                sender.Equals(e6) Or
+                                sender.Equals(e7) Or
+                                sender.Equals(e8) Or
+                                sender.Equals(f6) Or
+                                sender.Equals(f7) Or
+                                sender.Equals(f8) Or
+                                sender.Equals(g6) Or
+                                sender.Equals(g7) Or
+                                sender.Equals(g8) Or
+                                sender.Equals(h6) Or
+                                sender.Equals(h7) Or
+                                sender.Equals(h8) Or
+                                sender.Equals(i6) Or
+                                sender.Equals(i7) Or
+                                sender.Equals(i8) Then
+                            x2 = piece2.Location.X
+                            y2 = piece2.Location.Y
+                            piece1.Location = New Point(x2, y2)
+                            ResetValue()
+                        Else
+                            MessageBox.Show("You can only move and swap piece from A6 to I8")
+                        End If
+                        firstClick = True
                     End If
-                    firstClick = True
                 End If
             End If
         End If
