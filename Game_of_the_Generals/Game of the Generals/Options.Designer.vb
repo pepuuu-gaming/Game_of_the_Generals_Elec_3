@@ -199,6 +199,7 @@ Partial Class Options
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.back_to_menu)
         Me.Font = New System.Drawing.Font("Cooper Black", 12.0!)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Margin = New System.Windows.Forms.Padding(6, 4, 6, 4)
         Me.Name = "Options"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen

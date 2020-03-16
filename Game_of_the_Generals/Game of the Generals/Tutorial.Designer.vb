@@ -138,6 +138,7 @@ Partial Class Tutorial
         Me.Controls.Add(Me.BtnBattlefield)
         Me.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
         Me.ForeColor = System.Drawing.Color.FromArgb(CType(CType(80, Byte), Integer), CType(CType(80, Byte), Integer), CType(CType(80, Byte), Integer))
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Margin = New System.Windows.Forms.Padding(4, 3, 4, 3)
         Me.Name = "Tutorial"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen

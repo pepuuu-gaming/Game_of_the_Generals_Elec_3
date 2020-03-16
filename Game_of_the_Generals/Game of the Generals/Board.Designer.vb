@@ -1994,6 +1994,7 @@ Partial Class Gameboard
         Me.Controls.Add(Me.c8)
         Me.Controls.Add(Me.b8)
         Me.Controls.Add(Me.a8)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "Gameboard"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Game of the Generals"

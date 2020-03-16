@@ -233,6 +233,7 @@ Partial Class TutorialPage4
         Me.Controls.Add(Me.BtnTutorialNext)
         Me.Controls.Add(Me.back_to_menu)
         Me.Controls.Add(Me.Label1)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "TutorialPage4"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Game of the Generals"

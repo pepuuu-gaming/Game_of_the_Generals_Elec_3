@@ -126,8 +126,8 @@
         a.Enabled = False
     End Sub
 
-    Public Sub DisabledButton(a As Button)
-        a.Enabled = False
+    Public Sub EnableOrDisableButton(a As Button, b As Boolean)
+        a.Enabled = b
     End Sub
 
     Public Sub HideOrShowPiece(a As Button, b As Boolean)

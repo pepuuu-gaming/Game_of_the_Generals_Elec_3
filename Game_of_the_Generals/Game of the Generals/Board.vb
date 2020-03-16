@@ -2359,16 +2359,16 @@ Public Class Gameboard
         End Select
     End Sub
 
-    Public Sub DisableAllButton()
+    Public Sub EnableOrDisableAllButton(b As Boolean)
         Dim piece As New Piece
         SetPiecesAndCoordinateObject()
 
         For i = 0 To 71
-            piece.DisabledButton(gridCoordinateObject(i))
+            piece.EnableOrDisableButton(gridCoordinateObject(i), b)
         Next
         For i = 0 To 20
-            piece.DisabledButton(pieceObject(i))
-            piece.DisabledButton(enemyObject(i))
+            piece.EnableOrDisableButton(pieceObject(i), b)
+            piece.EnableOrDisableButton(enemyObject(i), b)
         Next
     End Sub
 
@@ -2413,6 +2413,7 @@ Public Class Gameboard
 
         If sender.Equals(ready) Then
             If isGameTime And isGameTimeDB Then
+                EnableOrDisableAllButton(True)
                 Dim l As Integer = GetCounter()
                 If Not host Then
                     'GetAndSetEnemyMove()
@@ -2433,7 +2434,7 @@ Public Class Gameboard
                 SetReadyToDatabase()
                 SetPiecesToDatabase()
                 'MessageBox.Show("All Set!")
-                ready.Enabled = False
+                ready.Text = "RECEIVE"
             End If
         End If
         'LISTEN MOVES
@@ -2442,7 +2443,7 @@ Public Class Gameboard
             If GetWinner() Then
                 WinOrLose.Visible = True
                 WinOrLose.BackgroundImageLayout = ImageLayout.Center
-                DisableAllButton()
+                EnableOrDisableAllButton(False)
                 'DISABLED ALL CLICK EXCEPT READY
                 If winner = "player1" Then
                     If host Then
@@ -2737,6 +2738,14 @@ Public Class Gameboard
             myName.Enabled = True
             If GetPlayer1ReadyStatus() And GetPlayer2ReadyStatus() Then
                 isGameTimeDB = True
+            ElseIf GetPlayer1ReadyStatus() And Not GetPlayer2ReadyStatus() Then
+                If host Then
+                    EnableOrDisableAllButton(False)
+                End If
+            ElseIf Not GetPlayer1ReadyStatus() And GetPlayer2ReadyStatus() Then
+                If Not host Then
+                    EnableOrDisableAllButton(False)
+                End If
             Else
                 If firstClick Then
                     If sender.Equals(hp1) Or
