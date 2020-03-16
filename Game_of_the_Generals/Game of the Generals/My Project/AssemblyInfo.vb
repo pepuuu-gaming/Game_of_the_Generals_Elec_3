@@ -9,8 +9,8 @@ Imports System.Runtime.InteropServices
 ' Review the values of the assembly attributes
 
 <Assembly: AssemblyTitle("Game of the Generals")>
-<Assembly: AssemblyDescription("")>
-<Assembly: AssemblyCompany("")>
+<Assembly: AssemblyDescription("Link: github/pepuuu-gaming/https://github.com/pepuuu-gaming/Game_of_the_Generals_Elec_3")>
+<Assembly: AssemblyCompany("AEFO")>
 <Assembly: AssemblyProduct("Game of the Generals")>
 <Assembly: AssemblyCopyright("Copyright ©  2020")>
 <Assembly: AssemblyTrademark("")>
