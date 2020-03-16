@@ -27,4 +27,4 @@ This application was made by:
 - [x] Up to date as of March 16, 2020
 
 ### Installer
-**[Game of the Generals](https://drive.google.com/open?id=17E8gFwQEj7iR-WvjTGJWvhl4Dnyj17Gy)**
+**[Game of the Generals](https://drive.google.com/open?id=1H3GD1uAO_0Nb4cLysF-x2anAoDaXa70J)**
